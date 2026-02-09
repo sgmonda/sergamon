@@ -1,6 +1,6 @@
 # Sergamon
 
-**A pixel-art monospaced font for programming.**
+**Monospaced font for nostalgic programmers**
 
 ![Sergamon Preview](build/previews/preview-python.png)
 

@@ -204,7 +204,7 @@ Pipeline:
   "font": {
     "familyName": "Sergamon",
     "version": "1.0.0",
-    "description": "A pixel-art monospaced font for programming",
+    "description": "Monospaced font for nostalgic programmers",
     "designer": "",
     "url": ""
   },
@@ -279,7 +279,7 @@ The site is dark-themed by default (with a light/dark toggle) and has a clean, d
 
 #### Header
 - Font name (rendered in the font itself, large)
-- One-line description: "A pixel-art monospaced font for programming"
+- One-line description: "Monospaced font for nostalgic programmers"
 - Download button (links to latest GitHub release)
 - GitHub repo link
 
@@ -303,7 +303,7 @@ The site is dark-themed by default (with a light/dark toggle) and has a clean, d
 #### Section 3: Distinguishability Test
 - Side-by-side comparisons of commonly confused character pairs:
   - `0 O o`, `1 l I |`, `" ' `` `, `{ ( [`, `: ;`, `. ,`
-- Rendered at multiple sizes (12px, 14px, 16px, 20px)
+- Rendered at multiple sizes (16px, 24px, 32px)
 
 #### Section 4: Comparison
 - Same code snippet rendered in the pixel font vs. popular alternatives (Fira Code, JetBrains Mono, Cascadia Code)

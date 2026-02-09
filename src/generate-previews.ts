@@ -11,19 +11,19 @@
  * Usage:  npx tsx src/generate-previews.ts
  */
 
-import { createRequire } from 'node:module';
-import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
-import { resolve, join } from 'node:path';
+import { createRequire } from "node:module";
+import { mkdirSync, writeFileSync, existsSync } from "node:fs";
+import { resolve, join } from "node:path";
 
 const require = createRequire(import.meta.url);
-const { createCanvas, GlobalFonts } = require('@napi-rs/canvas');
+const { createCanvas, GlobalFonts } = require("@napi-rs/canvas");
 
 // ── Paths ────────────────────────────────────────────────────────────────────
 
-const ROOT = resolve(import.meta.dirname, '..');
-const BUILD_DIR = join(ROOT, 'build');
-const PREVIEWS_DIR = join(BUILD_DIR, 'previews');
-const FONT_PATH = join(BUILD_DIR, 'Sergamon-Regular.ttf');
+const ROOT = resolve(import.meta.dirname, "..");
+const BUILD_DIR = join(ROOT, "build");
+const PREVIEWS_DIR = join(BUILD_DIR, "previews");
+const FONT_PATH = join(BUILD_DIR, "Sergamon-Regular.ttf");
 
 // ── Themes ───────────────────────────────────────────────────────────────────
 
@@ -49,50 +49,57 @@ interface Theme {
 }
 
 const darkTheme: Theme = {
-  name: 'dark',
-  suffix: '',
-  bg: '#1a1e24',
-  text: '#e6edf3',
-  comment: '#8b949e',
-  keyword: '#ff7b72',
-  string: '#a5d6ff',
-  number: '#79c0ff',
-  function: '#d2a8ff',
-  operator: '#ff7b72',
-  lineNumber: '#484f58',
-  lineNumberBg: '#161b22',
-  gutterBorder: '#30363d',
-  headerBg: '#161b22',
-  headerText: '#8b949e',
-  headerDot1: '#ff5f57',
-  headerDot2: '#febc2e',
-  headerDot3: '#28c840',
+  name: "dark",
+  suffix: "",
+  bg: "#1a1e24",
+  text: "#e6edf3",
+  comment: "#8b949e",
+  keyword: "#ff7b72",
+  string: "#a5d6ff",
+  number: "#79c0ff",
+  function: "#d2a8ff",
+  operator: "#ff7b72",
+  lineNumber: "#484f58",
+  lineNumberBg: "#161b22",
+  gutterBorder: "#30363d",
+  headerBg: "#161b22",
+  headerText: "#8b949e",
+  headerDot1: "#ff5f57",
+  headerDot2: "#febc2e",
+  headerDot3: "#28c840",
 };
 
 const lightTheme: Theme = {
-  name: 'light',
-  suffix: '-light',
-  bg: '#ffffff',
-  text: '#1f2328',
-  comment: '#6e7781',
-  keyword: '#cf222e',
-  string: '#0a3069',
-  number: '#0550ae',
-  function: '#8250df',
-  operator: '#cf222e',
-  lineNumber: '#8b949e',
-  lineNumberBg: '#f6f8fa',
-  gutterBorder: '#d0d7de',
-  headerBg: '#f6f8fa',
-  headerText: '#656d76',
-  headerDot1: '#ff5f57',
-  headerDot2: '#febc2e',
-  headerDot3: '#28c840',
+  name: "light",
+  suffix: "-light",
+  bg: "#ffffff",
+  text: "#1f2328",
+  comment: "#6e7781",
+  keyword: "#cf222e",
+  string: "#0a3069",
+  number: "#0550ae",
+  function: "#8250df",
+  operator: "#cf222e",
+  lineNumber: "#8b949e",
+  lineNumberBg: "#f6f8fa",
+  gutterBorder: "#d0d7de",
+  headerBg: "#f6f8fa",
+  headerText: "#656d76",
+  headerDot1: "#ff5f57",
+  headerDot2: "#febc2e",
+  headerDot3: "#28c840",
 };
 
 // ── Token types for simple syntax highlighting ───────────────────────────────
 
-type TokenType = 'text' | 'comment' | 'keyword' | 'string' | 'number' | 'function' | 'operator';
+type TokenType =
+  | "text"
+  | "comment"
+  | "keyword"
+  | "string"
+  | "number"
+  | "function"
+  | "operator";
 
 interface Token {
   type: TokenType;
@@ -103,23 +110,110 @@ interface Token {
 
 const languageKeywords: Record<string, string[]> = {
   python: [
-    'def', 'class', 'import', 'from', 'return', 'if', 'else', 'elif',
-    'for', 'while', 'in', 'not', 'and', 'or', 'True', 'False', 'None',
-    'with', 'as', 'try', 'except', 'raise', 'pass', 'yield', 'lambda',
-    'self', 'print', 'range', 'len', 'int', 'str', 'list', 'dict',
+    "def",
+    "class",
+    "import",
+    "from",
+    "return",
+    "if",
+    "else",
+    "elif",
+    "for",
+    "while",
+    "in",
+    "not",
+    "and",
+    "or",
+    "True",
+    "False",
+    "None",
+    "with",
+    "as",
+    "try",
+    "except",
+    "raise",
+    "pass",
+    "yield",
+    "lambda",
+    "self",
+    "print",
+    "range",
+    "len",
+    "int",
+    "str",
+    "list",
+    "dict",
   ],
   javascript: [
-    'const', 'let', 'var', 'function', 'return', 'if', 'else', 'for',
-    'while', 'class', 'new', 'this', 'import', 'export', 'from',
-    'async', 'await', 'try', 'catch', 'throw', 'typeof', 'instanceof',
-    'true', 'false', 'null', 'undefined', 'console', 'log',
+    "const",
+    "let",
+    "var",
+    "function",
+    "return",
+    "if",
+    "else",
+    "for",
+    "while",
+    "class",
+    "new",
+    "this",
+    "import",
+    "export",
+    "from",
+    "async",
+    "await",
+    "try",
+    "catch",
+    "throw",
+    "typeof",
+    "instanceof",
+    "true",
+    "false",
+    "null",
+    "undefined",
+    "console",
+    "log",
   ],
   rust: [
-    'fn', 'let', 'mut', 'pub', 'struct', 'enum', 'impl', 'trait',
-    'use', 'mod', 'crate', 'self', 'super', 'return', 'if', 'else',
-    'for', 'while', 'loop', 'match', 'in', 'as', 'ref', 'move',
-    'true', 'false', 'Some', 'None', 'Ok', 'Err', 'vec', 'println',
-    'where', 'type', 'const', 'static', 'unsafe', 'async', 'await',
+    "fn",
+    "let",
+    "mut",
+    "pub",
+    "struct",
+    "enum",
+    "impl",
+    "trait",
+    "use",
+    "mod",
+    "crate",
+    "self",
+    "super",
+    "return",
+    "if",
+    "else",
+    "for",
+    "while",
+    "loop",
+    "match",
+    "in",
+    "as",
+    "ref",
+    "move",
+    "true",
+    "false",
+    "Some",
+    "None",
+    "Ok",
+    "Err",
+    "vec",
+    "println",
+    "where",
+    "type",
+    "const",
+    "static",
+    "unsafe",
+    "async",
+    "await",
   ],
 };
 
@@ -132,12 +226,15 @@ function tokenize(line: string, language: string): Token[] {
 
   while (i < line.length) {
     // Comments
-    if (line[i] === '#' && language === 'python') {
-      tokens.push({ type: 'comment', value: line.slice(i) });
+    if (line[i] === "#" && language === "python") {
+      tokens.push({ type: "comment", value: line.slice(i) });
       break;
     }
-    if (line.slice(i, i + 2) === '//' && (language === 'javascript' || language === 'rust')) {
-      tokens.push({ type: 'comment', value: line.slice(i) });
+    if (
+      line.slice(i, i + 2) === "//" &&
+      (language === "javascript" || language === "rust")
+    ) {
+      tokens.push({ type: "comment", value: line.slice(i) });
       break;
     }
 
@@ -146,11 +243,11 @@ function tokenize(line: string, language: string): Token[] {
       const quote = line[i];
       let j = i + 1;
       while (j < line.length && line[j] !== quote) {
-        if (line[j] === '\\') j++; // skip escaped chars
+        if (line[j] === "\\") j++; // skip escaped chars
         j++;
       }
       j = Math.min(j + 1, line.length);
-      tokens.push({ type: 'string', value: line.slice(i, j) });
+      tokens.push({ type: "string", value: line.slice(i, j) });
       i = j;
       continue;
     }
@@ -159,16 +256,16 @@ function tokenize(line: string, language: string): Token[] {
     if (/\d/.test(line[i])) {
       let j = i;
       while (j < line.length && /[\d._xXa-fA-F]/.test(line[j])) j++;
-      tokens.push({ type: 'number', value: line.slice(i, j) });
+      tokens.push({ type: "number", value: line.slice(i, j) });
       i = j;
       continue;
     }
 
     // Operators
-    if ('=!<>+-*/%&|^~'.includes(line[i])) {
+    if ("=!<>+-*/%&|^~".includes(line[i])) {
       let j = i;
-      while (j < line.length && '=!<>+-*/%&|^~'.includes(line[j])) j++;
-      tokens.push({ type: 'operator', value: line.slice(i, j) });
+      while (j < line.length && "=!<>+-*/%&|^~".includes(line[j])) j++;
+      tokens.push({ type: "operator", value: line.slice(i, j) });
       i = j;
       continue;
     }
@@ -179,18 +276,18 @@ function tokenize(line: string, language: string): Token[] {
       while (j < line.length && /[a-zA-Z0-9_]/.test(line[j])) j++;
       const word = line.slice(i, j);
       if (keywords.includes(word)) {
-        tokens.push({ type: 'keyword', value: word });
-      } else if (j < line.length && line[j] === '(') {
-        tokens.push({ type: 'function', value: word });
+        tokens.push({ type: "keyword", value: word });
+      } else if (j < line.length && line[j] === "(") {
+        tokens.push({ type: "function", value: word });
       } else {
-        tokens.push({ type: 'text', value: word });
+        tokens.push({ type: "text", value: word });
       }
       i = j;
       continue;
     }
 
     // Other characters (whitespace, punctuation)
-    tokens.push({ type: 'text', value: line[i] });
+    tokens.push({ type: "text", value: line[i] });
     i++;
   }
 
@@ -302,10 +399,10 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
   const HEADER_HEIGHT = 36;
   const PADDING_LEFT = 16;
   const PADDING_TOP = 16;
-  const FONT_NAME = 'Sergamon';
+  const FONT_NAME = "Sergamon";
 
   const canvas = createCanvas(WIDTH, HEIGHT);
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
 
   // Background
   ctx.fillStyle = theme.bg;
@@ -338,8 +435,12 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
   // Header title
   ctx.fillStyle = theme.headerText;
   ctx.font = `12px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'middle';
-  ctx.fillText(`preview-${language}.${language === 'rust' ? 'rs' : language === 'python' ? 'py' : 'js'}`, 80, dotY);
+  ctx.textBaseline = "middle";
+  ctx.fillText(
+    `preview-${language}.${language === "rust" ? "rs" : language === "python" ? "py" : "js"}`,
+    80,
+    dotY,
+  );
 
   // Gutter background
   ctx.fillStyle = theme.lineNumberBg;
@@ -350,11 +451,11 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
   ctx.fillRect(GUTTER_WIDTH, HEADER_HEIGHT, 1, HEIGHT - HEADER_HEIGHT);
 
   // Render lines
-  const lines = code.split('\n');
+  const lines = code.split("\n");
   const startY = HEADER_HEIGHT + PADDING_TOP;
 
   ctx.font = `${FONT_SIZE}px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'top';
+  ctx.textBaseline = "top";
 
   for (let i = 0; i < lines.length; i++) {
     const y = startY + i * LINE_HEIGHT;
@@ -362,7 +463,7 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
 
     // Line number
     ctx.fillStyle = theme.lineNumber;
-    const lineNum = String(i + 1).padStart(3, ' ');
+    const lineNum = String(i + 1).padStart(3, " ");
     ctx.fillText(lineNum, 8, y);
 
     // Tokenize and render
@@ -371,22 +472,22 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
 
     for (const token of tokens) {
       switch (token.type) {
-        case 'comment':
+        case "comment":
           ctx.fillStyle = theme.comment;
           break;
-        case 'keyword':
+        case "keyword":
           ctx.fillStyle = theme.keyword;
           break;
-        case 'string':
+        case "string":
           ctx.fillStyle = theme.string;
           break;
-        case 'number':
+        case "number":
           ctx.fillStyle = theme.number;
           break;
-        case 'function':
+        case "function":
           ctx.fillStyle = theme.function;
           break;
-        case 'operator':
+        case "operator":
           ctx.fillStyle = theme.operator;
           break;
         default:
@@ -401,10 +502,14 @@ function renderPreview(language: string, code: string, theme: Theme): Buffer {
   // Watermark
   ctx.fillStyle = theme.comment;
   ctx.font = `11px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'bottom';
-  ctx.fillText('Sergamon - A pixel-art monospaced font for programming', GUTTER_WIDTH + PADDING_LEFT, HEIGHT - 12);
+  ctx.textBaseline = "bottom";
+  ctx.fillText(
+    "Sergamon - Monospaced font for nostalgic programmers",
+    GUTTER_WIDTH + PADDING_LEFT,
+    HEIGHT - 12,
+  );
 
-  return canvas.toBuffer('image/png');
+  return canvas.toBuffer("image/png");
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
@@ -417,10 +522,12 @@ function main(): void {
 
   // Register the font
   if (existsSync(FONT_PATH)) {
-    GlobalFonts.registerFromPath(FONT_PATH, 'Sergamon');
+    GlobalFonts.registerFromPath(FONT_PATH, "Sergamon");
     console.log(`Registered font from ${FONT_PATH}`);
   } else {
-    console.warn(`Warning: Font file not found at ${FONT_PATH}. Using fallback font.`);
+    console.warn(
+      `Warning: Font file not found at ${FONT_PATH}. Using fallback font.`,
+    );
     console.warn('Run "npm run build" first to generate font files.');
   }
 

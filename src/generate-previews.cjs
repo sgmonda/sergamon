@@ -11,82 +11,169 @@
  * Usage:  node src/generate-previews.cjs
  */
 
-const { createCanvas, GlobalFonts } = require('@napi-rs/canvas');
-const { mkdirSync, writeFileSync, existsSync } = require('node:fs');
-const { resolve, join } = require('node:path');
+const { createCanvas, GlobalFonts } = require("@napi-rs/canvas");
+const { mkdirSync, writeFileSync, existsSync } = require("node:fs");
+const { resolve, join } = require("node:path");
 
 // ── Paths ────────────────────────────────────────────────────────────────────
 
-const ROOT = resolve(__dirname, '..');
-const BUILD_DIR = join(ROOT, 'build');
-const PREVIEWS_DIR = join(BUILD_DIR, 'previews');
-const FONT_PATH = join(BUILD_DIR, 'Sergamon-Regular.ttf');
+const ROOT = resolve(__dirname, "..");
+const BUILD_DIR = join(ROOT, "build");
+const PREVIEWS_DIR = join(BUILD_DIR, "previews");
+const FONT_PATH = join(BUILD_DIR, "Sergamon-Regular.ttf");
 
 // ── Themes ───────────────────────────────────────────────────────────────────
 
 const darkTheme = {
-  name: 'dark',
-  suffix: '',
-  bg: '#1a1e24',
-  text: '#e6edf3',
-  comment: '#8b949e',
-  keyword: '#ff7b72',
-  string: '#a5d6ff',
-  number: '#79c0ff',
-  function: '#d2a8ff',
-  operator: '#ff7b72',
-  lineNumber: '#484f58',
-  lineNumberBg: '#161b22',
-  gutterBorder: '#30363d',
-  headerBg: '#161b22',
-  headerText: '#8b949e',
-  headerDot1: '#ff5f57',
-  headerDot2: '#febc2e',
-  headerDot3: '#28c840',
+  name: "dark",
+  suffix: "",
+  bg: "#1a1e24",
+  text: "#e6edf3",
+  comment: "#8b949e",
+  keyword: "#ff7b72",
+  string: "#a5d6ff",
+  number: "#79c0ff",
+  function: "#d2a8ff",
+  operator: "#ff7b72",
+  lineNumber: "#484f58",
+  lineNumberBg: "#161b22",
+  gutterBorder: "#30363d",
+  headerBg: "#161b22",
+  headerText: "#8b949e",
+  headerDot1: "#ff5f57",
+  headerDot2: "#febc2e",
+  headerDot3: "#28c840",
 };
 
 const lightTheme = {
-  name: 'light',
-  suffix: '-light',
-  bg: '#ffffff',
-  text: '#1f2328',
-  comment: '#6e7781',
-  keyword: '#cf222e',
-  string: '#0a3069',
-  number: '#0550ae',
-  function: '#8250df',
-  operator: '#cf222e',
-  lineNumber: '#8b949e',
-  lineNumberBg: '#f6f8fa',
-  gutterBorder: '#d0d7de',
-  headerBg: '#f6f8fa',
-  headerText: '#656d76',
-  headerDot1: '#ff5f57',
-  headerDot2: '#febc2e',
-  headerDot3: '#28c840',
+  name: "light",
+  suffix: "-light",
+  bg: "#ffffff",
+  text: "#1f2328",
+  comment: "#6e7781",
+  keyword: "#cf222e",
+  string: "#0a3069",
+  number: "#0550ae",
+  function: "#8250df",
+  operator: "#cf222e",
+  lineNumber: "#8b949e",
+  lineNumberBg: "#f6f8fa",
+  gutterBorder: "#d0d7de",
+  headerBg: "#f6f8fa",
+  headerText: "#656d76",
+  headerDot1: "#ff5f57",
+  headerDot2: "#febc2e",
+  headerDot3: "#28c840",
 };
 
 // ── Language-specific keywords ───────────────────────────────────────────────
 
 const languageKeywords = {
   python: [
-    'def', 'class', 'import', 'from', 'return', 'if', 'else', 'elif',
-    'for', 'while', 'in', 'not', 'and', 'or', 'True', 'False', 'None',
-    'with', 'as', 'try', 'except', 'raise', 'pass', 'yield', 'lambda',
-    'self', 'print', 'range', 'len', 'int', 'str', 'list', 'dict',
+    "def",
+    "class",
+    "import",
+    "from",
+    "return",
+    "if",
+    "else",
+    "elif",
+    "for",
+    "while",
+    "in",
+    "not",
+    "and",
+    "or",
+    "True",
+    "False",
+    "None",
+    "with",
+    "as",
+    "try",
+    "except",
+    "raise",
+    "pass",
+    "yield",
+    "lambda",
+    "self",
+    "print",
+    "range",
+    "len",
+    "int",
+    "str",
+    "list",
+    "dict",
   ],
   javascript: [
-    'const', 'let', 'var', 'function', 'return', 'if', 'else', 'for',
-    'while', 'class', 'new', 'this', 'import', 'export', 'from',
-    'async', 'await', 'try', 'catch', 'throw', 'typeof', 'instanceof',
-    'true', 'false', 'null', 'undefined', 'console', 'log',
+    "const",
+    "let",
+    "var",
+    "function",
+    "return",
+    "if",
+    "else",
+    "for",
+    "while",
+    "class",
+    "new",
+    "this",
+    "import",
+    "export",
+    "from",
+    "async",
+    "await",
+    "try",
+    "catch",
+    "throw",
+    "typeof",
+    "instanceof",
+    "true",
+    "false",
+    "null",
+    "undefined",
+    "console",
+    "log",
   ],
   rust: [
-    'fn', 'let', 'mut', 'pub', 'struct', 'enum', 'impl', 'trait',
-    'use', 'mod', 'crate', 'self', 'super', 'return', 'if', 'else',
-    'for', 'while', 'loop', 'match', 'in', 'as', 'ref', 'move',
-    'true', 'false', 'Some', 'None', 'Ok', 'Err', 'vec', 'println',
-    'where', 'type', 'const', 'static', 'unsafe', 'async', 'await',
+    "fn",
+    "let",
+    "mut",
+    "pub",
+    "struct",
+    "enum",
+    "impl",
+    "trait",
+    "use",
+    "mod",
+    "crate",
+    "self",
+    "super",
+    "return",
+    "if",
+    "else",
+    "for",
+    "while",
+    "loop",
+    "match",
+    "in",
+    "as",
+    "ref",
+    "move",
+    "true",
+    "false",
+    "Some",
+    "None",
+    "Ok",
+    "Err",
+    "vec",
+    "println",
+    "where",
+    "type",
+    "const",
+    "static",
+    "unsafe",
+    "async",
+    "await",
   ],
 };
 
@@ -104,12 +191,16 @@ function tokenize(line, language) {
 
   while (i < line.length) {
     // Comments
-    if (line[i] === '#' && language === 'python') {
-      tokens.push({ type: 'comment', value: line.slice(i) });
+    if (line[i] === "#" && language === "python") {
+      tokens.push({ type: "comment", value: line.slice(i) });
       break;
     }
-    if (line[i] === '/' && line[i + 1] === '/' && (language === 'javascript' || language === 'rust')) {
-      tokens.push({ type: 'comment', value: line.slice(i) });
+    if (
+      line[i] === "/" &&
+      line[i + 1] === "/" &&
+      (language === "javascript" || language === "rust")
+    ) {
+      tokens.push({ type: "comment", value: line.slice(i) });
       break;
     }
 
@@ -118,11 +209,11 @@ function tokenize(line, language) {
       const quote = line[i];
       let j = i + 1;
       while (j < line.length && line[j] !== quote) {
-        if (line[j] === '\\') j++;
+        if (line[j] === "\\") j++;
         j++;
       }
       j = Math.min(j + 1, line.length);
-      tokens.push({ type: 'string', value: line.slice(i, j) });
+      tokens.push({ type: "string", value: line.slice(i, j) });
       i = j;
       continue;
     }
@@ -131,16 +222,16 @@ function tokenize(line, language) {
     if (RE_DIGIT.test(line[i])) {
       let j = i;
       while (j < line.length && RE_HEX.test(line[j])) j++;
-      tokens.push({ type: 'number', value: line.slice(i, j) });
+      tokens.push({ type: "number", value: line.slice(i, j) });
       i = j;
       continue;
     }
 
     // Operators
-    if ('=!<>+-*/%&|^~'.includes(line[i])) {
+    if ("=!<>+-*/%&|^~".includes(line[i])) {
       let j = i;
-      while (j < line.length && '=!<>+-*/%&|^~'.includes(line[j])) j++;
-      tokens.push({ type: 'operator', value: line.slice(i, j) });
+      while (j < line.length && "=!<>+-*/%&|^~".includes(line[j])) j++;
+      tokens.push({ type: "operator", value: line.slice(i, j) });
       i = j;
       continue;
     }
@@ -151,18 +242,18 @@ function tokenize(line, language) {
       while (j < line.length && RE_WORD.test(line[j])) j++;
       const word = line.slice(i, j);
       if (keywords.includes(word)) {
-        tokens.push({ type: 'keyword', value: word });
-      } else if (j < line.length && line[j] === '(') {
-        tokens.push({ type: 'function', value: word });
+        tokens.push({ type: "keyword", value: word });
+      } else if (j < line.length && line[j] === "(") {
+        tokens.push({ type: "function", value: word });
       } else {
-        tokens.push({ type: 'text', value: word });
+        tokens.push({ type: "text", value: word });
       }
       i = j;
       continue;
     }
 
     // Other characters (whitespace, punctuation)
-    tokens.push({ type: 'text', value: line[i] });
+    tokens.push({ type: "text", value: line[i] });
     i++;
   }
 
@@ -274,10 +365,10 @@ function renderPreview(language, code, theme) {
   const HEADER_HEIGHT = 36;
   const PADDING_LEFT = 16;
   const PADDING_TOP = 16;
-  const FONT_NAME = 'Sergamon';
+  const FONT_NAME = "Sergamon";
 
   const canvas = createCanvas(WIDTH, HEIGHT);
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
 
   // Background
   ctx.fillStyle = theme.bg;
@@ -310,8 +401,8 @@ function renderPreview(language, code, theme) {
   // Header title
   ctx.fillStyle = theme.headerText;
   ctx.font = `12px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'middle';
-  const ext = language === 'rust' ? 'rs' : language === 'python' ? 'py' : 'js';
+  ctx.textBaseline = "middle";
+  const ext = language === "rust" ? "rs" : language === "python" ? "py" : "js";
   ctx.fillText(`preview-${language}.${ext}`, 80, dotY);
 
   // Gutter background
@@ -323,11 +414,11 @@ function renderPreview(language, code, theme) {
   ctx.fillRect(GUTTER_WIDTH, HEADER_HEIGHT, 1, HEIGHT - HEADER_HEIGHT);
 
   // Render lines
-  const lines = code.split('\n');
+  const lines = code.split("\n");
   const startY = HEADER_HEIGHT + PADDING_TOP;
 
   ctx.font = `${FONT_SIZE}px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'top';
+  ctx.textBaseline = "top";
 
   for (let i = 0; i < lines.length; i++) {
     const y = startY + i * LINE_HEIGHT;
@@ -335,7 +426,7 @@ function renderPreview(language, code, theme) {
 
     // Line number
     ctx.fillStyle = theme.lineNumber;
-    const lineNum = String(i + 1).padStart(3, ' ');
+    const lineNum = String(i + 1).padStart(3, " ");
     ctx.fillText(lineNum, 8, y);
 
     // Tokenize and render
@@ -344,13 +435,26 @@ function renderPreview(language, code, theme) {
 
     for (const token of tokens) {
       switch (token.type) {
-        case 'comment':  ctx.fillStyle = theme.comment; break;
-        case 'keyword':  ctx.fillStyle = theme.keyword; break;
-        case 'string':   ctx.fillStyle = theme.string; break;
-        case 'number':   ctx.fillStyle = theme.number; break;
-        case 'function': ctx.fillStyle = theme.function; break;
-        case 'operator': ctx.fillStyle = theme.operator; break;
-        default:         ctx.fillStyle = theme.text;
+        case "comment":
+          ctx.fillStyle = theme.comment;
+          break;
+        case "keyword":
+          ctx.fillStyle = theme.keyword;
+          break;
+        case "string":
+          ctx.fillStyle = theme.string;
+          break;
+        case "number":
+          ctx.fillStyle = theme.number;
+          break;
+        case "function":
+          ctx.fillStyle = theme.function;
+          break;
+        case "operator":
+          ctx.fillStyle = theme.operator;
+          break;
+        default:
+          ctx.fillStyle = theme.text;
       }
 
       ctx.fillText(token.value, x, y);
@@ -361,10 +465,14 @@ function renderPreview(language, code, theme) {
   // Watermark
   ctx.fillStyle = theme.comment;
   ctx.font = `11px "${FONT_NAME}", monospace`;
-  ctx.textBaseline = 'bottom';
-  ctx.fillText('Sergamon - A pixel-art monospaced font for programming', GUTTER_WIDTH + PADDING_LEFT, HEIGHT - 12);
+  ctx.textBaseline = "bottom";
+  ctx.fillText(
+    "Sergamon - Monospaced font for nostalgic programmers",
+    GUTTER_WIDTH + PADDING_LEFT,
+    HEIGHT - 12,
+  );
 
-  return canvas.toBuffer('image/png');
+  return canvas.toBuffer("image/png");
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
@@ -377,10 +485,12 @@ function main() {
 
   // Register the font
   if (existsSync(FONT_PATH)) {
-    GlobalFonts.registerFromPath(FONT_PATH, 'Sergamon');
+    GlobalFonts.registerFromPath(FONT_PATH, "Sergamon");
     console.log(`Registered font from ${FONT_PATH}`);
   } else {
-    console.warn(`Warning: Font file not found at ${FONT_PATH}. Using fallback font.`);
+    console.warn(
+      `Warning: Font file not found at ${FONT_PATH}. Using fallback font.`,
+    );
     console.warn('Run "npm run build" first to generate font files.');
   }
 
