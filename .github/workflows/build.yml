@@ -1,0 +1,65 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate glyphs
+        run: npm run validate
+
+      - name: Build font files
+        run: npm run build
+
+      - name: Generate previews
+        run: npm run previews
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: font-files
+          path: |
+            build/*.ttf
+            build/*.woff2
+            build/previews/*.png
+
+      - name: Read version from font-config.json
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: version
+        run: |
+          VERSION=$(node -e "const c = JSON.parse(require('fs').readFileSync('font-config.json','utf8')); console.log(c.font.version)")
+          echo "version=v${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Sergamon ${{ steps.version.outputs.version }}
+          generate_release_notes: true
+          files: |
+            build/Sergamon-Regular.ttf
+            build/Sergamon-Regular.woff2
+            build/Sergamon-Bold.ttf
+            build/Sergamon-Bold.woff2

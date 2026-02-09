@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sergamon - A pixel-art monospaced font for programming</title>
+  <meta name="description" content="Sergamon is an open-source pixel-art monospaced font designed for programming, with ligatures and full ASCII support.">
+
+  <!-- Highlight.js from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" id="hljs-theme-dark">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css" id="hljs-theme-light" disabled>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+
+  <!-- Font face declarations -->
+  <style>
+    @font-face {
+      font-family: 'Sergamon';
+      src: url('./fonts/Sergamon-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Sergamon';
+      src: url('./fonts/Sergamon-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    /* ================================================================
+       CSS CUSTOM PROPERTIES
+       ================================================================ */
+    :root {
+      --font-mono: 'Sergamon', 'Courier New', monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --max-width: 1100px;
+      --radius: 6px;
+      --transition: 0.2s ease;
+    }
+
+    /* Dark theme (default) */
+    [data-theme="dark"] {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-tertiary: #21262d;
+      --bg-editor: #1a1e24;
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #484f58;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --accent-bg: rgba(88, 166, 255, 0.1);
+      --green: #3fb950;
+      --orange: #d29922;
+      --red: #f85149;
+      --purple: #bc8cff;
+      --glyph-hover-bg: #30363d;
+      --editor-line-number: #484f58;
+      --tab-active-bg: #0d1117;
+      --tab-inactive-bg: #161b22;
+      --scrollbar-thumb: #30363d;
+      --scrollbar-track: #161b22;
+    }
+
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f6f8fa;
+      --bg-tertiary: #eaeef2;
+      --bg-editor: #fafbfc;
+      --text-primary: #1f2328;
+      --text-secondary: #656d76;
+      --text-muted: #8b949e;
+      --border: #d0d7de;
+      --accent: #0969da;
+      --accent-hover: #0550ae;
+      --accent-bg: rgba(9, 105, 218, 0.08);
+      --green: #1a7f37;
+      --orange: #9a6700;
+      --red: #cf222e;
+      --purple: #8250df;
+      --glyph-hover-bg: #eaeef2;
+      --editor-line-number: #8b949e;
+      --tab-active-bg: #ffffff;
+      --tab-inactive-bg: #f6f8fa;
+      --scrollbar-thumb: #d0d7de;
+      --scrollbar-track: #f6f8fa;
+    }
+
+    /* ================================================================
+       RESET & BASE
+       ================================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 4px;
+    }
+
+    /* ================================================================
+       LAYOUT
+       ================================================================ */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    /* ================================================================
+       HEADER
+       ================================================================ */
+    header {
+      padding: 48px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .header-pixels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--accent) 0px, var(--accent) 4px,
+        transparent 4px, transparent 8px
+      );
+      opacity: 0.6;
+    }
+
+    .header-top-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .font-title {
+      font-family: var(--font-mono);
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .font-tagline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .header-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+    .btn:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: #fff;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all var(--transition);
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* SVG icons */
+    .icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ================================================================
+       SECTION 1: CODE PREVIEW
+       ================================================================ */
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .lang-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .lang-tab {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: var(--tab-inactive-bg);
+      color: var(--text-secondary);
+      transition: all var(--transition);
+    }
+    .lang-tab:hover {
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+    .lang-tab.active {
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .editor-sliders {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .slider-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .slider-group label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .slider-group input[type="range"] {
+      width: 100px;
+      accent-color: var(--accent);
+    }
+    .slider-group .slider-value {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      min-width: 36px;
+    }
+
+    .editor-theme-toggle {
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .editor-theme-toggle:hover {
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+
+    .editor-wrapper {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-editor);
+    }
+
+    .editor-wrapper.light-editor {
+      background: #fafbfc;
+    }
+
+    .editor-container {
+      position: relative;
+      min-height: 400px;
+      overflow: auto;
+    }
+
+    .editor-textarea,
+    .editor-highlight {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      line-height: 1.5;
+      padding: 20px;
+      padding-left: 60px;
+      white-space: pre;
+      word-wrap: normal;
+      overflow-wrap: normal;
+      tab-size: 4;
+      -moz-tab-size: 4;
+    }
+
+    .editor-textarea {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      color: transparent;
+      caret-color: var(--text-primary);
+      border: none;
+      outline: none;
+      resize: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .editor-highlight {
+      position: relative;
+      z-index: 1;
+      min-height: 400px;
+    }
+
+    .editor-highlight pre {
+      margin: 0;
+      background: transparent !important;
+      padding: 0 !important;
+    }
+
+    .editor-highlight code {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      line-height: inherit !important;
+      background: transparent !important;
+      padding: 0 !important;
+    }
+
+    .editor-line-numbers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 44px;
+      padding: 20px 8px 20px 0;
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--editor-line-number);
+      user-select: none;
+      pointer-events: none;
+      z-index: 3;
+      border-right: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+
+    .editor-wrapper.light-editor .editor-line-numbers {
+      background: #f0f2f4;
+      color: #8b949e;
+      border-right-color: #d0d7de;
+    }
+
+    .editor-wrapper.light-editor .editor-textarea {
+      caret-color: #1f2328;
+    }
+
+    /* ================================================================
+       SECTION 2: CHARACTER GRID
+       ================================================================ */
+    .char-category {
+      margin-bottom: 32px;
+    }
+
+    .char-category-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+      gap: 4px;
+    }
+
+    .char-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: default;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .char-cell:hover {
+      background: var(--glyph-hover-bg);
+      border-color: var(--accent);
+      transform: scale(1.15);
+      z-index: 1;
+    }
+
+    .char-tooltip {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      font-size: 0.7rem;
+      font-family: var(--font-sans);
+      color: var(--text-secondary);
+      z-index: 10;
+      pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .char-tooltip .tooltip-char {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .char-cell:hover .char-tooltip {
+      display: block;
+    }
+
+    /* ================================================================
+       SECTION 3: DISTINGUISHABILITY
+       ================================================================ */
+    .distinguish-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .distinguish-table th,
+    .distinguish-table td {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+
+    .distinguish-table th {
+      background: var(--bg-secondary);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .distinguish-table td {
+      letter-spacing: 0.4em;
+    }
+
+    .distinguish-label {
+      font-family: var(--font-sans) !important;
+      font-size: 0.8rem !important;
+      color: var(--text-secondary) !important;
+      letter-spacing: 0 !important;
+    }
+
+    /* ================================================================
+       SECTION 4: FONT COMPARISON
+       ================================================================ */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .comparison-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .comparison-card-header {
+      padding: 10px 16px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .comparison-card-header .card-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      padding: 2px 6px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 3px;
+      margin-left: 8px;
+    }
+
+    .comparison-card pre {
+      padding: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      overflow-x: auto;
+      background: var(--bg-editor);
+      margin: 0;
+      min-height: 180px;
+    }
+
+    .comparison-card.font-sergamon pre {
+      font-family: 'Sergamon', monospace;
+    }
+    .comparison-card.font-firacode pre {
+      font-family: 'Fira Code', 'Fira Mono', monospace;
+    }
+    .comparison-card.font-jetbrains pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .comparison-card.font-cascadia pre {
+      font-family: 'Cascadia Code', 'Cascadia Mono', monospace;
+    }
+
+    /* ================================================================
+       SECTION 5: INSTALLATION
+       ================================================================ */
+    .install-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .install-tab {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: var(--tab-inactive-bg);
+      color: var(--text-secondary);
+      transition: all var(--transition);
+    }
+    .install-tab:hover {
+      color: var(--text-primary);
+    }
+    .install-tab.active {
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .install-content {
+      display: none;
+    }
+    .install-content.active {
+      display: block;
+    }
+
+    .install-step {
+      margin-bottom: 20px;
+    }
+
+    .install-step h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .install-step p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .code-block {
+      position: relative;
+      background: var(--bg-editor);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .code-block pre {
+      padding: 14px 16px;
+      padding-right: 50px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 0;
+      color: var(--text-primary);
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      transition: all var(--transition);
+    }
+    .copy-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .copy-btn.copied {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    footer {
+      padding: 40px 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-license {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-pixels {
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--accent) 0px, var(--accent) 4px,
+        transparent 4px, transparent 8px
+      );
+      opacity: 0.3;
+      margin-top: 32px;
+    }
+
+    /* ================================================================
+       RESPONSIVE
+       ================================================================ */
+    @media (max-width: 768px) {
+      .font-title {
+        font-size: 2.5rem;
+      }
+      section {
+        padding: 40px 0;
+      }
+      .editor-controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .editor-sliders {
+        width: 100%;
+      }
+      .slider-group input[type="range"] {
+        width: 80px;
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .distinguish-table {
+        font-size: 0.85rem;
+      }
+      .char-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .font-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+      .container {
+        padding: 0 16px;
+      }
+      .lang-tab, .install-tab {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================================================
+       HEADER
+       ==================================================================== -->
+  <header>
+    <div class="header-pixels"></div>
+    <div class="container">
+      <div class="header-top-bar">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+          <span class="theme-icon-dark" title="Switch to light mode">&#9790;</span>
+          <span class="theme-icon-light" style="display:none" title="Switch to dark mode">&#9728;</span>
+        </button>
+      </div>
+      <h1 class="font-title">Sergamon</h1>
+      <p class="font-tagline">A pixel-art monospaced font for programming</p>
+      <div class="header-actions">
+        <a href="https://github.com/sgmonda/sergamon/releases/latest" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14ZM7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>
+          Download
+        </a>
+        <a href="https://github.com/sgmonda/sergamon" class="btn">
+          <svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       SECTION 1: CODE PREVIEW
+       ==================================================================== -->
+  <section id="code-preview">
+    <div class="container">
+      <h2 class="section-title">Code Preview</h2>
+      <p class="section-subtitle">See how Sergamon renders real code. Switch languages or type your own.</p>
+
+      <div class="editor-controls">
+        <div class="lang-tabs" id="langTabs">
+          <button class="lang-tab active" data-lang="python">Python</button>
+          <button class="lang-tab" data-lang="javascript">JavaScript</button>
+          <button class="lang-tab" data-lang="typescript">TypeScript</button>
+          <button class="lang-tab" data-lang="rust">Rust</button>
+          <button class="lang-tab" data-lang="go">Go</button>
+          <button class="lang-tab" data-lang="html">HTML/CSS</button>
+          <button class="lang-tab" data-lang="java">Java</button>
+          <button class="lang-tab" data-lang="c">C</button>
+        </div>
+        <div class="editor-sliders">
+          <div class="slider-group">
+            <label for="fontSizeSlider">Size</label>
+            <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+            <span class="slider-value" id="fontSizeValue">16px</span>
+          </div>
+          <div class="slider-group">
+            <label for="lineHeightSlider">Height</label>
+            <input type="range" id="lineHeightSlider" min="1.0" max="2.0" value="1.5" step="0.1">
+            <span class="slider-value" id="lineHeightValue">1.5</span>
+          </div>
+          <button class="editor-theme-toggle" id="editorThemeToggle">Light editor</button>
+        </div>
+      </div>
+
+      <div class="editor-wrapper" id="editorWrapper">
+        <div class="editor-line-numbers" id="lineNumbers"></div>
+        <div class="editor-container">
+          <div class="editor-highlight" id="editorHighlight">
+            <pre><code id="highlightCode" class="language-python"></code></pre>
+          </div>
+          <textarea class="editor-textarea" id="editorTextarea" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECTION 2: CHARACTER GRID
+       ==================================================================== -->
+  <section id="character-grid">
+    <div class="container">
+      <h2 class="section-title">Character Grid</h2>
+      <p class="section-subtitle">Browse all available glyphs. Hover over any character to see it enlarged.</p>
+
+      <div class="char-category">
+        <h3 class="char-category-title">ASCII Printable (U+0020 - U+007E)</h3>
+        <div class="char-grid" id="asciiGrid"></div>
+      </div>
+
+      <div class="char-category">
+        <h3 class="char-category-title">Latin Extended</h3>
+        <div class="char-grid" id="latinExtGrid"></div>
+      </div>
+
+      <div class="char-category">
+        <h3 class="char-category-title">Programming Ligatures</h3>
+        <div class="char-grid" id="ligatureGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECTION 3: DISTINGUISHABILITY TEST
+       ==================================================================== -->
+  <section id="distinguishability">
+    <div class="container">
+      <h2 class="section-title">Distinguishability Test</h2>
+      <p class="section-subtitle">Commonly confused characters rendered side-by-side at multiple sizes.</p>
+
+      <table class="distinguish-table">
+        <thead>
+          <tr>
+            <th>Characters</th>
+            <th>12px</th>
+            <th>14px</th>
+            <th>16px</th>
+            <th>20px</th>
+          </tr>
+        </thead>
+        <tbody id="distinguishBody">
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECTION 4: FONT COMPARISON
+       ==================================================================== -->
+  <section id="font-comparison">
+    <div class="container">
+      <h2 class="section-title">Font Comparison</h2>
+      <p class="section-subtitle">The same code rendered in Sergamon and popular programming fonts.</p>
+
+      <div class="comparison-grid" id="comparisonGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SECTION 5: INSTALLATION
+       ==================================================================== -->
+  <section id="installation">
+    <div class="container">
+      <h2 class="section-title">Installation</h2>
+      <p class="section-subtitle">Get Sergamon set up in your favorite environment.</p>
+
+      <div class="install-tabs" id="installTabs">
+        <button class="install-tab active" data-tab="macos">macOS</button>
+        <button class="install-tab" data-tab="windows">Windows</button>
+        <button class="install-tab" data-tab="linux">Linux</button>
+        <button class="install-tab" data-tab="vscode">VS Code</button>
+        <button class="install-tab" data-tab="intellij">IntelliJ</button>
+        <button class="install-tab" data-tab="terminal">Terminal</button>
+      </div>
+
+      <div id="installContents">
+        <!-- macOS -->
+        <div class="install-content active" data-tab="macos">
+          <div class="install-step">
+            <h4>Option 1: Manual install</h4>
+            <p>Download the TTF files from the latest release, then double-click to open in Font Book.</p>
+            <div class="code-block">
+              <pre>curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf
+curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf
+open Sergamon-Regular.ttf
+open Sergamon-Bold.ttf</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+          <div class="install-step">
+            <h4>Option 2: Copy to Fonts directory</h4>
+            <div class="code-block">
+              <pre>cp Sergamon-*.ttf ~/Library/Fonts/</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows -->
+        <div class="install-content" data-tab="windows">
+          <div class="install-step">
+            <h4>Manual install</h4>
+            <p>Download the TTF files from the latest release, right-click each file, and select "Install for all users".</p>
+            <div class="code-block">
+              <pre># PowerShell
+Invoke-WebRequest -Uri "https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf" -OutFile "$env:TEMP\Sergamon-Regular.ttf"
+Invoke-WebRequest -Uri "https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf" -OutFile "$env:TEMP\Sergamon-Bold.ttf"
+Copy-Item "$env:TEMP\Sergamon-*.ttf" "C:\Windows\Fonts\"</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linux -->
+        <div class="install-content" data-tab="linux">
+          <div class="install-step">
+            <h4>Install to user fonts</h4>
+            <div class="code-block">
+              <pre>mkdir -p ~/.local/share/fonts
+curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf
+curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf
+mv Sergamon-*.ttf ~/.local/share/fonts/
+fc-cache -fv</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VS Code -->
+        <div class="install-content" data-tab="vscode">
+          <div class="install-step">
+            <h4>Step 1: Install the font on your system</h4>
+            <p>Follow the instructions for your OS above, then restart VS Code.</p>
+          </div>
+          <div class="install-step">
+            <h4>Step 2: Update settings.json</h4>
+            <div class="code-block">
+              <pre>{
+  "editor.fontFamily": "'Sergamon', 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.5
+}</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- IntelliJ -->
+        <div class="install-content" data-tab="intellij">
+          <div class="install-step">
+            <h4>Step 1: Install the font on your system</h4>
+            <p>Follow the instructions for your OS above, then restart IntelliJ.</p>
+          </div>
+          <div class="install-step">
+            <h4>Step 2: Configure the editor font</h4>
+            <p>Go to <strong>Settings &rarr; Editor &rarr; Font</strong> and set:</p>
+            <div class="code-block">
+              <pre>Font:        Sergamon
+Size:        16
+Line height: 1.5
+Enable font ligatures: checked</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal -->
+        <div class="install-content" data-tab="terminal">
+          <div class="install-step">
+            <h4>macOS Terminal.app</h4>
+            <p>Preferences &rarr; Profiles &rarr; Font &rarr; Change &rarr; Select "Sergamon" (size 16).</p>
+          </div>
+          <div class="install-step">
+            <h4>iTerm2</h4>
+            <p>Preferences &rarr; Profiles &rarr; Text &rarr; Font &rarr; Select "Sergamon".</p>
+          </div>
+          <div class="install-step">
+            <h4>Windows Terminal</h4>
+            <div class="code-block">
+              <pre>{
+  "profiles": {
+    "defaults": {
+      "font": {
+        "face": "Sergamon",
+        "size": 16
+      }
+    }
+  }
+}</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+          <div class="install-step">
+            <h4>Alacritty</h4>
+            <div class="code-block">
+              <pre>[font]
+normal = { family = "Sergamon", style = "Regular" }
+bold = { family = "Sergamon", style = "Bold" }
+size = 16.0</pre>
+              <button class="copy-btn" aria-label="Copy to clipboard" title="Copy">&#128203;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://github.com/sgmonda/sergamon">GitHub</a>
+        <a href="https://github.com/sgmonda/sergamon/issues">Issues</a>
+        <a href="https://github.com/sgmonda/sergamon/releases">Releases</a>
+        <a href="https://github.com/sgmonda/sergamon/blob/main/CONTRIBUTING.md">Contributing</a>
+      </div>
+      <p class="footer-license">
+        Font licensed under the <a href="https://scripts.sil.org/OFL">SIL Open Font License 1.1</a>.
+        Site and build tools licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.
+      </p>
+      <div class="footer-pixels"></div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       JAVASCRIPT
+       ==================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Code Snippets ──────────────────────────────────────────────
+
+      const snippets = {
+        python: `# Sergamon Font Preview - Python
+# Fibonacci with memoization
+
+from functools import lru_cache
+from typing import Optional
+
+@lru_cache(maxsize=None)
+def fibonacci(n: int) -> int:
+    """Return the nth Fibonacci number."""
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+class Matrix:
+    """A simple 2D matrix."""
+
+    def __init__(self, rows: int, cols: int):
+        self.rows = rows
+        self.cols = cols
+        self.data: list[list[float]] = [
+            [0.0] * cols for _ in range(rows)
+        ]
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Matrix):
+            return NotImplemented
+        return self.data == other.data
+
+    def __ne__(self, other: object) -> bool:
+        return not self.__eq__(other)
+
+# Test: 0 O o | 1 l I | \` ' "
+result = fibonacci(30)  # => 832040
+print(f"fib(30) == {result}")  # >= 0`,
+
+        javascript: `// Sergamon Font Preview - JavaScript
+// Event-driven task runner
+
+const STATUS = Object.freeze({
+  PENDING:  "pending",
+  RUNNING:  "running",
+  DONE:     "done",
+  FAILED:   "failed",
+});
+
+class TaskRunner {
+  #tasks = new Map();
+  #concurrency = 4;
+
+  constructor(options = {}) {
+    this.#concurrency = options.concurrency ?? 4;
+    this.onComplete = options.onComplete || (() => {});
+  }
+
+  add(name, fn) {
+    if (this.#tasks.has(name)) {
+      throw new Error(\`Task "\${name}" already exists\`);
+    }
+    this.#tasks.set(name, { fn, status: STATUS.PENDING });
+  }
+
+  async run() {
+    const pending = [...this.#tasks.entries()]
+      .filter(([, t]) => t.status === STATUS.PENDING);
+
+    const results = [];
+    for (const [name, task] of pending) {
+      task.status = STATUS.RUNNING;
+      try {
+        const result = await task.fn();
+        task.status = STATUS.DONE;
+        results.push({ name, result });
+      } catch (err) {
+        task.status = STATUS.FAILED;
+        // 0 O o | 1 l I | \` ' "
+        console.error(\`Task != expected: \${err}\`);
+      }
+    }
+    return results;  // => [{name, result}, ...]
+  }
+}
+
+const runner = new TaskRunner({ concurrency: 2 });
+runner.add("build", () => compile("src/**/*.ts"));`,
+
+        typescript: `// Sergamon Font Preview - TypeScript
+// Generic observable store
+
+interface Observer<T> {
+  next: (value: T) => void;
+  error?: (err: Error) => void;
+  complete?: () => void;
+}
+
+type Unsubscribe = () => void;
+
+class Store<T> {
+  private state: T;
+  private observers: Set<Observer<T>> = new Set();
+
+  constructor(initial: T) {
+    this.state = structuredClone(initial);
+  }
+
+  getState(): Readonly<T> {
+    return Object.freeze({ ...this.state });
+  }
+
+  setState(updater: (prev: T) => T): void {
+    const next = updater(this.state);
+    if (next !== this.state && next != null) {
+      this.state = next;
+      this.notify();
+    }
+  }
+
+  subscribe(observer: Observer<T>): Unsubscribe {
+    this.observers.add(observer);
+    observer.next(this.state);
+    return () => {
+      this.observers.delete(observer);
+    };
+  }
+
+  private notify(): void {
+    for (const obs of this.observers) {
+      obs.next(this.state);
+    }
+  }
+}
+
+// Distinguishability: 0 O o | 1 l I | \` ' "
+const store = new Store<{ count: number }>({ count: 0 });
+store.setState((s) => ({ count: s.count >= 10 ? 0 : s.count + 1 }));`,
+
+        rust: `// Sergamon Font Preview - Rust
+// A simple linked list implementation
+
+use std::fmt;
+
+#[derive(Debug, Clone)]
+enum List<T> {
+    Cons(T, Box<List<T>>),
+    Nil,
+}
+
+impl<T: fmt::Display + PartialEq> List<T> {
+    fn new() -> Self {
+        List::Nil
+    }
+
+    fn push(self, value: T) -> Self {
+        List::Cons(value, Box::new(self))
+    }
+
+    fn len(&self) -> usize {
+        match self {
+            List::Nil => 0,
+            List::Cons(_, tail) => 1 + tail.len(),
+        }
+    }
+
+    fn contains(&self, target: &T) -> bool {
+        match self {
+            List::Nil => false,
+            List::Cons(val, tail) => {
+                val == target || tail.contains(target)
+            }
+        }
+    }
+}
+
+impl<T: fmt::Display> fmt::Display for List<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        // 0 O o | 1 l I | \` ' "
+        match self {
+            List::Nil => write!(f, "[]"),
+            List::Cons(head, tail) => {
+                write!(f, "{} -> {}", head, tail)
+            }
+        }
+    }
+}
+
+fn main() {
+    let list = List::new().push(1).push(2).push(3);
+    let size = list.len();  // => 3
+    println!("List ({} items): {}", size, list);
+    assert!(size != 0 && size >= 1 && size <= 100);
+}`,
+
+        go: `// Sergamon Font Preview - Go
+// Concurrent worker pool
+
+package main
+
+import (
+\t"context"
+\t"fmt"
+\t"sync"
+\t"time"
+)
+
+type Job struct {
+\tID      int
+\tPayload string
+}
+
+type Result struct {
+\tJobID    int
+\tOutput   string
+\tDuration time.Duration
+}
+
+func worker(ctx context.Context, id int, jobs <-chan Job, results chan<- Result, wg *sync.WaitGroup) {
+\tdefer wg.Done()
+\tfor {
+\t\tselect {
+\t\tcase <-ctx.Done():
+\t\t\treturn
+\t\tcase job, ok := <-jobs:
+\t\t\tif !ok {
+\t\t\t\treturn
+\t\t\t}
+\t\t\tstart := time.Now()
+\t\t\t// Simulate work: 0 O o | 1 l I
+\t\t\toutput := fmt.Sprintf("worker-%d processed %q", id, job.Payload)
+\t\t\tresults <- Result{
+\t\t\t\tJobID:    job.ID,
+\t\t\t\tOutput:   output,
+\t\t\t\tDuration: time.Since(start),
+\t\t\t}
+\t\t}
+\t}
+}
+
+func main() {
+\tconst numWorkers = 4
+\tconst numJobs = 20
+
+\tjobs := make(chan Job, numJobs)
+\tresults := make(chan Result, numJobs)
+
+\tctx, cancel := context.WithTimeout(
+\t\tcontext.Background(), 30*time.Second,
+\t)
+\tdefer cancel()
+
+\tvar wg sync.WaitGroup
+\tfor i := 0; i < numWorkers; i++ {
+\t\twg.Add(1)
+\t\tgo worker(ctx, i, jobs, results, &wg)
+\t}
+
+\tfor j := 0; j < numJobs; j++ {
+\t\tjobs <- Job{ID: j, Payload: fmt.Sprintf("task-%d", j)}
+\t}
+\tclose(jobs)
+
+\tgo func() {
+\t\twg.Wait()
+\t\tclose(results)
+\t}()
+
+\tfor r := range results {
+\t\tif r.Duration >= 0 && r.JobID != -1 {
+\t\t\tfmt.Printf("Job #%d => %s\\n", r.JobID, r.Output)
+\t\t}
+\t}
+}`,
+
+        html: `<!-- Sergamon Font Preview - HTML/CSS -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Pixel Grid Component</title>
+  <style>
+    /* 0 O o | 1 l I | \` ' " */
+    :root {
+      --grid-size: 8;
+      --pixel-size: 24px;
+      --gap: 1px;
+      --color-on:  #58a6ff;
+      --color-off: #161b22;
+    }
+
+    .pixel-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(var(--grid-size), var(--pixel-size));
+      gap: var(--gap);
+      padding: 16px;
+      background: #0d1117;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    .pixel {
+      width: var(--pixel-size);
+      height: var(--pixel-size);
+      background: var(--color-off);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.1s ease;
+    }
+
+    .pixel:hover { background: var(--color-on); }
+    .pixel.active { background: var(--color-on); }
+
+    /* States: != active, == inactive */
+    .pixel[data-state="on"] {
+      background: var(--color-on);
+      box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="pixel-grid" id="grid">
+    <!-- 8x16 => 128 cells generated by JS -->
+  </div>
+  <script>
+    const grid = document.getElementById("grid");
+    const total = 8 * 16;  // >= 128 cells
+    for (let i = 0; i <= total - 1; i++) {
+      const px = document.createElement("div");
+      px.className = "pixel";
+      px.addEventListener("click", () => {
+        px.classList.toggle("active");
+      });
+      grid.appendChild(px);
+    }
+  </script>
+</body>
+</html>`,
+
+        java: `// Sergamon Font Preview - Java
+// Generic binary search tree
+
+import java.util.Optional;
+import java.util.function.Consumer;
+
+public class BST<T extends Comparable<T>> {
+    private Node<T> root;
+    private int size = 0;
+
+    private static class Node<T> {
+        T value;
+        Node<T> left, right;
+
+        Node(T value) {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    public void insert(T value) {
+        root = insertRec(root, value);
+        size++;
+    }
+
+    private Node<T> insertRec(Node<T> node, T val) {
+        if (node == null) {
+            return new Node<>(val);
+        }
+        int cmp = val.compareTo(node.value);
+        if (cmp < 0) {
+            node.left = insertRec(node.left, val);
+        } else if (cmp != 0) {
+            node.right = insertRec(node.right, val);
+        }
+        // cmp == 0 => duplicate, skip
+        return node;
+    }
+
+    public Optional<T> find(T target) {
+        Node<T> current = root;
+        while (current != null) {
+            int cmp = target.compareTo(current.value);
+            if (cmp == 0) {
+                return Optional.of(current.value);
+            }
+            // Traverse: cmp <= 0 -> left, >= 0 -> right
+            current = (cmp < 0) ? current.left : current.right;
+        }
+        return Optional.empty();
+    }
+
+    public void inOrder(Consumer<T> action) {
+        inOrderRec(root, action);
+    }
+
+    private void inOrderRec(Node<T> node, Consumer<T> fn) {
+        if (node != null) {
+            inOrderRec(node.left, fn);
+            fn.accept(node.value);
+            inOrderRec(node.right, fn);
+        }
+    }
+
+    // 0 O o | 1 l I | \` ' "
+    public int getSize() { return size; }
+    public boolean isEmpty() { return size == 0; }
+}`,
+
+        c: `// Sergamon Font Preview - C
+// Dynamic array (vector) implementation
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+#define INITIAL_CAPACITY 8
+
+typedef struct {
+    int    *data;
+    size_t  length;
+    size_t  capacity;
+} Vec;
+
+Vec* vec_new(void) {
+    Vec *v = malloc(sizeof(Vec));
+    if (v == NULL) return NULL;
+    v->data = malloc(INITIAL_CAPACITY * sizeof(int));
+    if (v->data == NULL) {
+        free(v);
+        return NULL;
+    }
+    v->length = 0;
+    v->capacity = INITIAL_CAPACITY;
+    return v;
+}
+
+bool vec_push(Vec *v, int value) {
+    if (v->length >= v->capacity) {
+        size_t new_cap = v->capacity * 2;
+        int *new_data = realloc(v->data, new_cap * sizeof(int));
+        if (new_data == NULL) return false;
+        v->data = new_data;
+        v->capacity = new_cap;
+    }
+    v->data[v->length++] = value;
+    return true;  // != 0 means success
+}
+
+int vec_get(const Vec *v, size_t index) {
+    if (index >= v->length) {
+        fprintf(stderr, "Index out of bounds\\n");
+        exit(1);
+    }
+    return v->data[index];  // => element
+}
+
+void vec_free(Vec *v) {
+    if (v != NULL) {
+        free(v->data);
+        free(v);
+    }
+}
+
+/* 0 O o | 1 l I | \` ' " */
+int main(void) {
+    Vec *numbers = vec_new();
+    for (int i = 0; i <= 99; i++) {
+        vec_push(numbers, i * i);
+    }
+    printf("Length == %zu\\n", numbers->length);
+    printf("First  => %d\\n", vec_get(numbers, 0));
+    printf("Last   >= %d\\n", vec_get(numbers, 99));
+    vec_free(numbers);
+    return 0;
+}`
+      };
+
+      // ── Language tab → hljs class mapping ──────────────────────────
+
+      const langMap = {
+        python: 'python',
+        javascript: 'javascript',
+        typescript: 'typescript',
+        rust: 'rust',
+        go: 'go',
+        html: 'xml',
+        java: 'java',
+        c: 'c',
+      };
+
+      // ── DOM Elements ───────────────────────────────────────────────
+
+      const $ = (sel) => document.querySelector(sel);
+      const $$ = (sel) => document.querySelectorAll(sel);
+
+      const editorTextarea = $('#editorTextarea');
+      const highlightCode = $('#highlightCode');
+      const lineNumbers = $('#lineNumbers');
+      const fontSizeSlider = $('#fontSizeSlider');
+      const fontSizeValue = $('#fontSizeValue');
+      const lineHeightSlider = $('#lineHeightSlider');
+      const lineHeightValue = $('#lineHeightValue');
+      const editorWrapper = $('#editorWrapper');
+      const editorThemeToggle = $('#editorThemeToggle');
+
+      let currentLang = 'python';
+      let editorDarkTheme = true;
+      let highlightTimer = null;
+
+      // ── Syntax highlighting ────────────────────────────────────────
+
+      function updateHighlight() {
+        const code = editorTextarea.value;
+        const hljsLang = langMap[currentLang] || 'plaintext';
+        highlightCode.className = `language-${hljsLang}`;
+        highlightCode.textContent = code;
+        hljs.highlightElement(highlightCode);
+        updateLineNumbers(code);
+      }
+
+      function debouncedHighlight() {
+        clearTimeout(highlightTimer);
+        highlightTimer = setTimeout(updateHighlight, 150);
+      }
+
+      function updateLineNumbers(code) {
+        const lines = code.split('\n');
+        lineNumbers.textContent = lines.map((_, i) => i + 1).join('\n');
+      }
+
+      function setSnippet(lang) {
+        currentLang = lang;
+        editorTextarea.value = snippets[lang] || '';
+        updateHighlight();
+      }
+
+      // ── Language tabs ──────────────────────────────────────────────
+
+      $('#langTabs').addEventListener('click', (e) => {
+        const tab = e.target.closest('.lang-tab');
+        if (!tab) return;
+        $$('.lang-tab').forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        setSnippet(tab.dataset.lang);
+      });
+
+      // ── Editor input ───────────────────────────────────────────────
+
+      editorTextarea.addEventListener('input', debouncedHighlight);
+      editorTextarea.addEventListener('scroll', () => {
+        const highlight = $('#editorHighlight');
+        highlight.scrollTop = editorTextarea.scrollTop;
+        highlight.scrollLeft = editorTextarea.scrollLeft;
+        lineNumbers.style.transform = `translateY(-${editorTextarea.scrollTop}px)`;
+      });
+
+      // ── Font size slider ───────────────────────────────────────────
+
+      fontSizeSlider.addEventListener('input', () => {
+        const size = fontSizeSlider.value + 'px';
+        fontSizeValue.textContent = size;
+        editorTextarea.style.fontSize = size;
+        $('#editorHighlight').style.fontSize = size;
+        lineNumbers.style.fontSize = size;
+        updateHighlight();
+      });
+
+      // ── Line height slider ─────────────────────────────────────────
+
+      lineHeightSlider.addEventListener('input', () => {
+        const lh = lineHeightSlider.value;
+        lineHeightValue.textContent = lh;
+        editorTextarea.style.lineHeight = lh;
+        $('#editorHighlight').style.lineHeight = lh;
+        lineNumbers.style.lineHeight = lh;
+        updateHighlight();
+      });
+
+      // ── Editor theme toggle ────────────────────────────────────────
+
+      editorThemeToggle.addEventListener('click', () => {
+        editorDarkTheme = !editorDarkTheme;
+        editorWrapper.classList.toggle('light-editor', !editorDarkTheme);
+        editorThemeToggle.textContent = editorDarkTheme ? 'Light editor' : 'Dark editor';
+        const darkSheet = $('#hljs-theme-dark');
+        const lightSheet = $('#hljs-theme-light');
+        darkSheet.disabled = !editorDarkTheme;
+        lightSheet.disabled = editorDarkTheme;
+        updateHighlight();
+      });
+
+      // ── Site theme toggle ──────────────────────────────────────────
+
+      $('#themeToggle').addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.querySelector('.theme-icon-dark').style.display = isDark ? 'none' : 'inline';
+        document.querySelector('.theme-icon-light').style.display = isDark ? 'inline' : 'none';
+      });
+
+      // ── Character Grid ─────────────────────────────────────────────
+
+      function createCharCell(char, label, codepoint) {
+        const cell = document.createElement('div');
+        cell.className = 'char-cell';
+        cell.textContent = char;
+
+        const tooltip = document.createElement('div');
+        tooltip.className = 'char-tooltip';
+        tooltip.innerHTML = `<span class="tooltip-char">${char === ' ' ? '&nbsp;' : char.replace(/</g, '&lt;')}</span>${label}<br>${codepoint}`;
+        cell.appendChild(tooltip);
+
+        return cell;
+      }
+
+      function populateASCII() {
+        const grid = $('#asciiGrid');
+        for (let cp = 0x0020; cp <= 0x007E; cp++) {
+          const char = String.fromCodePoint(cp);
+          const hex = 'U+' + cp.toString(16).toUpperCase().padStart(4, '0');
+          const label = cp === 0x20 ? 'Space' : char;
+          grid.appendChild(createCharCell(char === ' ' ? '\u00A0' : char, label, hex));
+        }
+      }
+
+      function populateLatinExt() {
+        const grid = $('#latinExtGrid');
+        const chars = [
+          [0x00E1, 'a acute'], [0x00E9, 'e acute'], [0x00ED, 'i acute'],
+          [0x00F3, 'o acute'], [0x00FA, 'u acute'], [0x00F1, 'n tilde'],
+          [0x00FC, 'u dieresis'], [0x00E7, 'c cedilla'], [0x00DF, 'sharp s'],
+          [0x00F8, 'o stroke'], [0x00E5, 'a ring'], [0x00E6, 'ae ligature'],
+          [0x00C1, 'A acute'], [0x00C9, 'E acute'], [0x00CD, 'I acute'],
+          [0x00D3, 'O acute'], [0x00DA, 'U acute'], [0x00D1, 'N tilde'],
+          [0x00DC, 'U dieresis'], [0x00C7, 'C cedilla'],
+          [0x00D8, 'O stroke'], [0x00C5, 'A ring'], [0x00C6, 'AE ligature'],
+          [0x00E0, 'a grave'], [0x00E8, 'e grave'], [0x00EC, 'i grave'],
+          [0x00F2, 'o grave'], [0x00F9, 'u grave'],
+          [0x00E2, 'a circumflex'], [0x00EA, 'e circumflex'],
+          [0x00EE, 'i circumflex'], [0x00F4, 'o circumflex'],
+          [0x00FB, 'u circumflex'],
+          [0x00E4, 'a dieresis'], [0x00EB, 'e dieresis'],
+          [0x00EF, 'i dieresis'], [0x00F6, 'o dieresis'],
+        ];
+        for (const [cp, name] of chars) {
+          const char = String.fromCodePoint(cp);
+          const hex = 'U+' + cp.toString(16).toUpperCase().padStart(4, '0');
+          grid.appendChild(createCharCell(char, name, hex));
+        }
+      }
+
+      function populateLigatures() {
+        const grid = $('#ligatureGrid');
+        const ligs = [
+          ['==', 'equal equal'], ['!=', 'not equal'], ['<=', 'less equal'],
+          ['>=', 'greater equal'], ['=>', 'arrow right'], ['->', 'arrow fat'],
+          ['<-', 'arrow left'], ['>>', 'shift right'], ['<<', 'shift left'],
+          ['||', 'logical or'], ['&&', 'logical and'], ['//', 'comment'],
+          ['/*', 'block comment open'], ['*/', 'block comment close'],
+          ['...', 'ellipsis'], ['===', 'strict equal'], ['!==', 'strict not equal'],
+          ['<=>', 'spaceship'], ['|>', 'pipe'],
+        ];
+        for (const [chars, name] of ligs) {
+          const cell = document.createElement('div');
+          cell.className = 'char-cell';
+          cell.style.fontSize = '1rem';
+          cell.textContent = chars;
+
+          const tooltip = document.createElement('div');
+          tooltip.className = 'char-tooltip';
+          tooltip.innerHTML = `<span class="tooltip-char">${chars}</span>${name}<br>Ligature`;
+          cell.appendChild(tooltip);
+
+          grid.appendChild(cell);
+        }
+      }
+
+      populateASCII();
+      populateLatinExt();
+      populateLigatures();
+
+      // ── Distinguishability Table ───────────────────────────────────
+
+      const confusionPairs = [
+        { label: '0 O o', chars: '0 O o' },
+        { label: '1 l I |', chars: '1 l I |' },
+        { label: '" \' `', chars: '" \' `' },
+        { label: '{ ( [', chars: '{ ( [' },
+        { label: ': ;', chars: ': ;' },
+        { label: '. ,', chars: '. ,' },
+      ];
+
+      const sizes = [12, 14, 16, 20];
+      const tbody = $('#distinguishBody');
+
+      for (const pair of confusionPairs) {
+        const tr = document.createElement('tr');
+
+        const labelTd = document.createElement('td');
+        labelTd.className = 'distinguish-label';
+        labelTd.textContent = pair.label;
+        tr.appendChild(labelTd);
+
+        for (const sz of sizes) {
+          const td = document.createElement('td');
+          td.style.fontSize = sz + 'px';
+          td.textContent = pair.chars;
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+
+      // ── Font Comparison ────────────────────────────────────────────
+
+      const comparisonSnippet = `fn main() {
+    let values = vec![1, 2, 3];
+    let sum: i32 = values
+        .iter()
+        .filter(|&&x| x != 0)
+        .map(|&x| x * 2)
+        .sum();
+    // 0 O o | 1 l I
+    println!("sum == {}", sum);
+    assert!(sum >= 6 && sum <= 100);
+}`;
+
+      const fonts = [
+        { name: 'Sergamon', cls: 'font-sergamon', tag: 'This font' },
+        { name: 'Fira Code', cls: 'font-firacode', tag: null },
+        { name: 'JetBrains Mono', cls: 'font-jetbrains', tag: null },
+        { name: 'Cascadia Code', cls: 'font-cascadia', tag: null },
+      ];
+
+      const compGrid = $('#comparisonGrid');
+      for (const font of fonts) {
+        const card = document.createElement('div');
+        card.className = `comparison-card ${font.cls}`;
+
+        const header = document.createElement('div');
+        header.className = 'comparison-card-header';
+        header.textContent = font.name;
+        if (font.tag) {
+          const span = document.createElement('span');
+          span.className = 'card-tag';
+          span.textContent = font.tag;
+          header.appendChild(span);
+        }
+        card.appendChild(header);
+
+        const pre = document.createElement('pre');
+        pre.textContent = comparisonSnippet;
+        card.appendChild(pre);
+
+        compGrid.appendChild(card);
+      }
+
+      // ── Installation Tabs ──────────────────────────────────────────
+
+      $('#installTabs').addEventListener('click', (e) => {
+        const tab = e.target.closest('.install-tab');
+        if (!tab) return;
+        $$('.install-tab').forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        $$('.install-content').forEach((c) => c.classList.remove('active'));
+        document.querySelector(`.install-content[data-tab="${tab.dataset.tab}"]`).classList.add('active');
+      });
+
+      // ── Copy to Clipboard ──────────────────────────────────────────
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.copy-btn');
+        if (!btn) return;
+        const codeBlock = btn.closest('.code-block');
+        const pre = codeBlock.querySelector('pre');
+        const text = pre.textContent;
+
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          const original = btn.innerHTML;
+          btn.innerHTML = '&#10003;';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = original;
+          }, 2000);
+        }).catch(() => {
+          // Fallback: select text
+          const range = document.createRange();
+          range.selectNode(pre);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+        });
+      });
+
+      // ── Initialize ─────────────────────────────────────────────────
+
+      setSnippet('python');
+
+    })();
+  </script>
+</body>
+</html>

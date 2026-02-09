@@ -1,0 +1,24 @@
+{
+  "font": {
+    "familyName": "Sergamon",
+    "version": "1.0.0",
+    "description": "A pixel-art monospaced font for programming",
+    "designer": "",
+    "url": ""
+  },
+  "grid": {
+    "width": 8,
+    "height": 16,
+    "baselineRow": 13
+  },
+  "metrics": {
+    "pixelSize": 120,
+    "ascenderPx": 13,
+    "descenderPx": 3,
+    "lineGapPx": 1
+  },
+  "weights": {
+    "regular": 400,
+    "bold": 700
+  }
+}

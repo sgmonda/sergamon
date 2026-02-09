@@ -1,0 +1,28 @@
+{
+  "name": "sergamon",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A pixel-art monospaced font for programming",
+  "scripts": {
+    "validate": "tsx src/validate-glyphs.ts",
+    "build": "npm run validate && tsx src/build-font.ts",
+    "previews": "npm run build && node src/generate-previews.cjs",
+    "site": "npm run build && cp build/*.woff2 site/fonts/",
+    "dev": "tsx src/dev-preview.ts",
+    "clean": "rm -rf build/",
+    "all": "npm run build && npm run previews"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^0.1.0",
+    "@types/node": "^25.2.2",
+    "chokidar": "^3.6.0",
+    "opentype.js": "^1.3.4",
+    "tsx": "^4.0.0",
+    "typescript": "^5.4.0",
+    "wawoff2": "^2.0.1"
+  },
+  "license": "OFL-1.1",
+  "engines": {
+    "node": ">=20"
+  }
+}
