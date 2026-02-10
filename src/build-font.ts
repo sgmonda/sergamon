@@ -61,7 +61,7 @@ function resolveComponentCodepoints(
   return codepoints;
 }
 
-// ── Build one weight ────────────────────────────────────────────────────────
+// ── Build font ─────────────────────────────────────────────────────────────
 
 interface BuiltGlyph {
   glyph: opentype.Glyph;

@@ -49,7 +49,7 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 [... 16 rows total, 8 cols for normal, 8*N cols for N-component ligatures]
 ```
 
-Grid uses `.` (empty) and `X` (filled) only. No bold variant exists; the font renders identically at all weights.
+Grid uses `.` (empty) and `X` (filled) only.
 
 ## Font Metrics & Coordinate System
 

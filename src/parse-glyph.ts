@@ -2,7 +2,7 @@
  * Parser for .glyph source files.
  *
  * A .glyph file consists of:
- *   - Header lines starting with '#' (label, codepoint, weight, optional components)
+ *   - Header lines starting with '#' (label, codepoint, optional components)
  *   - An empty separator line
  *   - Grid lines using '.' (empty) and 'X' (filled)
  *
@@ -22,11 +22,9 @@ import type { GlyphHeader, ParsedGlyph } from "./types.js";
  *
  * Expected patterns:
  *   # A (U+0041)
- *   # weight: regular
  *   # components: equal greater      (ligatures only)
  *
  *   # => (ligature)
- *   # weight: regular
  *   # components: equal greater
  */
 function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
@@ -38,11 +36,6 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
     // Strip the leading '#' and trim whitespace
     const line = raw.replace(/^#\s*/, "").trim();
     if (line === "") continue;
-
-    // Skip weight header (no longer used)
-    if (/^weight:\s*/i.test(line)) {
-      continue;
-    }
 
     // Match "components: equal greater ..."
     const componentsMatch = line.match(/^components:\s+(.+)$/i);

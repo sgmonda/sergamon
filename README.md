@@ -15,7 +15,6 @@
 - **Pixel-art aesthetic** -- an 8x16 pixel grid gives each character a crisp, retro look that stays sharp at its design size.
 - **19 programming ligatures** -- common operators like `==`, `!=`, `=>`, `->`, `<=`, `>=`, `>>`, `<<`, `||`, `&&`, `//`, `/*`, `*/`, `...`, `===`, `!==`, `<=>`, `|>`, and `<-` render as unified symbols.
 - **Designed for code** -- careful distinction between easily confused characters (`0/O/o`, `1/l/I`, `` ` ``/`'`/`"`), plus full ASCII coverage and essential Latin Extended glyphs.
-- **Regular and Bold weights** -- both weights included; bold variants are auto-generated when not explicitly designed.
 
 ---
 
@@ -25,8 +24,8 @@ Download the latest `.ttf` or `.woff2` files from the [GitHub Releases](https://
 
 ### macOS
 
-1. Download `Sergamon-Regular.ttf` and `Sergamon-Bold.ttf` from Releases.
-2. Double-click each file and click **Install Font** in the Font Book preview.
+1. Download `Sergamon.ttf` from Releases.
+2. Double-click the file and click **Install Font** in the Font Book preview.
 
 ### Windows
 
@@ -60,7 +59,6 @@ Here is the glyph file for the digit zero (`U+0030`):
 
 ```
 # zero (U+0030)
-# weight: regular
 
 ........
 ........
@@ -80,7 +78,7 @@ Here is the glyph file for the digit zero (`U+0030`):
 ........
 ```
 
-Each `.` is an empty pixel and each `X` is a filled pixel. The grid is always 8 columns wide and 16 rows tall. Header comments specify the character name, Unicode codepoint, and weight. Ligature glyphs span multiples of 8 columns (e.g., 16 columns for a two-character ligature like `==`).
+Each `.` is an empty pixel and each `X` is a filled pixel. The grid is always 8 columns wide and 16 rows tall. Header comments specify the character name and Unicode codepoint. Ligature glyphs span multiples of 8 columns (e.g., 16 columns for a two-character ligature like `==`).
 
 The build pipeline:
 1. **Validates** all `.glyph` files for correctness (grid dimensions, valid characters, completeness).

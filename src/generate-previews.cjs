@@ -20,7 +20,7 @@ const { resolve, join } = require("node:path");
 const ROOT = resolve(__dirname, "..");
 const BUILD_DIR = join(ROOT, "build");
 const PREVIEWS_DIR = join(BUILD_DIR, "previews");
-const FONT_PATH = join(BUILD_DIR, "Sergamon-Regular.ttf");
+const FONT_PATH = join(BUILD_DIR, "Sergamon.ttf");
 
 // ── Themes ───────────────────────────────────────────────────────────────────
 

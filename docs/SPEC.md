@@ -32,13 +32,10 @@ sergamon/
 ├── site/                      # GitHub Pages site
 │   ├── index.html             # Single-page app (self-contained)
 │   └── fonts/                 # WOFF2 copied here by `npm run site`
-│       ├── Sergamon-Regular.woff2
-│       └── Sergamon-Bold.woff2
+│       └── Sergamon.woff2
 ├── build/                     # Generated output (gitignored)
-│   ├── Sergamon-Regular.ttf
-│   ├── Sergamon-Regular.woff2
-│   ├── Sergamon-Bold.ttf
-│   ├── Sergamon-Bold.woff2
+│   ├── Sergamon.ttf
+│   ├── Sergamon.woff2
 │   └── previews/
 │       ├── preview-python.png
 │       ├── preview-js.png
@@ -68,7 +65,6 @@ Each file represents one glyph. Naming convention:
 
 ```
 # A (U+0041)
-# weight: regular
 
 ..XXXX..
 .X....X.
@@ -92,7 +88,6 @@ Rules:
 
 - **Header comments** start with `#`. Required fields:
   - Line 1: human-readable label and codepoint
-  - `weight`: `regular` or `bold`
 - **Grid dimensions**: all glyphs are **8 columns × 16 rows**. No width/height headers needed — the build validates this.
 - **Grid characters**:
   - `.` = empty pixel
@@ -101,41 +96,12 @@ Rules:
 - No trailing whitespace. Files end with a newline.
 - The top row is the top of the em square; the bottom row is the lowest descender pixel.
 
-### 2.3 Bold weight
-
-Bold variants live in the same directory, distinguished by `weight: bold` in the header. Example:
-
-```
-# A (U+0041)
-# weight: bold
-
-.XXXXXX.
-XX....XX
-XX....XX
-XX....XX
-XX....XX
-XX....XX
-XXXXXXXX
-XX....XX
-XX....XX
-XX....XX
-XX....XX
-XX....XX
-XX....XX
-........
-........
-........
-```
-
-If a glyph has no bold variant file, the build script auto-generates one by expanding each filled pixel one unit to the right.
-
-### 2.4 Ligature mapping
+### 2.3 Ligature mapping
 
 Ligature files include an additional header field:
 
 ```
 # => (ligature)
-# weight: regular
 # components: equal greater
 
 ................
@@ -172,7 +138,7 @@ Validates all `.glyph` files before building:
 - No duplicate codepoints
 - Required ASCII range (U+0020–U+007E) is complete
 - Ligature `components` reference existing glyphs
-- `weight` is either `regular` or `bold`
+- Ligature `components` reference existing glyphs
 
 Exits with non-zero code and clear error messages on failure.
 
@@ -219,10 +185,6 @@ Pipeline:
     "descenderPx": 3,
     "lineGapPx": 1
   },
-  "weights": {
-    "regular": 400,
-    "bold": 700
-  }
 }
 ```
 
@@ -322,7 +284,7 @@ The site is dark-themed by default (with a light/dark toggle) and has a clean, d
 
 - The entire site must be a **single HTML file** with embedded CSS and JS
 - Highlight.js loaded from `cdnjs.cloudflare.com`
-- Font loaded via `@font-face` pointing to `./fonts/Sergamon-Regular.woff2` and `./fonts/Sergamon-Bold.woff2`
+- Font loaded via `@font-face` pointing to `./fonts/Sergamon.woff2`
 - Must be responsive (mobile-friendly)
 - No cookies, no analytics, no tracking
 - The code editor area uses a `<textarea>` overlaid with a `<pre><code>` for the highlighting (standard code-editor-in-browser pattern)
@@ -392,8 +354,6 @@ For the first release, the font must include at minimum:
 - **Full ASCII printable range** (U+0020–U+007E): space through tilde (95 glyphs)
 - **Core programming ligatures**: `==`, `!=`, `<=`, `>=`, `=>`, `->`, `<-`, `>>`, `<<`, `||`, `&&`, `//`, `/*`, `*/`, `...`, `===`, `!==`, `<=>`, `|>`
 - **Essential Latin Extended**: `á`, `é`, `í`, `ó`, `ú`, `ñ`, `ü`, `ç`, `ß`, `ø`, `å`, `æ` (enough for Spanish, French, German, Nordic)
-
-Bold weight for all the above.
 
 ---
 

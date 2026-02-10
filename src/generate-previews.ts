@@ -23,7 +23,7 @@ const { createCanvas, GlobalFonts } = require("@napi-rs/canvas");
 const ROOT = resolve(import.meta.dirname, "..");
 const BUILD_DIR = join(ROOT, "build");
 const PREVIEWS_DIR = join(BUILD_DIR, "previews");
-const FONT_PATH = join(BUILD_DIR, "Sergamon-Regular.ttf");
+const FONT_PATH = join(BUILD_DIR, "Sergamon.ttf");
 
 // ── Themes ───────────────────────────────────────────────────────────────────
 

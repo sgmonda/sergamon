@@ -48,8 +48,7 @@
         <style>
             @font-face {
                 font-family: "Sergamon";
-                src: url("./fonts/Sergamon-Regular.woff2") format("woff2");
-                font-weight: 400;
+                src: url("./fonts/Sergamon.woff2") format("woff2");
                 font-style: normal;
                 font-display: swap;
             }
@@ -191,6 +190,7 @@
                 font-size: 1.5rem;
                 margin-bottom: 8px;
                 color: var(--text-primary);
+                text-transform: uppercase;
             }
 
             .section-subtitle {
@@ -530,6 +530,7 @@
             }
 
             .char-tooltip .tooltip-char {
+                font-size: 5rem;
                 display: block;
                 text-align: center;
                 margin-bottom: 4px;
@@ -1024,10 +1025,8 @@
                             </p>
                             <div class="code-block">
                                 <pre>
-curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf
-curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf
-open Sergamon-Regular.ttf
-open Sergamon-Bold.ttf</pre
+curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon.ttf
+open Sergamon.ttf</pre
                                 >
                                 <button
                                     class="copy-btn"
@@ -1041,7 +1040,7 @@ open Sergamon-Bold.ttf</pre
                         <div class="install-step">
                             <h4>Option 2: Copy to Fonts directory</h4>
                             <div class="code-block">
-                                <pre>cp Sergamon-*.ttf ~/Library/Fonts/</pre>
+                                <pre>cp Sergamon.ttf ~/Library/Fonts/</pre>
                                 <button
                                     class="copy-btn"
                                     aria-label="Copy to clipboard"
@@ -1065,9 +1064,8 @@ open Sergamon-Bold.ttf</pre
                             <div class="code-block">
                                 <pre>
 # PowerShell
-Invoke-WebRequest -Uri "https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf" -OutFile "$env:TEMP\Sergamon-Regular.ttf"
-Invoke-WebRequest -Uri "https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf" -OutFile "$env:TEMP\Sergamon-Bold.ttf"
-Copy-Item "$env:TEMP\Sergamon-*.ttf" "C:\Windows\Fonts\"</pre
+Invoke-WebRequest -Uri "https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon.ttf" -OutFile "$env:TEMP\Sergamon.ttf"
+Copy-Item "$env:TEMP\Sergamon.ttf" "C:\Windows\Fonts\"</pre
                                 >
                                 <button
                                     class="copy-btn"
@@ -1087,9 +1085,8 @@ Copy-Item "$env:TEMP\Sergamon-*.ttf" "C:\Windows\Fonts\"</pre
                             <div class="code-block">
                                 <pre>
 mkdir -p ~/.local/share/fonts
-curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Regular.ttf
-curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon-Bold.ttf
-mv Sergamon-*.ttf ~/.local/share/fonts/
+curl -LO https://github.com/sgmonda/sergamon/releases/latest/download/Sergamon.ttf
+mv Sergamon.ttf ~/.local/share/fonts/
 fc-cache -fv</pre
                                 >
                                 <button
@@ -1215,8 +1212,8 @@ Enable font ligatures: checked</pre
                             <div class="code-block">
                                 <pre>
 [font]
-normal = { family = "Sergamon", style = "Regular" }
-bold = { family = "Sergamon", style = "Bold" }
+[font]
+normal = { family = "Sergamon" }
 size = 16.0</pre
                                 >
                                 <button

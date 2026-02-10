@@ -29,7 +29,6 @@ Each glyph is defined in a plain-text file with an 8x16 pixel grid. Use `.` for 
 
 ```
 # A (U+0041)
-# weight: regular
 
 ..XXXX..
 .X....X.
@@ -51,15 +50,10 @@ X......X
 
 Header lines start with `#` and must include:
 - **Line 1**: a human-readable label and Unicode codepoint.
-- **`weight`**: either `regular` or `bold`.
 
 The grid must be exactly **8 columns wide** and **16 rows tall**. Only `.` and `X` characters are allowed in grid rows. Every row must have exactly 8 characters. Files must end with a newline and contain no trailing whitespace.
 
-### 2. Bold variants
-
-Bold glyphs use the same file format but with `weight: bold` in the header. They live in the same directory as their regular counterparts. If you do not provide a bold variant, the build pipeline will auto-generate one by expanding each filled pixel one unit to the right.
-
-### 3. Ligatures
+### 2. Ligatures
 
 Ligature files include a `components` header field listing the glyph names that trigger the ligature. Ligatures span `8 * N` columns wide, where N is the number of component characters, while remaining 16 rows tall.
 
@@ -67,7 +61,6 @@ Ligature files include a `components` header field listing the glyph names that 
 
 ```
 # => (ligature)
-# weight: regular
 # components: equal greater
 
 ................
@@ -117,7 +110,7 @@ Run the validator to check all `.glyph` files for format errors:
 npm run validate
 ```
 
-This checks grid dimensions, valid characters, duplicate codepoints, completeness of the ASCII range, ligature component references, and weight values. It exits with a non-zero code and clear error messages on any failure.
+This checks grid dimensions, valid characters, duplicate codepoints, completeness of the ASCII range, and ligature component references. It exits with a non-zero code and clear error messages on any failure.
 
 ### Live preview
 
@@ -159,9 +152,8 @@ The CI pipeline will automatically validate your glyph files on every pull reque
 To maintain visual consistency across the font, follow these pixel-art conventions:
 
 ### Stroke width
-- Use **1-pixel strokes** for regular weight.
-- Use **2-pixel strokes** for bold weight.
-- Vertical and horizontal strokes should be uniform in thickness within the same weight.
+- Use **1-pixel strokes**.
+- Vertical and horizontal strokes should be uniform in thickness.
 
 ### Character proportions
 - Most uppercase letters should span columns 1--7 (0-indexed), leaving column 0 and column 7 as side-bearings when possible.
