@@ -1,6 +1,6 @@
 # Sergamon
 
-**Monospaced font for nostalgic programmers**
+**Monospaced font for nostalgic computers**
 
 ![Sergamon Preview](build/previews/preview-python.png)
 

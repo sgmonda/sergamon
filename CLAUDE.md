@@ -10,7 +10,7 @@ Sergamon is a pixel-art monospaced programming font. Glyphs are defined as plain
 
 ```bash
 npm run validate          # Validate all glyph files
-npm run build             # Validate + build TTF/WOFF2 (Regular & Bold)
+npm run build             # Validate + build TTF/WOFF2
 npm run previews          # Build + generate PNG preview images
 npm run all               # Build + previews
 npm run dev               # Dev server with file watching (localhost:3000)
@@ -32,7 +32,6 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 - `src/validate-glyphs.ts` — CLI validator: grid dimensions, characters, duplicates, ASCII completeness, ligature components
 - `src/optimize-paths.ts` — Greedy row-merge: adjacent pixels → rectangles (reduces path count)
 - `src/glyph-to-path.ts` — Rectangles → opentype.js Path (coordinate conversion)
-- `src/auto-bold.ts` — Auto-generates bold by expanding each pixel 1px right
 - `src/build-font.ts` — Main orchestrator: parse → optimize → build Font → register ligatures → export TTF → compress WOFF2
 - `src/generate-previews.cjs` — PNG preview generator (must be .cjs, see gotchas)
 - `src/opentype.d.ts` — Custom type declarations for opentype.js and wawoff2
@@ -43,7 +42,6 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 
 ```
 # A (U+0041)
-# weight: regular
 # components: equal greater   ← ligatures only
 
 ..XXXX..
@@ -51,7 +49,7 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 [... 16 rows total, 8 cols for normal, 8*N cols for N-component ligatures]
 ```
 
-Grid uses `.` (empty) and `X` (filled) only. Weight is `regular` or `bold`. Missing bold variants are auto-generated.
+Grid uses `.` (empty) and `X` (filled) only. No bold variant exists; the font renders identically at all weights.
 
 ## Font Metrics & Coordinate System
 

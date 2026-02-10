@@ -2,8 +2,8 @@
  * Main font build orchestrator.
  *
  * Reads glyph source files, optimizes pixel grids into vector rectangles,
- * constructs opentype.js Font objects for Regular and Bold weights, registers
- * ligature substitutions, and exports TTF and WOFF2 files.
+ * constructs an opentype.js Font object, registers ligature substitutions,
+ * and exports TTF and WOFF2 files.
  *
  * Run:  tsx src/build-font.ts
  *
@@ -18,7 +18,6 @@ import type { FontConfig, ParsedGlyph, Rectangle } from "./types.js";
 import { parseAllGlyphs } from "./parse-glyph.js";
 import { optimizeGrid } from "./optimize-paths.js";
 import { glyphToPath } from "./glyph-to-path.js";
-import { autoBold } from "./auto-bold.js";
 
 // ── Constants ───────────────────────────────────────────────────────────────
 
@@ -201,141 +200,73 @@ async function main(): Promise<void> {
   const allGlyphs = await parseAllGlyphs(GLYPH_DIRS);
   console.log(`  Parsed ${allGlyphs.length} glyph file(s).\n`);
 
-  // 3. Separate by weight.
-  const regularGlyphs: ParsedGlyph[] = [];
-  const boldGlyphs: ParsedGlyph[] = [];
-
-  for (const g of allGlyphs) {
-    if (g.header.weight === "bold") {
-      boldGlyphs.push(g);
-    } else {
-      regularGlyphs.push(g);
-    }
-  }
-
-  console.log(
-    `  Regular: ${regularGlyphs.length} glyph(s), Bold: ${boldGlyphs.length} glyph(s).`,
-  );
-
-  // 4. Auto-generate missing bold glyphs.
-  // Build a set of identifiers for existing bold glyphs (codepoint or ligature label).
-  const boldKeys = new Set<string>();
-  for (const g of boldGlyphs) {
-    if (g.header.codepoint !== undefined) {
-      boldKeys.add(`cp:${g.header.codepoint}`);
-    } else if (g.header.components) {
-      boldKeys.add(`lig:${g.header.label}`);
-    }
-  }
-
-  let autoBoldCount = 0;
-  for (const g of regularGlyphs) {
-    let key: string;
-    if (g.header.codepoint !== undefined) {
-      key = `cp:${g.header.codepoint}`;
-    } else if (g.header.components) {
-      key = `lig:${g.header.label}`;
-    } else {
-      continue;
-    }
-
-    if (!boldKeys.has(key)) {
-      // Auto-generate bold variant.
-      const boldGrid = autoBold(g.grid);
-      const boldParsed: ParsedGlyph = {
-        header: {
-          ...g.header,
-          weight: "bold",
-        },
-        grid: boldGrid,
-        filePath: g.filePath,
-        width: g.width,
-        height: g.height,
-      };
-      boldGlyphs.push(boldParsed);
-      autoBoldCount++;
-    }
-  }
-
-  console.log(
-    `  Auto-generated ${autoBoldCount} bold variant(s).\n`,
-  );
-
-  // 5. Build a label-to-codepoint map from regular glyphs for ligature resolution.
+  // 3. Build a label-to-codepoint map for ligature resolution.
   const labelToCodepoint = new Map<string, number>();
-  for (const g of regularGlyphs) {
+  for (const g of allGlyphs) {
     if (g.header.codepoint !== undefined) {
       labelToCodepoint.set(g.header.label, g.header.codepoint);
     }
   }
 
-  // 6. Build fonts for each weight.
-  for (const [weightName, weightGlyphs] of [
-    ["Regular", regularGlyphs],
-    ["Bold", boldGlyphs],
-  ] as const) {
-    console.log(`  Building ${weightName} font...`);
+  // 4. Build glyphs.
+  console.log(`  Building font...`);
 
-    const builtGlyphs = buildGlyphs(
-      weightGlyphs,
-      config,
-      labelToCodepoint,
-    );
+  const builtGlyphs = buildGlyphs(
+    allGlyphs,
+    config,
+    labelToCodepoint,
+  );
 
-    // 7. Create .notdef glyph (empty, index 0).
-    const notdefGlyph = new opentype.Glyph({
-      name: ".notdef",
-      unicode: 0,
-      advanceWidth: stdAdvanceWidth,
-      path: new opentype.Path(),
-    });
+  // 5. Create .notdef glyph (empty, index 0).
+  const notdefGlyph = new opentype.Glyph({
+    name: ".notdef",
+    unicode: 0,
+    advanceWidth: stdAdvanceWidth,
+    path: new opentype.Path(),
+  });
 
-    // Assemble the glyph array: .notdef must be first.
-    const glyphArray = [notdefGlyph, ...builtGlyphs.map((bg) => bg.glyph)];
+  // Assemble the glyph array: .notdef must be first.
+  const glyphArray = [notdefGlyph, ...builtGlyphs.map((bg) => bg.glyph)];
 
-    // 8. Build the opentype.Font.
-    const font = new opentype.Font({
-      familyName: config.font.familyName,
-      styleName: weightName,
-      unitsPerEm: unitsPerEm,
-      ascender: ascender,
-      descender: descender,
-      glyphs: glyphArray,
-    });
+  // 6. Build the opentype.Font.
+  const font = new opentype.Font({
+    familyName: config.font.familyName,
+    styleName: "Regular",
+    unitsPerEm: unitsPerEm,
+    ascender: ascender,
+    descender: descender,
+    glyphs: glyphArray,
+  });
 
-    // 9. Register ligature substitutions.
-    registerLigatures(font, builtGlyphs);
+  // 7. Register ligature substitutions.
+  registerLigatures(font, builtGlyphs);
 
-    const ligCount = builtGlyphs.filter((bg) => bg.ligatureComponents).length;
-    console.log(
-      `    ${glyphArray.length} glyphs (including .notdef), ${ligCount} ligature(s).`,
-    );
+  const ligCount = builtGlyphs.filter((bg) => bg.ligatureComponents).length;
+  console.log(
+    `    ${glyphArray.length} glyphs (including .notdef), ${ligCount} ligature(s).`,
+  );
 
-    // 10. Export TTF.
-    await fs.mkdir(BUILD_DIR, { recursive: true });
-    await fs.mkdir(SITE_FONTS_DIR, { recursive: true });
+  // 8. Export TTF.
+  await fs.mkdir(BUILD_DIR, { recursive: true });
+  await fs.mkdir(SITE_FONTS_DIR, { recursive: true });
 
-    const ttfFileName = `Sergamon-${weightName}.ttf`;
-    const woff2FileName = `Sergamon-${weightName}.woff2`;
+  const ttfPath = path.join(BUILD_DIR, "Sergamon.ttf");
+  const woff2BuildPath = path.join(BUILD_DIR, "Sergamon.woff2");
+  const woff2SitePath = path.join(SITE_FONTS_DIR, "Sergamon.woff2");
 
-    const ttfPath = path.join(BUILD_DIR, ttfFileName);
-    const woff2BuildPath = path.join(BUILD_DIR, woff2FileName);
-    const woff2SitePath = path.join(SITE_FONTS_DIR, woff2FileName);
+  const arrayBuffer = font.toArrayBuffer();
+  const ttfBuffer = Buffer.from(arrayBuffer);
+  await fs.writeFile(ttfPath, ttfBuffer);
+  console.log(`    Wrote ${ttfPath}`);
 
-    const arrayBuffer = font.toArrayBuffer();
-    const ttfBuffer = Buffer.from(arrayBuffer);
-    await fs.writeFile(ttfPath, ttfBuffer);
-    console.log(`    Wrote ${ttfPath}`);
+  // 9. Convert to WOFF2.
+  const woff2Buffer = await wawoff2.compress(ttfBuffer);
+  await fs.writeFile(woff2BuildPath, woff2Buffer);
+  console.log(`    Wrote ${woff2BuildPath}`);
 
-    // 11. Convert to WOFF2.
-    const woff2Buffer = await wawoff2.compress(ttfBuffer);
-    await fs.writeFile(woff2BuildPath, woff2Buffer);
-    console.log(`    Wrote ${woff2BuildPath}`);
-
-    // 12. Copy WOFF2 to site/fonts/.
-    await fs.writeFile(woff2SitePath, woff2Buffer);
-    console.log(`    Wrote ${woff2SitePath}`);
-  }
+  // 10. Copy WOFF2 to site/fonts/.
+  await fs.writeFile(woff2SitePath, woff2Buffer);
+  console.log(`    Wrote ${woff2SitePath}`);
 
   console.log("\nBuild complete.");
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sergamon - Monospaced font for nostalgic programmers</title>
+        <title>Sergamon - Monospaced font for nostalgic computers</title>
         <meta
             name="description"
             content="Sergamon is an open-source pixel-art monospaced font designed for programming, with ligatures and full ASCII support."
@@ -53,24 +53,14 @@
                 font-style: normal;
                 font-display: swap;
             }
-            @font-face {
-                font-family: "Sergamon";
-                src: url("./fonts/Sergamon-Bold.woff2") format("woff2");
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
-            }
         </style>
 
         <style>
             /* ================================================================
-       CSS CUSTOM PROPERTIES
-       ================================================================ */
+            CSS CUSTOM PROPERTIES
+            ================================================================ */
             :root {
                 --font-mono: "Sergamon", "Courier New", monospace;
-                --font-sans:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    sans-serif;
                 --max-width: 1100px;
                 --radius: 6px;
                 --transition: 0.2s ease;
@@ -127,8 +117,9 @@
             }
 
             /* ================================================================
-       RESET & BASE
-       ================================================================ */
+                 RESET & BASE
+                 ================================================================ */
+
             *,
             *::before,
             *::after {
@@ -142,11 +133,16 @@
                 -webkit-text-size-adjust: 100%;
             }
 
+            * {
+                font-family: var(--font-mono);
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1;
+            }
+
             body {
-                font-family: var(--font-sans);
                 background: var(--bg-primary);
                 color: var(--text-primary);
-                line-height: 1.6;
                 transition:
                     background var(--transition),
                     color var(--transition);
@@ -175,8 +171,8 @@
             }
 
             /* ================================================================
-       LAYOUT
-       ================================================================ */
+            LAYOUT
+            ================================================================ */
             .container {
                 max-width: var(--max-width);
                 margin: 0 auto;
@@ -192,21 +188,19 @@
             }
 
             .section-title {
-                font-size: 1.75rem;
-                font-weight: 700;
+                font-size: 1.5rem;
                 margin-bottom: 8px;
                 color: var(--text-primary);
             }
 
             .section-subtitle {
-                font-size: 1rem;
                 color: var(--text-secondary);
                 margin-bottom: 32px;
             }
 
             /* ================================================================
-       HEADER
-       ================================================================ */
+            HEADER
+            ================================================================ */
             header {
                 padding: 48px 0 40px;
                 text-align: center;
@@ -240,18 +234,12 @@
             }
 
             .font-title {
-                font-family: var(--font-mono);
-                font-size: 4rem;
-                font-weight: 400;
-                letter-spacing: 4px;
-                line-height: 1.1;
+                font-size: 3rem;
                 margin-bottom: 12px;
                 color: var(--text-primary);
             }
 
             .font-tagline {
-                font-family: var(--font-mono);
-                font-size: 1.15rem;
                 color: var(--text-secondary);
                 margin-bottom: 28px;
             }
@@ -261,6 +249,7 @@
                 justify-content: center;
                 gap: 12px;
                 flex-wrap: wrap;
+                margin-bottom: 4rem;
             }
 
             /* Buttons */
@@ -270,8 +259,6 @@
                 gap: 8px;
                 padding: 10px 20px;
                 border-radius: var(--radius);
-                font-size: 0.9rem;
-                font-weight: 600;
                 border: 1px solid var(--border);
                 cursor: pointer;
                 transition: all var(--transition);
@@ -307,7 +294,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 1.1rem;
                 transition: all var(--transition);
             }
             .theme-toggle:hover {
@@ -324,8 +310,8 @@
             }
 
             /* ================================================================
-       SECTION 1: CODE PREVIEW
-       ================================================================ */
+            SECTION 1: CODE PREVIEW
+            ================================================================ */
             .editor-controls {
                 display: flex;
                 justify-content: space-between;
@@ -343,8 +329,6 @@
 
             .lang-tab {
                 padding: 6px 14px;
-                font-size: 0.8rem;
-                font-weight: 500;
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
                 cursor: pointer;
@@ -375,7 +359,6 @@
                 gap: 8px;
             }
             .slider-group label {
-                font-size: 0.8rem;
                 color: var(--text-secondary);
                 white-space: nowrap;
             }
@@ -384,15 +367,12 @@
                 accent-color: var(--accent);
             }
             .slider-group .slider-value {
-                font-size: 0.75rem;
                 color: var(--text-muted);
-                font-family: var(--font-mono);
                 min-width: 36px;
             }
 
             .editor-theme-toggle {
                 padding: 4px 10px;
-                font-size: 0.75rem;
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
                 background: var(--bg-tertiary);
@@ -425,9 +405,6 @@
 
             .editor-textarea,
             .editor-highlight {
-                font-family: var(--font-mono);
-                font-size: 24px;
-                line-height: 1;
                 padding: 20px;
                 padding-left: 60px;
                 white-space: pre;
@@ -463,13 +440,9 @@
                 margin: 0;
                 background: transparent !important;
                 padding: 0 !important;
-                font-family: inherit !important;
             }
 
             .editor-highlight code {
-                font-family: inherit !important;
-                font-size: inherit !important;
-                line-height: inherit !important;
                 background: transparent !important;
                 padding: 0 !important;
             }
@@ -481,9 +454,6 @@
                 width: 44px;
                 padding: 20px 8px 20px 0;
                 text-align: right;
-                font-family: var(--font-mono);
-                font-size: 16px;
-                line-height: 1.5;
                 color: var(--editor-line-number);
                 user-select: none;
                 pointer-events: none;
@@ -503,19 +473,18 @@
             }
 
             /* ================================================================
-       SECTION 2: CHARACTER GRID
-       ================================================================ */
+            SECTION 2: CHARACTER GRID
+            ================================================================ */
             .char-category {
                 margin-bottom: 32px;
             }
 
             .char-category-title {
-                font-size: 1.1rem;
-                font-weight: 600;
                 margin-bottom: 12px;
                 color: var(--text-secondary);
                 padding-bottom: 8px;
                 border-bottom: 1px solid var(--border);
+                text-align: center;
             }
 
             .char-grid {
@@ -529,8 +498,7 @@
                 align-items: center;
                 justify-content: center;
                 aspect-ratio: 1;
-                font-family: var(--font-mono);
-                font-size: 3rem;
+                font-size: 2rem;
                 border: 1px solid var(--border);
                 border-radius: 4px;
                 cursor: default;
@@ -555,8 +523,6 @@
                 border-radius: 4px;
                 padding: 8px 12px;
                 white-space: nowrap;
-                font-size: 0.7rem;
-                font-family: var(--font-sans);
                 color: var(--text-secondary);
                 z-index: 10;
                 pointer-events: none;
@@ -564,8 +530,6 @@
             }
 
             .char-tooltip .tooltip-char {
-                font-family: var(--font-mono);
-                font-size: 2rem;
                 display: block;
                 text-align: center;
                 margin-bottom: 4px;
@@ -577,8 +541,8 @@
             }
 
             /* ================================================================
-       SECTION 3: DISTINGUISHABILITY
-       ================================================================ */
+            SECTION 3: DISTINGUISHABILITY
+            ================================================================ */
             .distinguish-table {
                 width: 100%;
                 border-collapse: collapse;
@@ -590,31 +554,20 @@
                 padding: 12px 16px;
                 border: 1px solid var(--border);
                 text-align: center;
-                font-family: var(--font-mono);
             }
 
             .distinguish-table th {
                 background: var(--bg-secondary);
-                font-family: var(--font-sans);
-                font-weight: 600;
-                font-size: 1rem;
                 color: var(--text-secondary);
             }
 
-            .distinguish-table td {
-                letter-spacing: 0.4em;
-            }
-
             .distinguish-label {
-                font-family: var(--font-sans) !important;
-                font-size: 1rem !important;
                 color: var(--text-secondary) !important;
-                letter-spacing: 0 !important;
             }
 
             /* ================================================================
-       SECTION 4: FONT COMPARISON
-       ================================================================ */
+            SECTION 4: FONT COMPARISON
+            ================================================================ */
             .comparison-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -631,14 +584,10 @@
                 padding: 10px 16px;
                 background: var(--bg-secondary);
                 border-bottom: 1px solid var(--border);
-                font-size: 0.85rem;
-                font-weight: 600;
                 color: var(--text-secondary);
             }
 
             .comparison-card-header .card-tag {
-                font-size: 0.7rem;
-                font-weight: 400;
                 padding: 2px 6px;
                 background: var(--accent-bg);
                 color: var(--accent);
@@ -648,8 +597,6 @@
 
             .comparison-card pre {
                 padding: 16px;
-                font-size: 18px;
-                line-height: 1;
                 overflow-x: auto;
                 background: var(--bg-editor);
                 margin: 0;
@@ -670,8 +617,8 @@
             }
 
             /* ================================================================
-       SECTION 5: INSTALLATION
-       ================================================================ */
+            SECTION 5: INSTALLATION
+            ================================================================ */
             .install-tabs {
                 display: flex;
                 flex-wrap: wrap;
@@ -681,8 +628,6 @@
 
             .install-tab {
                 padding: 8px 16px;
-                font-size: 0.85rem;
-                font-weight: 500;
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
                 cursor: pointer;
@@ -711,13 +656,10 @@
             }
 
             .install-step h4 {
-                font-size: 0.95rem;
-                font-weight: 600;
                 margin-bottom: 8px;
             }
 
             .install-step p {
-                font-size: 0.9rem;
                 color: var(--text-secondary);
                 margin-bottom: 10px;
             }
@@ -733,9 +675,6 @@
             .code-block pre {
                 padding: 14px 16px;
                 padding-right: 50px;
-                font-family: var(--font-mono);
-                font-size: 1rem;
-                line-height: 1.5;
                 overflow-x: auto;
                 margin: 0;
                 color: var(--text-primary);
@@ -755,7 +694,6 @@
                 border-radius: 4px;
                 cursor: pointer;
                 color: var(--text-secondary);
-                font-size: 0.8rem;
                 transition: all var(--transition);
             }
             .copy-btn:hover {
@@ -768,8 +706,8 @@
             }
 
             /* ================================================================
-       FOOTER
-       ================================================================ */
+            FOOTER
+            ================================================================ */
             footer {
                 padding: 40px 0;
                 background: var(--bg-secondary);
@@ -786,7 +724,6 @@
             }
 
             .footer-links a {
-                font-size: 0.9rem;
                 color: var(--text-secondary);
             }
             .footer-links a:hover {
@@ -794,7 +731,6 @@
             }
 
             .footer-license {
-                font-size: 0.8rem;
                 color: var(--text-muted);
             }
 
@@ -812,12 +748,9 @@
             }
 
             /* ================================================================
-       RESPONSIVE
-       ================================================================ */
+            RESPONSIVE
+            ================================================================ */
             @media (max-width: 768px) {
-                .font-title {
-                    font-size: 2.5rem;
-                }
                 section {
                     padding: 40px 0;
                 }
@@ -834,26 +767,8 @@
                 .comparison-grid {
                     grid-template-columns: 1fr;
                 }
-                .distinguish-table {
-                    font-size: 0.85rem;
-                }
                 .char-grid {
                     grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-                }
-            }
-
-            @media (max-width: 480px) {
-                .font-title {
-                    font-size: 2rem;
-                    letter-spacing: 2px;
-                }
-                .container {
-                    padding: 0 16px;
-                }
-                .lang-tab,
-                .install-tab {
-                    padding: 5px 10px;
-                    font-size: 0.75rem;
                 }
             }
         </style>
@@ -886,7 +801,7 @@
                 </div>
                 <h1 class="font-title">Sergamon</h1>
                 <p class="font-tagline">
-                    Monospaced font for nostalgic programmers
+                    Monospaced font for nostalgic computers
                 </p>
                 <div class="header-actions">
                     <a
@@ -948,9 +863,9 @@
                             <input
                                 type="range"
                                 id="fontSizeSlider"
-                                min="24"
+                                min="16"
                                 max="64"
-                                value="24"
+                                value="16"
                                 step="1"
                             />
                             <span class="slider-value" id="fontSizeValue"

@@ -80,18 +80,7 @@ function validateGlyphs(
     const rel = relativeToProject(glyph.filePath);
     const isLigature = glyph.header.components !== undefined;
 
-    // ── 1. Weight must be "regular" or "bold" ───────────────────────────
-    if (
-      glyph.header.weight !== "regular" &&
-      glyph.header.weight !== "bold"
-    ) {
-      errors.push({
-        file: rel,
-        message: `Invalid weight "${glyph.header.weight}". Must be "regular" or "bold".`,
-      });
-    }
-
-    // ── 2. Grid height must be exactly 16 rows ─────────────────────────
+    // ── 1. Grid height must be exactly 16 rows ──────────────────────────
     if (glyph.height !== stdHeight) {
       errors.push({
         file: rel,
@@ -199,43 +188,25 @@ function validateGlyphs(
     }
   }
 
-  // ── 8. No duplicate codepoints (same weight) ─────────────────────────
-  // Group by (codepoint, weight) to detect duplicates.
-  const cpWeightKey = (cp: number, w: string) => `${cp}:${w}`;
-  const cpWeightMap = new Map<string, ParsedGlyph[]>();
-
-  for (const g of glyphs) {
-    if (g.header.codepoint === undefined) continue;
-    const key = cpWeightKey(g.header.codepoint, g.header.weight);
-    if (!cpWeightMap.has(key)) {
-      cpWeightMap.set(key, []);
-    }
-    cpWeightMap.get(key)!.push(g);
-  }
-
-  for (const [, dups] of cpWeightMap) {
+  // ── 7. No duplicate codepoints ────────────────────────────────────────
+  for (const [cp, dups] of codepointOccurrences) {
     if (dups.length > 1) {
-      const cp = dups[0].header.codepoint!;
-      const weight = dups[0].header.weight;
       const files = dups.map((g) => relativeToProject(g.filePath)).join(", ");
       errors.push({
         file: files,
-        message: `Duplicate codepoint ${formatCodepoint(cp)} (weight: ${weight}) found in multiple files.`,
+        message: `Duplicate codepoint ${formatCodepoint(cp)} found in multiple files.`,
       });
     }
   }
 
-  // ── 9. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
-  // Check that every codepoint in the required ASCII range has at least a
-  // regular-weight glyph.
+  // ── 8. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
   for (let cp = ASCII_START; cp <= ASCII_END; cp++) {
-    const key = cpWeightKey(cp, "regular");
-    if (!cpWeightMap.has(key) || cpWeightMap.get(key)!.length === 0) {
+    if (!codepointToGlyph.has(cp)) {
       const char =
         cp >= 0x21 ? ` '${String.fromCodePoint(cp)}'` : "";
       errors.push({
         file: "glyphs/ascii/",
-        message: `Missing required ASCII glyph: ${formatCodepoint(cp)}${char} (regular weight).`,
+        message: `Missing required ASCII glyph: ${formatCodepoint(cp)}${char}.`,
       });
     }
   }

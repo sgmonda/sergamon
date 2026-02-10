@@ -204,7 +204,7 @@ Pipeline:
   "font": {
     "familyName": "Sergamon",
     "version": "1.0.0",
-    "description": "Monospaced font for nostalgic programmers",
+    "description": "Monospaced font for nostalgic computers",
     "designer": "",
     "url": ""
   },
@@ -279,7 +279,7 @@ The site is dark-themed by default (with a light/dark toggle) and has a clean, d
 
 #### Header
 - Font name (rendered in the font itself, large)
-- One-line description: "Monospaced font for nostalgic programmers"
+- One-line description: "Monospaced font for nostalgic computers"
 - Download button (links to latest GitHub release)
 - GitHub repo link
 

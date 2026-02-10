@@ -32,7 +32,6 @@ import type { GlyphHeader, ParsedGlyph } from "./types.js";
 function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
   let label: string | undefined;
   let codepoint: number | undefined;
-  let weight: "regular" | "bold" | undefined;
   let components: string[] | undefined;
 
   for (const raw of headerLines) {
@@ -40,10 +39,8 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
     const line = raw.replace(/^#\s*/, "").trim();
     if (line === "") continue;
 
-    // Match "weight: regular" or "weight: bold"
-    const weightMatch = line.match(/^weight:\s*(regular|bold)$/i);
-    if (weightMatch) {
-      weight = weightMatch[1].toLowerCase() as "regular" | "bold";
+    // Skip weight header (no longer used)
+    if (/^weight:\s*/i.test(line)) {
       continue;
     }
 
@@ -86,11 +83,6 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
     label = basename.replace(/^U\+[0-9A-Fa-f]+_/, "").replace(/^LIG_/, "");
   }
 
-  // Default weight
-  if (weight === undefined) {
-    weight = "regular";
-  }
-
   // Try to extract codepoint from filename if not found in header
   if (codepoint === undefined && components === undefined) {
     const basename = path.basename(filePath, ".glyph");
@@ -100,7 +92,7 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
     }
   }
 
-  return { label: label!, codepoint, weight, components };
+  return { label: label!, codepoint, components };
 }
 
 // ── Grid parsing ────────────────────────────────────────────────────────────

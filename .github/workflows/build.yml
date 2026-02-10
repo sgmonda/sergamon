@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -44,22 +46,33 @@ jobs:
             build/*.woff2
             build/previews/*.png
 
-      - name: Read version from font-config.json
+      - name: Check version change
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         id: version
         run: |
-          VERSION=$(node -e "const c = JSON.parse(require('fs').readFileSync('font-config.json','utf8')); console.log(c.font.version)")
-          echo "version=v${VERSION}" >> "$GITHUB_OUTPUT"
+          CURRENT=$(node -e "console.log(require('./package.json').version)")
+          PREVIOUS=$(git show HEAD~1:package.json 2>/dev/null | node -e "
+            let data = '';
+            process.stdin.on('data', c => data += c);
+            process.stdin.on('end', () => {
+              try { console.log(JSON.parse(data).version); }
+              catch { console.log(''); }
+            });
+          " || echo "")
+          echo "current=v${CURRENT}" >> "$GITHUB_OUTPUT"
+          if [ "$CURRENT" != "$PREVIOUS" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create GitHub Release
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: steps.version.outputs.changed == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.version }}
-          name: Sergamon ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.version.outputs.current }}
+          name: Sergamon ${{ steps.version.outputs.current }}
           generate_release_notes: true
           files: |
-            build/Sergamon-Regular.ttf
-            build/Sergamon-Regular.woff2
-            build/Sergamon-Bold.ttf
-            build/Sergamon-Bold.woff2
+            build/Sergamon.ttf
+            build/Sergamon.woff2

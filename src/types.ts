@@ -6,7 +6,6 @@
 
 export interface FontConfigFont {
   familyName: string;
-  version: string;
   description: string;
   designer: string;
   url: string;
@@ -32,16 +31,10 @@ export interface FontConfigMetrics {
   lineGapPx: number;
 }
 
-export interface FontConfigWeights {
-  regular: number;
-  bold: number;
-}
-
 export interface FontConfig {
   font: FontConfigFont;
   grid: FontConfigGrid;
   metrics: FontConfigMetrics;
-  weights: FontConfigWeights;
 }
 
 // ── Parsed glyph data ───────────────────────────────────────────────────────
@@ -51,8 +44,6 @@ export interface GlyphHeader {
   label: string;
   /** Unicode codepoint as a number, e.g. 0x0041. Undefined for ligatures. */
   codepoint: number | undefined;
-  /** Weight variant: "regular" or "bold". */
-  weight: "regular" | "bold";
   /** For ligatures: ordered list of component glyph names that trigger the substitution. Undefined for normal glyphs. */
   components: string[] | undefined;
 }

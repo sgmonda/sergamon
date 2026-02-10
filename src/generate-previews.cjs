@@ -467,7 +467,7 @@ function renderPreview(language, code, theme) {
   ctx.font = `11px "${FONT_NAME}", monospace`;
   ctx.textBaseline = "bottom";
   ctx.fillText(
-    "Sergamon - Monospaced font for nostalgic programmers",
+    "Sergamon - Monospaced font for nostalgic computers",
     GUTTER_WIDTH + PADDING_LEFT,
     HEIGHT - 12,
   );

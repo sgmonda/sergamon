@@ -1,8 +1,7 @@
 {
   "font": {
     "familyName": "Sergamon",
-    "version": "1.0.0",
-    "description": "Monospaced font for nostalgic programmers",
+    "description": "Monospaced font for nostalgic computers",
     "designer": "",
     "url": ""
   },
@@ -16,9 +15,5 @@
     "ascenderPx": 13,
     "descenderPx": 3,
     "lineGapPx": 1
-  },
-  "weights": {
-    "regular": 400,
-    "bold": 700
   }
 }
