@@ -407,11 +407,16 @@
             .editor-highlight {
                 padding: 20px;
                 padding-left: 60px;
-                white-space: pre;
                 word-wrap: normal;
                 overflow-wrap: normal;
                 tab-size: 4;
                 -moz-tab-size: 4;
+                font-size: 16px;
+                line-height: 1.2;
+            }
+
+            .editor-textarea {
+                white-space: pre;
             }
 
             .editor-textarea {
@@ -436,15 +441,18 @@
                 min-height: 400px;
             }
 
-            .editor-highlight pre {
-                margin: 0;
-                background: transparent !important;
+            .editor-highlight pre,
+            .editor-highlight code,
+            .editor-highlight .hljs,
+            .editor-highlight pre code.hljs {
+                margin: 0 !important;
                 padding: 0 !important;
+                background: transparent !important;
             }
 
-            .editor-highlight code {
-                background: transparent !important;
-                padding: 0 !important;
+            .editor-highlight * {
+                font-size: inherit !important;
+                line-height: inherit !important;
             }
 
             .editor-line-numbers {
@@ -454,12 +462,15 @@
                 width: 44px;
                 padding: 20px 8px 20px 0;
                 text-align: right;
+                white-space: pre;
                 color: var(--editor-line-number);
                 user-select: none;
                 pointer-events: none;
                 z-index: 3;
                 border-right: 1px solid var(--border);
                 background: var(--bg-secondary);
+                font-size: 16px;
+                line-height: 1.2;
             }
 
             .editor-wrapper.light-editor .editor-line-numbers {
@@ -880,11 +891,11 @@
                                 id="lineHeightSlider"
                                 min="1.0"
                                 max="2.0"
-                                value="1"
+                                value="1.2"
                                 step="0.1"
                             />
                             <span class="slider-value" id="lineHeightValue"
-                                >1.5</span
+                                >1.2</span
                             >
                         </div>
                         <button
@@ -1722,10 +1733,9 @@ int main(void) {
                 function updateHighlight() {
                     const code = editorTextarea.value;
                     const hljsLang = langMap[currentLang] || "plaintext";
+                    const result = hljs.highlight(code, { language: hljsLang });
                     highlightCode.className = `language-${hljsLang}`;
-                    highlightCode.removeAttribute("data-highlighted");
-                    highlightCode.textContent = code;
-                    hljs.highlightElement(highlightCode);
+                    highlightCode.innerHTML = result.value;
                     updateLineNumbers(code);
                 }
 
