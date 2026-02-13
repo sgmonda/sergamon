@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=IBM+Plex+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap"
             rel="stylesheet"
         />
         <link
@@ -636,6 +636,19 @@
             .comparison-card.font-cascadia pre,
             .comparison-card.font-cascadia pre code {
                 font-family: "Cascadia Code", "Cascadia Mono", monospace;
+            }
+            .comparison-card.font-sourcecodepro pre,
+            .comparison-card.font-sourcecodepro pre code {
+                font-family: "Source Code Pro", monospace;
+            }
+            .comparison-card.font-ibmplexmono pre,
+            .comparison-card.font-ibmplexmono pre code {
+                font-family: "IBM Plex Mono", monospace;
+            }
+
+            .comparison-card.font-sergamon {
+                border-color: var(--accent);
+                box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 20%, transparent);
             }
 
             .comparison-card pre code.hljs {
@@ -1983,6 +1996,16 @@ int main(void) {
                         tag: null,
                     },
                     { name: "Cascadia Code", cls: "font-cascadia", tag: null },
+                    {
+                        name: "Source Code Pro",
+                        cls: "font-sourcecodepro",
+                        tag: null,
+                    },
+                    {
+                        name: "IBM Plex Mono",
+                        cls: "font-ibmplexmono",
+                        tag: null,
+                    },
                 ];
 
                 const compGrid = $("#comparisonGrid");
