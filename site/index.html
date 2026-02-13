@@ -619,17 +619,26 @@
                 min-height: 180px;
             }
 
-            .comparison-card.font-sergamon pre {
+            .comparison-card.font-sergamon pre,
+            .comparison-card.font-sergamon pre code {
                 font-family: "Sergamon", monospace;
             }
-            .comparison-card.font-firacode pre {
+            .comparison-card.font-firacode pre,
+            .comparison-card.font-firacode pre code {
                 font-family: "Fira Code", "Fira Mono", monospace;
             }
-            .comparison-card.font-jetbrains pre {
+            .comparison-card.font-jetbrains pre,
+            .comparison-card.font-jetbrains pre code {
                 font-family: "JetBrains Mono", monospace;
             }
-            .comparison-card.font-cascadia pre {
+            .comparison-card.font-cascadia pre,
+            .comparison-card.font-cascadia pre code {
                 font-family: "Cascadia Code", "Cascadia Mono", monospace;
+            }
+
+            .comparison-card pre code.hljs {
+                padding: 0;
+                background: transparent;
             }
 
             /* ================================================================
@@ -1991,8 +2000,12 @@ int main(void) {
                     card.appendChild(header);
 
                     const pre = document.createElement("pre");
-                    pre.textContent = comparisonSnippet;
+                    const code = document.createElement("code");
+                    code.className = "language-rust";
+                    code.textContent = comparisonSnippet;
+                    pre.appendChild(code);
                     card.appendChild(pre);
+                    hljs.highlightElement(code);
 
                     compGrid.appendChild(card);
                 }
