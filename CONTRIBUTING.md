@@ -23,6 +23,10 @@ npm ci
 
 Sergamon does **not** support ligatures. Each character is rendered exactly as typed -- no automatic substitutions, no hidden transformations. This is a deliberate design choice: your source code should look exactly as you wrote it.
 
+## Design Principle: Single Weight
+
+Sergamon has one weight only -- no bold, no light. Inspired by classic hardware terminals, every character renders with the same uniform stroke. Do not add weight variants.
+
 ---
 
 ## How to Add a Glyph

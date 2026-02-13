@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sergamon - Monospaced font for nostalgic computers</title>
+        <title>Sergamon - Monospaced font for nostalgic hackers</title>
         <meta
             name="description"
-            content="Sergamon is an open-source pixel-art monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures."
+            content="Sergamon is an open-source pixel-art monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures, single weight."
         />
 
         <!-- Comparison fonts from Google Fonts -->
@@ -59,6 +59,7 @@
             CSS CUSTOM PROPERTIES
             ================================================================ */
             :root {
+                --font-size: 20px;
                 --font-mono: "Sergamon", "Courier New", monospace;
                 --max-width: 1100px;
                 --radius: 6px;
@@ -128,6 +129,7 @@
             }
 
             html {
+                font-size: var(--font-size);
                 scroll-behavior: smooth;
                 -webkit-text-size-adjust: 100%;
             }
@@ -411,7 +413,7 @@
                 overflow-wrap: normal;
                 tab-size: 4;
                 -moz-tab-size: 4;
-                font-size: 16px;
+                font-size: 1rem;
                 line-height: 1.2;
             }
 
@@ -469,7 +471,7 @@
                 z-index: 3;
                 border-right: 1px solid var(--border);
                 background: var(--bg-secondary);
-                font-size: 16px;
+                font-size: 1rem;
                 line-height: 1.2;
             }
 
@@ -569,7 +571,7 @@
             }
 
             .distinguish-table tr > td:nth-child(1) {
-                font-size: 24px;
+                font-size: 1.5rem;
             }
 
             .distinguish-table th {
@@ -826,7 +828,7 @@
                 </div>
                 <h1 class="font-title">Sergamon</h1>
                 <p class="font-tagline">
-                    Monospaced font for nostalgic computers
+                    Monospaced font for nostalgic hackers
                 </p>
                 <div class="header-actions">
                     <a

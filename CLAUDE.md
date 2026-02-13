@@ -10,6 +10,10 @@ Sergamon is a pixel-art monospaced programming font. Glyphs are defined as plain
 
 Sergamon deliberately does **not** support ligatures. Each character is rendered exactly as typed -- no automatic substitutions, no hidden transformations. When you type `==`, you see two equal signs. When you type `->`, you see a hyphen and a greater-than sign. This transparency is a core design principle: the font faithfully represents the source code without surprises.
 
+### Design Principle: Single Weight
+
+Inspired by classic hardware terminals, Sergamon has a single weight -- there is no bold, light, or any other variant. Every character renders with the same stroke regardless of the `font-weight` CSS property. This keeps the retro terminal aesthetic consistent and avoids visual noise from weight variations.
+
 ## Commands
 
 ```bash

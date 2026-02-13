@@ -1,8 +1,8 @@
 {
   "name": "sergamon",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "type": "module",
-  "description": "Monospaced font for nostalgic computers",
+  "description": "Monospaced font for nostalgic hackers",
   "scripts": {
     "validate": "tsx src/validate-glyphs.ts",
     "build": "npm run validate && tsx src/build-font.ts",

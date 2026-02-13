@@ -1,6 +1,6 @@
 # Sergamon
 
-**Monospaced font for nostalgic computers**
+**Monospaced font for nostalgic hackers**
 
 ![Sergamon Preview](build/previews/preview-python.png)
 
@@ -14,6 +14,7 @@
 - **Monospaced** -- every glyph occupies the same fixed width, keeping code perfectly aligned.
 - **Pixel-art aesthetic** -- an 8x16 pixel grid gives each character a crisp, retro look that stays sharp at its design size.
 - **What you see is what you get** -- no ligatures, no automatic substitutions. Each character is rendered exactly as typed. When you write `==`, you see two equal signs. Sergamon faithfully represents your source code without surprises.
+- **Single weight** -- inspired by classic hardware terminals, Sergamon has one weight only. No bold, no light -- just consistent, uniform strokes.
 - **Designed for code** -- careful distinction between easily confused characters (`0/O/o`, `1/l/I`, `` ` ``/`'`/`"`), plus full ASCII coverage and essential Latin Extended glyphs.
 
 ---
