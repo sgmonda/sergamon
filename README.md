@@ -1,11 +1,16 @@
-# Sergamon
+<div align="center">
+
+<img width="512" height="128" alt="logo" src="https://github.com/user-attachments/assets/f838ac8d-4ab0-4b8f-8a6e-3c2d8425857a" />
 
 **Monospaced font for nostalgic hackers**
 
-![Sergamon Preview](build/previews/preview-python.png)
-
+[![Release](https://img.shields.io/github/v/release/sgmonda/sergamon?label=release)](https://github.com/sgmonda/sergamon/releases)
 [![License: OFL-1.1](https://img.shields.io/badge/License-OFL--1.1-blue.svg)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://github.com/sgmonda/sergamon/actions/workflows/build.yml/badge.svg)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
+
+[Website](https://sgmonda.com/sergamon)
+
+</div>
 
 ---
 
@@ -87,7 +92,7 @@ The build pipeline:
 
 ---
 
-## npm Scripts
+## NPM Scripts
 
 | Script | Command | Description |
 |---|---|---|
