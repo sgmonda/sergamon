@@ -22,7 +22,6 @@ const PROJECT_ROOT = path.resolve(
 const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "ascii"),
   path.join(PROJECT_ROOT, "glyphs", "latin-ext"),
-  path.join(PROJECT_ROOT, "glyphs", "ligatures"),
 ];
 
 const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");
@@ -55,17 +54,10 @@ function validateGlyphs(
   const errors: ValidationError[] = [];
   const { width: stdWidth, height: stdHeight } = config.grid;
 
-  // Collect all known glyph labels (by codepoint) for ligature component checks.
-  // Build a map from label -> ParsedGlyph and codepoint -> ParsedGlyph.
-  const glyphByLabel = new Map<string, ParsedGlyph>();
   const codepointToGlyph = new Map<number, ParsedGlyph>();
   const codepointOccurrences = new Map<number, ParsedGlyph[]>();
 
   for (const g of glyphs) {
-    // Track labels
-    glyphByLabel.set(g.header.label, g);
-
-    // Track codepoints
     if (g.header.codepoint !== undefined) {
       const cp = g.header.codepoint;
       if (!codepointOccurrences.has(cp)) {
@@ -78,7 +70,6 @@ function validateGlyphs(
 
   for (const glyph of glyphs) {
     const rel = relativeToProject(glyph.filePath);
-    const isLigature = glyph.header.components !== undefined;
 
     // ── 1. Grid height must be exactly 16 rows ──────────────────────────
     if (glyph.height !== stdHeight) {
@@ -88,29 +79,16 @@ function validateGlyphs(
       });
     }
 
-    // ── 3. Grid width ──────────────────────────────────────────────────
-    if (isLigature) {
-      const expectedWidth =
-        stdWidth * glyph.header.components!.length;
-      if (glyph.width !== expectedWidth) {
-        errors.push({
-          file: rel,
-          message: `Ligature grid width is ${glyph.width}, expected ${expectedWidth} (${stdWidth} * ${glyph.header.components!.length} components).`,
-        });
-      }
-    } else {
-      if (glyph.width !== stdWidth) {
-        errors.push({
-          file: rel,
-          message: `Grid width is ${glyph.width}, expected ${stdWidth}.`,
-        });
-      }
+    // ── 2. Grid width ──────────────────────────────────────────────────
+    if (glyph.width !== stdWidth) {
+      errors.push({
+        file: rel,
+        message: `Grid width is ${glyph.width}, expected ${stdWidth}.`,
+      });
     }
 
-    // ── 4. All rows must have consistent width ─────────────────────────
-    const expectedRowWidth = isLigature
-      ? stdWidth * glyph.header.components!.length
-      : stdWidth;
+    // ── 3. All rows must have consistent width ─────────────────────────
+    const expectedRowWidth = stdWidth;
 
     for (let row = 0; row < glyph.grid.length; row++) {
       if (glyph.grid[row].length !== expectedRowWidth) {
@@ -121,7 +99,7 @@ function validateGlyphs(
       }
     }
 
-    // ── 5. Grid characters: only '.' and 'X' are valid ─────────────────
+    // ── 4. Grid characters: only '.' and 'X' are valid ─────────────────
     // We re-read the raw file to check for invalid characters in the grid.
     // The parser already converted to booleans, so we verify from source.
     try {
@@ -157,7 +135,7 @@ function validateGlyphs(
       });
     }
 
-    // ── 6. Valid Unicode codepoint ──────────────────────────────────────
+    // ── 5. Valid Unicode codepoint ──────────────────────────────────────
     if (glyph.header.codepoint !== undefined) {
       const cp = glyph.header.codepoint;
       if (cp < 0 || cp > 0x10ffff) {
@@ -175,20 +153,9 @@ function validateGlyphs(
       }
     }
 
-    // ── 7. Ligature components must reference existing glyphs ───────────
-    if (isLigature) {
-      for (const comp of glyph.header.components!) {
-        if (!glyphByLabel.has(comp)) {
-          errors.push({
-            file: rel,
-            message: `Ligature component "${comp}" does not match any known glyph label.`,
-          });
-        }
-      }
-    }
   }
 
-  // ── 7. No duplicate codepoints ────────────────────────────────────────
+  // ── 6. No duplicate codepoints ────────────────────────────────────────
   for (const [cp, dups] of codepointOccurrences) {
     if (dups.length > 1) {
       const files = dups.map((g) => relativeToProject(g.filePath)).join(", ");
@@ -199,7 +166,7 @@ function validateGlyphs(
     }
   }
 
-  // ── 8. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
+  // ── 7. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
   for (let cp = ASCII_START; cp <= ASCII_END; cp++) {
     if (!codepointToGlyph.has(cp)) {
       const char =

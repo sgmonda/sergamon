@@ -6,7 +6,7 @@
         <title>Sergamon - Monospaced font for nostalgic computers</title>
         <meta
             name="description"
-            content="Sergamon is an open-source pixel-art monospaced font designed for programming, with ligatures and full ASCII support."
+            content="Sergamon is an open-source pixel-art monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures."
         />
 
         <!-- Comparison fonts from Google Fonts -->
@@ -949,10 +949,6 @@
                     <div class="char-grid" id="latinExtGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Programming Ligatures</h3>
-                    <div class="char-grid" id="ligatureGrid"></div>
-                </div>
             </div>
         </section>
 
@@ -1127,7 +1123,6 @@ fc-cache -fv</pre
 {
   "editor.fontFamily": "'Sergamon', 'Courier New', monospace",
   "editor.fontSize": 16,
-  "editor.fontLigatures": true,
   "editor.lineHeight": 1.5
 }</pre
                                 >
@@ -1164,8 +1159,7 @@ fc-cache -fv</pre
                                 <pre>
 Font:        Sergamon
 Size:        16
-Line height: 1.5
-Enable font ligatures: checked</pre
+Line height: 1.5</pre
                                 >
                                 <button
                                     class="copy-btn"
@@ -1914,47 +1908,8 @@ int main(void) {
                     }
                 }
 
-                function populateLigatures() {
-                    const grid = $("#ligatureGrid");
-                    const ligs = [
-                        ["==", "equal equal"],
-                        ["!=", "not equal"],
-                        ["<=", "less equal"],
-                        [">=", "greater equal"],
-                        ["=>", "arrow right"],
-                        ["->", "arrow fat"],
-                        ["<-", "arrow left"],
-                        [">>", "shift right"],
-                        ["<<", "shift left"],
-                        ["||", "logical or"],
-                        ["&&", "logical and"],
-                        ["//", "comment"],
-                        ["/*", "block comment open"],
-                        ["*/", "block comment close"],
-                        ["...", "ellipsis"],
-                        ["===", "strict equal"],
-                        ["!==", "strict not equal"],
-                        ["<=>", "spaceship"],
-                        ["|>", "pipe"],
-                    ];
-                    for (const [chars, name] of ligs) {
-                        const cell = document.createElement("div");
-                        cell.className = "char-cell";
-                        cell.style.fontSize = "1rem";
-                        cell.textContent = chars;
-
-                        const tooltip = document.createElement("div");
-                        tooltip.className = "char-tooltip";
-                        tooltip.innerHTML = `<span class="tooltip-char">${chars}</span>${name}<br>Ligature`;
-                        cell.appendChild(tooltip);
-
-                        grid.appendChild(cell);
-                    }
-                }
-
                 populateASCII();
                 populateLatinExt();
-                populateLigatures();
 
                 // ── Distinguishability Table ───────────────────────────────────
 

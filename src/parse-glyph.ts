@@ -2,7 +2,7 @@
  * Parser for .glyph source files.
  *
  * A .glyph file consists of:
- *   - Header lines starting with '#' (label, codepoint, optional components)
+ *   - Header lines starting with '#' (label and codepoint)
  *   - An empty separator line
  *   - Grid lines using '.' (empty) and 'X' (filled)
  *
@@ -20,35 +20,20 @@ import type { GlyphHeader, ParsedGlyph } from "./types.js";
 /**
  * Parse the header comment lines into a GlyphHeader.
  *
- * Expected patterns:
+ * Expected pattern:
  *   # A (U+0041)
- *   # components: equal greater      (ligatures only)
- *
- *   # => (ligature)
- *   # components: equal greater
  */
 function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
   let label: string | undefined;
   let codepoint: number | undefined;
-  let components: string[] | undefined;
 
   for (const raw of headerLines) {
     // Strip the leading '#' and trim whitespace
     const line = raw.replace(/^#\s*/, "").trim();
     if (line === "") continue;
 
-    // Match "components: equal greater ..."
-    const componentsMatch = line.match(/^components:\s+(.+)$/i);
-    if (componentsMatch) {
-      components = componentsMatch[1].trim().split(/\s+/);
-      continue;
-    }
-
     // First non-field header line is the label line.
-    // Patterns:
-    //   "A (U+0041)"
-    //   "space (U+0020)"
-    //   "=> (ligature)"
+    // Pattern: "A (U+0041)" or "space (U+0020)"
     if (label === undefined) {
       const codepointMatch = line.match(
         /^(.+?)\s+\(U\+([0-9A-Fa-f]{4,6})\)$/,
@@ -57,14 +42,8 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
         label = codepointMatch[1].trim();
         codepoint = parseInt(codepointMatch[2], 16);
       } else {
-        // Ligature or other label without a codepoint (e.g. "=> (ligature)")
-        const ligatureMatch = line.match(/^(.+?)\s+\(ligature\)$/i);
-        if (ligatureMatch) {
-          label = ligatureMatch[1].trim();
-        } else {
-          // Fallback: entire line is the label
-          label = line;
-        }
+        // Fallback: entire line is the label
+        label = line;
       }
     }
   }
@@ -72,12 +51,12 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
   // Fallback label from filename if header had none
   if (label === undefined) {
     const basename = path.basename(filePath, ".glyph");
-    // Strip U+XXXX_ prefix or LIG_ prefix
-    label = basename.replace(/^U\+[0-9A-Fa-f]+_/, "").replace(/^LIG_/, "");
+    // Strip U+XXXX_ prefix
+    label = basename.replace(/^U\+[0-9A-Fa-f]+_/, "");
   }
 
   // Try to extract codepoint from filename if not found in header
-  if (codepoint === undefined && components === undefined) {
+  if (codepoint === undefined) {
     const basename = path.basename(filePath, ".glyph");
     const filenameMatch = basename.match(/^U\+([0-9A-Fa-f]{4,6})_/);
     if (filenameMatch) {
@@ -85,7 +64,7 @@ function parseHeader(headerLines: string[], filePath: string): GlyphHeader {
     }
   }
 
-  return { label: label!, codepoint, components };
+  return { label: label!, codepoint };
 }
 
 // ── Grid parsing ────────────────────────────────────────────────────────────

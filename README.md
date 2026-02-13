@@ -13,7 +13,7 @@
 
 - **Monospaced** -- every glyph occupies the same fixed width, keeping code perfectly aligned.
 - **Pixel-art aesthetic** -- an 8x16 pixel grid gives each character a crisp, retro look that stays sharp at its design size.
-- **19 programming ligatures** -- common operators like `==`, `!=`, `=>`, `->`, `<=`, `>=`, `>>`, `<<`, `||`, `&&`, `//`, `/*`, `*/`, `...`, `===`, `!==`, `<=>`, `|>`, and `<-` render as unified symbols.
+- **What you see is what you get** -- no ligatures, no automatic substitutions. Each character is rendered exactly as typed. When you write `==`, you see two equal signs. Sergamon faithfully represents your source code without surprises.
 - **Designed for code** -- careful distinction between easily confused characters (`0/O/o`, `1/l/I`, `` ` ``/`'`/`"`), plus full ASCII coverage and essential Latin Extended glyphs.
 
 ---
@@ -44,8 +44,7 @@ After installing the font on your system, add this to your `settings.json`:
 
 ```json
 {
-  "editor.fontFamily": "'Sergamon', monospace",
-  "editor.fontLigatures": true
+  "editor.fontFamily": "'Sergamon', monospace"
 }
 ```
 
@@ -78,12 +77,12 @@ Here is the glyph file for the digit zero (`U+0030`):
 ........
 ```
 
-Each `.` is an empty pixel and each `X` is a filled pixel. The grid is always 8 columns wide and 16 rows tall. Header comments specify the character name and Unicode codepoint. Ligature glyphs span multiples of 8 columns (e.g., 16 columns for a two-character ligature like `==`).
+Each `.` is an empty pixel and each `X` is a filled pixel. The grid is always 8 columns wide and 16 rows tall. Header comments specify the character name and Unicode codepoint.
 
 The build pipeline:
 1. **Validates** all `.glyph` files for correctness (grid dimensions, valid characters, completeness).
 2. **Converts** pixel grids into vector outlines using opentype.js, merging adjacent pixels into larger rectangles to minimize path count.
-3. **Exports** TTF and WOFF2 font files with proper monospace metrics and OpenType ligature tables.
+3. **Exports** TTF and WOFF2 font files with proper monospace metrics.
 
 ---
 
@@ -103,7 +102,7 @@ The build pipeline:
 
 ## Contributing
 
-Contributions are welcome! Whether you want to refine an existing glyph, add a new character, or fix a ligature, see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on the `.glyph` file format, naming conventions, testing workflow, and pull request process.
+Contributions are welcome! Whether you want to refine an existing glyph or add a new character, see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on the `.glyph` file format, naming conventions, testing workflow, and pull request process.
 
 ---
 

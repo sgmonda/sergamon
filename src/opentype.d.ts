@@ -27,9 +27,6 @@ declare module "opentype.js" {
       ascender: number;
       descender: number;
       glyphs: { length: number; get(index: number): Glyph };
-      substitution: {
-        add(feature: string, rule: any): void;
-      };
       charToGlyphIndex(codepoint: string | number): number;
       toArrayBuffer(): ArrayBuffer;
       download(fileName?: string): void;

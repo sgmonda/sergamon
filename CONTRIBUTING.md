@@ -19,9 +19,15 @@ npm ci
 
 ---
 
+## Design Principle: What You See Is What You Get
+
+Sergamon does **not** support ligatures. Each character is rendered exactly as typed -- no automatic substitutions, no hidden transformations. This is a deliberate design choice: your source code should look exactly as you wrote it.
+
+---
+
 ## How to Add a Glyph
 
-### 1. Create the `.glyph` file
+### Create the `.glyph` file
 
 Each glyph is defined in a plain-text file with an 8x16 pixel grid. Use `.` for empty pixels and `X` for filled pixels.
 
@@ -53,42 +59,12 @@ Header lines start with `#` and must include:
 
 The grid must be exactly **8 columns wide** and **16 rows tall**. Only `.` and `X` characters are allowed in grid rows. Every row must have exactly 8 characters. Files must end with a newline and contain no trailing whitespace.
 
-### 2. Ligatures
-
-Ligature files include a `components` header field listing the glyph names that trigger the ligature. Ligatures span `8 * N` columns wide, where N is the number of component characters, while remaining 16 rows tall.
-
-**Example -- the `=>` ligature:**
-
-```
-# => (ligature)
-# components: equal greater
-
-................
-................
-..............X.
-.............X..
-XXXXXXXX...X....
-XXXXXXXX..X.....
-.............X..
-..............X.
-................
-................
-................
-................
-................
-................
-................
-................
-```
-
 ---
 
 ## File Naming Conventions
 
-- **ASCII and Unicode glyphs**: `U+{CODEPOINT}_{LABEL}.glyph`
+- **Format**: `U+{CODEPOINT}_{LABEL}.glyph`
   - Examples: `U+0041_A.glyph`, `U+00F1_ntilde.glyph`
-- **Ligatures**: `LIG_{component_names}.glyph`
-  - Examples: `LIG_equal_equal.glyph` (for `==`), `LIG_arrow_right.glyph` (for `=>`)
 
 Place files in the appropriate subdirectory:
 
@@ -96,7 +72,6 @@ Place files in the appropriate subdirectory:
 |---|---|
 | ASCII (U+0020 -- U+007E) | `glyphs/ascii/` |
 | Latin Extended (accents, etc.) | `glyphs/latin-ext/` |
-| Programming ligatures | `glyphs/ligatures/` |
 
 ---
 
@@ -110,7 +85,7 @@ Run the validator to check all `.glyph` files for format errors:
 npm run validate
 ```
 
-This checks grid dimensions, valid characters, duplicate codepoints, completeness of the ASCII range, and ligature component references. It exits with a non-zero code and clear error messages on any failure.
+This checks grid dimensions, valid characters, duplicate codepoints, and completeness of the ASCII range. It exits with a non-zero code and clear error messages on any failure.
 
 ### Live preview
 

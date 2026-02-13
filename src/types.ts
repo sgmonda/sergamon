@@ -40,12 +40,10 @@ export interface FontConfig {
 // ── Parsed glyph data ───────────────────────────────────────────────────────
 
 export interface GlyphHeader {
-  /** Human-readable label, e.g. "A" or "=>" */
+  /** Human-readable label, e.g. "A" */
   label: string;
-  /** Unicode codepoint as a number, e.g. 0x0041. Undefined for ligatures. */
+  /** Unicode codepoint as a number, e.g. 0x0041. */
   codepoint: number | undefined;
-  /** For ligatures: ordered list of component glyph names that trigger the substitution. Undefined for normal glyphs. */
-  components: string[] | undefined;
 }
 
 export interface ParsedGlyph {
@@ -54,7 +52,7 @@ export interface ParsedGlyph {
   grid: boolean[][];
   /** Absolute path to the source .glyph file. */
   filePath: string;
-  /** Number of pixel columns (8 for standard glyphs, 8*N for ligatures). */
+  /** Number of pixel columns (always 8). */
   width: number;
   /** Number of pixel rows (always 16). */
   height: number;

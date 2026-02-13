@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Sergamon is a pixel-art monospaced programming font. Glyphs are defined as plain-text `.glyph` files (8x16 pixel grids) that compile into TTF and WOFF2 via a TypeScript pipeline using opentype.js v1.3.4 and wawoff2.
 
+### Design Principle: What You See Is What You Get
+
+Sergamon deliberately does **not** support ligatures. Each character is rendered exactly as typed -- no automatic substitutions, no hidden transformations. When you type `==`, you see two equal signs. When you type `->`, you see a hyphen and a greater-than sign. This transparency is a core design principle: the font faithfully represents the source code without surprises.
+
 ## Commands
 
 ```bash
@@ -29,24 +33,23 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 
 - `src/types.ts` — Shared interfaces (`ParsedGlyph`, `Rectangle`, `FontConfig`)
 - `src/parse-glyph.ts` — Reads `.glyph` files into `ParsedGlyph` (header + boolean[][] grid)
-- `src/validate-glyphs.ts` — CLI validator: grid dimensions, characters, duplicates, ASCII completeness, ligature components
+- `src/validate-glyphs.ts` — CLI validator: grid dimensions, characters, duplicates, ASCII completeness
 - `src/optimize-paths.ts` — Greedy row-merge: adjacent pixels → rectangles (reduces path count)
 - `src/glyph-to-path.ts` — Rectangles → opentype.js Path (coordinate conversion)
-- `src/build-font.ts` — Main orchestrator: parse → optimize → build Font → register ligatures → export TTF → compress WOFF2
+- `src/build-font.ts` — Main orchestrator: parse → optimize → build Font → export TTF → compress WOFF2
 - `src/generate-previews.cjs` — PNG preview generator (must be .cjs, see gotchas)
 - `src/opentype.d.ts` — Custom type declarations for opentype.js and wawoff2
 
 ## Glyph File Format
 
-**Naming:** `U+{CODEPOINT}_{LABEL}.glyph` or `LIG_{component_names}.glyph`
+**Naming:** `U+{CODEPOINT}_{LABEL}.glyph`
 
 ```
 # A (U+0041)
-# components: equal greater   ← ligatures only
 
 ..XXXX..
 .XX..XX.
-[... 16 rows total, 8 cols for normal, 8*N cols for N-component ligatures]
+[... 16 rows total, 8 cols]
 ```
 
 Grid uses `.` (empty) and `X` (filled) only.
@@ -64,8 +67,6 @@ Grid uses `.` (empty) and `X` (filled) only.
 
 **opentype.js v1.3.4 (not v2.x — v2 doesn't exist):**
 - `charToGlyphIndex()` takes a **string** (`String.fromCodePoint(cp)`), not a number
-- `font.substitution.add('liga', lig)` — call once per ligature with `{ sub: [glyphIdx...], by: ligGlyphIndex }`, not an array wrapper
-- Sort ligatures longest-first before registering
 - Glyph array must start with `.notdef` at index 0
 - Don't use `@types/opentype.js` (conflicts); use the custom `src/opentype.d.ts`
 
@@ -73,19 +74,13 @@ Grid uses `.` (empty) and `X` (filled) only.
 - Importing @napi-rs/canvas in ESM causes heap exhaustion regardless of `--max-old-space-size`
 - The preview script must be a `.cjs` file run with `node` (not tsx)
 
-**Tokenizer pattern:**
-- If `RE_WORD_START` includes chars not in `RE_WORD` (e.g., `@`), the tokenizer infinite-loops. Keep both regex sets consistent.
-
 ## Glyph Inventory
 
 - 95 ASCII (U+0020–U+007E) in `glyphs/ascii/`
 - 12 Latin Extended (accented vowels, ñ, ü, ç, ß, ø, å, æ) in `glyphs/latin-ext/`
-- 19 ligatures (==, !=, <=, >=, =>, ->, <-, >>, <<, ||, &&, //, /*, */, ..., ===, !==, <=>, |>) in `glyphs/ligatures/`
 
 ## Adding a Glyph
 
 1. Create the `.glyph` file in the appropriate directory following naming conventions
-2. For ligatures: add `# components: name1 name2` header (names must match existing glyph labels)
-3. Ligature grid width = 8 * number of components
-4. Run `npm run validate` then `npm run dev` to preview
-5. Confusable characters (0/O/o, 1/l/I, quotes) must be visually distinct
+2. Run `npm run validate` then `npm run dev` to preview
+3. Confusable characters (0/O/o, 1/l/I, quotes) must be visually distinct
