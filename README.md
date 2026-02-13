@@ -10,7 +10,6 @@
 
 <br />
 
-[![Release](https://img.shields.io/github/v/release/sgmonda/sergamon?style=flat-square&label=release&color=blue)](https://github.com/sgmonda/sergamon/releases)
 [![License: OFL-1.1](https://img.shields.io/badge/license-OFL--1.1-green?style=flat-square)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://img.shields.io/github/actions/workflow/status/sgmonda/sergamon/build.yml?style=flat-square&label=build)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
 [![Glyphs](https://img.shields.io/badge/glyphs-107-orange?style=flat-square)](https://sgmonda.com/sergamon)
