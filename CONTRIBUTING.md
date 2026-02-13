@@ -131,8 +131,9 @@ The CI pipeline will automatically validate your glyph files on every pull reque
 To maintain visual consistency across the font, follow these pixel-art conventions:
 
 ### Stroke width
-- Use **1-pixel strokes**.
-- Vertical and horizontal strokes should be uniform in thickness.
+- Use **1-pixel or 2-pixels strokes** only.
+- Vertical strokes are 2-pixels width.
+- Horizontal strokes are 1-pixel width.
 
 ### Character proportions
 - Most uppercase letters should span columns 1--7 (0-indexed), leaving column 0 and column 7 as side-bearings when possible.
