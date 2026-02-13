@@ -2,7 +2,7 @@
 
 <br />
 
-<img width="512" height="128" alt="Sergamon" src="https://github.com/user-attachments/assets/f838ac8d-4ab0-4b8f-8a6e-3c2d8425857a" />
+<img width="341" height="85" alt="Sergamon" src="https://github.com/user-attachments/assets/f838ac8d-4ab0-4b8f-8a6e-3c2d8425857a" />
 
 <br />
 
