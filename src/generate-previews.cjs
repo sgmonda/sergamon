@@ -359,8 +359,8 @@ fn main() {
 function renderPreview(language, code, theme) {
   const WIDTH = 1200;
   const HEIGHT = 800;
-  const FONT_SIZE = 14;
-  const LINE_HEIGHT = 22;
+  const FONT_SIZE = 20;
+  const LINE_HEIGHT = 20;
   const GUTTER_WIDTH = 52;
   const HEADER_HEIGHT = 36;
   const PADDING_LEFT = 16;
