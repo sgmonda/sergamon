@@ -39,7 +39,7 @@
 | | |
 |---|---|
 | **Monospaced** | Every glyph occupies the same fixed width, keeping code perfectly aligned. |
-| **Pixel-art aesthetic** | An 8x16 pixel grid gives each character a crisp, retro look that stays sharp at its design size. |
+| **Pixel-art aesthetic** | A 10x16 pixel grid (8x16 character with 1px margin on each side) gives each character a crisp, retro look that stays sharp at its design size. |
 | **What you see is what you get** | No ligatures, no automatic substitutions. `==` is two equal signs, `->` is a hyphen and a greater-than. Your source code looks exactly as you typed it. |
 | **Single weight** | Inspired by classic hardware terminals -- one weight, uniform strokes, no bold or light variants. |
 | **Designed for code** | Careful distinction between confusable characters (`0/O/o`, `1/l/I`, `` ` ``/`'`/`"`), full ASCII coverage, and essential Latin Extended glyphs. |
@@ -211,27 +211,27 @@ You can also load it directly from the project site:
 
 ## How It Works
 
-Sergamon treats glyph definitions as source code. Each character lives in a plain-text `.glyph` file -- an 8x16 pixel grid that a TypeScript pipeline compiles into vector font files.
+Sergamon treats glyph definitions as source code. Each character lives in a plain-text `.glyph` file -- a 10x16 pixel grid (8x16 character with 1-column margin on each side) that a TypeScript pipeline compiles into vector font files.
 
 ```
 # zero (U+0030)
 
-........   . = empty pixel
-........   X = filled pixel
-........   8 columns wide
-.XXXXX..  16 rows tall
-XX...XX.
-XX...XX.
-XX..XXX.
-XX.XXXX.
-XXXX.XX.
-XXX..XX.
-XX...XX.
-XX...XX.
-.XXXXX..
-........
-........
-........
+..........   . = empty pixel
+..........   X = filled pixel
+..........   10 columns wide
+..XXXXX...  16 rows tall
+.XX...XX..
+.XX...XX..
+.XX..XXX..
+.XX.XXXX..
+.XXXX.XX..
+.XXX..XX..
+.XX...XX..
+.XX...XX..
+..XXXXX...
+..........
+..........
+..........
 ```
 
 **Build pipeline:**

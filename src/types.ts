@@ -12,7 +12,7 @@ export interface FontConfigFont {
 }
 
 export interface FontConfigGrid {
-  /** Standard glyph width in pixels (8). */
+  /** Standard glyph width in pixels (10). */
   width: number;
   /** Standard glyph height in pixels (16). */
   height: number;
@@ -52,7 +52,7 @@ export interface ParsedGlyph {
   grid: boolean[][];
   /** Absolute path to the source .glyph file. */
   filePath: string;
-  /** Number of pixel columns (always 8). */
+  /** Number of pixel columns (always 10). */
   width: number;
   /** Number of pixel rows (always 16). */
   height: number;

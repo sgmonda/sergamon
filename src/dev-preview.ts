@@ -11,13 +11,14 @@
 
 import { watch } from 'chokidar';
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
+import type { AddressInfo } from 'node:net';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, join, extname } from 'node:path';
 import { execSync } from 'node:child_process';
 
 // ── Configuration ────────────────────────────────────────────────────────────
 
-const PORT = 3000;
+const PREFERRED_PORT = 3000;
 const ROOT = resolve(import.meta.dirname, '..');
 const SITE_DIR = join(ROOT, 'site');
 const GLYPHS_DIR = join(ROOT, 'glyphs');
@@ -207,8 +208,21 @@ function main(): void {
     });
   });
 
-  server.listen(PORT, () => {
-    console.log(`[dev] Server running at http://localhost:${PORT}`);
+  let tryPort = PREFERRED_PORT;
+
+  server.on('error', (err: NodeJS.ErrnoException) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`[dev] Port ${tryPort} in use, trying ${tryPort + 1}...`);
+      tryPort++;
+      server.listen(tryPort);
+    } else {
+      throw err;
+    }
+  });
+
+  server.listen(tryPort, () => {
+    const { port } = server.address() as AddressInfo;
+    console.log(`[dev] Server running at http://localhost:${port}`);
     console.log('[dev] Press Ctrl+C to stop.\n');
   });
 

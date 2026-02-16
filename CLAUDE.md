@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Sergamon is a pixel-art monospaced programming font. Glyphs are defined as plain-text `.glyph` files (8x16 pixel grids) that compile into TTF and WOFF2 via a TypeScript pipeline using opentype.js v1.3.4 and wawoff2.
+Sergamon is a pixel-art monospaced programming font. Glyphs are defined as plain-text `.glyph` files (10x16 pixel grids -- 8x16 character pixels with 1-column margin on each side) that compile into TTF and WOFF2 via a TypeScript pipeline using opentype.js v1.3.4 and wawoff2.
 
 ### Design Principle: What You See Is What You Get
 
@@ -51,17 +51,17 @@ npm run site              # Build + copy WOFF2 to site/fonts/
 ```
 # A (U+0041)
 
-..XXXX..
-.XX..XX.
-[... 16 rows total, 8 cols]
+...XXX....
+..XX.XX...
+[... 16 rows total, 10 cols]
 ```
 
 Grid uses `.` (empty) and `X` (filled) only.
 
 ## Font Metrics & Coordinate System
 
-- Grid: 8 wide x 16 tall, baseline at row 13
-- pixelSize=120, unitsPerEm=1920, ascender=1560, descender=-360, advanceWidth=960
+- Grid: 10 wide x 16 tall, baseline at row 13
+- pixelSize=120, unitsPerEm=1920, ascender=1560, descender=-360, advanceWidth=1200
 - Pixel grid: row 0 = top, row increases downward
 - Font coords: y=0 = baseline, y increases upward
 - Conversion: `fontY = (13 - row) * 120`, `fontX = col * 120`

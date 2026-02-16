@@ -2,7 +2,7 @@
 
 ## Overview
 
-Open-source monospaced pixel font (8×16 grid) designed for programming. The project treats glyph definitions as source code: plain-text grid files that a TypeScript build pipeline compiles into distributable font files (TTF, WOFF2) and preview assets. Includes a GitHub Pages site where users can test the font live with syntax-highlighted code.
+Open-source monospaced pixel font (10×16 grid) designed for programming. The project treats glyph definitions as source code: plain-text grid files that a TypeScript build pipeline compiles into distributable font files (TTF, WOFF2) and preview assets. Includes a GitHub Pages site where users can test the font live with syntax-highlighted code.
 
 ---
 
@@ -57,33 +57,33 @@ Each file represents one glyph. Naming convention:
 ```
 # A (U+0041)
 
-..XXXX..
-.X....X.
-X......X
-X......X
-X......X
-X......X
-XXXXXXXX
-X......X
-X......X
-X......X
-X......X
-X......X
-X......X
-........
-........
-........
+...XXX....
+..XX.XX...
+.XX...XX..
+.XX...XX..
+.XX...XX..
+.XXXXXXX..
+.XX...XX..
+.XX...XX..
+.XX...XX..
+.XX...XX..
+..........
+..........
+..........
+..........
+..........
+..........
 ```
 
 Rules:
 
 - **Header comments** start with `#`. Required fields:
   - Line 1: human-readable label and codepoint
-- **Grid dimensions**: all glyphs are **8 columns × 16 rows**. No width/height headers needed — the build validates this.
+- **Grid dimensions**: all glyphs are **10 columns × 16 rows**. No width/height headers needed — the build validates this.
 - **Grid characters**:
   - `.` = empty pixel
   - `X` = filled pixel
-- All rows must have exactly 8 characters.
+- All rows must have exactly 10 characters.
 - No trailing whitespace. Files end with a newline.
 - The top row is the top of the em square; the bottom row is the lowest descender pixel.
 
@@ -103,7 +103,7 @@ Sergamon ships a single weight. There is no bold, light, or any other variant. E
 
 Validates all `.glyph` files before building:
 
-- All grids are exactly 8 columns × 16 rows
+- All grids are exactly 10 columns × 16 rows
 - No invalid characters (only `.`, `X`, `#`, spaces in comments)
 - All codepoints are valid Unicode
 - No duplicate codepoints
@@ -143,7 +143,7 @@ Pipeline:
     "url": ""
   },
   "grid": {
-    "width": 8,
+    "width": 10,
     "height": 16,
     "baselineRow": 13
   },
@@ -286,7 +286,7 @@ The README must include:
 
 Must cover:
 
-1. **How to add a glyph**: create a `.glyph` file following the format spec (8×16 grid), run validation
+1. **How to add a glyph**: create a `.glyph` file following the format spec (10×16 grid), run validation
 2. **How to test changes**: `npm run dev` for live preview
 3. **Naming conventions** for files
 4. **Pull request process**: one glyph per PR is fine, or batch additions
