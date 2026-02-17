@@ -13,7 +13,7 @@
  *
  * Usage:
  *   import { glyphToPath } from './glyph-to-path.js';
- *   const path = glyphToPath(rects, 120, 13);
+ *   const path = glyphToPath(rects, 120, 15);
  */
 
 import opentype from "opentype.js";
@@ -25,7 +25,7 @@ import type { Rectangle } from "./types.js";
  *
  * @param rects - Merged rectangles from optimizeGrid().
  * @param pixelSize - Size of one pixel in font units (e.g. 120).
- * @param baselineRow - Row index of the baseline (0-based from top, e.g. 13).
+ * @param baselineRow - Row index of the baseline (0-based from top, e.g. 15).
  * @returns An opentype.Path containing all rectangle sub-paths.
  */
 export function glyphToPath(

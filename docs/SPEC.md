@@ -2,7 +2,7 @@
 
 ## Overview
 
-Open-source monospaced pixel font (10×16 grid) designed for programming. The project treats glyph definitions as source code: plain-text grid files that a TypeScript build pipeline compiles into distributable font files (TTF, WOFF2) and preview assets. Includes a GitHub Pages site where users can test the font live with syntax-highlighted code.
+Open-source monospaced pixel font (10×18 grid) designed for programming. The project treats glyph definitions as source code: plain-text grid files that a TypeScript build pipeline compiles into distributable font files (TTF, WOFF2) and preview assets. Includes a GitHub Pages site where users can test the font live with syntax-highlighted code.
 
 ---
 
@@ -57,6 +57,11 @@ Each file represents one glyph. Naming convention:
 ```
 # A (U+0041)
 
+..........
+..........
+..........
+..........
+..........
 ...XXX....
 ..XX.XX...
 .XX...XX..
@@ -70,16 +75,13 @@ Each file represents one glyph. Naming convention:
 ..........
 ..........
 ..........
-..........
-..........
-..........
 ```
 
 Rules:
 
 - **Header comments** start with `#`. Required fields:
   - Line 1: human-readable label and codepoint
-- **Grid dimensions**: all glyphs are **10 columns × 16 rows**. No width/height headers needed — the build validates this.
+- **Grid dimensions**: all glyphs are **10 columns × 18 rows**. No width/height headers needed — the build validates this.
 - **Grid characters**:
   - `.` = empty pixel
   - `X` = filled pixel
@@ -103,7 +105,7 @@ Sergamon ships a single weight. There is no bold, light, or any other variant. E
 
 Validates all `.glyph` files before building:
 
-- All grids are exactly 10 columns × 16 rows
+- All grids are exactly 10 columns × 18 rows
 - No invalid characters (only `.`, `X`, `#`, spaces in comments)
 - All codepoints are valid Unicode
 - No duplicate codepoints
@@ -121,7 +123,7 @@ Pipeline:
 2. For each glyph, convert the pixel grid into vector outlines:
    - Each `X` becomes a square path at `(col * pixel_size, row * pixel_size)` of size `pixel_size`
    - **Merge adjacent filled pixels** into larger rectangles (greedy row-merge algorithm) to reduce path count and file size
-   - Coordinate system: y=0 at baseline. Baseline is at row 13 (counting from 0), giving 13 rows ascender + 3 rows descender
+   - Coordinate system: y=0 at baseline. Baseline is at row 15 (counting from 0), giving 15 rows ascender + 3 rows descender
 3. Build the font using opentype.js:
    - Set font metadata (name, version, license, description)
    - Set monospace metrics (all glyphs same advance width)
@@ -144,19 +146,19 @@ Pipeline:
   },
   "grid": {
     "width": 10,
-    "height": 16,
-    "baselineRow": 13
+    "height": 18,
+    "baselineRow": 15
   },
   "metrics": {
     "pixelSize": 120,
-    "ascenderPx": 13,
+    "ascenderPx": 15,
     "descenderPx": 3,
     "lineGapPx": 1
   },
 }
 ```
 
-`baselineRow: 13` means rows 0–12 are above the baseline (ascender) and rows 13–15 are below (descender).
+`baselineRow: 15` means rows 0–14 are above the baseline (ascender) and rows 15–17 are below (descender).
 
 ### 3.4 `src/generate-previews.ts`
 

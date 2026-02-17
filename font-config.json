@@ -7,12 +7,12 @@
   },
   "grid": {
     "width": 10,
-    "height": 16,
-    "baselineRow": 13
+    "height": 18,
+    "baselineRow": 15
   },
   "metrics": {
     "pixelSize": 120,
-    "ascenderPx": 13,
+    "ascenderPx": 15,
     "descenderPx": 3,
     "lineGapPx": 1
   }

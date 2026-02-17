@@ -14,7 +14,7 @@ export interface FontConfigFont {
 export interface FontConfigGrid {
   /** Standard glyph width in pixels (10). */
   width: number;
-  /** Standard glyph height in pixels (16). */
+  /** Standard glyph height in pixels (18). */
   height: number;
   /** Row index of the baseline (0-based from top). Rows above are ascender, rows at and below are descender. */
   baselineRow: number;
@@ -54,7 +54,7 @@ export interface ParsedGlyph {
   filePath: string;
   /** Number of pixel columns (always 10). */
   width: number;
-  /** Number of pixel rows (always 16). */
+  /** Number of pixel rows (always 18). */
   height: number;
 }
 

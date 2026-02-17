@@ -33,13 +33,15 @@ Sergamon has one weight only -- no bold, no light. Inspired by classic hardware 
 
 ### Create the `.glyph` file
 
-Each glyph is defined in a plain-text file with a 10x16 pixel grid (8x16 character with 1-column margin on each side). Use `.` for empty pixels and `X` for filled pixels.
+Each glyph is defined in a plain-text file with a 10x18 pixel grid (8x18 character with 1-column margin on each side). Use `.` for empty pixels and `X` for filled pixels.
 
 **Example -- the letter A (`U+0041`):**
 
 ```
 # A (U+0041)
 
+..........
+..........
 ..........
 ..........
 ..........
@@ -61,7 +63,7 @@ Each glyph is defined in a plain-text file with a 10x16 pixel grid (8x16 charact
 Header lines start with `#` and must include:
 - **Line 1**: a human-readable label and Unicode codepoint.
 
-The grid must be exactly **10 columns wide** and **16 rows tall**. Only `.` and `X` characters are allowed in grid rows. Every row must have exactly 10 characters. Files must end with a newline and contain no trailing whitespace.
+The grid must be exactly **10 columns wide** and **18 rows tall**. Only `.` and `X` characters are allowed in grid rows. Every row must have exactly 10 characters. Files must end with a newline and contain no trailing whitespace.
 
 ---
 
@@ -137,7 +139,7 @@ To maintain visual consistency across the font, follow these pixel-art conventio
 
 ### Character proportions
 - Most uppercase letters should span columns 2--8 (0-indexed), leaving columns 0--1 and column 9 as side-bearings when possible.
-- Lowercase letters typically occupy the middle rows (approximately rows 3--12), with ascenders reaching row 1--2 and descenders extending to rows 13--15.
+- Lowercase letters typically occupy the middle rows (approximately rows 5--14), with ascenders reaching row 3--4 and descenders extending to rows 15--17.
 - Digits should be the same height as uppercase letters.
 
 ### Curvature
@@ -151,7 +153,7 @@ To maintain visual consistency across the font, follow these pixel-art conventio
 
 ### Spacing and alignment
 - All glyphs must respect the fixed 10-column width. Do not use columns outside the grid.
-- Baseline is at row 13 (0-indexed). Characters should sit on the baseline unless they have descenders.
+- Baseline is at row 15 (0-indexed). Characters should sit on the baseline unless they have descenders.
 - Maintain consistent vertical alignment for similar character classes (all digits at the same height, all uppercase at the same height, etc.).
 
 ### General principles

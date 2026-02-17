@@ -71,7 +71,7 @@ function validateGlyphs(
   for (const glyph of glyphs) {
     const rel = relativeToProject(glyph.filePath);
 
-    // ── 1. Grid height must be exactly 16 rows ──────────────────────────
+    // ── 1. Grid height must be exactly 18 rows ──────────────────────────
     if (glyph.height !== stdHeight) {
       errors.push({
         file: rel,
