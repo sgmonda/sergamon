@@ -65,25 +65,48 @@ function buildGlyphs(
   return results;
 }
 
-// ── Binary patch: post.isFixedPitch ─────────────────────────────────────────
+// ── Binary patches ──────────────────────────────────────────────────────────
 
 /**
- * Find the 'post' table in a TTF buffer and set isFixedPitch = 1.
+ * Locate a table in the TTF table directory by its 4-char tag.
  * TTF table directory starts at offset 12; each record is 16 bytes:
  *   tag(4) + checksum(4) + offset(4) + length(4).
+ * Returns the table offset, or -1 if not found.
  */
-function patchPostIsFixedPitch(buf: Buffer): void {
+function findTableOffset(buf: Buffer, tableTag: string): number {
   const numTables = buf.readUInt16BE(4);
   for (let i = 0; i < numTables; i++) {
     const rec = 12 + i * 16;
     const tag = buf.toString("ascii", rec, rec + 4);
-    if (tag === "post") {
-      const tableOffset = buf.readUInt32BE(rec + 8);
-      // isFixedPitch is a ULONG at byte offset 12 within the post table.
-      buf.writeUInt32BE(1, tableOffset + 12);
-      return;
+    if (tag === tableTag) {
+      return buf.readUInt32BE(rec + 8);
     }
   }
+  return -1;
+}
+
+/**
+ * Set post.isFixedPitch = 1.
+ * opentype.js hardcodes isFixedPitch=0; we patch at byte offset 12
+ * within the post table (after version, italicAngle, underline fields).
+ */
+function patchPostIsFixedPitch(buf: Buffer): void {
+  const off = findTableOffset(buf, "post");
+  if (off !== -1) buf.writeUInt32BE(1, off + 12);
+}
+
+/**
+ * Set head.fontRevision to match the package version.
+ * fontRevision is a Fixed (16.16) at byte offset 4 within the head table.
+ * opentype.js defaults it to 1.0; we patch it to the actual version
+ * so macOS Font Book detects version changes correctly.
+ */
+function patchHeadFontRevision(buf: Buffer, version: string): void {
+  const off = findTableOffset(buf, "head");
+  if (off === -1) return;
+  const num = parseFloat(version); // "1.11.0" → 1.11
+  const fixed = Math.round(num * 65536); // 16.16 fixed-point
+  buf.writeUInt32BE(fixed, off + 4);
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────
@@ -212,11 +235,9 @@ async function main(): Promise<void> {
   const arrayBuffer = font.toArrayBuffer();
   const ttfBuffer = Buffer.from(arrayBuffer);
 
-  // Patch post.isFixedPitch in the TTF buffer.
-  // opentype.js hardcodes isFixedPitch=0 in makePostTable() (no args).
-  // The post table layout: version(4) + italicAngle(4) + underlinePosition(2)
-  // + underlineThickness(2) = isFixedPitch at offset 12 (ULONG, 4 bytes).
+  // Patch binary fields that opentype.js doesn't expose via its API.
   patchPostIsFixedPitch(ttfBuffer);
+  patchHeadFontRevision(ttfBuffer, version);
 
   await fs.writeFile(ttfPath, ttfBuffer);
   console.log(`    Wrote ${ttfPath}`);
