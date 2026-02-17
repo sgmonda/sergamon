@@ -73,6 +73,9 @@ async function main(): Promise<void> {
   const configRaw = await fs.readFile(CONFIG_PATH, "utf-8");
   const config: FontConfig = JSON.parse(configRaw);
 
+  const pkgRaw = await fs.readFile(path.join(PROJECT_ROOT, "package.json"), "utf-8");
+  const pkgVersion: string = JSON.parse(pkgRaw).version;
+
   const { pixelSize, ascenderPx, descenderPx } = config.metrics;
   const { width: stdWidth, height: stdHeight, baselineRow } = config.grid;
 
@@ -118,6 +121,10 @@ async function main(): Promise<void> {
     glyphs: glyphArray,
   });
 
+  // Set font version from package.json.
+  font.names.version = { en: `Version ${pkgVersion}` };
+
+  console.log(`    Version  : ${pkgVersion}`);
   console.log(`    ${glyphArray.length} glyphs (including .notdef).`);
 
   // 6. Export TTF.
