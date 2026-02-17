@@ -65,6 +65,27 @@ function buildGlyphs(
   return results;
 }
 
+// ── Binary patch: post.isFixedPitch ─────────────────────────────────────────
+
+/**
+ * Find the 'post' table in a TTF buffer and set isFixedPitch = 1.
+ * TTF table directory starts at offset 12; each record is 16 bytes:
+ *   tag(4) + checksum(4) + offset(4) + length(4).
+ */
+function patchPostIsFixedPitch(buf: Buffer): void {
+  const numTables = buf.readUInt16BE(4);
+  for (let i = 0; i < numTables; i++) {
+    const rec = 12 + i * 16;
+    const tag = buf.toString("ascii", rec, rec + 4);
+    if (tag === "post") {
+      const tableOffset = buf.readUInt32BE(rec + 8);
+      // isFixedPitch is a ULONG at byte offset 12 within the post table.
+      buf.writeUInt32BE(1, tableOffset + 12);
+      return;
+    }
+  }
+}
+
 // ── Main ────────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
@@ -115,17 +136,67 @@ async function main(): Promise<void> {
   const glyphArray = [notdefGlyph, ...builtGlyphs];
 
   // 5. Build the opentype.Font.
+  const familyName = config.font.familyName;
+  const styleName = "Regular";
+
   const font = new opentype.Font({
-    familyName: config.font.familyName,
-    styleName: "Regular",
+    familyName,
+    styleName,
     unitsPerEm: unitsPerEm,
     ascender: ascender,
     descender: descender,
     glyphs: glyphArray,
   });
 
-  // Set font version from package.json.
-  font.names.version = { en: `Version ${version}` };
+  // ── Name table (IDs 0–14, 16–17, 19) ──────────────────────────────────
+  const authorName: string = typeof pkg.author === "string" ? pkg.author : pkg.author?.name ?? familyName;
+  const authorUrl: string = typeof pkg.author === "string" ? "" : pkg.author?.url ?? "";
+  const description: string = pkg.description ?? "";
+  const licenseSPDX: string = pkg.license ?? "";
+  const licenseText = licenseSPDX === "OFL-1.1"
+    ? "This Font Software is licensed under the SIL Open Font License, Version 1.1."
+    : licenseSPDX;
+  const year = new Date().getFullYear();
+
+  const n = font.names;
+  n.copyright       = { en: `Copyright (c) ${year}, ${authorName} (${authorUrl})` };
+  // fontFamily (ID 1) and fontSubfamily (ID 2) are set by the constructor
+  n.uniqueID        = { en: `${version};${config.font.vendorID};${familyName}-${styleName}` };
+  n.fullName        = { en: `${familyName} ${styleName}` };
+  n.version         = { en: `Version ${version}` };
+  n.postScriptName  = { en: `${familyName}-${styleName}` };
+  n.manufacturer    = { en: authorName };
+  n.designer        = { en: authorName };
+  n.description     = { en: description };
+  n.manufacturerURL = { en: authorUrl };
+  n.designerURL     = { en: authorUrl };
+  n.license         = { en: licenseText };
+  n.licenseURL      = { en: config.font.licenseURL };
+  n.preferredFamily = { en: familyName };
+  n.preferredSubfamily = { en: styleName };
+  n.sampleText      = { en: config.font.sampleText };
+
+  // ── OS/2 table ─────────────────────────────────────────────────────────
+  // opentype.js merges font.tables.os2 into the OS/2 make() options via
+  // Object.assign. Panose bytes are individual fields, not an array.
+  const os2 = (font as any).tables.os2;
+  if (os2) {
+    os2.achVendID       = config.font.vendorID;        // 4-char vendor ID
+    os2.usWeightClass   = 400;                         // Regular
+    os2.usWidthClass    = 5;                           // Medium (normal)
+    os2.fsType          = 0x0000;                      // Installable embedding
+    // PANOSE classification: Latin Text / No Fit / Regular / Monospaced
+    os2.bFamilyType     = 2;                           // Latin Text
+    os2.bSerifStyle     = 1;                           // No Fit
+    os2.bWeight         = 5;                           // Book (Regular)
+    os2.bProportion     = 9;                           // Monospaced
+    os2.bContrast       = 0;                           // Any
+    os2.bStrokeVariation = 0;                          // Any
+    os2.bArmStyle       = 0;                           // Any
+    os2.bLetterform     = 0;                           // Any
+    os2.bMidline        = 0;                           // Any
+    os2.bXHeight        = 0;                           // Any
+  }
 
   console.log(`    Version: ${version}`);
   console.log(`    ${glyphArray.length} glyphs (including .notdef).`);
@@ -140,6 +211,13 @@ async function main(): Promise<void> {
 
   const arrayBuffer = font.toArrayBuffer();
   const ttfBuffer = Buffer.from(arrayBuffer);
+
+  // Patch post.isFixedPitch in the TTF buffer.
+  // opentype.js hardcodes isFixedPitch=0 in makePostTable() (no args).
+  // The post table layout: version(4) + italicAngle(4) + underlinePosition(2)
+  // + underlineThickness(2) = isFixedPitch at offset 12 (ULONG, 4 bytes).
+  patchPostIsFixedPitch(ttfBuffer);
+
   await fs.writeFile(ttfPath, ttfBuffer);
   console.log(`    Wrote ${ttfPath}`);
 

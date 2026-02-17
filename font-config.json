@@ -1,9 +1,9 @@
 {
   "font": {
     "familyName": "Sergamon",
-    "description": "Monospaced font for nostalgic hackers",
-    "designer": "Sergio García Mondaray",
-    "url": "https://sgmonda.com/sergamon/"
+    "vendorID": "SGMO",
+    "licenseURL": "https://openfontlicense.org",
+    "sampleText": "The quick brown fox jumps over the lazy dog. 0O 1lI {}[]<> => != ++"
   },
   "grid": {
     "width": 8,

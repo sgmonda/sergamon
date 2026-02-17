@@ -6,9 +6,9 @@
 
 export interface FontConfigFont {
   familyName: string;
-  description: string;
-  designer: string;
-  url: string;
+  vendorID: string;
+  licenseURL: string;
+  sampleText: string;
 }
 
 export interface FontConfigGrid {
