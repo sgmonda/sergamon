@@ -1,6 +1,6 @@
 {
   "name": "sergamon",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "type": "module",
   "description": "Monospaced font for nostalgic hackers",
   "scripts": {
@@ -20,6 +20,11 @@
     "tsx": "^4.0.0",
     "typescript": "^5.4.0",
     "wawoff2": "^2.0.1"
+  },
+  "author": {
+    "name": "Sergio García Mondaray",
+    "url": "https://sgmonda.com",
+    "email": "sgmonda@gmail.com"
   },
   "license": "OFL-1.1",
   "engines": {

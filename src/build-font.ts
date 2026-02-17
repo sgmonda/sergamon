@@ -25,6 +25,7 @@ const PROJECT_ROOT = path.resolve(
   "..",
 );
 
+const PKG_PATH = path.join(PROJECT_ROOT, "package.json");
 const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");
 
 const GLYPH_DIRS = [
@@ -70,8 +71,13 @@ async function main(): Promise<void> {
   console.log("Building Sergamon font...\n");
 
   // 1. Read configuration.
-  const configRaw = await fs.readFile(CONFIG_PATH, "utf-8");
+  const [configRaw, pkgRaw] = await Promise.all([
+    fs.readFile(CONFIG_PATH, "utf-8"),
+    fs.readFile(PKG_PATH, "utf-8"),
+  ]);
   const config: FontConfig = JSON.parse(configRaw);
+  const pkg = JSON.parse(pkgRaw);
+  const version: string = pkg.version;
 
   const { pixelSize, ascenderPx, descenderPx } = config.metrics;
   const { width: stdWidth, height: stdHeight, baselineRow } = config.grid;
@@ -118,6 +124,10 @@ async function main(): Promise<void> {
     glyphs: glyphArray,
   });
 
+  // Set font version from package.json.
+  font.names.version = { en: `Version ${version}` };
+
+  console.log(`    Version: ${version}`);
   console.log(`    ${glyphArray.length} glyphs (including .notdef).`);
 
   // 6. Export TTF.
