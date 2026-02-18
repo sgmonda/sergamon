@@ -111,14 +111,29 @@ npm run all
 
 ---
 
+## Register the Glyph on the Website
+
+ASCII glyphs (U+0020 -- U+007E) are automatically listed on the website. For **non-ASCII glyphs** (Latin Extended, etc.) you must manually add the codepoint to the character grid in `site/index.html`.
+
+Open `site/index.html` and find the `populateLatinExt()` function. Inside it there is a `chars` array -- add a new entry with the codepoint and a human-readable label:
+
+```js
+[0x00bf, "inverted question"],
+```
+
+Run `npm run build` (or `npm run dev`) to regenerate the font and verify the new character appears in the grid.
+
+---
+
 ## Pull Request Process
 
 1. **Fork** the repository and create a feature branch from `main`.
 2. **Add or modify** glyph files following the format and naming conventions above.
-3. **Run `npm run validate`** to ensure there are no errors.
-4. **Run `npm run dev`** to visually inspect your changes.
-5. **Commit** with a clear message describing what was added or changed (e.g., "Add glyph for U+00E9 eacute" or "Fix alignment of digit 8").
-6. **Open a pull request** against `main`.
+3. **Register non-ASCII glyphs** on the website (see section above).
+4. **Run `npm run validate`** to ensure there are no errors.
+5. **Run `npm run dev`** to visually inspect your changes.
+6. **Commit** with a clear message describing what was added or changed (e.g., "Add glyph for U+00E9 eacute" or "Fix alignment of digit 8").
+7. **Open a pull request** against `main`.
 
 Both single-glyph PRs and batch additions are welcome. If you are adding a batch, please group related glyphs (e.g., all Latin Extended vowels) in a single PR for easier review.
 

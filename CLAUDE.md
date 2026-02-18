@@ -86,5 +86,7 @@ Grid uses `.` (empty) and `X` (filled) only.
 ## Adding a Glyph
 
 1. Create the `.glyph` file in the appropriate directory following naming conventions
-2. Run `npm run validate` then `npm run dev` to preview
-3. Confusable characters (0/O/o, 1/l/I, quotes) must be visually distinct
+2. Run `npm run validate` then `npm run build` to compile the font
+3. For non-ASCII glyphs, add the codepoint to the `populateLatinExt()` array in `site/index.html` (format: `[0x00XX, "label"]`)
+4. Run `npm run dev` to preview
+5. Confusable characters (0/O/o, 1/l/I, quotes) must be visually distinct
