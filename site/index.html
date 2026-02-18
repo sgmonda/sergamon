@@ -1840,6 +1840,7 @@ int main(void) {
                     editorTextarea.style.fontSize = size;
                     $("#editorHighlight").style.fontSize = size;
                     lineNumbers.style.fontSize = size;
+                    localStorage.setItem("sergamon-font-size", fontSizeSlider.value);
                     updateHighlight();
                 });
 
@@ -2116,6 +2117,16 @@ int main(void) {
                 });
 
                 // ── Initialize ─────────────────────────────────────────────────
+
+                const savedSize = localStorage.getItem("sergamon-font-size");
+                if (savedSize) {
+                    fontSizeSlider.value = savedSize;
+                    const sizePx = savedSize + "px";
+                    fontSizeValue.textContent = sizePx;
+                    editorTextarea.style.fontSize = sizePx;
+                    $("#editorHighlight").style.fontSize = sizePx;
+                    lineNumbers.style.fontSize = sizePx;
+                }
 
                 const savedLang = localStorage.getItem("sergamon-selected-lang") || "python";
                 const savedTab = document.querySelector(`.lang-tab[data-lang="${savedLang}"]`);
