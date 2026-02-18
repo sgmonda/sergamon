@@ -6,7 +6,7 @@
 
 <br />
 
-**A pixel-art monospaced font for nostalgic hackers**
+**Monospaced font for nostalgic hackers**
 
 <br />
 
