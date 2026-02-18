@@ -223,7 +223,7 @@ The site is dark-themed by default (with a light/dark toggle) and has a clean, d
   - Distinguishability of `0/O/o`, `1/l/I`, backtick/quote
 - Users can also **type their own code** in the editor area
 - **Font size slider** (12px–24px, default 16px)
-- **Line height slider** (1.0–2.0, default 1.5)
+- **Line height slider** (1.0–2.0, default 1.0)
 - **Theme toggle**: light editor / dark editor (separate from site theme)
 
 #### Section 2: Character Grid

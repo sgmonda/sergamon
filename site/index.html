@@ -428,7 +428,7 @@
                 -moz-tab-size: 4;
                 font-family: var(--font-mono);
                 font-size: 1rem;
-                line-height: 1.2;
+                line-height: 1;
             }
 
             .editor-textarea {
@@ -487,7 +487,7 @@
                 border-right: 1px solid var(--border);
                 background: var(--bg-secondary);
                 font-size: 1rem;
-                line-height: 1.2;
+                line-height: 1;
             }
 
             .editor-wrapper.light-editor .editor-line-numbers {
@@ -498,6 +498,16 @@
 
             .editor-wrapper.light-editor .editor-textarea {
                 caret-color: #1f2328;
+            }
+
+            .editor-wrapper.light-editor {
+                border-color: #d0d7de;
+            }
+
+            .editor-wrapper.light-editor .editor-highlight,
+            .editor-wrapper.light-editor .editor-highlight code,
+            .editor-wrapper.light-editor .editor-highlight pre {
+                color: #383a42;
             }
 
             /* ================================================================
@@ -981,11 +991,11 @@
                                 id="lineHeightSlider"
                                 min="1.0"
                                 max="2.0"
-                                value="1.2"
+                                value="1.0"
                                 step="0.1"
                             />
                             <span class="slider-value" id="lineHeightValue"
-                                >1.2</span
+                                >1.0</span
                             >
                         </div>
                         <button
@@ -1134,6 +1144,9 @@
                     </button>
                     <button class="install-tab" data-tab="intellij">
                         IntelliJ
+                    </button>
+                    <button class="install-tab" data-tab="zed">
+                        Zed
                     </button>
                     <button class="install-tab" data-tab="terminal">
                         Terminal
@@ -1322,7 +1335,11 @@ fc-cache -fv</pre
 {
   "editor.fontFamily": "'Sergamon', 'Courier New', monospace",
   "editor.fontSize": 16,
-  "editor.lineHeight": 1.5
+  "editor.lineHeight": 1,
+  "editor.fontLigatures": false,
+  "editor.fontWeight": "normal",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontWeightBold": "normal"
 }</pre
                                 >
                                 <button
@@ -1376,9 +1393,84 @@ fc-cache -fv</pre
                             </p>
                             <div class="code-block">
                                 <pre>
-Font:        Sergamon
-Size:        16
-Line height: 1.5</pre
+Font:              Sergamon
+Size:              16
+Line height:       1
+Enable ligatures:  unchecked</pre
+                                >
+                                <button
+                                    class="copy-btn"
+                                    aria-label="Copy to clipboard"
+                                    title="Copy"
+                                >
+                                    <svg
+                                        class="icon"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <rect
+                                            x="9"
+                                            y="9"
+                                            width="13"
+                                            height="13"
+                                            rx="2"
+                                            ry="2"
+                                        />
+                                        <path
+                                            d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="install-step">
+                            <h4>Step 3: Disable anti-aliasing</h4>
+                            <p>
+                                Go to
+                                <strong
+                                    >Settings &rarr; Appearance &amp;
+                                    Behavior &rarr; Appearance</strong
+                                >
+                                and set both <strong>Antialiasing</strong>
+                                dropdowns (IDE and Editor) to
+                                <strong>No antialiasing</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Zed -->
+                    <div class="install-content" data-tab="zed">
+                        <div class="install-step">
+                            <h4>Step 1: Install the font on your system</h4>
+                            <p>
+                                Follow the instructions for your OS above, then
+                                restart Zed.
+                            </p>
+                        </div>
+                        <div class="install-step">
+                            <h4>Step 2: Update settings.json</h4>
+                            <p>
+                                Open settings with
+                                <strong>Zed &rarr; Settings &rarr; Open Settings</strong>
+                                (or <code>Cmd+,</code>) and add:
+                            </p>
+                            <div class="code-block">
+                                <pre>
+{
+  "buffer_font_family": "Sergamon",
+  "buffer_font_size": 16,
+  "buffer_line_height": {
+    "custom": 1.0
+  },
+  "buffer_font_features": {
+    "liga": false,
+    "calt": false
+  }
+}</pre
                                 >
                                 <button
                                     class="copy-btn"
@@ -1424,7 +1516,14 @@ Line height: 1.5</pre
                             <h4>iTerm2</h4>
                             <p>
                                 Preferences &rarr; Profiles &rarr; Text &rarr;
-                                Font &rarr; Select "Sergamon".
+                                Font &rarr; Select "Sergamon". Then uncheck
+                                <strong
+                                    >"Draw bold text in bold font"</strong
+                                >
+                                and
+                                <strong
+                                    >"Draw bold text in bright colors"</strong
+                                >.
                             </p>
                         </div>
                         <div class="install-step">
@@ -1437,7 +1536,8 @@ Line height: 1.5</pre
       "font": {
         "face": "Sergamon",
         "size": 16
-      }
+      },
+      "intenseTextStyle": "none"
     }
   }
 }</pre
@@ -1476,8 +1576,8 @@ Line height: 1.5</pre
                             <div class="code-block">
                                 <pre>
 [font]
-[font]
-normal = { family = "Sergamon" }
+normal = { family = "Sergamon", style = "Regular" }
+bold = { family = "Sergamon", style = "Regular" }
 size = 16.0</pre
                                 >
                                 <button
@@ -2097,6 +2197,10 @@ int main(void) {
                     editorTextarea.style.lineHeight = lh;
                     $("#editorHighlight").style.lineHeight = lh;
                     lineNumbers.style.lineHeight = lh;
+                    localStorage.setItem(
+                        "sergamon-line-height",
+                        lineHeightSlider.value,
+                    );
                     updateHighlight();
                 });
 
@@ -2373,6 +2477,15 @@ int main(void) {
                     editorTextarea.style.fontSize = sizePx;
                     $("#editorHighlight").style.fontSize = sizePx;
                     lineNumbers.style.fontSize = sizePx;
+                }
+
+                const savedLineHeight = localStorage.getItem("sergamon-line-height");
+                if (savedLineHeight) {
+                    lineHeightSlider.value = savedLineHeight;
+                    lineHeightValue.textContent = savedLineHeight;
+                    editorTextarea.style.lineHeight = savedLineHeight;
+                    $("#editorHighlight").style.lineHeight = savedLineHeight;
+                    lineNumbers.style.lineHeight = savedLineHeight;
                 }
 
                 const savedLang =
