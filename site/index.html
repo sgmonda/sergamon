@@ -912,6 +912,7 @@
                         </button>
                         <button class="lang-tab" data-lang="java">Java</button>
                         <button class="lang-tab" data-lang="c">C</button>
+                        <button class="lang-tab" data-lang="custom">Custom</button>
                     </div>
                     <div class="editor-sliders">
                         <div class="slider-group">
@@ -1744,6 +1745,7 @@ int main(void) {
                     html: "xml",
                     java: "java",
                     c: "c",
+                    custom: "plaintext",
                 };
 
                 // ── DOM Elements ───────────────────────────────────────────────
@@ -1789,8 +1791,17 @@ int main(void) {
                 }
 
                 function setSnippet(lang) {
+                    // Save current custom text before switching away
+                    if (currentLang === "custom") {
+                        localStorage.setItem("sergamon-custom-text", editorTextarea.value);
+                    }
                     currentLang = lang;
-                    editorTextarea.value = snippets[lang] || "";
+                    localStorage.setItem("sergamon-selected-lang", lang);
+                    if (lang === "custom") {
+                        editorTextarea.value = localStorage.getItem("sergamon-custom-text") || "";
+                    } else {
+                        editorTextarea.value = snippets[lang] || "";
+                    }
                     updateHighlight();
                 }
 
@@ -1808,7 +1819,12 @@ int main(void) {
 
                 // ── Editor input ───────────────────────────────────────────────
 
-                editorTextarea.addEventListener("input", debouncedHighlight);
+                editorTextarea.addEventListener("input", () => {
+                    if (currentLang === "custom") {
+                        localStorage.setItem("sergamon-custom-text", editorTextarea.value);
+                    }
+                    debouncedHighlight();
+                });
                 editorTextarea.addEventListener("scroll", () => {
                     const highlight = $("#editorHighlight");
                     highlight.scrollTop = editorTextarea.scrollTop;
@@ -2101,7 +2117,13 @@ int main(void) {
 
                 // ── Initialize ─────────────────────────────────────────────────
 
-                setSnippet("python");
+                const savedLang = localStorage.getItem("sergamon-selected-lang") || "python";
+                const savedTab = document.querySelector(`.lang-tab[data-lang="${savedLang}"]`);
+                if (savedTab) {
+                    $$(".lang-tab").forEach((t) => t.classList.remove("active"));
+                    savedTab.classList.add("active");
+                }
+                setSnippet(savedLang);
             })();
         </script>
     </body>
