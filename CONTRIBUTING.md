@@ -27,6 +27,13 @@ Sergamon does **not** support ligatures. Each character is rendered exactly as t
 
 Sergamon has one weight only -- no bold, no light. Inspired by classic hardware terminals, every character renders with the same uniform stroke. Do not add weight variants.
 
+## Recommended Settings
+
+For the best rendering experience:
+
+- **Disable anti-aliasing.** Sergamon is a pixel-art font designed to be rendered without smoothing. Anti-aliasing blurs the sharp pixel edges and ruins the retro aesthetic.
+- **Disable bold text.** Some programs (e.g., iTerm2, terminal emulators) artificially synthesize bold by thickening strokes when no bold variant exists. This must be disabled -- Sergamon has no bold variant and artificial bolding distorts the glyphs.
+
 ---
 
 ## How to Add a Glyph
