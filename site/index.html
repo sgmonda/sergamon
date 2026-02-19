@@ -6,7 +6,7 @@
         <title>Sergamon - Monospaced font for nostalgic hackers</title>
         <meta
             name="description"
-            content="Sergamon is an open-source pixel-art monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures, single weight."
+            content="Sergamon is an open-source monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures, single weight."
         />
 
         <!-- Comparison fonts from Google Fonts -->
@@ -1145,9 +1145,7 @@
                     <button class="install-tab" data-tab="intellij">
                         IntelliJ
                     </button>
-                    <button class="install-tab" data-tab="zed">
-                        Zed
-                    </button>
+                    <button class="install-tab" data-tab="zed">Zed</button>
                     <button class="install-tab" data-tab="terminal">
                         Terminal
                     </button>
@@ -1432,8 +1430,8 @@ Enable ligatures:  unchecked</pre
                             <p>
                                 Go to
                                 <strong
-                                    >Settings &rarr; Appearance &amp;
-                                    Behavior &rarr; Appearance</strong
+                                    >Settings &rarr; Appearance &amp; Behavior
+                                    &rarr; Appearance</strong
                                 >
                                 and set both <strong>Antialiasing</strong>
                                 dropdowns (IDE and Editor) to
@@ -1455,7 +1453,10 @@ Enable ligatures:  unchecked</pre
                             <h4>Step 2: Update settings.json</h4>
                             <p>
                                 Open settings with
-                                <strong>Zed &rarr; Settings &rarr; Open Settings</strong>
+                                <strong
+                                    >Zed &rarr; Settings &rarr; Open
+                                    Settings</strong
+                                >
                                 (or <code>Cmd+,</code>) and add:
                             </p>
                             <div class="code-block">
@@ -1517,9 +1518,7 @@ Enable ligatures:  unchecked</pre
                             <p>
                                 Preferences &rarr; Profiles &rarr; Text &rarr;
                                 Font &rarr; Select "Sergamon". Then uncheck
-                                <strong
-                                    >"Draw bold text in bold font"</strong
-                                >
+                                <strong>"Draw bold text in bold font"</strong>
                                 and
                                 <strong
                                     >"Draw bold text in bright colors"</strong
@@ -2484,7 +2483,9 @@ int main(void) {
                     lineNumbers.style.fontSize = sizePx;
                 }
 
-                const savedLineHeight = localStorage.getItem("sergamon-line-height");
+                const savedLineHeight = localStorage.getItem(
+                    "sergamon-line-height",
+                );
                 if (savedLineHeight) {
                     lineHeightSlider.value = savedLineHeight;
                     lineHeightValue.textContent = savedLineHeight;
