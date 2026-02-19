@@ -31,6 +31,7 @@ const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");
 const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "ascii"),
   path.join(PROJECT_ROOT, "glyphs", "latin-ext"),
+  path.join(PROJECT_ROOT, "glyphs", "arrows"),
 ];
 
 const BUILD_DIR = path.join(PROJECT_ROOT, "build");
