@@ -1061,6 +1061,51 @@
                     </h3>
                     <div class="char-grid" id="boxDrawingGrid"></div>
                 </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Block Elements</h3>
+                    <div class="char-grid" id="blockElementsGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Geometric Shapes</h3>
+                    <div class="char-grid" id="geometricGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Symbols</h3>
+                    <div class="char-grid" id="symbolsGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Currency</h3>
+                    <div class="char-grid" id="currencyGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Math Operators</h3>
+                    <div class="char-grid" id="mathGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Greek</h3>
+                    <div class="char-grid" id="greekGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Powerline</h3>
+                    <div class="char-grid" id="powerlineGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Braille Patterns</h3>
+                    <div class="char-grid" id="brailleGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Keyboard</h3>
+                    <div class="char-grid" id="keyboardGrid"></div>
+                </div>
             </div>
         </section>
 
@@ -2378,6 +2423,26 @@ int main(void) {
                         [0x0128, "I tilde"],
                         [0x0168, "U tilde"],
                         [0x1ebc, "E tilde"],
+                        [0x0141, "L stroke"],
+                        [0x0142, "l stroke"],
+                        [0x015e, "S cedilla"],
+                        [0x015f, "s cedilla"],
+                        [0x0162, "T cedilla"],
+                        [0x0163, "t cedilla"],
+                        [0x017d, "Z caron"],
+                        [0x017e, "z caron"],
+                        [0x010c, "C caron"],
+                        [0x010d, "c caron"],
+                        [0x0160, "S caron"],
+                        [0x0161, "s caron"],
+                        [0x0150, "O dbl acute"],
+                        [0x0151, "o dbl acute"],
+                        [0x0170, "U dbl acute"],
+                        [0x0171, "u dbl acute"],
+                        [0x0105, "a ogonek"],
+                        [0x0119, "e ogonek"],
+                        [0x0110, "D stroke"],
+                        [0x0111, "d stroke"],
                     ]);
                 }
 
@@ -2421,10 +2486,154 @@ int main(void) {
                     ]);
                 }
 
+                function populateBlockElements() {
+                    populateCategory("#blockElementsGrid", [
+                        [0x2580, "upper half"],
+                        [0x2581, "lower 1/8"],
+                        [0x2582, "lower 1/4"],
+                        [0x2583, "lower 3/8"],
+                        [0x2584, "lower half"],
+                        [0x2585, "lower 5/8"],
+                        [0x2586, "lower 3/4"],
+                        [0x2587, "lower 7/8"],
+                        [0x2588, "full block"],
+                        [0x258c, "left half"],
+                        [0x2590, "right half"],
+                        [0x2591, "light shade"],
+                        [0x2592, "medium shade"],
+                        [0x2593, "dark shade"],
+                    ]);
+                }
+
+                function populateGeometric() {
+                    populateCategory("#geometricGrid", [
+                        [0x25a0, "filled square"],
+                        [0x25a1, "empty square"],
+                        [0x25aa, "sm filled sq"],
+                        [0x25ab, "sm empty sq"],
+                        [0x25cf, "filled circle"],
+                        [0x25cb, "empty circle"],
+                        [0x25c6, "filled diamond"],
+                        [0x25c7, "empty diamond"],
+                        [0x25b2, "up triangle"],
+                        [0x25b3, "up tri outline"],
+                        [0x25b6, "right triangle"],
+                        [0x25b7, "right tri outline"],
+                        [0x25bc, "down triangle"],
+                        [0x25bd, "down tri outline"],
+                        [0x25c0, "left triangle"],
+                        [0x25c1, "left tri outline"],
+                    ]);
+                }
+
+                function populateSymbols() {
+                    populateCategory("#symbolsGrid", [
+                        [0x2713, "check mark"],
+                        [0x2717, "cross mark"],
+                        [0x2022, "bullet"],
+                        [0x2026, "ellipsis"],
+                        [0x2014, "em dash"],
+                        [0x2013, "en dash"],
+                        [0x00b7, "middle dot"],
+                        [0x00b6, "pilcrow"],
+                        [0x00a7, "section"],
+                        [0x00a9, "copyright"],
+                    ]);
+                }
+
+                function populateCurrency() {
+                    populateCategory("#currencyGrid", [
+                        [0x20ac, "euro"],
+                        [0x00a3, "pound"],
+                        [0x00a5, "yen"],
+                        [0x00a2, "cent"],
+                    ]);
+                }
+
+                function populateMath() {
+                    populateCategory("#mathGrid", [
+                        [0x2260, "not equal"],
+                        [0x2264, "less equal"],
+                        [0x2265, "greater equal"],
+                        [0x2248, "approx equal"],
+                        [0x00b1, "plus minus"],
+                        [0x00d7, "multiply"],
+                        [0x00f7, "divide"],
+                        [0x221e, "infinity"],
+                        [0x221a, "radical"],
+                        [0x00ac, "logical not"],
+                        [0x2227, "logical and"],
+                        [0x2228, "logical or"],
+                    ]);
+                }
+
+                function populateGreek() {
+                    populateCategory("#greekGrid", [
+                        [0x0394, "Delta"],
+                        [0x03a3, "Sigma"],
+                        [0x03a9, "Omega"],
+                        [0x03a0, "Pi"],
+                        [0x03b1, "alpha"],
+                        [0x03b2, "beta"],
+                        [0x03b3, "gamma"],
+                        [0x03b4, "delta"],
+                        [0x03b5, "epsilon"],
+                        [0x03bb, "lambda"],
+                        [0x03bc, "mu"],
+                        [0x03c0, "pi"],
+                        [0x03c3, "sigma"],
+                        [0x03c4, "tau"],
+                        [0x03c6, "phi"],
+                        [0x03c9, "omega"],
+                    ]);
+                }
+
+                function populatePowerline() {
+                    populateCategory("#powerlineGrid", [
+                        [0xe0a0, "branch"],
+                        [0xe0a1, "line number"],
+                        [0xe0a2, "padlock"],
+                        [0xe0b0, "right triangle"],
+                        [0xe0b1, "right tri thin"],
+                        [0xe0b2, "left triangle"],
+                        [0xe0b3, "left tri thin"],
+                    ]);
+                }
+
+                function populateBraille() {
+                    const grid = $("#brailleGrid");
+                    for (let cp = 0x2800; cp <= 0x28ff; cp++) {
+                        const char = String.fromCodePoint(cp);
+                        const hex = "U+" + cp.toString(16).toUpperCase().padStart(4, "0");
+                        const dots = cp - 0x2800;
+                        const label = dots === 0 ? "blank" : "dots " + dots.toString(16);
+                        grid.appendChild(createCharCell(char, label, hex));
+                    }
+                }
+
+                function populateKeyboard() {
+                    populateCategory("#keyboardGrid", [
+                        [0x2318, "command"],
+                        [0x2325, "option"],
+                        [0x2303, "control"],
+                        [0x21e7, "shift"],
+                        [0x23ce, "return"],
+                    ]);
+                }
+
                 populateASCII();
                 populateLatinExt();
                 populateArrows();
                 populateBoxDrawing();
+                populateBlockElements();
+                populateGeometric();
+                populateSymbols();
+                populateCurrency();
+                populateMath();
+                populateGreek();
+                populatePowerline();
+                populateBraille();
+                populateKeyboard();
 
                 // ── Distinguishability Table ───────────────────────────────────
 

@@ -33,6 +33,15 @@ const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "latin-ext"),
   path.join(PROJECT_ROOT, "glyphs", "arrows"),
   path.join(PROJECT_ROOT, "glyphs", "box-drawing"),
+  path.join(PROJECT_ROOT, "glyphs", "block-elements"),
+  path.join(PROJECT_ROOT, "glyphs", "geometric"),
+  path.join(PROJECT_ROOT, "glyphs", "symbols"),
+  path.join(PROJECT_ROOT, "glyphs", "currency"),
+  path.join(PROJECT_ROOT, "glyphs", "math"),
+  path.join(PROJECT_ROOT, "glyphs", "greek"),
+  path.join(PROJECT_ROOT, "glyphs", "powerline"),
+  path.join(PROJECT_ROOT, "glyphs", "braille"),
+  path.join(PROJECT_ROOT, "glyphs", "keyboard"),
 ];
 
 const BUILD_DIR = path.join(PROJECT_ROOT, "build");
