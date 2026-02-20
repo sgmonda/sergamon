@@ -1049,6 +1049,18 @@
                     <h3 class="char-category-title">Latin Extended</h3>
                     <div class="char-grid" id="latinExtGrid"></div>
                 </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">Arrows</h3>
+                    <div class="char-grid" id="arrowsGrid"></div>
+                </div>
+
+                <div class="char-category">
+                    <h3 class="char-category-title">
+                        Box Drawing
+                    </h3>
+                    <div class="char-grid" id="boxDrawingGrid"></div>
+                </div>
             </div>
         </section>
 
@@ -2300,9 +2312,19 @@ int main(void) {
                     }
                 }
 
+                function populateCategory(gridId, chars) {
+                    const grid = $(gridId);
+                    for (const [cp, name] of chars) {
+                        const char = String.fromCodePoint(cp);
+                        const hex =
+                            "U+" +
+                            cp.toString(16).toUpperCase().padStart(4, "0");
+                        grid.appendChild(createCharCell(char, name, hex));
+                    }
+                }
+
                 function populateLatinExt() {
-                    const grid = $("#latinExtGrid");
-                    const chars = [
+                    populateCategory("#latinExtGrid", [
                         [0x00e1, "a acute"],
                         [0x00e9, "e acute"],
                         [0x00ed, "i acute"],
@@ -2356,11 +2378,20 @@ int main(void) {
                         [0x0128, "I tilde"],
                         [0x0168, "U tilde"],
                         [0x1ebc, "E tilde"],
+                    ]);
+                }
+
+                function populateArrows() {
+                    populateCategory("#arrowsGrid", [
                         [0x2190, "left arrow"],
                         [0x2191, "up arrow"],
                         [0x2192, "right arrow"],
                         [0x2193, "down arrow"],
-                        // Box drawing - single line
+                    ]);
+                }
+
+                function populateBoxDrawing() {
+                    populateCategory("#boxDrawingGrid", [
                         [0x2500, "horiz line"],
                         [0x2502, "vert line"],
                         [0x250c, "corner DR"],
@@ -2372,7 +2403,6 @@ int main(void) {
                         [0x252c, "tee down"],
                         [0x2534, "tee up"],
                         [0x253c, "cross"],
-                        // Box drawing - double line
                         [0x2550, "dbl horiz"],
                         [0x2551, "dbl vert"],
                         [0x2554, "dbl DR"],
@@ -2384,23 +2414,17 @@ int main(void) {
                         [0x2566, "dbl tee D"],
                         [0x2569, "dbl tee U"],
                         [0x256c, "dbl cross"],
-                        // Box drawing - rounded corners
                         [0x256d, "arc DR"],
                         [0x256e, "arc DL"],
                         [0x256f, "arc UL"],
                         [0x2570, "arc UR"],
-                    ];
-                    for (const [cp, name] of chars) {
-                        const char = String.fromCodePoint(cp);
-                        const hex =
-                            "U+" +
-                            cp.toString(16).toUpperCase().padStart(4, "0");
-                        grid.appendChild(createCharCell(char, name, hex));
-                    }
+                    ]);
                 }
 
                 populateASCII();
                 populateLatinExt();
+                populateArrows();
+                populateBoxDrawing();
 
                 // ── Distinguishability Table ───────────────────────────────────
 
