@@ -1056,9 +1056,7 @@
                 </div>
 
                 <div class="char-category">
-                    <h3 class="char-category-title">
-                        Box Drawing
-                    </h3>
+                    <h3 class="char-category-title">Box Drawing</h3>
                     <div class="char-grid" id="boxDrawingGrid"></div>
                 </div>
 
@@ -2125,37 +2123,65 @@ int main(void) {
     return 0;
 }`,
 
-                    tui: `# Sergamon Font Preview - Terminal UI
-# Box-drawing characters for tables and panels
+                    tui: `╔════════════════════════════════════════╗
+║  ⌘ SERGAMON SYSTEM MONITOR             ║
+║  ⌃C Exit  ⌥S Save  ⇧⌘R Reset  ⏎ Run    ║
+╚════════════════════════════════════════╝
 
-  System Status
-  \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+  Service Status ═══════════════════════
 
-  \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
-  \u2502 Service  \u2502 Status    \u2502 Uptime   \u2502
-  \u251C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524
-  \u2502 nginx    \u2502 running   \u2502 14d 02h  \u2502
-  \u2502 postgres \u2502 running   \u2502 14d 02h  \u2502
-  \u2502 redis    \u2502 stopped   \u2502 --       \u2502
-  \u2502 node     \u2502 running   \u2502 02d 11h  \u2502
-  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518
+  ┌──────────┬────────┬────────┬──────┐
+  │ Service  │ Status │ Uptime │ Load │
+  ├──────────┼────────┼────────┼──────┤
+  │ nginx    │ ✓ up   │ 14d 2h │ ▓▓▒░ │
+  │ postgres │ ✓ up   │ 14d 2h │ ▓▒░░ │
+  │ redis    │ ✗ down │ –      │ ░░░░ │
+  │ node     │ ✓ up   │  2d11h │ ▓▓▓▒ │
+  └──────────┴────────┴────────┴──────┘
 
-  \u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-  \u2551        Weekly Report #42         \u2551
-  \u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2566\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563
-  \u2551 Metric     \u2551 Value               \u2551
-  \u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u256C\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563
-  \u2551 Requests   \u2551 1,248,032           \u2551
-  \u2551 Errors     \u2551 342 (0.03%)         \u2551
-  \u2551 Avg resp.  \u2551 45ms                \u2551
-  \u2551 P99 resp.  \u2551 230ms               \u2551
-  \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2569\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
+  ╭────────────────────────────────────╮
+  │ ● CPU 42%  ○ MEM 68%  ◆ I/O  3%    │
+  │ ▲ Peak 89% ▼ Low 12%  ■ Avg  45%   │
+  │                                    │
+  │ ▓▓▓▓▓▓▓▒▒▒░░░░░░░░░░  42% usage    │
+  │ █████████████▌          68% alloc  │
+  │ ▀▀▀▀▀▀▀▀▄▄▄▄▄▄▄▄▄▄▄▄  swap i/o     │
+  │                                    │
+  │ Trend: ⡀⣀⣄⣤⣦⣶⣷⣿⣷⣶⣤⣄⣀⡀ (24h)        │
+  │                                    │
+  │ Alerts: 3 ≥ threshold              │
+  │ Errors ≠ 0 → check logs            │
+  │ Load ≤ 80% ∧ uptime ≥ 99.9%        │
+  │ Budget ≈ €142k ± 5%                │
+  ╰────────────────────────────────────╯
 
-  \u256D\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256E
-  \u2502  All systems operational.       \u2502
-  \u2502  Next maintenance: 2025-02-14   \u2502
-  \u2502  Navigate: \u2190 prev  next \u2192       \u2502
-  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256F`,
+  Formulas (Δt = 1h)
+  ╔════════════╦═════════════════════════╗
+  ║ Metric     ║ Formula                 ║
+  ╠════════════╬═════════════════════════╣
+  ║ throughput ║ Σ(req) ÷ Δt = 1248      ║
+  ║ error rate ║ α × 100 = 0.03%         ║
+  ║ p99 resp   ║ μ + 3·σ ≈ 230ms         ║
+  ║ entropy    ║ ¬(∞) → convergent       ║
+  ║ λ-reduce   ║ (λx.x) → identity       ║
+  ║ search     ║ √n ≤ Ω(log n) ∨ reset   ║
+  ╚════════════╩═════════════════════════╝
+
+  Revenue (© 2025) ─────────────────────
+  • €142,000  European ops
+  • £ 89,200  UK region
+  • ¥1.2M     Asian markets
+  • ¢  0.03   per API call
+
+   main ← origin · 3 ahead
+   production · §1 — Config
+
+  Héctor González · résumé
+  Ölaf Müller · naïve café
+
+  ◀ prev │ ◇ home │ ▶ next
+  ↑↓ Navigate  ←→ Switch tab
+  §1 — Config · ¶ End … (12 more)`,
                 };
 
                 // ── Language tab → hljs class mapping ──────────────────────────
@@ -2604,9 +2630,12 @@ int main(void) {
                     const grid = $("#brailleGrid");
                     for (let cp = 0x2800; cp <= 0x28ff; cp++) {
                         const char = String.fromCodePoint(cp);
-                        const hex = "U+" + cp.toString(16).toUpperCase().padStart(4, "0");
+                        const hex =
+                            "U+" +
+                            cp.toString(16).toUpperCase().padStart(4, "0");
                         const dots = cp - 0x2800;
-                        const label = dots === 0 ? "blank" : "dots " + dots.toString(16);
+                        const label =
+                            dots === 0 ? "blank" : "dots " + dots.toString(16);
                         grid.appendChild(createCharCell(char, label, hex));
                     }
                 }
