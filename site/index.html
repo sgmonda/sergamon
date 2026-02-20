@@ -965,6 +965,7 @@
                         </button>
                         <button class="lang-tab" data-lang="java">Java</button>
                         <button class="lang-tab" data-lang="c">C</button>
+                        <button class="lang-tab" data-lang="tui">TUI</button>
                         <button class="lang-tab" data-lang="custom">
                             Custom
                         </button>
@@ -2066,6 +2067,38 @@ int main(void) {
     vec_free(numbers);
     return 0;
 }`,
+
+                    tui: `# Sergamon Font Preview - Terminal UI
+# Box-drawing characters for tables and panels
+
+  System Status
+  \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+
+  \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
+  \u2502 Service  \u2502 Status    \u2502 Uptime   \u2502
+  \u251C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524
+  \u2502 nginx    \u2502 running   \u2502 14d 02h  \u2502
+  \u2502 postgres \u2502 running   \u2502 14d 02h  \u2502
+  \u2502 redis    \u2502 stopped   \u2502 --       \u2502
+  \u2502 node     \u2502 running   \u2502 02d 11h  \u2502
+  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518
+
+  \u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+  \u2551        Weekly Report #42         \u2551
+  \u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2566\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563
+  \u2551 Metric     \u2551 Value               \u2551
+  \u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u256C\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563
+  \u2551 Requests   \u2551 1,248,032           \u2551
+  \u2551 Errors     \u2551 342 (0.03%)         \u2551
+  \u2551 Avg resp.  \u2551 45ms                \u2551
+  \u2551 P99 resp.  \u2551 230ms               \u2551
+  \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2569\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
+
+  \u256D\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256E
+  \u2502  All systems operational.       \u2502
+  \u2502  Next maintenance: 2025-02-14   \u2502
+  \u2502  Navigate: \u2190 prev  next \u2192       \u2502
+  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256F`,
                 };
 
                 // ── Language tab → hljs class mapping ──────────────────────────
@@ -2079,6 +2112,7 @@ int main(void) {
                     html: "xml",
                     java: "java",
                     c: "c",
+                    tui: "plaintext",
                     custom: "plaintext",
                 };
 
@@ -2326,6 +2360,35 @@ int main(void) {
                         [0x2191, "up arrow"],
                         [0x2192, "right arrow"],
                         [0x2193, "down arrow"],
+                        // Box drawing - single line
+                        [0x2500, "horiz line"],
+                        [0x2502, "vert line"],
+                        [0x250c, "corner DR"],
+                        [0x2510, "corner DL"],
+                        [0x2514, "corner UR"],
+                        [0x2518, "corner UL"],
+                        [0x251c, "tee right"],
+                        [0x2524, "tee left"],
+                        [0x252c, "tee down"],
+                        [0x2534, "tee up"],
+                        [0x253c, "cross"],
+                        // Box drawing - double line
+                        [0x2550, "dbl horiz"],
+                        [0x2551, "dbl vert"],
+                        [0x2554, "dbl DR"],
+                        [0x2557, "dbl DL"],
+                        [0x255a, "dbl UR"],
+                        [0x255d, "dbl UL"],
+                        [0x2560, "dbl tee R"],
+                        [0x2563, "dbl tee L"],
+                        [0x2566, "dbl tee D"],
+                        [0x2569, "dbl tee U"],
+                        [0x256c, "dbl cross"],
+                        // Box drawing - rounded corners
+                        [0x256d, "arc DR"],
+                        [0x256e, "arc DL"],
+                        [0x256f, "arc UL"],
+                        [0x2570, "arc UR"],
                     ];
                     for (const [cp, name] of chars) {
                         const char = String.fromCodePoint(cp);
