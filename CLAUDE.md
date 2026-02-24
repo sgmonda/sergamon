@@ -18,6 +18,7 @@ Inspired by classic hardware terminals, Sergamon has a single weight -- there is
 
 - **Disable anti-aliasing.** Sergamon is a pixel-art font designed to be rendered without smoothing. Anti-aliasing blurs the sharp pixel edges and ruins the retro aesthetic.
 - **Disable bold text.** Some programs (e.g., iTerm2, terminal emulators) artificially synthesize bold by thickening strokes when no bold variant exists. This must be disabled -- Sergamon has no bold variant and artificial bolding distorts the glyphs.
+- **Set letter-spacing to 0.** Some editors add default letter-spacing that breaks the pixel grid alignment. Set `letter-spacing: 0` (or `"editor.letterSpacing": 0` in VS Code) to keep glyphs flush and preserve the intended pixel-art spacing.
 
 ## Commands
 

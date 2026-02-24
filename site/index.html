@@ -429,6 +429,7 @@
                 font-family: var(--font-mono);
                 font-size: 1rem;
                 line-height: 1;
+                letter-spacing: 0px;
             }
 
             .editor-textarea {
@@ -999,6 +1000,20 @@
                                 >1.0</span
                             >
                         </div>
+                        <div class="slider-group">
+                            <label for="letterSpacingSlider">Spacing</label>
+                            <input
+                                type="range"
+                                id="letterSpacingSlider"
+                                min="0"
+                                max="5"
+                                value="0"
+                                step="1"
+                            />
+                            <span class="slider-value" id="letterSpacingValue"
+                                >0px</span
+                            >
+                        </div>
                         <button
                             class="editor-theme-toggle"
                             id="editorThemeToggle"
@@ -1178,9 +1193,12 @@
                         <strong style="color: var(--text-primary)"
                             >disable anti-aliasing</strong
                         >
-                        (font smoothing) and
+                        (font smoothing),
                         <strong style="color: var(--text-primary)"
                             >disable bold text</strong
+                        >, and set
+                        <strong style="color: var(--text-primary)"
+                            >letter-spacing to 0</strong
                         >. Some programs (e.g. iTerm2) artificially synthesize
                         bold when no bold variant exists -- this distorts the
                         glyphs. Sergamon has a single weight by design.
@@ -1390,10 +1408,12 @@ fc-cache -fv</pre
   "editor.fontFamily": "'Sergamon', 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.lineHeight": 1,
+  "editor.letterSpacing": 0,
   "editor.fontLigatures": false,
   "editor.fontWeight": "normal",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontWeightBold": "normal"
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.letterSpacing": 0
 }</pre
                                 >
                                 <button
@@ -2211,6 +2231,8 @@ int main(void) {
                 const fontSizeValue = $("#fontSizeValue");
                 const lineHeightSlider = $("#lineHeightSlider");
                 const lineHeightValue = $("#lineHeightValue");
+                const letterSpacingSlider = $("#letterSpacingSlider");
+                const letterSpacingValue = $("#letterSpacingValue");
                 const editorWrapper = $("#editorWrapper");
                 const editorThemeToggle = $("#editorThemeToggle");
 
@@ -2316,6 +2338,20 @@ int main(void) {
                     localStorage.setItem(
                         "sergamon-line-height",
                         lineHeightSlider.value,
+                    );
+                    updateHighlight();
+                });
+
+                // ── Letter spacing slider ──────────────────────────────────────
+
+                letterSpacingSlider.addEventListener("input", () => {
+                    const ls = letterSpacingSlider.value + "px";
+                    letterSpacingValue.textContent = ls;
+                    editorTextarea.style.letterSpacing = ls;
+                    $("#editorHighlight").style.letterSpacing = ls;
+                    localStorage.setItem(
+                        "sergamon-letter-spacing",
+                        letterSpacingSlider.value,
                     );
                     updateHighlight();
                 });
@@ -2831,6 +2867,17 @@ int main(void) {
                     editorTextarea.style.lineHeight = savedLineHeight;
                     $("#editorHighlight").style.lineHeight = savedLineHeight;
                     lineNumbers.style.lineHeight = savedLineHeight;
+                }
+
+                const savedLetterSpacing = localStorage.getItem(
+                    "sergamon-letter-spacing",
+                );
+                if (savedLetterSpacing) {
+                    letterSpacingSlider.value = savedLetterSpacing;
+                    const lsPx = savedLetterSpacing + "px";
+                    letterSpacingValue.textContent = lsPx;
+                    editorTextarea.style.letterSpacing = lsPx;
+                    $("#editorHighlight").style.letterSpacing = lsPx;
                 }
 
                 const savedLang =
