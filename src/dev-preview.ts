@@ -17,7 +17,6 @@ import { execSync } from 'node:child_process';
 
 // ── Configuration ────────────────────────────────────────────────────────────
 
-const PORT = 3000;
 const ROOT = resolve(import.meta.dirname, '..');
 const SITE_DIR = join(ROOT, 'site');
 const GLYPHS_DIR = join(ROOT, 'glyphs');
@@ -207,8 +206,10 @@ function main(): void {
     });
   });
 
-  server.listen(PORT, () => {
-    console.log(`[dev] Server running at http://localhost:${PORT}`);
+  server.listen(0, () => {
+    const addr = server.address();
+    const port = typeof addr === 'object' && addr ? addr.port : '?';
+    console.log(`[dev] Server running at http://localhost:${port}`);
     console.log('[dev] Press Ctrl+C to stop.\n');
   });
 
