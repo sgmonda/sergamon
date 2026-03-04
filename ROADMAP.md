@@ -30,11 +30,11 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00AE ® registered
 - [x] U+00AF ¯ macron
 - [x] U+00B0 ° degree
-- [ ] U+00B2 ² superscript two
-- [ ] U+00B3 ³ superscript three
-- [ ] U+00B4 ´ acute accent
-- [ ] U+00B5 µ micro sign
-- [ ] U+00B8 ¸ cedilla
+- [x] U+00B2 ² superscript two
+- [x] U+00B3 ³ superscript three
+- [x] U+00B4 ´ acute accent
+- [x] U+00B5 µ micro sign
+- [x] U+00B8 ¸ cedilla
 - [ ] U+00B9 ¹ superscript one
 - [ ] U+00BA º masculine ordinal
 - [ ] U+00BB » right guillemet
