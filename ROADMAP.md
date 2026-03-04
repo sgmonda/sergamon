@@ -35,16 +35,16 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00B4 ´ acute accent
 - [x] U+00B5 µ micro sign
 - [x] U+00B8 ¸ cedilla
-- [ ] U+00B9 ¹ superscript one
-- [ ] U+00BA º masculine ordinal
-- [ ] U+00BB » right guillemet
-- [ ] U+00BC ¼ one quarter
-- [ ] U+00BD ½ one half
-- [ ] U+00BE ¾ three quarters
-- [ ] U+00C0 À A grave
-- [ ] U+00C4 Ä A dieresis
-- [ ] U+00C8 È E grave
-- [ ] U+00CB Ë E dieresis
+- [x] U+00B9 ¹ superscript one
+- [x] U+00BA º masculine ordinal
+- [x] U+00BB » right guillemet
+- [x] U+00BC ¼ one quarter
+- [x] U+00BD ½ one half
+- [x] U+00BE ¾ three quarters
+- [x] U+00C0 À A grave
+- [x] U+00C4 Ä A dieresis
+- [x] U+00C8 È E grave
+- [x] U+00CB Ë E dieresis
 - [ ] U+00CC Ì I grave
 - [ ] U+00CF Ï I dieresis
 - [ ] U+00D0 Ð Eth
