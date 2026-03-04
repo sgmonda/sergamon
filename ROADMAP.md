@@ -25,11 +25,11 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00A4 ¤ currency sign
 - [x] U+00A6 ¦ broken bar
 - [x] U+00A8 ¨ dieresis
-- [ ] U+00AA ª feminine ordinal
-- [ ] U+00AB « left guillemet
-- [ ] U+00AE ® registered
-- [ ] U+00AF ¯ macron
-- [ ] U+00B0 ° degree
+- [x] U+00AA ª feminine ordinal
+- [x] U+00AB « left guillemet
+- [x] U+00AE ® registered
+- [x] U+00AF ¯ macron
+- [x] U+00B0 ° degree
 - [ ] U+00B2 ² superscript two
 - [ ] U+00B3 ³ superscript three
 - [ ] U+00B4 ´ acute accent
