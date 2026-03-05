@@ -339,26 +339,32 @@
             .lang-tabs {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 4px;
+                gap: 0;
+                border-bottom: 1px solid var(--border);
+                flex-grow: 1;
             }
 
             .lang-tab {
-                padding: 6px 14px;
-                border: 1px solid var(--border);
-                border-radius: var(--radius);
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-bottom: none;
+                border-radius: var(--radius) var(--radius) 0 0;
                 cursor: pointer;
-                background: var(--tab-inactive-bg);
+                background: transparent;
                 color: var(--text-secondary);
                 transition: all var(--transition);
+                margin-bottom: -1px;
+                font-size: 0.85rem;
             }
             .lang-tab:hover {
                 color: var(--text-primary);
-                border-color: var(--text-muted);
+                background: var(--tab-inactive-bg);
             }
             .lang-tab.active {
-                background: var(--accent-bg);
+                background: var(--bg-primary);
                 color: var(--accent);
-                border-color: var(--accent);
+                border-color: var(--border);
+                border-bottom: 1px solid var(--bg-primary);
             }
 
             .editor-sliders {
@@ -514,6 +520,44 @@
             /* ================================================================
             SECTION 2: CHARACTER GRID
             ================================================================ */
+            .char-tabs {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0;
+                border-bottom: 1px solid var(--border);
+                margin-bottom: 20px;
+            }
+
+            .char-tab {
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-bottom: none;
+                border-radius: var(--radius) var(--radius) 0 0;
+                cursor: pointer;
+                background: transparent;
+                color: var(--text-secondary);
+                transition: all var(--transition);
+                margin-bottom: -1px;
+                font-size: 0.85rem;
+            }
+            .char-tab:hover {
+                color: var(--text-primary);
+                background: var(--tab-inactive-bg);
+            }
+            .char-tab.active {
+                background: var(--bg-primary);
+                color: var(--accent);
+                border-color: var(--border);
+                border-bottom: 1px solid var(--bg-primary);
+            }
+
+            .char-tab-panel {
+                display: none;
+            }
+            .char-tab-panel.active {
+                display: block;
+            }
+
             .char-category {
                 margin-bottom: 32px;
             }
@@ -689,26 +733,31 @@
             .install-tabs {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 4px;
+                gap: 0;
+                border-bottom: 1px solid var(--border);
                 margin-bottom: 20px;
             }
 
             .install-tab {
                 padding: 8px 16px;
-                border: 1px solid var(--border);
-                border-radius: var(--radius);
+                border: 1px solid transparent;
+                border-bottom: none;
+                border-radius: var(--radius) var(--radius) 0 0;
                 cursor: pointer;
-                background: var(--tab-inactive-bg);
+                background: transparent;
                 color: var(--text-secondary);
                 transition: all var(--transition);
+                margin-bottom: -1px;
             }
             .install-tab:hover {
                 color: var(--text-primary);
+                background: var(--tab-inactive-bg);
             }
             .install-tab.active {
-                background: var(--accent-bg);
+                background: var(--bg-primary);
                 color: var(--accent);
-                border-color: var(--accent);
+                border-color: var(--border);
+                border-bottom: 1px solid var(--bg-primary);
             }
 
             .install-content {
@@ -1053,70 +1102,87 @@
                     it enlarged.
                 </p>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">
-                        ASCII Printable (U+0020 - U+007E)
-                    </h3>
+                <div class="char-tabs" id="charTabs">
+                    <button class="char-tab active" data-tab="ascii">
+                        ASCII
+                    </button>
+                    <button class="char-tab" data-tab="latin-ext">
+                        Latin Extended
+                    </button>
+                    <button class="char-tab" data-tab="arrows">Arrows</button>
+                    <button class="char-tab" data-tab="box-drawing">
+                        Box Drawing
+                    </button>
+                    <button class="char-tab" data-tab="block-elements">
+                        Block Elements
+                    </button>
+                    <button class="char-tab" data-tab="geometric">
+                        Geometric
+                    </button>
+                    <button class="char-tab" data-tab="symbols">Symbols</button>
+                    <button class="char-tab" data-tab="currency">
+                        Currency
+                    </button>
+                    <button class="char-tab" data-tab="math">Math</button>
+                    <button class="char-tab" data-tab="greek">Greek</button>
+                    <button class="char-tab" data-tab="powerline">
+                        Powerline
+                    </button>
+                    <button class="char-tab" data-tab="braille">Braille</button>
+                    <button class="char-tab" data-tab="keyboard">
+                        Keyboard
+                    </button>
+                </div>
+
+                <div class="char-tab-panel active" data-tab="ascii">
                     <div class="char-grid" id="asciiGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Latin Extended</h3>
+                <div class="char-tab-panel" data-tab="latin-ext">
                     <div class="char-grid" id="latinExtGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Arrows</h3>
+                <div class="char-tab-panel" data-tab="arrows">
                     <div class="char-grid" id="arrowsGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Box Drawing</h3>
+                <div class="char-tab-panel" data-tab="box-drawing">
                     <div class="char-grid" id="boxDrawingGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Block Elements</h3>
+                <div class="char-tab-panel" data-tab="block-elements">
                     <div class="char-grid" id="blockElementsGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Geometric Shapes</h3>
+                <div class="char-tab-panel" data-tab="geometric">
                     <div class="char-grid" id="geometricGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Symbols</h3>
+                <div class="char-tab-panel" data-tab="symbols">
                     <div class="char-grid" id="symbolsGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Currency</h3>
+                <div class="char-tab-panel" data-tab="currency">
                     <div class="char-grid" id="currencyGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Math Operators</h3>
+                <div class="char-tab-panel" data-tab="math">
                     <div class="char-grid" id="mathGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Greek</h3>
+                <div class="char-tab-panel" data-tab="greek">
                     <div class="char-grid" id="greekGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Powerline</h3>
+                <div class="char-tab-panel" data-tab="powerline">
                     <div class="char-grid" id="powerlineGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Braille Patterns</h3>
+                <div class="char-tab-panel" data-tab="braille">
                     <div class="char-grid" id="brailleGrid"></div>
                 </div>
 
-                <div class="char-category">
-                    <h3 class="char-category-title">Keyboard</h3>
+                <div class="char-tab-panel" data-tab="keyboard">
                     <div class="char-grid" id="keyboardGrid"></div>
                 </div>
             </div>
@@ -2514,6 +2580,11 @@ int main(void) {
                         [0x00ba, "masc ordinal"],
                         [0x00ab, "left guillemet"],
                         [0x00bb, "right guillemet"],
+                        [0x00cc, "I grave"],
+                        [0x00cf, "I dieresis"],
+                        [0x00d0, "Eth"],
+                        [0x00d2, "O grave"],
+                        [0x00d6, "O dieresis"],
                     ]);
                 }
 
@@ -2820,6 +2891,25 @@ int main(void) {
 
                     compGrid.appendChild(card);
                 }
+
+                // ── Character Grid Tabs ───────────────────────────────────────
+
+                $("#charTabs").addEventListener("click", (e) => {
+                    const tab = e.target.closest(".char-tab");
+                    if (!tab) return;
+                    $$(".char-tab").forEach((t) =>
+                        t.classList.remove("active"),
+                    );
+                    tab.classList.add("active");
+                    $$(".char-tab-panel").forEach((c) =>
+                        c.classList.remove("active"),
+                    );
+                    document
+                        .querySelector(
+                            `.char-tab-panel[data-tab="${tab.dataset.tab}"]`,
+                        )
+                        .classList.add("active");
+                });
 
                 // ── Installation Tabs ──────────────────────────────────────────
 

@@ -45,11 +45,11 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00C4 Ä A dieresis
 - [x] U+00C8 È E grave
 - [x] U+00CB Ë E dieresis
-- [ ] U+00CC Ì I grave
-- [ ] U+00CF Ï I dieresis
-- [ ] U+00D0 Ð Eth
-- [ ] U+00D2 Ò O grave
-- [ ] U+00D6 Ö O dieresis
+- [x] U+00CC Ì I grave
+- [x] U+00CF Ï I dieresis
+- [x] U+00D0 Ð Eth
+- [x] U+00D2 Ò O grave
+- [x] U+00D6 Ö O dieresis
 - [ ] U+00D9 Ù U grave
 - [ ] U+00DD Ý Y acute
 - [ ] U+00DE Þ Thorn
