@@ -68,10 +68,10 @@ U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+0
 
 **Missing (104):**
 - [x] U+0100 Ā, U+0101 ā (A macron)
-- [-] U+0102 Ă, U+0103 ă (A breve) — Ă done, ă pending
-- [ ] U+0104 Ą (A ogonek — lowercase ą already done)
-- [ ] U+0106 Ć, U+0107 ć (C acute)
-- [ ] U+0108 Ĉ, U+0109 ĉ (C circumflex)
+- [x] U+0102 Ă, U+0103 ă (A breve)
+- [x] U+0104 Ą (A ogonek — lowercase ą already done)
+- [x] U+0106 Ć, U+0107 ć (C acute)
+- [-] U+0108 Ĉ, U+0109 ĉ (C circumflex) — Ĉ done, ĉ pending
 - [ ] U+010A Ċ, U+010B ċ (C dot above)
 - [ ] U+010E Ď, U+010F ď (D caron)
 - [ ] U+0112 Ē, U+0113 ē (E macron)
