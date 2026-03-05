@@ -134,12 +134,12 @@ U+256F ╯, U+2570 ╰
 **Missing (102) — good candidate for procedural generation:**
 - [x] U+2501 ━ heavy horizontal
 - [x] U+2503 ┃ heavy vertical
-- [-] U+2504–U+250B ┄┅┆┇┈┉┊┋ (dashed lines) — U+2504–U+250A done, U+250B pending
-- [ ] U+250D–U+250F ┍┎┏ (heavy corners, down+right)
-- [ ] U+2511–U+2513 ┑┒┓ (heavy corners, down+left)
-- [ ] U+2515–U+2517 ┕┖┗ (heavy corners, up+right)
-- [ ] U+2519–U+251B ┙┚┛ (heavy corners, up+left)
-- [ ] U+251D–U+2523 ┝┞┟┠┡┢┣ (heavy T-junctions, right)
+- [x] U+2504–U+250B ┄┅┆┇┈┉┊┋ (dashed lines)
+- [x] U+250D–U+250F ┍┎┏ (heavy corners, down+right)
+- [x] U+2511–U+2513 ┑┒┓ (heavy corners, down+left)
+- [x] U+2515–U+2517 ┕┖┗ (heavy corners, up+right)
+- [x] U+2519–U+251B ┙┚┛ (heavy corners, up+left)
+- [x] U+251D–U+2523 ┝┞┟┠┡┢┣ (heavy T-junctions, right)
 - [ ] U+2525–U+252B ┥┦┧┨┩┪┫ (heavy T-junctions, left)
 - [ ] U+252D–U+2533 ┭┮┯┰┱┲┳ (heavy T-junctions, down)
 - [ ] U+2535–U+253B ┵┶┷┸┹┺┻ (heavy T-junctions, up)
