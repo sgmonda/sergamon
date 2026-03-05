@@ -115,12 +115,12 @@ U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+0
 - [x] U+016A Ū, U+016B ū (U macron)
 - [x] U+016C Ŭ, U+016D ŭ (U breve)
 - [x] U+016E Ů, U+016F ů (U ring above)
-- [-] U+0172 Ų, U+0173 ų (U ogonek) — Ų done, ų pending
-- [ ] U+0174 Ŵ, U+0175 ŵ (W circumflex)
-- [ ] U+0176 Ŷ, U+0177 ŷ (Y circumflex)
-- [ ] U+0178 Ÿ (Y dieresis)
-- [ ] U+0179 Ź, U+017A ź (Z acute)
-- [ ] U+017B Ż, U+017C ż (Z dot above)
+- [x] U+0172 Ų, U+0173 ų (U ogonek)
+- [x] U+0174 Ŵ, U+0175 ŵ (W circumflex)
+- [x] U+0176 Ŷ, U+0177 ŷ (Y circumflex)
+- [x] U+0178 Ÿ (Y dieresis)
+- [x] U+0179 Ź, U+017A ź (Z acute)
+- [x] U+017B Ż, U+017C ż (Z dot above)
 - [ ] U+017F ſ (long s)
 
 ### [-] Box Drawing (U+2500–U+257F) — 26/128
