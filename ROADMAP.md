@@ -163,16 +163,16 @@ U+2580 ▀, U+2581 ▁, U+2582 ▂, U+2583 ▃, U+2584 ▄, U+2585 ▅, U+2586 �
 U+2588 █, U+258C ▌, U+2590 ▐, U+2591 ░, U+2592 ▒, U+2593 ▓
 
 **Missing (18) — good candidate for procedural generation:**
-- [ ] U+2589 ▉ left seven eighths
-- [ ] U+258A ▊ left three quarters
-- [ ] U+258B ▋ left five eighths
-- [ ] U+258D ▍ left three eighths
-- [ ] U+258E ▎ left one quarter
-- [ ] U+258F ▏ left one eighth
-- [ ] U+2594 ▔ upper one eighth
-- [ ] U+2595 ▕ right one eighth
-- [ ] U+2596 ▖ quadrant lower left
-- [ ] U+2597 ▗ quadrant lower right
+- [x] U+2589 ▉ left seven eighths
+- [x] U+258A ▊ left three quarters
+- [x] U+258B ▋ left five eighths
+- [x] U+258D ▍ left three eighths
+- [x] U+258E ▎ left one quarter
+- [x] U+258F ▏ left one eighth
+- [x] U+2594 ▔ upper one eighth
+- [x] U+2595 ▕ right one eighth
+- [x] U+2596 ▖ quadrant lower left
+- [x] U+2597 ▗ quadrant lower right
 - [ ] U+2598 ▘ quadrant upper left
 - [ ] U+2599 ▙ quadrant upper left + lower left + lower right
 - [ ] U+259A ▚ quadrant upper left + lower right
