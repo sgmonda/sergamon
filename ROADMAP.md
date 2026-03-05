@@ -71,12 +71,12 @@ U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+0
 - [x] U+0102 Ă, U+0103 ă (A breve)
 - [x] U+0104 Ą (A ogonek — lowercase ą already done)
 - [x] U+0106 Ć, U+0107 ć (C acute)
-- [-] U+0108 Ĉ, U+0109 ĉ (C circumflex) — Ĉ done, ĉ pending
-- [ ] U+010A Ċ, U+010B ċ (C dot above)
-- [ ] U+010E Ď, U+010F ď (D caron)
-- [ ] U+0112 Ē, U+0113 ē (E macron)
-- [ ] U+0114 Ĕ, U+0115 ĕ (E breve)
-- [ ] U+0116 Ė, U+0117 ė (E dot above)
+- [x] U+0108 Ĉ, U+0109 ĉ (C circumflex)
+- [x] U+010A Ċ, U+010B ċ (C dot above)
+- [x] U+010E Ď, U+010F ď (D caron)
+- [x] U+0112 Ē, U+0113 ē (E macron)
+- [x] U+0114 Ĕ, U+0115 ĕ (E breve)
+- [-] U+0116 Ė, U+0117 ė (E dot above) — Ė done, ė pending
 - [ ] U+0118 Ę (E ogonek — lowercase ę already done)
 - [ ] U+011A Ě, U+011B ě (E caron)
 - [ ] U+011C Ĝ, U+011D ĝ (G circumflex)
