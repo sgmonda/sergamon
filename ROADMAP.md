@@ -50,12 +50,12 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00D0 Ð Eth
 - [x] U+00D2 Ò O grave
 - [x] U+00D6 Ö O dieresis
-- [ ] U+00D9 Ù U grave
-- [ ] U+00DD Ý Y acute
-- [ ] U+00DE Þ Thorn
+- [x] U+00D9 Ù U grave
+- [x] U+00DD Ý Y acute
+- [x] U+00DE Þ Thorn
 - [ ] U+00E0 à — (wait, already done above)
-- [ ] U+00F0 ð eth
-- [ ] U+00FD ý y acute
+- [x] U+00F0 ð eth
+- [x] U+00FD ý y acute
 - [ ] U+00FE þ thorn
 - [ ] U+00FF ÿ y dieresis
 
