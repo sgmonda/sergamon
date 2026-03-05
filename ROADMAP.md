@@ -53,11 +53,11 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00D9 Ù U grave
 - [x] U+00DD Ý Y acute
 - [x] U+00DE Þ Thorn
-- [ ] U+00E0 à — (wait, already done above)
+- [x] U+00E0 à — (already done above)
 - [x] U+00F0 ð eth
 - [x] U+00FD ý y acute
-- [ ] U+00FE þ thorn
-- [ ] U+00FF ÿ y dieresis
+- [x] U+00FE þ thorn
+- [x] U+00FF ÿ y dieresis
 
 ### [-] Latin Extended-A (U+0100–U+017F) — 20/128
 
@@ -67,8 +67,8 @@ U+0141 Ł, U+0142 ł, U+0150 Ő, U+0151 ő, U+015E Ş, U+015F ş, U+0160 Š, U+0
 U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+017E ž
 
 **Missing (104):**
-- [ ] U+0100 Ā, U+0101 ā (A macron)
-- [ ] U+0102 Ă, U+0103 ă (A breve)
+- [x] U+0100 Ā, U+0101 ā (A macron)
+- [-] U+0102 Ă, U+0103 ă (A breve) — Ă done, ă pending
 - [ ] U+0104 Ą (A ogonek — lowercase ą already done)
 - [ ] U+0106 Ć, U+0107 ć (C acute)
 - [ ] U+0108 Ĉ, U+0109 ĉ (C circumflex)
