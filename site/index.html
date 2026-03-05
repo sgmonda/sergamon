@@ -582,7 +582,7 @@
                 font-size: 2rem;
                 border: 1px solid var(--border);
                 border-radius: 4px;
-                cursor: default;
+                cursor: pointer;
                 transition: all var(--transition);
                 position: relative;
             }
@@ -591,6 +591,10 @@
                 border-color: var(--accent);
                 transform: scale(1.15);
                 z-index: 1;
+            }
+            .char-cell.copied {
+                background: var(--accent-bg);
+                border-color: var(--accent);
             }
 
             .char-tooltip {
@@ -2418,6 +2422,19 @@ int main(void) {
                     tooltip.className = "char-tooltip";
                     tooltip.innerHTML = `<span class="tooltip-char">${char === " " ? "&nbsp;" : char.replace(/</g, "&lt;")}</span>${label}<br>${codepoint}`;
                     cell.appendChild(tooltip);
+
+                    cell.addEventListener("click", () => {
+                        const original = char === "\u00A0" ? " " : char;
+                        navigator.clipboard.writeText(original).then(() => {
+                            cell.classList.add("copied");
+                            const prev = tooltip.innerHTML;
+                            tooltip.innerHTML = `<span class="tooltip-char">${char === " " ? "&nbsp;" : char.replace(/</g, "&lt;")}</span>Copied!`;
+                            setTimeout(() => {
+                                cell.classList.remove("copied");
+                                tooltip.innerHTML = prev;
+                            }, 1000);
+                        });
+                    });
 
                     return cell;
                 }
