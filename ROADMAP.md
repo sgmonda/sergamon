@@ -141,7 +141,7 @@ U+256F ╯, U+2570 ╰
 - [x] U+2519–U+251B ┙┚┛ (heavy corners, up+left)
 - [x] U+251D–U+2523 ┝┞┟┠┡┢┣ (heavy T-junctions, right)
 - [x] U+2525–U+252B ┥┦┧┨┩┪┫ (heavy T-junctions, left)
-- [ ] U+252D–U+2533 ┭┮┯┰┱┲┳ (heavy T-junctions, down)
+- [-] U+252D–U+2533 ┭┮┯┰┱┲┳ (heavy T-junctions, down)
 - [ ] U+2535–U+253B ┵┶┷┸┹┺┻ (heavy T-junctions, up)
 - [ ] U+253D–U+254F ┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋ (heavy crosses)
 - [ ] U+2552–U+2553 ╒╓ (mixed single/double, down+right)
@@ -176,11 +176,11 @@ U+2588 █, U+258C ▌, U+2590 ▐, U+2591 ░, U+2592 ▒, U+2593 ▓
 - [x] U+2598 ▘ quadrant upper left
 - [x] U+2599 ▙ quadrant upper left + lower left + lower right
 - [x] U+259A ▚ quadrant upper left + lower right
-- [ ] U+259B ▛ quadrant upper left + upper right + lower left
-- [ ] U+259C ▜ quadrant upper left + upper right + lower right
-- [ ] U+259D ▝ quadrant upper right
-- [ ] U+259E ▞ quadrant upper right + lower left
-- [ ] U+259F ▟ quadrant upper right + lower left + lower right
+- [x] U+259B ▛ quadrant upper left + upper right + lower left
+- [x] U+259C ▜ quadrant upper left + upper right + lower right
+- [x] U+259D ▝ quadrant upper right
+- [x] U+259E ▞ quadrant upper right + lower left
+- [x] U+259F ▟ quadrant upper right + lower left + lower right
 
 ### [-] Greek & Coptic (U+0370–U+03FF) — 16/135
 
