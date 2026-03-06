@@ -190,11 +190,11 @@ U+0394 Δ, U+03A0 Π, U+03A3 Σ, U+03A9 Ω, U+03B1 α, U+03B2 β, U+03B3 γ, U+0
 U+03B5 ε, U+03BB λ, U+03BC μ, U+03C0 π, U+03C3 σ, U+03C4 τ, U+03C6 φ, U+03C9 ω
 
 **Missing uppercase (17):**
-- [ ] U+0391 Α Alpha
-- [ ] U+0392 Β Beta
-- [ ] U+0393 Γ Gamma
-- [ ] U+0395 Ε Epsilon
-- [ ] U+0396 Ζ Zeta
+- [x] U+0391 Α Alpha
+- [x] U+0392 Β Beta
+- [x] U+0393 Γ Gamma
+- [x] U+0395 Ε Epsilon
+- [x] U+0396 Ζ Zeta
 - [ ] U+0397 Η Eta
 - [ ] U+0398 Θ Theta
 - [ ] U+0399 Ι Iota
