@@ -154,8 +154,8 @@ U+256F ╯, U+2570 ╰
 - [x] U+2564–U+2565 ╤╥ (mixed single/double, T down)
 - [x] U+2567–U+2568 ╧╨ (mixed single/double, T up)
 - [x] U+256A–U+256B ╪╫ (mixed single/double, cross)
-- [-] U+2571–U+2573 ╱╲╳ (diagonal lines and cross)
-- [ ] U+2574–U+257F (light/heavy line segments)
+- [x] U+2571–U+2573 ╱╲╳ (diagonal lines and cross)
+- [-] U+2574–U+257F (light/heavy line segments)
 
 ### [-] Block Elements (U+2580–U+259F) — 14/32
 
