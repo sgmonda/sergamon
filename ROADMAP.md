@@ -404,11 +404,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+20A4 ₤ lira
 - [x] U+20A7 ₧ peseta
 - [x] U+20A8 ₨ rupee
-- [ ] U+20A9 ₩ won
-- [ ] U+20AA ₪ sheqel
-- [ ] U+20AB ₫ dong
-- [ ] U+20AD ₭ kip
-- [ ] U+20AE ₮ tugrik
+- [x] U+20A9 ₩ won
+- [x] U+20AA ₪ sheqel
+- [x] U+20AB ₫ dong
+- [x] U+20AD ₭ kip
+- [x] U+20AE ₮ tugrik
 - [ ] U+20B1 ₱ peso
 - [ ] U+20B2 ₲ guarani
 - [ ] U+20B4 ₴ hryvnia
