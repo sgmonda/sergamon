@@ -325,8 +325,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [ ] U+25B4–U+25B5 (small triangles)
 - [ ] U+25B8–U+25BB (small/medium right triangles)
 - [x] U+25BE–U+25BF (small down triangles)
-- [ ] U+25C2–U+25C5 (small/medium left triangles)
-- [ ] U+25C8–U+25CA (diamonds, lozenges)
+- [x] U+25C2–U+25C5 (small/medium left triangles)
+- [x] U+25C8 (diamond in diamond)
+- [ ] U+25C9–U+25CA (fisheye, lozenge)
 - [ ] U+25CC–U+25CE (dotted circle, bullseye)
 - [ ] U+25D0–U+25FF (half circles, arcs, sectors, etc.)
 
