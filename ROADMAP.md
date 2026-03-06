@@ -249,8 +249,8 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 **Already done:** U+2190 ←, U+2191 ↑, U+2192 →, U+2193 ↓
 
 **High-priority missing:**
-- [ ] U+2194 ↔ left-right arrow
-- [ ] U+2195 ↕ up-down arrow
+- [x] U+2194 ↔ left-right arrow
+- [x] U+2195 ↕ up-down arrow
 - [ ] U+2196 ↖ north-west arrow
 - [ ] U+2197 ↗ north-east arrow
 - [ ] U+2198 ↘ south-east arrow
@@ -263,12 +263,12 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
 
 **High-priority missing:**
-- [ ] U+2200 ∀ for all
+- [x] U+2200 ∀ for all
 - [ ] U+2201 ∁ complement
 - [ ] U+2202 ∂ partial differential
-- [ ] U+2203 ∃ there exists
+- [x] U+2203 ∃ there exists
 - [ ] U+2204 ∄ does not exist
-- [ ] U+2205 ∅ empty set
+- [x] U+2205 ∅ empty set
 - [ ] U+2206 ∆ increment
 - [ ] U+2207 ∇ nabla
 - [ ] U+2208 ∈ element of
