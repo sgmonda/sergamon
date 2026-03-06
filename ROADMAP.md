@@ -218,9 +218,9 @@ U+03B5 ε, U+03BB λ, U+03BC μ, U+03C0 π, U+03C3 σ, U+03C4 τ, U+03C6 φ, U+0
 - [x] U+03BF ο omicron
 - [x] U+03C1 ρ rho
 - [x] U+03C2 ς final sigma
-- [ ] U+03C5 υ upsilon
-- [ ] U+03C7 χ chi
-- [ ] U+03C8 ψ psi
+- [x] U+03C5 υ upsilon
+- [x] U+03C7 χ chi
+- [x] U+03C8 ψ psi
 
 ---
 
