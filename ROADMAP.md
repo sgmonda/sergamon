@@ -255,7 +255,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2197 ↗ north-east arrow
 - [x] U+2198 ↘ south-east arrow
 - [x] U+2199 ↙ south-west arrow
-- [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ done)
+- [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ done)
 
 ### [-] Mathematical Operators (U+2200–U+22FF) — 12/256
 
@@ -270,9 +270,9 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2204 ∄ does not exist
 - [x] U+2205 ∅ empty set
 - [x] U+2206 ∆ increment
-- [ ] U+2207 ∇ nabla
-- [ ] U+2208 ∈ element of
-- [ ] U+2209 ∉ not element of
+- [x] U+2207 ∇ nabla
+- [x] U+2208 ∈ element of
+- [x] U+2209 ∉ not element of
 - [ ] U+220A ∊ small element of
 - [ ] U+220B ∋ contains
 - [ ] U+2211 ∑ summation
