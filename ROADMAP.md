@@ -353,11 +353,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2021 ‡ double dagger
 - [x] U+2023 ‣ triangular bullet
 - [x] U+2024 one dot leader
-- [ ] U+2025 two dot leader
-- [ ] U+2027 ‧ hyphenation point
-- [ ] U+2030 ‰ per mille
-- [ ] U+2032 ′ prime
-- [ ] U+2033 ″ double prime
+- [x] U+2025 two dot leader
+- [x] U+2027 ‧ hyphenation point
+- [x] U+2030 ‰ per mille
+- [x] U+2032 ′ prime
+- [x] U+2033 ″ double prime
 - [ ] U+2039 ‹ single left guillemet
 - [ ] U+203A › single right guillemet
 - [ ] U+203C ‼ double exclamation
