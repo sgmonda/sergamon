@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1381 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1396 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -242,9 +242,9 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0450 ѐ, U+0451 ё
 - [x] U+0452–U+045F (lowercase of above)
 - [x] U+0490 Ґ, U+0491 ґ (Ukrainian)
-- [-] U+0492–U+04FF (additional Cyrillic extensions as needed — U+0492–U+04A3, U+04A6–U+04A9, U+04AA–U+04E1, U+04AE–U+04BB, U+04D8–U+04D9, U+04E8–U+04E9 done)
+- [-] U+0492–U+04FF (additional Cyrillic extensions as needed — U+0492–U+04A3, U+04A6–U+04A9, U+04AA–U+04E6, U+04AE–U+04BB, U+04D8–U+04D9, U+04E8–U+04E9 done)
 
-### [-] Arrows (U+2190–U+21FF) — 89/112
+### [-] Arrows (U+2190–U+21FF) — 94/112
 
 **Already done:** U+2190 ←, U+2191 ↑, U+2192 →, U+2193 ↓
 
@@ -257,7 +257,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2199 ↙ south-west arrow
 - [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ ⇕ ⇖ ⇗ ⇘ ⇙ ⇠ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↤ ↥ ↦ ↧ ↨ ↰ ↱ ↲ ↳ ↺ ↻ ⇄ ⇅ ⇆ ⇋ ⇌ done)
 
-### [-] Mathematical Operators (U+2200–U+22FF) — 129/256
+### [-] Mathematical Operators (U+2200–U+22FF) — 134/256
 
 **Already done:**
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
@@ -547,9 +547,9 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase | Estimated | Done | % |
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
-| Phase 2 — High-impact blocks | ~600 | 453 | 76% |
+| Phase 2 — High-impact blocks | ~600 | 468 | 78% |
 | Phase 3 — Enrichment | ~500 | 240 | 48% |
 | Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **1045** | **~39%** |
-| **Grand total (with existing 538)** | **~3,188** | **1381** | **~43%** |
+| **Total new glyphs** | **~2,650** | **1060** | **~40%** |
+| **Grand total (with existing 538)** | **~3,188** | **1396** | **~44%** |
