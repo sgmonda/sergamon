@@ -241,7 +241,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0402–U+040F (Serbian/Macedonian: Ђ Ѓ Є Ѕ І Ї Ј Љ Њ Ћ Ќ Ў Џ)
 - [x] U+0450 ѐ, U+0451 ё
 - [x] U+0452–U+045F (lowercase of above)
-- [ ] U+0490 Ґ, U+0491 ґ (Ukrainian)
+- [x] U+0490 Ґ, U+0491 ґ (Ukrainian)
 - [ ] U+0492–U+04FF (additional Cyrillic extensions as needed)
 
 ### [-] Arrows (U+2190–U+21FF) — 4/112
@@ -255,7 +255,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2197 ↗ north-east arrow
 - [x] U+2198 ↘ south-east arrow
 - [x] U+2199 ↙ south-west arrow
-- [ ] U+219A–U+21FF (remaining arrows: double, dashed, etc.)
+- [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ done)
 
 ### [-] Mathematical Operators (U+2200–U+22FF) — 12/256
 
