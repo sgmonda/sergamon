@@ -320,11 +320,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 
 **Missing (~80):**
 - [x] U+25A4–U+25A8 (squares with fills: horiz, vert, crosshatch, diag down, diag up)
-- [ ] U+25A9 (square with diagonal crosshatch fill)
-- [ ] U+25AC–U+25B1 (rectangles, parallelograms)
+- [x] U+25A9 (square with diagonal crosshatch fill)
+- [x] U+25B0–U+25B1 (black/white parallelogram)
 - [ ] U+25B4–U+25B5 (small triangles)
 - [ ] U+25B8–U+25BB (small/medium right triangles)
-- [ ] U+25BE–U+25BF (small down triangles)
+- [x] U+25BE–U+25BF (small down triangles)
 - [ ] U+25C2–U+25C5 (small/medium left triangles)
 - [ ] U+25C8–U+25CA (diamonds, lozenges)
 - [ ] U+25CC–U+25CE (dotted circle, bullseye)
