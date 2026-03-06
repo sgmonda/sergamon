@@ -397,7 +397,7 @@
             .philosophy-card {
                 border: 1px solid var(--border);
                 border-radius: var(--radius);
-                padding: 28px 24px;
+                padding: 16px 24px;
                 background: var(--bg-secondary);
                 position: relative;
                 overflow: hidden;
@@ -1514,7 +1514,7 @@ The quick brown fox jumps over the lazy dog.
                     <div class="philosophy-card card-weight">
                         <span class="philosophy-icon">W</span>
                         <h3>Single Weight</h3>
-                        <p>Inspired by classic terminals. No bold, no light.</p>
+                        <p>Inspired by classic terminals. No bold.</p>
                         <div class="philosophy-demo">
                             -- same<br />
                             <span
@@ -1532,7 +1532,7 @@ The quick brown fox jumps over the lazy dog.
                     <div class="philosophy-card card-wysiwyg">
                         <span class="philosophy-icon">=&gt;</span>
                         <h3>No Ligatures</h3>
-                        <p>What you type should be what you see.</p>
+                        <p>What you type is what you see.</p>
                         <div class="philosophy-demo">
                             <span class="demo-highlight">==</span> is not ══<br />
                             <span class="demo-highlight">!=</span> is not ≠<br />
@@ -1543,7 +1543,7 @@ The quick brown fox jumps over the lazy dog.
                     <div class="philosophy-card card-lineheight">
                         <span class="philosophy-icon">↕</span>
                         <h3>Line Height 1.0</h3>
-                        <p>Each row of pixels is text. Every pixel matters.</p>
+                        <p>Each pixel matters. No space between rows</p>
                         <div class="philosophy-demo">
                             -- pixel-perfect:<br />
                             <span class="demo-highlight">line-height: 1</span>
@@ -1555,14 +1555,10 @@ The quick brown fox jumps over the lazy dog.
                         <h3>Letter Spacing 0</h3>
                         <p>Glyphs are designed to tile on the pixel grid.</p>
                         <div class="philosophy-demo">
+                            -- pixel-perfect:<br />
                             <span class="demo-highlight"
                                 >letter-spacing: 0</span
                             >
-                            ── ┌──┐ connected<br />
-                            <span class="demo-highlight"
-                                >letter-spacing: 1px</span
-                            >
-                            ── ┌ ── ┐ broken
                         </div>
                     </div>
                 </div>
