@@ -358,11 +358,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2030 ‰ per mille
 - [x] U+2032 ′ prime
 - [x] U+2033 ″ double prime
-- [ ] U+2039 ‹ single left guillemet
-- [ ] U+203A › single right guillemet
-- [ ] U+203C ‼ double exclamation
-- [ ] U+2044 ⁄ fraction slash
-- [ ] U+2047 ⁇ double question mark
+- [x] U+2039 ‹ single left guillemet
+- [x] U+203A › single right guillemet
+- [x] U+203C ‼ double exclamation
+- [x] U+2044 ⁄ fraction slash
+- [x] U+2047 ⁇ double question mark
 - [ ] U+2048 ⁈ question exclamation
 - [ ] U+2049 ⁉ exclamation question
 - [ ] Remaining U+2000–U+206F
