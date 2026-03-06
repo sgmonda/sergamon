@@ -195,11 +195,11 @@ U+03B5 ε, U+03BB λ, U+03BC μ, U+03C0 π, U+03C3 σ, U+03C4 τ, U+03C6 φ, U+0
 - [x] U+0393 Γ Gamma
 - [x] U+0395 Ε Epsilon
 - [x] U+0396 Ζ Zeta
-- [ ] U+0397 Η Eta
-- [ ] U+0398 Θ Theta
-- [ ] U+0399 Ι Iota
-- [ ] U+039A Κ Kappa
-- [ ] U+039B Λ Lambda
+- [x] U+0397 Η Eta
+- [x] U+0398 Θ Theta
+- [x] U+0399 Ι Iota
+- [x] U+039A Κ Kappa
+- [x] U+039B Λ Lambda
 - [ ] U+039C Μ Mu
 - [ ] U+039D Ν Nu
 - [ ] U+039E Ξ Xi
