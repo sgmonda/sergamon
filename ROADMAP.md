@@ -386,12 +386,12 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2103 ℃ degree celsius
 - [x] U+2109 ℉ degree fahrenheit
 - [x] U+210E ℎ planck constant
-- [ ] U+2116 № numero sign
-- [ ] U+2117 ℗ sound recording copyright
-- [ ] U+2120 ℠ service mark
-- [ ] U+2122 ™ trademark
+- [x] U+2116 № numero sign
+- [x] U+2117 ℗ sound recording copyright
+- [x] U+2120 ℠ service mark
+- [x] U+2122 ™ trademark
 - [ ] U+212B Å angstrom sign
-- [ ] U+2139 ℹ information source
+- [x] U+2139 ℹ information source
 - [ ] Remaining U+2100–U+214F
 
 ### [-] Currency Symbols (U+20A0–U+20CF) — 4/32
