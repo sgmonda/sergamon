@@ -283,11 +283,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2218 ∘ ring operator
 - [x] U+2219 ∙ bullet operator
 - [x] U+221D ∝ proportional to
-- [ ] U+2220 ∠ angle
-- [ ] U+2225 ∥ parallel to
-- [ ] U+2229 ∩ intersection
-- [ ] U+222A ∪ union
-- [ ] U+222B ∫ integral
+- [x] U+2220 ∠ angle
+- [x] U+2225 ∥ parallel to
+- [x] U+2229 ∩ intersection
+- [x] U+222A ∪ union
+- [x] U+222B ∫ integral
 - [ ] U+2234 ∴ therefore
 - [ ] U+2235 ∵ because
 - [ ] U+223C ∼ tilde operator
