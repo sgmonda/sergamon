@@ -374,18 +374,18 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 **High-priority missing:**
 - [x] U+2302 ⌂ house
 - [x] U+2310 ⌐ reversed not sign
-- [ ] U+2318 ⌘ (done)
-- [-] U+2320–U+2321 ⌠⌡ integral top/bottom (⌠ done)
-- [ ] U+2328 ⌨ keyboard
+- [x] U+2318 ⌘ (done)
+- [x] U+2320–U+2321 ⌠⌡ integral top/bottom
+- [x] U+2328 ⌨ keyboard
 - [ ] U+23B8–U+23B9 (left/right vertical box line)
 - [ ] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
 - [ ] Remaining as needed
 
 ### [ ] Letterlike Symbols (U+2100–U+214F) — 0/80
 
-- [ ] U+2103 ℃ degree celsius
-- [ ] U+2109 ℉ degree fahrenheit
-- [ ] U+210E ℎ planck constant
+- [x] U+2103 ℃ degree celsius
+- [x] U+2109 ℉ degree fahrenheit
+- [x] U+210E ℎ planck constant
 - [ ] U+2116 № numero sign
 - [ ] U+2117 ℗ sound recording copyright
 - [ ] U+2120 ℠ service mark
