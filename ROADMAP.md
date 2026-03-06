@@ -240,7 +240,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0400 Ѐ, U+0401 Ё (Io — critical for Russian)
 - [x] U+0402–U+040F (Serbian/Macedonian: Ђ Ѓ Є Ѕ І Ї Ј Љ Њ Ћ Ќ Ў Џ)
 - [x] U+0450 ѐ, U+0451 ё
-- [-] U+0452–U+045F (lowercase of above — ђ ѓ є ѕ і ї ј љ done)
+- [x] U+0452–U+045F (lowercase of above)
 - [ ] U+0490 Ґ, U+0491 ґ (Ukrainian)
 - [ ] U+0492–U+04FF (additional Cyrillic extensions as needed)
 
