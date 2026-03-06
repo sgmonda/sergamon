@@ -414,11 +414,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+20B4 ₴ hryvnia
 - [x] U+20B5 ₵ cedi
 - [x] U+20B8 ₸ tenge
-- [ ] U+20B9 ₹ Indian rupee
-- [ ] U+20BA ₺ Turkish lira
-- [ ] U+20BC ₼ manat
-- [ ] U+20BD ₽ Russian ruble
-- [ ] U+20BF ₿ bitcoin
+- [x] U+20B9 ₹ Indian rupee
+- [x] U+20BA ₺ Turkish lira
+- [x] U+20BC ₼ manat
+- [x] U+20BD ₽ Russian ruble
+- [x] U+20BF ₿ bitcoin
 
 ### [ ] Superscripts & Subscripts (U+2070–U+209F) — 0/42
 
