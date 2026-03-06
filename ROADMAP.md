@@ -234,13 +234,13 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0410–U+042F А Б В Г Д Е Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
 
 **Lowercase (32):**
-- [-] U+0430–U+044F а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я (а–ш щ ъ ы ь э done)
+- [x] U+0430–U+044F а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
 
 **Extended Cyrillic (essential extras):**
 - [x] U+0400 Ѐ, U+0401 Ё (Io — critical for Russian)
 - [x] U+0402–U+040F (Serbian/Macedonian: Ђ Ѓ Є Ѕ І Ї Ј Љ Њ Ћ Ќ Ў Џ)
 - [x] U+0450 ѐ, U+0451 ё
-- [ ] U+0452–U+045F (lowercase of above)
+- [-] U+0452–U+045F (lowercase of above — ђ ѓ є done)
 - [ ] U+0490 Ґ, U+0491 ґ (Ukrainian)
 - [ ] U+0492–U+04FF (additional Cyrillic extensions as needed)
 
