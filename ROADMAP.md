@@ -298,11 +298,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+226B ≫ much greater than
 - [x] U+2282 ⊂ subset of
 - [x] U+2283 ⊃ superset of
-- [ ] U+2284 ⊄ not subset
-- [ ] U+2286 ⊆ subset or equal
-- [ ] U+2287 ⊇ superset or equal
-- [ ] U+2295 ⊕ circled plus
-- [ ] U+2296 ⊖ circled minus
+- [x] U+2284 ⊄ not subset
+- [x] U+2286 ⊆ subset or equal
+- [x] U+2287 ⊇ superset or equal
+- [x] U+2295 ⊕ circled plus
+- [x] U+2296 ⊖ circled minus
 - [ ] U+2297 ⊗ circled times
 - [ ] U+22A5 ⊥ perpendicular
 - [ ] U+22C5 ⋅ dot operator
