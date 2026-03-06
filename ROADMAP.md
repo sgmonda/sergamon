@@ -288,11 +288,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2229 ∩ intersection
 - [x] U+222A ∪ union
 - [x] U+222B ∫ integral
-- [ ] U+2234 ∴ therefore
-- [ ] U+2235 ∵ because
-- [ ] U+223C ∼ tilde operator
-- [ ] U+2245 ≅ approximately equal
-- [ ] U+2261 ≡ identical to
+- [x] U+2234 ∴ therefore
+- [x] U+2235 ∵ because
+- [x] U+223C ∼ tilde operator
+- [x] U+2245 ≅ approximately equal
+- [x] U+2261 ≡ identical to
 - [ ] U+2262 ≢ not identical to
 - [ ] U+226A ≪ much less than
 - [ ] U+226B ≫ much greater than
