@@ -322,8 +322,8 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25A4–U+25A8 (squares with fills: horiz, vert, crosshatch, diag down, diag up)
 - [x] U+25A9 (square with diagonal crosshatch fill)
 - [x] U+25B0–U+25B1 (black/white parallelogram)
-- [ ] U+25B4–U+25B5 (small triangles)
-- [ ] U+25B8–U+25BB (small/medium right triangles)
+- [x] U+25B4–U+25B5 (small triangles)
+- [x] U+25B8–U+25BB (small/medium right triangles)
 - [x] U+25BE–U+25BF (small down triangles)
 - [x] U+25C2–U+25C5 (small/medium left triangles)
 - [x] U+25C8 (diamond in diamond)
@@ -363,8 +363,8 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+203C ‼ double exclamation
 - [x] U+2044 ⁄ fraction slash
 - [x] U+2047 ⁇ double question mark
-- [ ] U+2048 ⁈ question exclamation
-- [ ] U+2049 ⁉ exclamation question
+- [x] U+2048 ⁈ question exclamation
+- [x] U+2049 ⁉ exclamation question
 - [ ] Remaining U+2000–U+206F
 
 ### [ ] Miscellaneous Technical (U+2300–U+23FF) — 5/256
@@ -372,10 +372,10 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
 **High-priority missing:**
-- [ ] U+2302 ⌂ house
-- [ ] U+2310 ⌐ reversed not sign
+- [x] U+2302 ⌂ house
+- [x] U+2310 ⌐ reversed not sign
 - [ ] U+2318 ⌘ (done)
-- [ ] U+2320–U+2321 ⌠⌡ integral top/bottom
+- [-] U+2320–U+2321 ⌠⌡ integral top/bottom (⌠ done)
 - [ ] U+2328 ⌨ keyboard
 - [ ] U+23B8–U+23B9 (left/right vertical box line)
 - [ ] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
