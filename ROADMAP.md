@@ -329,7 +329,8 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25C8 (diamond in diamond)
 - [x] U+25C9–U+25CA (fisheye, lozenge)
 - [x] U+25CC–U+25CE (dotted circle, circle vert fill, bullseye)
-- [ ] U+25D0–U+25FF (half circles, arcs, sectors, etc.)
+- [x] U+25D0–U+25D4 (half circles, UL quadrant)
+- [ ] U+25D5–U+25FF (remaining circles, arcs, sectors, etc.)
 
 ### [-] General Punctuation (U+2000–U+206F) — 5/111
 
