@@ -343,11 +343,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2012 ‒ figure dash
 - [x] U+2015 ― horizontal bar
 - [x] U+2018 ' left single quote
-- [ ] U+2019 ' right single quote (apostrophe)
-- [ ] U+201A ‚ single low-9 quote
-- [ ] U+201B ‛ single high-reversed-9 quote
-- [ ] U+201C " left double quote
-- [ ] U+201D " right double quote
+- [x] U+2019 ' right single quote (apostrophe)
+- [x] U+201A ‚ single low-9 quote
+- [x] U+201B ‛ single high-reversed-9 quote
+- [x] U+201C " left double quote
+- [x] U+201D " right double quote
 - [ ] U+201E „ double low-9 quote
 - [ ] U+2020 † dagger
 - [ ] U+2021 ‡ double dagger
