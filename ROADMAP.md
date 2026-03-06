@@ -319,7 +319,8 @@ U+25A0 ■, U+25A1 □, U+25AA ▪, U+25AB ▫, U+25B2 ▲, U+25B3 △, U+25B6 �
 U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB ○, U+25CF ●
 
 **Missing (~80):**
-- [ ] U+25A2–U+25A9 (squares with fills/frames)
+- [x] U+25A4–U+25A8 (squares with fills: horiz, vert, crosshatch, diag down, diag up)
+- [ ] U+25A9 (square with diagonal crosshatch fill)
 - [ ] U+25AC–U+25B1 (rectangles, parallelograms)
 - [ ] U+25B4–U+25B5 (small triangles)
 - [ ] U+25B8–U+25BB (small/medium right triangles)
