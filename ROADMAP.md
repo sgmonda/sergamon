@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1187 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1202 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -242,9 +242,9 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0450 ѐ, U+0451 ё
 - [x] U+0452–U+045F (lowercase of above)
 - [x] U+0490 Ґ, U+0491 ґ (Ukrainian)
-- [-] U+0492–U+04FF (additional Cyrillic extensions as needed — U+0492–U+04A0 done)
+- [-] U+0492–U+04FF (additional Cyrillic extensions as needed — U+0492–U+04A3, U+04AE–U+04AF done)
 
-### [-] Arrows (U+2190–U+21FF) — 25/112
+### [-] Arrows (U+2190–U+21FF) — 30/112
 
 **Already done:** U+2190 ←, U+2191 ↑, U+2192 →, U+2193 ↓
 
@@ -255,9 +255,9 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2197 ↗ north-east arrow
 - [x] U+2198 ↘ south-east arrow
 - [x] U+2199 ↙ south-west arrow
-- [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↤ ↦ done)
+- [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↤ ↥ ↦ ↧ ↨ ↰ ↱ done)
 
-### [-] Mathematical Operators (U+2200–U+22FF) — 64/256
+### [-] Mathematical Operators (U+2200–U+22FF) — 69/256
 
 **Already done:**
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
@@ -306,7 +306,7 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2297 ⊗ circled times
 - [x] U+22A5 ⊥ perpendicular
 - [x] U+22C5 ⋅ dot operator
-- [-] Remaining U+2200–U+22FF (~200 more — U+2216, U+2223–U+2224, U+2226, U+222C–U+222E, U+2236–U+2237, U+2243–U+2244, U+2247, U+2249, U+22A2–U+22A4, U+22A8, U+22BB, U+22C4, U+22C6, U+22EE–U+22EF done)
+- [-] Remaining U+2200–U+22FF (~200 more — U+2216, U+2223–U+2224, U+2226, U+222C–U+222E, U+2236–U+2237, U+2243–U+2244, U+2247, U+2249–U+2253, U+2256, U+22A2–U+22A4, U+22A8, U+22BB, U+22C4, U+22C6, U+22EE–U+22EF done)
 
 ---
 
@@ -547,9 +547,9 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase | Estimated | Done | % |
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
-| Phase 2 — High-impact blocks | ~600 | 259 | 43% |
+| Phase 2 — High-impact blocks | ~600 | 274 | 46% |
 | Phase 3 — Enrichment | ~500 | 240 | 48% |
 | Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **851** | **~32%** |
-| **Grand total (with existing 538)** | **~3,188** | **1187** | **~37%** |
+| **Total new glyphs** | **~2,650** | **866** | **~33%** |
+| **Grand total (with existing 538)** | **~3,188** | **1202** | **~38%** |
