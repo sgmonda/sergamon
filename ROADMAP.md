@@ -251,9 +251,9 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 **High-priority missing:**
 - [x] U+2194 ↔ left-right arrow
 - [x] U+2195 ↕ up-down arrow
-- [ ] U+2196 ↖ north-west arrow
-- [ ] U+2197 ↗ north-east arrow
-- [ ] U+2198 ↘ south-east arrow
+- [x] U+2196 ↖ north-west arrow
+- [x] U+2197 ↗ north-east arrow
+- [x] U+2198 ↘ south-east arrow
 - [ ] U+2199 ↙ south-west arrow
 - [ ] U+219A–U+21FF (remaining arrows: double, dashed, etc.)
 
