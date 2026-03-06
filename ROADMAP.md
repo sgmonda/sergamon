@@ -409,11 +409,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+20AB ₫ dong
 - [x] U+20AD ₭ kip
 - [x] U+20AE ₮ tugrik
-- [ ] U+20B1 ₱ peso
-- [ ] U+20B2 ₲ guarani
-- [ ] U+20B4 ₴ hryvnia
-- [ ] U+20B5 ₵ cedi
-- [ ] U+20B8 ₸ tenge
+- [x] U+20B1 ₱ peso
+- [x] U+20B2 ₲ guarani
+- [x] U+20B4 ₴ hryvnia
+- [x] U+20B5 ₵ cedi
+- [x] U+20B8 ₸ tenge
 - [ ] U+20B9 ₹ Indian rupee
 - [ ] U+20BA ₺ Turkish lira
 - [ ] U+20BC ₼ manat
