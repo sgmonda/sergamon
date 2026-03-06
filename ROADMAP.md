@@ -293,11 +293,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+223C ∼ tilde operator
 - [x] U+2245 ≅ approximately equal
 - [x] U+2261 ≡ identical to
-- [ ] U+2262 ≢ not identical to
-- [ ] U+226A ≪ much less than
-- [ ] U+226B ≫ much greater than
-- [ ] U+2282 ⊂ subset of
-- [ ] U+2283 ⊃ superset of
+- [x] U+2262 ≢ not identical to
+- [x] U+226A ≪ much less than
+- [x] U+226B ≫ much greater than
+- [x] U+2282 ⊂ subset of
+- [x] U+2283 ⊃ superset of
 - [ ] U+2284 ⊄ not subset
 - [ ] U+2286 ⊆ subset or equal
 - [ ] U+2287 ⊇ superset or equal
