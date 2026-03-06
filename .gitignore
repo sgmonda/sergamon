@@ -3,3 +3,4 @@ build/
 dist/
 *.tgz
 .DS_Store
+.claude/
