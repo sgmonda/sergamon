@@ -242,7 +242,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0450 ѐ, U+0451 ё
 - [x] U+0452–U+045F (lowercase of above)
 - [x] U+0490 Ґ, U+0491 ґ (Ukrainian)
-- [ ] U+0492–U+04FF (additional Cyrillic extensions as needed)
+- [-] U+0492–U+04FF (additional Cyrillic extensions as needed — U+0492–U+0496 done)
 
 ### [-] Arrows (U+2190–U+21FF) — 4/112
 
@@ -546,10 +546,10 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 
 | Phase | Estimated | Done | % |
 |-------|-----------|------|---|
-| Phase 1 — Complete started blocks | ~350 | 0 | 0% |
-| Phase 2 — High-impact blocks | ~600 | 0 | 0% |
-| Phase 3 — Enrichment | ~500 | 0 | 0% |
-| Phase 4 — Extended coverage | ~500 | 0 | 0% |
+| Phase 1 — Complete started blocks | ~350 | 350 | 100% |
+| Phase 2 — High-impact blocks | ~600 | 217 | 36% |
+| Phase 3 — Enrichment | ~500 | 195 | 39% |
+| Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **0** | **0%** |
-| **Grand total (with existing 538)** | **~3,188** | **538** | **~17%** |
+| **Total new glyphs** | **~2,650** | **764** | **~29%** |
+| **Grand total (with existing 538)** | **~3,188** | **1100** | **~35%** |
