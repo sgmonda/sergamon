@@ -200,11 +200,11 @@ U+03B5 ε, U+03BB λ, U+03BC μ, U+03C0 π, U+03C3 σ, U+03C4 τ, U+03C6 φ, U+0
 - [x] U+0399 Ι Iota
 - [x] U+039A Κ Kappa
 - [x] U+039B Λ Lambda
-- [ ] U+039C Μ Mu
-- [ ] U+039D Ν Nu
-- [ ] U+039E Ξ Xi
-- [ ] U+039F Ο Omicron
-- [ ] U+03A1 Ρ Rho
+- [x] U+039C Μ Mu
+- [x] U+039D Ν Nu
+- [x] U+039E Ξ Xi
+- [x] U+039F Ο Omicron
+- [x] U+03A1 Ρ Rho
 - [ ] U+03A4–U+03A8 Τ Υ Φ Χ Ψ (Tau, Upsilon, Phi, Chi, Psi)
 
 **Missing lowercase (8):**
