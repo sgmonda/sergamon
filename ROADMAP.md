@@ -278,11 +278,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2211 ∑ summation
 - [x] U+2212 − minus sign
 - [x] U+2213 ∓ minus-or-plus
-- [ ] U+2215 ∕ division slash
-- [ ] U+2217 ∗ asterisk operator
-- [ ] U+2218 ∘ ring operator
-- [ ] U+2219 ∙ bullet operator
-- [ ] U+221D ∝ proportional to
+- [x] U+2215 ∕ division slash
+- [x] U+2217 ∗ asterisk operator
+- [x] U+2218 ∘ ring operator
+- [x] U+2219 ∙ bullet operator
+- [x] U+221D ∝ proportional to
 - [ ] U+2220 ∠ angle
 - [ ] U+2225 ∥ parallel to
 - [ ] U+2229 ∩ intersection
