@@ -273,11 +273,11 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2207 ∇ nabla
 - [x] U+2208 ∈ element of
 - [x] U+2209 ∉ not element of
-- [ ] U+220A ∊ small element of
-- [ ] U+220B ∋ contains
-- [ ] U+2211 ∑ summation
-- [ ] U+2212 − minus sign
-- [ ] U+2213 ∓ minus-or-plus
+- [x] U+220A ∊ small element of
+- [x] U+220B ∋ contains
+- [x] U+2211 ∑ summation
+- [x] U+2212 − minus sign
+- [x] U+2213 ∓ minus-or-plus
 - [ ] U+2215 ∕ division slash
 - [ ] U+2217 ∗ asterisk operator
 - [ ] U+2218 ∘ ring operator
