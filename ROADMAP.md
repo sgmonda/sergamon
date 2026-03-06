@@ -332,7 +332,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25D0–U+25D4 (half circles, UL quadrant)
 - [-] U+25D5–U+25FF (remaining circles, arcs, sectors — U+25D5–U+25D7, U+25E2–U+25E6, U+25EF, U+25FB–U+25FC done)
 
-### [-] General Punctuation (U+2000–U+206F) — 38/111
+### [-] General Punctuation (U+2000–U+206F) — 48/111
 
 **Already done:** U+2013 –, U+2014 —, U+2022 •, U+2026 …
 
@@ -365,9 +365,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2047 ⁇ double question mark
 - [x] U+2048 ⁈ question exclamation
 - [x] U+2049 ⁉ exclamation question
-- [ ] Remaining U+2000–U+206F
+- [-] Remaining U+2000–U+206F (U+2016, U+202F, U+2034–U+2035, U+2038, U+203B, U+203D–U+203E, U+2043, U+204B done)
 
-### [ ] Miscellaneous Technical (U+2300–U+23FF) — 5/256
+### [-] Miscellaneous Technical (U+2300–U+23FF) — 18/256
 
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
@@ -377,8 +377,8 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2318 ⌘ (done)
 - [x] U+2320–U+2321 ⌠⌡ integral top/bottom
 - [x] U+2328 ⌨ keyboard
-- [ ] U+23B8–U+23B9 (left/right vertical box line)
-- [ ] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
+- [x] U+23B8–U+23B9 (left/right vertical box line)
+- [x] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
 - [ ] Remaining as needed
 
 ### [ ] Letterlike Symbols (U+2100–U+214F) — 0/80
@@ -548,8 +548,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 229 | 38% |
-| Phase 3 — Enrichment | ~500 | 217 | 43% |
+| Phase 3 — Enrichment | ~500 | 240 | 48% |
 | Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **798** | **~30%** |
-| **Grand total (with existing 538)** | **~3,188** | **1134** | **~36%** |
+| **Total new glyphs** | **~2,650** | **821** | **~31%** |
+| **Grand total (with existing 538)** | **~3,188** | **1157** | **~36%** |
