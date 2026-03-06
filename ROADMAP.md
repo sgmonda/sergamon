@@ -399,11 +399,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 **Already done:** U+00A2 ¢, U+00A3 £, U+00A5 ¥, U+20AC €
 
 **Missing (high-priority):**
-- [ ] U+20A0 ₠ Euro-currency sign (old)
-- [ ] U+20A3 ₣ French franc
-- [ ] U+20A4 ₤ lira
-- [ ] U+20A7 ₧ peseta
-- [ ] U+20A8 ₨ rupee
+- [x] U+20A0 ₠ Euro-currency sign (old)
+- [x] U+20A3 ₣ French franc
+- [x] U+20A4 ₤ lira
+- [x] U+20A7 ₧ peseta
+- [x] U+20A8 ₨ rupee
 - [ ] U+20A9 ₩ won
 - [ ] U+20AA ₪ sheqel
 - [ ] U+20AB ₫ dong
