@@ -78,7 +78,7 @@ U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+0
 - [x] U+0114 Ĕ, U+0115 ĕ (E breve)
 - [x] U+0116 Ė, U+0117 ė (E dot above)
 - [x] U+0118 Ę (E ogonek — lowercase ę already done)
-- [-] U+011A Ě, U+011B ě (E caron)
+- [x] U+011A Ě, U+011B ě (E caron)
 - [x] U+011C Ĝ, U+011D ĝ (G circumflex)
 - [x] U+011E Ğ, U+011F ğ (G breve)
 - [x] U+0120 Ġ, U+0121 ġ (G dot above)
@@ -155,7 +155,7 @@ U+256F ╯, U+2570 ╰
 - [x] U+2567–U+2568 ╧╨ (mixed single/double, T up)
 - [x] U+256A–U+256B ╪╫ (mixed single/double, cross)
 - [x] U+2571–U+2573 ╱╲╳ (diagonal lines and cross)
-- [-] U+2574–U+257F (light/heavy line segments)
+- [x] U+2574–U+257F (light/heavy line segments)
 
 ### [-] Block Elements (U+2580–U+259F) — 14/32
 
@@ -237,8 +237,8 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [ ] U+0430–U+044F а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я
 
 **Extended Cyrillic (essential extras):**
-- [ ] U+0400 Ѐ, U+0401 Ё (Io — critical for Russian)
-- [ ] U+0402–U+040F (Serbian/Macedonian: Ђ Ѓ Є Ѕ І Ї Ј Љ Њ Ћ Ќ Ў Џ)
+- [x] U+0400 Ѐ, U+0401 Ё (Io — critical for Russian)
+- [-] U+0402–U+040F (Serbian/Macedonian: Ђ Ѓ Є Ѕ І Ї Ј Љ Њ Ћ Ќ Ў Џ)
 - [ ] U+0450 ѐ, U+0451 ё
 - [ ] U+0452–U+045F (lowercase of above)
 - [ ] U+0490 Ґ, U+0491 ґ (Ukrainian)

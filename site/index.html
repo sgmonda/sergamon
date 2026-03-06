@@ -1119,6 +1119,7 @@
                         Math & Greek
                     </button>
                     <button class="char-tab" data-tab="braille">Braille</button>
+                    <button class="char-tab" data-tab="cyrillic">Cyrillic</button>
                 </div>
 
                 <div class="char-tab-panel active" data-tab="ascii">
@@ -1143,6 +1144,10 @@
 
                 <div class="char-tab-panel" data-tab="braille">
                     <div class="char-grid" id="brailleGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="cyrillic">
+                    <div class="char-grid" id="cyrillicGrid"></div>
                 </div>
             </div>
         </section>
@@ -2995,12 +3000,23 @@ int main(void) {
                     }
                 }
 
+                function populateCyrillic() {
+                    populateCategory("#cyrillicGrid", [
+                        [0x0400, "Ie grave"],
+                        [0x0401, "Io"],
+                        [0x0402, "Dje"],
+                        [0x0403, "Gje"],
+                        [0x0404, "Ie"],
+                    ]);
+                }
+
                 populateASCII();
                 populateLatinExt();
                 populateShapes();
                 populateSymbols();
                 populateMath();
                 populateBraille();
+                populateCyrillic();
 
                 // ── Distinguishability Table ───────────────────────────────────
 
