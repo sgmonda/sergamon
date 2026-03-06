@@ -257,7 +257,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2199 ↙ south-west arrow
 - [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ done)
 
-### [-] Mathematical Operators (U+2200–U+22FF) — 12/256
+### [-] Mathematical Operators (U+2200–U+22FF) — 54/256
 
 **Already done:**
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
@@ -306,13 +306,13 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2297 ⊗ circled times
 - [x] U+22A5 ⊥ perpendicular
 - [x] U+22C5 ⋅ dot operator
-- [ ] Remaining U+2200–U+22FF (~200 more)
+- [-] Remaining U+2200–U+22FF (~200 more — U+2216, U+2223–U+2224, U+22A2–U+22A4, U+22A8, U+22BB, U+22C4, U+22C6, U+22EE–U+22EF done)
 
 ---
 
 ## Phase 3 — Enrichment (~500 glyphs)
 
-### [-] Geometric Shapes (U+25A0–U+25FF) — 16/96
+### [-] Geometric Shapes (U+25A0–U+25FF) — 49/96
 
 **Already done:**
 U+25A0 ■, U+25A1 □, U+25AA ▪, U+25AB ▫, U+25B2 ▲, U+25B3 △, U+25B6 ▶, U+25B7 ▷,
@@ -330,14 +330,14 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25C9–U+25CA (fisheye, lozenge)
 - [x] U+25CC–U+25CE (dotted circle, circle vert fill, bullseye)
 - [x] U+25D0–U+25D4 (half circles, UL quadrant)
-- [ ] U+25D5–U+25FF (remaining circles, arcs, sectors, etc.)
+- [-] U+25D5–U+25FF (remaining circles, arcs, sectors — U+25D5–U+25D7, U+25E2–U+25E6, U+25EF, U+25FB–U+25FC done)
 
-### [-] General Punctuation (U+2000–U+206F) — 5/111
+### [-] General Punctuation (U+2000–U+206F) — 38/111
 
 **Already done:** U+2013 –, U+2014 —, U+2022 •, U+2026 …
 
 **High-priority missing:**
-- [ ] U+2000–U+200A (various spaces: en quad, em quad, etc.)
+- [x] U+2000–U+200A (various spaces: en quad, em quad, etc.)
 - [x] U+2010 ‐ hyphen
 - [x] U+2011 ‑ non-breaking hyphen
 - [x] U+2012 ‒ figure dash
@@ -547,9 +547,9 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase | Estimated | Done | % |
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
-| Phase 2 — High-impact blocks | ~600 | 217 | 36% |
-| Phase 3 — Enrichment | ~500 | 195 | 39% |
+| Phase 2 — High-impact blocks | ~600 | 229 | 38% |
+| Phase 3 — Enrichment | ~500 | 217 | 43% |
 | Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **764** | **~29%** |
-| **Grand total (with existing 538)** | **~3,188** | **1100** | **~35%** |
+| **Total new glyphs** | **~2,650** | **798** | **~30%** |
+| **Grand total (with existing 538)** | **~3,188** | **1134** | **~36%** |
