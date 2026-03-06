@@ -8,6 +8,45 @@
             name="description"
             content="Sergamon is an open-source monospaced font designed for programming, with full ASCII support. What you see is what you get -- no ligatures, single weight."
         />
+        <meta name="theme-color" content="#0d1117" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Sergamon - Monospaced font for nostalgic hackers"
+        />
+        <meta
+            property="og:description"
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 538+ glyphs. What you type is what you see."
+        />
+        <meta
+            property="og:image"
+            content="https://sgmonda.github.io/sergamon/og-image.png"
+        />
+        <meta property="og:url" content="https://sgmonda.github.io/sergamon/" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Sergamon - Monospaced font for nostalgic hackers"
+        />
+        <meta
+            name="twitter:description"
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 538+ glyphs."
+        />
+        <meta
+            name="twitter:image"
+            content="https://sgmonda.github.io/sergamon/og-image.png"
+        />
+
+        <!-- Favicon (pixel-art S) -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 16'%3E%3Crect width='8' height='16' fill='%230d1117'/%3E%3Crect x='1' y='1' width='6' height='1' fill='%2358a6ff'/%3E%3Crect x='0' y='2' width='2' height='3' fill='%2358a6ff'/%3E%3Crect x='1' y='5' width='6' height='1' fill='%2358a6ff'/%3E%3Crect x='6' y='6' width='2' height='3' fill='%2358a6ff'/%3E%3Crect x='1' y='9' width='6' height='1' fill='%2358a6ff'/%3E%3C/svg%3E"
+        />
 
         <!-- Comparison fonts from Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -259,7 +298,7 @@
                 justify-content: center;
                 gap: 12px;
                 flex-wrap: wrap;
-                margin-bottom: 4rem;
+                margin-bottom: 1.5rem;
             }
 
             /* Buttons */
@@ -322,6 +361,123 @@
             .icon[fill="none"] {
                 fill: none;
                 stroke: currentColor;
+            }
+
+            /* ================================================================
+            DESIGN PHILOSOPHY
+            ================================================================ */
+            .philosophy {
+                padding: 48px 0;
+                border-bottom: 1px solid var(--border);
+                background: var(--bg-primary);
+            }
+
+            .philosophy-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .philosophy-demo {
+                margin-bottom: 0.5em;
+            }
+
+            @media (max-width: 1200px) {
+                .philosophy-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .philosophy-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .philosophy-card {
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 28px 24px;
+                background: var(--bg-secondary);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .philosophy-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+            }
+
+            .philosophy-card.card-weight::before {
+                background: var(--accent);
+            }
+
+            .philosophy-card.card-wysiwyg::before {
+                background: var(--green);
+            }
+
+            .philosophy-card.card-lineheight::before {
+                background: var(--purple);
+            }
+
+            .philosophy-card.card-letterspacing::before {
+                background: var(--orange);
+            }
+
+            .philosophy-icon {
+                font-size: 2rem;
+                margin-bottom: 12px;
+                display: block;
+                color: var(--text-muted);
+                font-family: var(--font-mono);
+            }
+
+            .philosophy-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+                color: var(--text-primary);
+            }
+
+            .philosophy-card p {
+                color: var(--text-secondary);
+            }
+
+            .philosophy-card .philosophy-demo {
+                margin-top: 16px;
+                padding: 8px 12px;
+                background: var(--bg-editor);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                color: var(--text-muted);
+                font-family: var(--font-mono);
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .philosophy-card .philosophy-demo .demo-highlight {
+                color: var(--text-primary);
+            }
+
+            .philosophy-card.card-weight .philosophy-demo .demo-highlight {
+                color: var(--accent);
+            }
+
+            .philosophy-card.card-wysiwyg .philosophy-demo .demo-highlight {
+                color: var(--green);
+            }
+
+            .philosophy-card.card-lineheight .philosophy-demo .demo-highlight {
+                color: var(--purple);
+            }
+
+            .philosophy-card.card-letterspacing
+                .philosophy-demo
+                .demo-highlight {
+                color: var(--orange);
             }
 
             /* ================================================================
@@ -675,14 +831,23 @@
                 background: var(--bg-secondary);
                 border-bottom: 1px solid var(--border);
                 color: var(--text-secondary);
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .comparison-card-header .card-tag,
+            .comparison-card-header .ligature-badge {
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-size: 0.7em;
+                white-space: nowrap;
             }
 
             .comparison-card-header .card-tag {
-                padding: 2px 6px;
                 background: var(--accent-bg);
                 color: var(--accent);
-                border-radius: 3px;
-                margin-left: 8px;
             }
 
             .comparison-card pre {
@@ -780,6 +945,7 @@
             .install-step p {
                 color: var(--text-secondary);
                 margin-bottom: 10px;
+                line-height: 1.5;
             }
 
             .code-block {
@@ -866,6 +1032,153 @@
             }
 
             /* ================================================================
+            STICKY NAV
+            ================================================================ */
+            .sticky-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                background: var(--bg-secondary);
+                border-bottom: 1px solid var(--border);
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                backdrop-filter: blur(8px);
+                background: color-mix(
+                    in srgb,
+                    var(--bg-secondary) 85%,
+                    transparent
+                );
+            }
+            .sticky-nav.visible {
+                transform: translateY(0);
+            }
+            .sticky-nav .nav-inner {
+                max-width: var(--max-width);
+                margin: 0 auto;
+                padding: 0 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 48px;
+                gap: 16px;
+            }
+            .sticky-nav .nav-brand {
+                color: var(--text-primary);
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            .sticky-nav .nav-links {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                overflow-x: auto;
+                flex: 1;
+                justify-content: center;
+            }
+            .sticky-nav .nav-links a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                white-space: nowrap;
+                transition: color var(--transition);
+            }
+            .sticky-nav .nav-links a:hover {
+                color: var(--accent);
+                text-decoration: none;
+            }
+            .sticky-nav .nav-star {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 5px 12px;
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                color: var(--text-secondary);
+                text-decoration: none;
+                white-space: nowrap;
+                transition: all var(--transition);
+            }
+            .sticky-nav .nav-star:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+            /* ================================================================
+            HERO ENHANCEMENTS
+            ================================================================ */
+            .hero-stats {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+                flex-wrap: wrap;
+                color: var(--text-muted);
+                margin-bottom: 32px;
+            }
+            .hero-stats span {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .hero-stats .stat-separator {
+                color: var(--border);
+            }
+            .hero-try {
+                max-width: 680px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .hero-try textarea {
+                width: 100%;
+                font-family: var(--font-mono);
+                font-size: 1.2rem;
+                line-height: 1.4;
+                padding: 16px 20px;
+                background: var(--bg-editor);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                color: var(--text-primary);
+                resize: none;
+                outline: none;
+                transition: border-color var(--transition);
+                height: 4.8em;
+            }
+            .hero-try textarea:focus {
+                border-color: var(--accent);
+            }
+            .hero-try-label {
+                position: absolute;
+                top: -10px;
+                left: 16px;
+                padding: 0 6px;
+                background: var(--bg-secondary);
+                color: var(--text-muted);
+                font-size: 0.75rem;
+            }
+            .github-stars-badge {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 4px;
+                height: 20px;
+            }
+
+            /* ================================================================
+            LIGATURE BADGES
+            ================================================================ */
+            .ligature-badge {
+                display: inline-block;
+            }
+            .ligature-badge.has-ligatures {
+                background: color-mix(in srgb, var(--orange) 15%, transparent);
+                color: var(--orange);
+            }
+            .ligature-badge.no-ligatures {
+                background: color-mix(in srgb, var(--green) 15%, transparent);
+                color: var(--green);
+            }
+
+            /* ================================================================
             RESPONSIVE
             ================================================================ */
             @media (max-width: 768px) {
@@ -888,10 +1201,59 @@
                 .char-grid {
                     grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
                 }
+                .sticky-nav .nav-links {
+                    display: none;
+                }
+                .sticky-nav .nav-brand {
+                    font-size: 0.85rem;
+                }
+                .hero-stats {
+                    gap: 12px;
+                }
+                .hero-stats .stat-separator {
+                    display: none;
+                }
+                .hero-stats span {
+                    font-size: 0.85rem;
+                }
             }
         </style>
     </head>
     <body>
+        <!-- ====================================================================
+       STICKY NAV
+       ==================================================================== -->
+        <nav class="sticky-nav" id="stickyNav">
+            <div class="nav-inner">
+                <a href="#" class="nav-brand">Sergamon</a>
+                <div class="nav-links">
+                    <a href="#code-preview">Code</a>
+                    <a href="#font-comparison">Comparison</a>
+                    <a href="#philosophy">Philosophy</a>
+                    <a href="#character-grid">Characters</a>
+                    <a href="#installation">Install</a>
+                </div>
+                <a
+                    href="https://github.com/sgmonda/sergamon"
+                    class="nav-star"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <svg
+                        class="icon"
+                        viewBox="0 0 16 16"
+                        style="width: 14px; height: 14px"
+                    >
+                        <path
+                            d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    Star
+                </a>
+            </div>
+        </nav>
+
         <!-- ====================================================================
        HEADER
        ==================================================================== -->
@@ -976,14 +1338,42 @@
                         </svg>
                         Download
                     </a>
-                    <a href="https://github.com/sgmonda/sergamon" class="btn">
+                    <a
+                        href="https://github.com/sgmonda/sergamon"
+                        class="btn"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         <svg class="icon" viewBox="0 0 16 16">
                             <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                                d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"
+                                fill="currentColor"
                             />
                         </svg>
-                        GitHub
+                        Star on GitHub
                     </a>
+                </div>
+                <div class="hero-stats">
+                    <span>538+ glyphs</span>
+                    <span class="stat-separator">|</span>
+                    <span>8x16 pixel grid</span>
+                    <span class="stat-separator">|</span>
+                    <span>No ligatures</span>
+                    <span class="stat-separator">|</span>
+                    <span>SIL Licensed</span>
+                </div>
+                <div class="hero-try">
+                    <span class="hero-try-label">Type to try</span>
+                    <textarea
+                        id="heroTry"
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                    >
+The quick brown fox jumps over the lazy dog.
+0O 1lI {([ ])} != == >= <= => -> :: ...</textarea
+                    >
                 </div>
             </div>
         </header>
@@ -1094,60 +1484,87 @@
         </section>
 
         <!-- ====================================================================
-       SECTION 2: CHARACTER GRID
+       SECTION 2: FONT COMPARISON
        ==================================================================== -->
-        <section id="character-grid">
+        <section id="font-comparison">
             <div class="container">
-                <h2 class="section-title">Character Grid</h2>
+                <h2 class="section-title">Font Comparison</h2>
                 <p class="section-subtitle">
-                    Browse all available glyphs. Hover over any character to see
-                    it enlarged.
+                    The same code rendered in Sergamon and popular programming
+                    fonts.
                 </p>
 
-                <div class="char-tabs" id="charTabs">
-                    <button class="char-tab active" data-tab="ascii">
-                        ASCII
-                    </button>
-                    <button class="char-tab" data-tab="latin-ext">
-                        Latin Extended
-                    </button>
-                    <button class="char-tab" data-tab="shapes">
-                        Shapes & Lines
-                    </button>
-                    <button class="char-tab" data-tab="symbols">Symbols</button>
-                    <button class="char-tab" data-tab="math">
-                        Math & Greek
-                    </button>
-                    <button class="char-tab" data-tab="braille">Braille</button>
-                    <button class="char-tab" data-tab="cyrillic">Cyrillic</button>
-                </div>
+                <div class="comparison-grid" id="comparisonGrid"></div>
+            </div>
+        </section>
 
-                <div class="char-tab-panel active" data-tab="ascii">
-                    <div class="char-grid" id="asciiGrid"></div>
-                </div>
+        <!-- ====================================================================
+       DESIGN PHILOSOPHY
+       ==================================================================== -->
+        <section class="philosophy" id="philosophy">
+            <div class="container">
+                <h2 class="section-title">Philosophy</h2>
+                <p class="section-subtitle">
+                    These principles guided the design of Sergamon from the very
+                    beginning. For the best experience, set up your editor
+                    according to them.
+                </p>
 
-                <div class="char-tab-panel" data-tab="latin-ext">
-                    <div class="char-grid" id="latinExtGrid"></div>
-                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card card-weight">
+                        <span class="philosophy-icon">W</span>
+                        <h3>Single Weight</h3>
+                        <p>Inspired by classic terminals. No bold, no light.</p>
+                        <div class="philosophy-demo">
+                            -- same<br />
+                            <span
+                                class="demo-highlight"
+                                style="font-weight: 400"
+                                >font-weight: 400</span
+                            >
+                            <span
+                                class="demo-highlight"
+                                style="font-weight: 700"
+                                >font-weight: 700</span
+                            >
+                        </div>
+                    </div>
+                    <div class="philosophy-card card-wysiwyg">
+                        <span class="philosophy-icon">=&gt;</span>
+                        <h3>No Ligatures</h3>
+                        <p>What you type should be what you see.</p>
+                        <div class="philosophy-demo">
+                            <span class="demo-highlight">==</span> is not ══<br />
+                            <span class="demo-highlight">!=</span> is not ≠<br />
+                            <span class="demo-highlight">=></span> is not ⇒<br />
+                        </div>
+                    </div>
 
-                <div class="char-tab-panel" data-tab="shapes">
-                    <div class="char-grid" id="shapesGrid"></div>
-                </div>
+                    <div class="philosophy-card card-lineheight">
+                        <span class="philosophy-icon">↕</span>
+                        <h3>Line Height 1.0</h3>
+                        <p>Each row of pixels is text. Every pixel matters.</p>
+                        <div class="philosophy-demo">
+                            -- pixel-perfect:<br />
+                            <span class="demo-highlight">line-height: 1</span>
+                        </div>
+                    </div>
 
-                <div class="char-tab-panel" data-tab="symbols">
-                    <div class="char-grid" id="symbolsGrid"></div>
-                </div>
-
-                <div class="char-tab-panel" data-tab="math">
-                    <div class="char-grid" id="mathGrid"></div>
-                </div>
-
-                <div class="char-tab-panel" data-tab="braille">
-                    <div class="char-grid" id="brailleGrid"></div>
-                </div>
-
-                <div class="char-tab-panel" data-tab="cyrillic">
-                    <div class="char-grid" id="cyrillicGrid"></div>
+                    <div class="philosophy-card card-letterspacing">
+                        <span class="philosophy-icon">↔</span>
+                        <h3>Letter Spacing 0</h3>
+                        <p>Glyphs are designed to tile on the pixel grid.</p>
+                        <div class="philosophy-demo">
+                            <span class="demo-highlight"
+                                >letter-spacing: 0</span
+                            >
+                            ── ┌──┐ connected<br />
+                            <span class="demo-highlight"
+                                >letter-spacing: 1px</span
+                            >
+                            ── ┌ ── ┐ broken
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1178,17 +1595,63 @@
         </section>
 
         <!-- ====================================================================
-       SECTION 4: FONT COMPARISON
+       SECTION 4: CHARACTER GRID
        ==================================================================== -->
-        <section id="font-comparison">
+        <section id="character-grid">
             <div class="container">
-                <h2 class="section-title">Font Comparison</h2>
+                <h2 class="section-title">Character Grid</h2>
                 <p class="section-subtitle">
-                    The same code rendered in Sergamon and popular programming
-                    fonts.
+                    Browse all available glyphs. Hover over any character to see
+                    it enlarged.
                 </p>
 
-                <div class="comparison-grid" id="comparisonGrid"></div>
+                <div class="char-tabs" id="charTabs">
+                    <button class="char-tab active" data-tab="ascii">
+                        ASCII
+                    </button>
+                    <button class="char-tab" data-tab="latin-ext">
+                        Latin Extended
+                    </button>
+                    <button class="char-tab" data-tab="shapes">
+                        Shapes & Lines
+                    </button>
+                    <button class="char-tab" data-tab="symbols">Symbols</button>
+                    <button class="char-tab" data-tab="math">
+                        Math & Greek
+                    </button>
+                    <button class="char-tab" data-tab="braille">Braille</button>
+                    <button class="char-tab" data-tab="cyrillic">
+                        Cyrillic
+                    </button>
+                </div>
+
+                <div class="char-tab-panel active" data-tab="ascii">
+                    <div class="char-grid" id="asciiGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="latin-ext">
+                    <div class="char-grid" id="latinExtGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="shapes">
+                    <div class="char-grid" id="shapesGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="symbols">
+                    <div class="char-grid" id="symbolsGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="math">
+                    <div class="char-grid" id="mathGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="braille">
+                    <div class="char-grid" id="brailleGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="cyrillic">
+                    <div class="char-grid" id="cyrillicGrid"></div>
+                </div>
             </div>
         </section>
 
@@ -3660,23 +4123,37 @@ int main(void) {
                         name: "Sergamon",
                         cls: "font-sergamon",
                         tag: "This font",
+                        ligatures: false,
                     },
-                    { name: "Fira Code", cls: "font-firacode", tag: null },
+                    {
+                        name: "Fira Code",
+                        cls: "font-firacode",
+                        tag: null,
+                        ligatures: true,
+                    },
                     {
                         name: "JetBrains Mono",
                         cls: "font-jetbrains",
                         tag: null,
+                        ligatures: true,
                     },
-                    { name: "Cascadia Code", cls: "font-cascadia", tag: null },
+                    {
+                        name: "Cascadia Code",
+                        cls: "font-cascadia",
+                        tag: null,
+                        ligatures: true,
+                    },
                     {
                         name: "Source Code Pro",
                         cls: "font-sourcecodepro",
                         tag: null,
+                        ligatures: false,
                     },
                     {
                         name: "IBM Plex Mono",
                         cls: "font-ibmplexmono",
                         tag: null,
+                        ligatures: false,
                     },
                 ];
 
@@ -3693,6 +4170,17 @@ int main(void) {
                         span.className = "card-tag";
                         span.textContent = font.tag;
                         header.appendChild(span);
+                    }
+                    if (font.ligatures) {
+                        const badge = document.createElement("span");
+                        badge.className = "ligature-badge has-ligatures";
+                        badge.textContent = "Has ligatures";
+                        header.appendChild(badge);
+                    } else if (font.cls === "font-sergamon") {
+                        const badge = document.createElement("span");
+                        badge.className = "ligature-badge no-ligatures";
+                        badge.textContent = "No ligatures";
+                        header.appendChild(badge);
                     }
                     card.appendChild(header);
 
@@ -3724,7 +4212,10 @@ int main(void) {
                             `.char-tab-panel[data-tab="${tab.dataset.tab}"]`,
                         )
                         .classList.add("active");
-                    localStorage.setItem("sergamon-selected-char-tab", tab.dataset.tab);
+                    localStorage.setItem(
+                        "sergamon-selected-char-tab",
+                        tab.dataset.tab,
+                    );
                 });
 
                 // ── Installation Tabs ──────────────────────────────────────────
@@ -3744,7 +4235,10 @@ int main(void) {
                             `.install-content[data-tab="${tab.dataset.tab}"]`,
                         )
                         .classList.add("active");
-                    localStorage.setItem("sergamon-selected-install-tab", tab.dataset.tab);
+                    localStorage.setItem(
+                        "sergamon-selected-install-tab",
+                        tab.dataset.tab,
+                    );
                 });
 
                 // ── Copy to Clipboard ──────────────────────────────────────────
@@ -3824,27 +4318,82 @@ int main(void) {
                 }
                 setSnippet(savedLang);
 
-                const savedCharTab = localStorage.getItem("sergamon-selected-char-tab");
+                const savedCharTab = localStorage.getItem(
+                    "sergamon-selected-char-tab",
+                );
                 if (savedCharTab) {
-                    const ct = document.querySelector(`.char-tab[data-tab="${savedCharTab}"]`);
+                    const ct = document.querySelector(
+                        `.char-tab[data-tab="${savedCharTab}"]`,
+                    );
                     if (ct) {
-                        $$(".char-tab").forEach((t) => t.classList.remove("active"));
+                        $$(".char-tab").forEach((t) =>
+                            t.classList.remove("active"),
+                        );
                         ct.classList.add("active");
-                        $$(".char-tab-panel").forEach((c) => c.classList.remove("active"));
-                        document.querySelector(`.char-tab-panel[data-tab="${savedCharTab}"]`).classList.add("active");
+                        $$(".char-tab-panel").forEach((c) =>
+                            c.classList.remove("active"),
+                        );
+                        document
+                            .querySelector(
+                                `.char-tab-panel[data-tab="${savedCharTab}"]`,
+                            )
+                            .classList.add("active");
                     }
                 }
 
-                const savedInstallTab = localStorage.getItem("sergamon-selected-install-tab");
+                const savedInstallTab = localStorage.getItem(
+                    "sergamon-selected-install-tab",
+                );
                 if (savedInstallTab) {
-                    const it = document.querySelector(`.install-tab[data-tab="${savedInstallTab}"]`);
+                    const it = document.querySelector(
+                        `.install-tab[data-tab="${savedInstallTab}"]`,
+                    );
                     if (it) {
-                        $$(".install-tab").forEach((t) => t.classList.remove("active"));
+                        $$(".install-tab").forEach((t) =>
+                            t.classList.remove("active"),
+                        );
                         it.classList.add("active");
-                        $$(".install-content").forEach((c) => c.classList.remove("active"));
-                        document.querySelector(`.install-content[data-tab="${savedInstallTab}"]`).classList.add("active");
+                        $$(".install-content").forEach((c) =>
+                            c.classList.remove("active"),
+                        );
+                        document
+                            .querySelector(
+                                `.install-content[data-tab="${savedInstallTab}"]`,
+                            )
+                            .classList.add("active");
                     }
                 }
+
+                // ── Sticky Nav ──────────────────────────────────────────────────
+
+                const stickyNav = $("#stickyNav");
+                const headerEl = document.querySelector("header");
+                const navObserver = new IntersectionObserver(
+                    ([entry]) => {
+                        stickyNav.classList.toggle(
+                            "visible",
+                            !entry.isIntersecting,
+                        );
+                    },
+                    { threshold: 0 },
+                );
+                navObserver.observe(headerEl);
+
+                // Smooth scroll for nav links
+                stickyNav.addEventListener("click", (e) => {
+                    const link = e.target.closest("a[href^='#']");
+                    if (!link) return;
+                    const target = document.querySelector(
+                        link.getAttribute("href"),
+                    );
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
             })();
         </script>
     </body>
