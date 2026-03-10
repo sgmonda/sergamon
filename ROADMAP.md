@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1657 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1783 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -506,34 +506,53 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+26A1 ⚡ lightning
 - [ ] Remaining as desired
 
-### [ ] Dingbats (U+2700–U+27BF) — 2/192
+### [-] Dingbats (U+2700–U+27BF) — 21/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
-- [ ] U+2701 ✁ scissors
-- [ ] U+2702 ✂ scissors (alternate)
-- [ ] U+2708 ✈ airplane
-- [ ] U+2709 ✉ envelope
-- [ ] U+270C ✌ victory
-- [ ] U+270E ✎ pencil
-- [ ] U+270F ✏ pencil (alternate)
-- [ ] U+2714 ✔ heavy check
-- [ ] U+2716 ✖ heavy multiplication
-- [ ] U+2718 ✘ heavy ballot X
-- [ ] U+271A ✚ heavy Greek cross
-- [ ] U+2720 ✠ Maltese cross
-- [ ] U+2728 ✨ sparkles
-- [ ] U+2744 ❄ snowflake
-- [ ] U+2764 ❤ heavy heart
-- [ ] U+2795 ➕, U+2796 ➖, U+2797 ➗ heavy plus/minus/division
-- [ ] U+27A1 ➡ right arrow
+- [x] U+2701 ✁ scissors
+- [x] U+2702 ✂ scissors (alternate)
+- [x] U+2708 ✈ airplane
+- [x] U+2709 ✉ envelope
+- [x] U+270C ✌ victory
+- [x] U+270E ✎ pencil
+- [x] U+270F ✏ pencil (alternate)
+- [x] U+2714 ✔ heavy check
+- [x] U+2716 ✖ heavy multiplication
+- [x] U+2718 ✘ heavy ballot X
+- [x] U+271A ✚ heavy Greek cross
+- [x] U+2720 ✠ Maltese cross
+- [x] U+2728 ✨ sparkles
+- [x] U+2744 ❄ snowflake
+- [x] U+2764 ❤ heavy heart
+- [x] U+2795 ➕, U+2796 ➖, U+2797 ➗ heavy plus/minus/division
+- [x] U+27A1 ➡ right arrow
 - [ ] Remaining as desired
 
-### [ ] Latin Extended-B (U+0180–U+024F) — 0/208
-- [ ] Common additions for Romanian, Croatian, Vietnamese, etc.
-- [ ] U+0180–U+024F (as needed per language support)
+### [-] Latin Extended-B (U+0180–U+024F) — 50/208
+- [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
+- [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
+- [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
+- [x] U+01A0 Ơ, U+01A1 ơ, U+01AF Ư, U+01B0 ư (Vietnamese horn)
+- [x] U+01B5 Ƶ, U+01B6 ƶ (Z stroke)
+- [x] U+01C4–U+01CC (Croatian digraphs: DŽ/Dž/dž, LJ/Lj/lj, NJ/Nj/nj)
+- [x] U+01CD–U+01D4 (Pinyin caron: Ǎǎ Ǐǐ Ǒǒ Ǔǔ)
+- [x] U+0218 Ș, U+0219 ș, U+021A Ț, U+021B ț (Romanian comma below)
+- [x] U+0237 ȷ (dotless j)
+- [x] U+0259 ə (small schwa)
+- [ ] Remaining U+0180–U+024F
 
-### [ ] IPA Extensions (U+0250–U+02AF) — 0/96
-- [ ] U+0250–U+02AF (phonetic symbols, useful for linguistics)
+### [-] IPA Extensions (U+0250–U+02AF) — 57/96
+- [x] U+0250–U+0254 (turned a, alpha, turned alpha, open o)
+- [x] U+0258–U+025F (reversed e, open e variants, dotless j stroke)
+- [x] U+0260–U+0266 (g variants, gamma, ram's horn, turned h, h hook)
+- [x] U+0268–U+026F (i stroke, small cap I, l variants, turned m)
+- [x] U+0270–U+0275 (turned m long leg, m hook, n variants, small cap N, barred o)
+- [x] U+0278–U+027E (phi, turned r variants, r long leg, r tail, r fishhook)
+- [x] U+0280–U+0283 (small cap R, inverted small cap R, s hook, esh)
+- [x] U+0288–U+0292 (t retroflex, u bar, upsilon, v hook, turned v/w/y, small cap Y, z variants, ezh)
+- [x] U+0294–U+0298 (glottal stop, pharyngeal, bilabial click)
+- [x] U+029D (j crossed tail), U+02A1–U+02A2 (glottal variants)
+- [ ] Remaining U+0250–U+02AF
 
 ### [ ] Spacing Modifier Letters (U+02B0–U+02FF) — 0/80
 - [ ] U+02B0–U+02FF (modifier letters, diacritics)
@@ -587,7 +606,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 339 | 68% |
-| Phase 4 — Extended coverage | ~500 | 107 | 21% |
+| Phase 4 — Extended coverage | ~500 | 233 | 47% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **1321** | **~50%** |
-| **Grand total (with existing 538)** | **~3,188** | **1657** | **~52%** |
+| **Total new glyphs** | **~2,650** | **1447** | **~55%** |
+| **Grand total (with existing 538)** | **~3,188** | **1783** | **~56%** |
