@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1783 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1901 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -554,27 +554,28 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+029D (j crossed tail), U+02A1–U+02A2 (glottal variants)
 - [ ] Remaining U+0250–U+02AF
 
-### [ ] Spacing Modifier Letters (U+02B0–U+02FF) — 0/80
-- [ ] U+02B0–U+02FF (modifier letters, diacritics)
+### [-] Spacing Modifier Letters (U+02B0–U+02FF) — 53/80
+- [x] U+02B0–U+02B8 (superscript modifier letters: h, h-hook, j, r, turned-r variants, w, y)
+- [x] U+02B9–U+02BF (modifier punctuation: prime, double prime, commas, half rings)
+- [x] U+02C0–U+02CF (modifier marks: glottal stops, arrowheads, circumflex, caron, stress marks)
+- [x] U+02D0–U+02DF (IPA modifiers: triangular colon, tacks, breve, dot, ring, ogonek, tilde, double acute)
+- [x] U+02E0–U+02E4 (superscript gamma, l, s, x, reversed glottal)
+- [ ] Remaining U+02B0–U+02FF
 
-### [ ] Combining Diacritical Marks (U+0300–U+036F) — 0/112
-- [ ] U+0300 ̀ combining grave
-- [ ] U+0301 ́ combining acute
-- [ ] U+0302 ̂ combining circumflex
-- [ ] U+0303 ̃ combining tilde
-- [ ] U+0304 ̄ combining macron
-- [ ] U+0308 ̈ combining dieresis
-- [ ] U+030A ̊ combining ring above
-- [ ] U+030C ̌ combining caron
-- [ ] U+0327 ̧ combining cedilla
-- [ ] U+0328 ̨ combining ogonek
+### [-] Combining Diacritical Marks (U+0300–U+036F) — 38/112
+- [x] U+0300–U+0314 (above marks: grave, acute, circumflex, tilde, macron, overline, breve, dot, dieresis, hook, ring, double acute, caron, vertical lines, double grave, candrabindu, inverted breve, commas)
+- [x] U+0316–U+0317 (below accents: grave, acute)
+- [x] U+0323–U+0329 (below marks: dot, dieresis, ring, comma, cedilla, ogonek, vertical line)
+- [x] U+032D–U+032E (below: circumflex, breve)
+- [x] U+0330–U+0331 (below: tilde, macron)
+- [x] U+0335–U+0338 (through: short/long stroke, short/long solidus)
 - [ ] Remaining as needed
 
 ---
 
 ## Phase 5 — Non-Latin Scripts (ambitious, optional)
 
-### [ ] Hebrew (U+0590–U+05FF) — 0/88
+### [-] Hebrew (U+0590–U+05FF) — 27/88
 ### [ ] Arabic (U+0600–U+06FF) — 0/256 *(complex: RTL + contextual forms)*
 ### [ ] Thai (U+0E00–U+0E7F) — 0/87
 ### [ ] Georgian (U+10A0–U+10FF) — 0/88
@@ -606,7 +607,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 339 | 68% |
-| Phase 4 — Extended coverage | ~500 | 233 | 47% |
-| Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **1447** | **~55%** |
-| **Grand total (with existing 538)** | **~3,188** | **1783** | **~56%** |
+| Phase 4 — Extended coverage | ~500 | 324 | 65% |
+| Phase 5 — Non-Latin scripts | ~700+ | 27 | 4% |
+| **Total new glyphs** | **~2,650** | **1565** | **~59%** |
+| **Grand total (with existing 538)** | **~3,188** | **1901** | **~60%** |

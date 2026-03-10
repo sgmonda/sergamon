@@ -1625,6 +1625,9 @@ The quick brown fox jumps over the lazy dog.
                     <button class="char-tab" data-tab="misc-symbols">
                         Misc Symbols
                     </button>
+                    <button class="char-tab" data-tab="hebrew">
+                        Hebrew
+                    </button>
                 </div>
 
                 <div class="char-tab-panel active" data-tab="ascii">
@@ -1661,6 +1664,10 @@ The quick brown fox jumps over the lazy dog.
 
                 <div class="char-tab-panel" data-tab="misc-symbols">
                     <div class="char-grid" id="miscSymbolsGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="hebrew">
+                    <div class="char-grid" id="hebrewGrid"></div>
                 </div>
             </div>
         </section>
@@ -3253,6 +3260,97 @@ int main(void) {
                         [0x029d, "j crossed tail"],
                         [0x02a1, "glottal stroke"],
                         [0x02a2, "rev glottal stroke"],
+                        [0x02b0, "mod h"],
+                        [0x02b1, "mod h hook"],
+                        [0x02b2, "mod j"],
+                        [0x02b3, "mod r"],
+                        [0x02b4, "mod turned r"],
+                        [0x02b5, "mod turned r hook"],
+                        [0x02b6, "mod small cap R"],
+                        [0x02b7, "mod w"],
+                        [0x02b8, "mod y"],
+                        [0x02b9, "mod prime"],
+                        [0x02ba, "mod dbl prime"],
+                        [0x02bb, "turned comma"],
+                        [0x02bc, "mod apostrophe"],
+                        [0x02bd, "rev comma"],
+                        [0x02be, "right half ring"],
+                        [0x02bf, "left half ring"],
+                        [0x02c0, "mod glottal"],
+                        [0x02c1, "mod rev glottal"],
+                        [0x02c2, "left arrowhead"],
+                        [0x02c3, "right arrowhead"],
+                        [0x02c4, "up arrowhead"],
+                        [0x02c5, "down arrowhead"],
+                        [0x02c6, "circumflex"],
+                        [0x02c7, "caron"],
+                        [0x02c8, "vert line"],
+                        [0x02c9, "macron"],
+                        [0x02ca, "acute"],
+                        [0x02cb, "grave"],
+                        [0x02cc, "low vert line"],
+                        [0x02cd, "low macron"],
+                        [0x02ce, "low grave"],
+                        [0x02cf, "low acute"],
+                        [0x02d0, "triangular colon"],
+                        [0x02d1, "half tri colon"],
+                        [0x02d2, "right half ring"],
+                        [0x02d3, "left half ring"],
+                        [0x02d4, "up tack"],
+                        [0x02d5, "down tack"],
+                        [0x02d6, "mod plus"],
+                        [0x02d7, "mod minus"],
+                        [0x02d8, "breve"],
+                        [0x02d9, "dot above"],
+                        [0x02da, "ring above"],
+                        [0x02db, "ogonek"],
+                        [0x02dc, "small tilde"],
+                        [0x02dd, "double acute"],
+                        [0x02de, "rhotic hook"],
+                        [0x02df, "cross accent"],
+                        [0x02e0, "mod gamma"],
+                        [0x02e1, "mod l"],
+                        [0x02e2, "mod s"],
+                        [0x02e3, "mod x"],
+                        [0x02e4, "mod rev glottal"],
+                        [0x0300, "comb grave"],
+                        [0x0301, "comb acute"],
+                        [0x0302, "comb circumflex"],
+                        [0x0303, "comb tilde"],
+                        [0x0304, "comb macron"],
+                        [0x0305, "comb overline"],
+                        [0x0306, "comb breve"],
+                        [0x0307, "comb dot above"],
+                        [0x0308, "comb dieresis"],
+                        [0x0309, "comb hook above"],
+                        [0x030a, "comb ring above"],
+                        [0x030b, "comb dbl acute"],
+                        [0x030c, "comb caron"],
+                        [0x030d, "comb vert line"],
+                        [0x030e, "comb dbl vert"],
+                        [0x030f, "comb dbl grave"],
+                        [0x0310, "comb candrabindu"],
+                        [0x0311, "comb inv breve"],
+                        [0x0312, "comb turned comma"],
+                        [0x0313, "comb comma above"],
+                        [0x0314, "comb rev comma"],
+                        [0x0316, "comb grave below"],
+                        [0x0317, "comb acute below"],
+                        [0x0323, "comb dot below"],
+                        [0x0324, "comb dieresis below"],
+                        [0x0325, "comb ring below"],
+                        [0x0326, "comb comma below"],
+                        [0x0327, "comb cedilla"],
+                        [0x0328, "comb ogonek"],
+                        [0x0329, "comb vert below"],
+                        [0x032d, "comb circumflex below"],
+                        [0x032e, "comb breve below"],
+                        [0x0330, "comb tilde below"],
+                        [0x0331, "comb macron below"],
+                        [0x0335, "comb short stroke"],
+                        [0x0336, "comb long stroke"],
+                        [0x0337, "comb short solidus"],
+                        [0x0338, "comb long solidus"],
                     ]);
                 }
 
@@ -4424,6 +4522,39 @@ int main(void) {
                 populateCyrillic();
                 populateEnclosed();
                 populateMiscSymbols();
+
+                function populateHebrew() {
+                    populateCategory("#hebrewGrid", [
+                        [0x05d0, "alef"],
+                        [0x05d1, "bet"],
+                        [0x05d2, "gimel"],
+                        [0x05d3, "dalet"],
+                        [0x05d4, "he"],
+                        [0x05d5, "vav"],
+                        [0x05d6, "zayin"],
+                        [0x05d7, "chet"],
+                        [0x05d8, "tet"],
+                        [0x05d9, "yod"],
+                        [0x05da, "final kaf"],
+                        [0x05db, "kaf"],
+                        [0x05dc, "lamed"],
+                        [0x05dd, "final mem"],
+                        [0x05de, "mem"],
+                        [0x05df, "final nun"],
+                        [0x05e0, "nun"],
+                        [0x05e1, "samekh"],
+                        [0x05e2, "ayin"],
+                        [0x05e3, "final pe"],
+                        [0x05e4, "pe"],
+                        [0x05e5, "final tsadi"],
+                        [0x05e6, "tsadi"],
+                        [0x05e7, "qof"],
+                        [0x05e8, "resh"],
+                        [0x05e9, "shin"],
+                        [0x05ea, "tav"],
+                    ]);
+                }
+                populateHebrew();
 
                 // ── Distinguishability Table ───────────────────────────────────
 
