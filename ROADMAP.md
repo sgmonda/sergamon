@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2359 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2408 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 98/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 114/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -583,9 +583,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2626 ☦ orthodox cross, U+262A ☪ star and crescent
 - [x] U+263D ☽ first quarter moon
 - [x] U+2641 ♁ earth, U+2643 ♃ jupiter, U+2644 ♄ saturn
+- [x] U+2645 ♅ uranus, U+2646 ♆ neptune, U+2647 ♇ pluto
+- [x] U+2621 ☡ caution, U+2627 ☧ chi rho, U+2628 ☨ cross of Lorraine, U+2629 ☩ cross of Jerusalem
+- [x] U+2670–U+2671 ♰♱ west/east syriac cross
+- [x] U+2698 ⚘ fleur-de-lis, U+269C ⚜ fleur-de-lis alt, U+269D ⚝ outlined white star
+- [x] U+26AA ⚪ medium white circle, U+26AB ⚫ medium black circle
+- [x] U+26BD ⚽ soccer ball, U+26BE ⚾ baseball
 - [ ] Remaining as desired
 
-### [-] Dingbats (U+2700–U+27BF) — 53/192
+### [-] Dingbats (U+2700–U+27BF) — 68/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -618,9 +624,17 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2730 ✰ shadowed white star
 - [x] U+2733–U+2734 ✳✴ eight-spoked asterisks
 - [x] U+2747–U+2748 ❇❈ sparkle variants
+- [x] U+2740–U+2742 ❀❁❂ florette variants
+- [x] U+274E ❎ negative squared cross mark
+- [x] U+2754 ❔ white question mark
+- [x] U+2762 ❢ heavy exclamation ornament
+- [x] U+2766–U+2767 ❦❧ floral heart
+- [x] U+2794 ➔ heavy right arrow
+- [x] U+2798–U+279C ➘➙➚➛➜ heavy arrows
+- [x] U+27A4 ➤ black right arrowhead
 - [ ] Remaining as desired
 
-### [-] Latin Extended-B (U+0180–U+024F) — 89/208
+### [-] Latin Extended-B (U+0180–U+024F) — 107/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -644,6 +658,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+020D–U+020F (ȍ Ȏȏ — O double grave lowercase, O inverted breve)
 - [x] U+0210–U+0211 (Ȑȑ — R double grave)
 - [x] U+0214–U+0217 (Ȕȕ Ȗȗ — U double grave, U inverted breve)
+- [x] U+0220 Ƞ (N retroflex hook), U+0221 ȡ (d retrotail)
+- [x] U+0224–U+0225 (Ȥȥ — Z hook)
+- [x] U+0226–U+0227 (Ȧȧ — A dot above)
+- [x] U+0228–U+0229 (Ȩȩ — E cedilla)
+- [x] U+022A–U+022B (Ȫȫ — O dieresis macron)
+- [x] U+022C–U+022D (Ȭȭ — O tilde macron)
+- [x] U+022E–U+022F (Ȯȯ — O dot above)
+- [x] U+0230–U+0231 (Ȱȱ — O dot above macron)
+- [x] U+0232–U+0233 (Ȳȳ — Y macron)
 - [ ] Remaining U+0180–U+024F
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
@@ -722,7 +745,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 462 | 92% |
-| Phase 4 — Extended coverage | ~500 | 514 | 103% |
+| Phase 4 — Extended coverage | ~500 | 563 | 113% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2023** | **~76%** |
-| **Grand total (with existing 538)** | **~3,188** | **2359** | **~74%** |
+| **Total new glyphs** | **~2,650** | **2072** | **~78%** |
+| **Grand total (with existing 538)** | **~3,188** | **2408** | **~76%** |
