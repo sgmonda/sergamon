@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2154 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2206 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -367,7 +367,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2049 ⁉ exclamation question
 - [-] Remaining U+2000–U+206F (U+2016, U+202F, U+2034–U+2035, U+2038, U+203B, U+203D–U+203E, U+2043, U+204B done)
 
-### [-] Miscellaneous Technical (U+2300–U+23FF) — 43/256
+### [-] Miscellaneous Technical (U+2300–U+23FF) — 59/256
 
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
@@ -391,9 +391,17 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2326 ⌦ erase to the right
 - [x] U+2327 ⌧ X in rectangle
 - [x] U+23F4–U+23FA ⏴⏵⏶⏷⏸⏹⏺ (media controls: triangles, pause, stop, record)
+- [x] U+2301 ⌁ electric arrow
+- [x] U+2305–U+2307 ⌅⌆⌇ (projective, perspective, wavy line)
+- [x] U+230C–U+230F ⌌⌍⌎⌏ (crop marks)
+- [x] U+2311 ⌑ square lozenge
+- [x] U+2315–U+2317 ⌕⌖⌗ (telephone recorder, position indicator, viewdata square)
+- [x] U+2324 ⌤ up arrowhead between bars
+- [x] U+2329–U+232A ⟨⟩ (angle brackets)
+- [x] U+232B ⌫ erase to the left
 - [ ] Remaining as needed
 
-### [x] Letterlike Symbols (U+2100–U+214F) — 72/80
+### [x] Letterlike Symbols (U+2100–U+214F) — 78/80
 
 - [x] U+2100 a/c account of
 - [x] U+2101 a/s addressed to
@@ -455,6 +463,12 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+214A ⅊ property line
 - [x] U+214B ⅋ turned ampersand
 - [x] U+214E ⅎ turned small f
+- [x] U+2106 ℆ cada una
+- [x] U+210C ℌ black-letter capital H
+- [x] U+213A ℺ rotated capital Q
+- [x] U+214C ⅌ per sign
+- [x] U+214D ⅍ aktieselskab
+- [x] U+214F ⅏ samaritan source
 - [ ] Remaining U+2100–U+214F
 
 ### [-] Currency Symbols (U+20A0–U+20CF) — 4/32
@@ -506,16 +520,17 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 
 ## Phase 4 — Extended Coverage (~500+ glyphs)
 
-### [-] Enclosed Alphanumerics (U+2460–U+24FF) — 130/160
+### [x] Enclosed Alphanumerics (U+2460–U+24FF) — 160/160
 - [x] U+2460–U+2473 ①–⑳ circled numbers
 - [x] U+2474–U+2487 ⑴–⒇ parenthesized numbers 1-20
+- [x] U+2488–U+249B ⒈–⒛ digit full stop 1-20
 - [x] U+249C–U+24B5 ⒜–⒵ parenthesized letters a-z
 - [x] U+24B6–U+24CF Ⓐ–Ⓩ circled uppercase letters
 - [x] U+24D0–U+24E9 ⓐ–ⓩ circled lowercase letters
 - [x] U+24EA ⓪ circled zero
 - [x] U+24EB–U+24F4 ⓫–⓴ negative circled numbers 11-20
+- [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
-- [ ] Remaining (U+2488–U+249B digit full stops, U+24F5–U+24FE double circled)
 
 ### [-] Miscellaneous Symbols (U+2600–U+26FF) — 32/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
@@ -647,8 +662,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
-| Phase 3 — Enrichment | ~500 | 390 | 78% |
-| Phase 4 — Extended coverage | ~500 | 381 | 76% |
+| Phase 3 — Enrichment | ~500 | 412 | 82% |
+| Phase 4 — Extended coverage | ~500 | 411 | 82% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **1818** | **~69%** |
-| **Grand total (with existing 538)** | **~3,188** | **2154** | **~68%** |
+| **Total new glyphs** | **~2,650** | **1870** | **~71%** |
+| **Grand total (with existing 538)** | **~3,188** | **2206** | **~69%** |
