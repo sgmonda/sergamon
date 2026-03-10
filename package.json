@@ -1,6 +1,6 @@
 {
   "name": "sergamon",
-  "version": "1.136.2",
+  "version": "1.137.0",
   "type": "module",
   "description": "Monospaced font for nostalgic hackers",
   "scripts": {

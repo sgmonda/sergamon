@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1453 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1544 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -381,16 +381,52 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
 - [ ] Remaining as needed
 
-### [ ] Letterlike Symbols (U+2100–U+214F) — 0/80
+### [x] Letterlike Symbols (U+2100–U+214F) — 46/80
 
+- [x] U+2100 a/c account of
+- [x] U+2101 a/s addressed to
+- [x] U+2102 ℂ double-struck C
 - [x] U+2103 ℃ degree celsius
+- [x] U+2105 ℅ care of
+- [x] U+2107 ℇ Euler constant
 - [x] U+2109 ℉ degree fahrenheit
+- [x] U+210A ℊ script small g
+- [x] U+210B ℋ script capital H
+- [x] U+210D ℍ double-struck H
 - [x] U+210E ℎ planck constant
+- [x] U+210F ℏ planck constant bar
+- [x] U+2110 ℐ script capital I
+- [x] U+2111 ℑ black-letter I
+- [x] U+2112 ℒ script capital L
+- [x] U+2113 ℓ script small l
+- [x] U+2115 ℕ double-struck N
 - [x] U+2116 № numero sign
 - [x] U+2117 ℗ sound recording copyright
+- [x] U+2118 ℘ Weierstrass p
+- [x] U+2119 ℙ double-struck P
+- [x] U+211A ℚ double-struck Q
+- [x] U+211B ℛ script capital R
+- [x] U+211C ℜ black-letter R
+- [x] U+211D ℝ double-struck R
+- [x] U+211E ℞ prescription
 - [x] U+2120 ℠ service mark
 - [x] U+2122 ™ trademark
-- [ ] U+212B Å angstrom sign
+- [x] U+2124 ℤ double-struck Z
+- [x] U+2126 Ω ohm sign
+- [x] U+2127 ℧ inverted ohm
+- [x] U+2128 ℨ black-letter Z
+- [x] U+212A K Kelvin sign
+- [x] U+212B Å angstrom sign
+- [x] U+212D ℭ black-letter C
+- [x] U+212F ℯ script small e
+- [x] U+2130 ℰ script capital E
+- [x] U+2131 ℱ script capital F
+- [x] U+2133 ℳ script capital M
+- [x] U+2134 ℴ script small o
+- [x] U+2135 ℵ alef symbol
+- [x] U+2136 ℶ bet symbol
+- [x] U+2137 ℷ gimel symbol
+- [x] U+2138 ℸ dalet symbol
 - [x] U+2139 ℹ information source
 - [ ] Remaining U+2100–U+214F
 
@@ -420,22 +456,24 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+20BD ₽ Russian ruble
 - [x] U+20BF ₿ bitcoin
 
-### [ ] Superscripts & Subscripts (U+2070–U+209F) — 0/42
+### [x] Superscripts & Subscripts (U+2070–U+209F) — 30/42
 
 - [x] U+2070 ⁰ superscript zero
 - [x] U+2071 ⁱ superscript i
 - [x] U+2074–U+2079 ⁴⁵⁶⁷⁸⁹ superscripts 4-9
 - [x] U+207A–U+207E ⁺⁻⁼⁽⁾ superscript operators
 - [x] U+207F ⁿ superscript n
-- [-] U+2080–U+2089 ₀₁₂₃₄₅₆₇₈₉ subscripts 0-9 (₀ done)
-- [ ] U+208A–U+208E ₊₋₌₍₎ subscript operators
+- [x] U+2080–U+2089 ₀₁₂₃₄₅₆₇₈₉ subscripts 0-9
+- [x] U+208A–U+208E ₊₋₌₍₎ subscript operators
 
-### [ ] Number Forms (U+2150–U+218F) — 0/60
+### [-] Number Forms (U+2150–U+218F) — 40/60
 
-- [ ] U+2150–U+215E ⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ vulgar fractions
-- [ ] U+2160–U+216F Ⅰ–Ⅿ Roman numerals uppercase
-- [ ] U+2170–U+217F ⅰ–ⅿ Roman numerals lowercase
-- [ ] U+2189 ↉ zero thirds fraction
+- [x] U+2150–U+215E ⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ vulgar fractions
+- [x] U+2160–U+216B Ⅰ–Ⅻ Roman numerals uppercase (12)
+- [x] U+2170–U+217B ⅰ–ⅻ Roman numerals lowercase (12)
+- [x] U+2189 ↉ zero thirds fraction
+- [ ] U+216C–U+216F Ⅼ Ⅽ Ⅾ Ⅿ Roman numerals L C D M
+- [ ] U+217C–U+217F ⅼ ⅽ ⅾ ⅿ lowercase L C D M
 
 ---
 
@@ -537,8 +575,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 - [ ] **Box Drawing** (remaining 102) — combinations of light/heavy/double lines
 - [ ] **Braille** — already done (256/256)
 - [ ] **Enclosed Alphanumerics** — circled/parenthesized variants of existing glyphs
-- [ ] **Superscripts & Subscripts** — scaled versions of existing digits/letters
-- [ ] **Number Forms (fractions)** — composite of existing digit glyphs
+- [x] **Superscripts & Subscripts** — scaled versions of existing digits/letters
+- [-] **Number Forms (fractions)** — composite of existing digit glyphs
 
 ---
 
@@ -548,8 +586,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
-| Phase 3 — Enrichment | ~500 | 240 | 48% |
+| Phase 3 — Enrichment | ~500 | 331 | 66% |
 | Phase 4 — Extended coverage | ~500 | 2 | 0% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **1117** | **~42%** |
-| **Grand total (with existing 538)** | **~3,188** | **1453** | **~46%** |
+| **Total new glyphs** | **~2,650** | **1208** | **~46%** |
+| **Grand total (with existing 538)** | **~3,188** | **1544** | **~48%** |
