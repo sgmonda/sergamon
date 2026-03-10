@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2206 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2256 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -399,9 +399,14 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2324 ⌤ up arrowhead between bars
 - [x] U+2329–U+232A ⟨⟩ (angle brackets)
 - [x] U+232B ⌫ erase to the left
-- [ ] Remaining as needed
+- [x] U+2313 ⌓ segment, U+2314 ⌔ sector
+- [x] U+2336 ⌶ ibeam, U+2338 ⌸ quad equal, U+233D ⌽ circle stile, U+2395 ⎕ APL quad
+- [x] U+2387 ⎇ alt key, U+238B ⎋ escape
+- [x] U+23CF ⏏ eject
+- [x] U+23FB–U+23FE ⏻⏼⏽⏾ (power symbols)
+- [x] Remaining as needed
 
-### [x] Letterlike Symbols (U+2100–U+214F) — 78/80
+### [x] Letterlike Symbols (U+2100–U+214F) — 80/80
 
 - [x] U+2100 a/c account of
 - [x] U+2101 a/s addressed to
@@ -469,7 +474,10 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+214C ⅌ per sign
 - [x] U+214D ⅍ aktieselskab
 - [x] U+214F ⅏ samaritan source
-- [ ] Remaining U+2100–U+214F
+- [x] U+2108 ℈ scruple
+- [x] U+211F ℟ response
+- [x] U+2123 ℣ versicle
+- [x] Remaining U+2100–U+214F
 
 ### [-] Currency Symbols (U+20A0–U+20CF) — 4/32
 
@@ -532,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 32/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 66/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -550,6 +558,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2690–U+2691 ⚐⚑ flags
 - [x] U+26A0 ⚠ warning sign
 - [x] U+26A1 ⚡ lightning
+- [x] U+262E ☮ peace, U+262F ☯ yin yang
+- [x] U+2648–U+264F ♈–♏ zodiac signs (Aries through Scorpio)
+- [x] U+2654–U+265F ♔–♟ chess pieces (white & black)
+- [x] U+266C ♬ beamed sixteenth notes
+- [x] U+266D ♭ flat, U+266E ♮ natural, U+266F ♯ sharp
+- [x] U+2672 ♲ recycling, U+267B ♻ black recycling
+- [x] U+2694 ⚔ swords, U+2695 ⚕ staff of Aesculapius
+- [x] U+2696 ⚖ scales, U+2697 ⚗ alembic
+- [x] U+2699 ⚙ gear, U+269B ⚛ atom
 - [ ] Remaining as desired
 
 ### [-] Dingbats (U+2700–U+27BF) — 21/192
@@ -662,8 +679,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
-| Phase 3 — Enrichment | ~500 | 412 | 82% |
+| Phase 3 — Enrichment | ~500 | 462 | 92% |
 | Phase 4 — Extended coverage | ~500 | 411 | 82% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **1870** | **~71%** |
-| **Grand total (with existing 538)** | **~3,188** | **2206** | **~69%** |
+| **Total new glyphs** | **~2,650** | **1920** | **~72%** |
+| **Grand total (with existing 538)** | **~3,188** | **2256** | **~71%** |
