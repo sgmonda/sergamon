@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2046 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2154 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -367,7 +367,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2049 ⁉ exclamation question
 - [-] Remaining U+2000–U+206F (U+2016, U+202F, U+2034–U+2035, U+2038, U+203B, U+203D–U+203E, U+2043, U+204B done)
 
-### [-] Miscellaneous Technical (U+2300–U+23FF) — 18/256
+### [-] Miscellaneous Technical (U+2300–U+23FF) — 43/256
 
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
@@ -379,14 +379,27 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2328 ⌨ keyboard
 - [x] U+23B8–U+23B9 (left/right vertical box line)
 - [x] U+23E9–U+23F3 (media control symbols: ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳)
+- [x] U+2300 ⌀ diameter sign
+- [x] U+2304 ⌄ down arrowhead
+- [x] U+2308–U+230B ⌈⌉⌊⌋ (ceiling/floor brackets)
+- [x] U+2312 ⌒ arc
+- [x] U+2319 ⌙ turned not sign
+- [x] U+231A ⌚ watch
+- [x] U+231B ⌛ hourglass
+- [x] U+231C–U+231F ⌜⌝⌞⌟ (quine corners)
+- [x] U+2322–U+2323 ⌢⌣ (frown/smile)
+- [x] U+2326 ⌦ erase to the right
+- [x] U+2327 ⌧ X in rectangle
+- [x] U+23F4–U+23FA ⏴⏵⏶⏷⏸⏹⏺ (media controls: triangles, pause, stop, record)
 - [ ] Remaining as needed
 
-### [x] Letterlike Symbols (U+2100–U+214F) — 46/80
+### [x] Letterlike Symbols (U+2100–U+214F) — 72/80
 
 - [x] U+2100 a/c account of
 - [x] U+2101 a/s addressed to
 - [x] U+2102 ℂ double-struck C
 - [x] U+2103 ℃ degree celsius
+- [x] U+2104 ℄ centre line symbol
 - [x] U+2105 ℅ care of
 - [x] U+2107 ℇ Euler constant
 - [x] U+2109 ℉ degree fahrenheit
@@ -399,6 +412,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2111 ℑ black-letter I
 - [x] U+2112 ℒ script capital L
 - [x] U+2113 ℓ script small l
+- [x] U+2114 ℔ L B bar symbol
 - [x] U+2115 ℕ double-struck N
 - [x] U+2116 № numero sign
 - [x] U+2117 ℗ sound recording copyright
@@ -410,17 +424,23 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+211D ℝ double-struck R
 - [x] U+211E ℞ prescription
 - [x] U+2120 ℠ service mark
+- [x] U+2121 ℡ telephone sign
 - [x] U+2122 ™ trademark
 - [x] U+2124 ℤ double-struck Z
+- [x] U+2125 ℥ ounce sign
 - [x] U+2126 Ω ohm sign
 - [x] U+2127 ℧ inverted ohm
 - [x] U+2128 ℨ black-letter Z
+- [x] U+2129 ℩ turned iota
 - [x] U+212A K Kelvin sign
 - [x] U+212B Å angstrom sign
+- [x] U+212C ℬ script capital B
 - [x] U+212D ℭ black-letter C
+- [x] U+212E ℮ estimated sign
 - [x] U+212F ℯ script small e
 - [x] U+2130 ℰ script capital E
 - [x] U+2131 ℱ script capital F
+- [x] U+2132 Ⅎ turned capital F
 - [x] U+2133 ℳ script capital M
 - [x] U+2134 ℴ script small o
 - [x] U+2135 ℵ alef symbol
@@ -428,6 +448,13 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2137 ℷ gimel symbol
 - [x] U+2138 ℸ dalet symbol
 - [x] U+2139 ℹ information source
+- [x] U+213B ℻ facsimile sign
+- [x] U+213C–U+2140 ℼℽℾℿ⅀ (double-struck pi, gamma, Gamma, Pi, summation)
+- [x] U+2141–U+2144 ⅁⅂⅃⅄ (turned/reversed letters)
+- [x] U+2145–U+2149 ⅅⅆⅇⅈⅉ (double-struck italic letters)
+- [x] U+214A ⅊ property line
+- [x] U+214B ⅋ turned ampersand
+- [x] U+214E ⅎ turned small f
 - [ ] Remaining U+2100–U+214F
 
 ### [-] Currency Symbols (U+20A0–U+20CF) — 4/32
@@ -479,12 +506,16 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 
 ## Phase 4 — Extended Coverage (~500+ glyphs)
 
-### [-] Enclosed Alphanumerics (U+2460–U+24FF) — 73/160
+### [-] Enclosed Alphanumerics (U+2460–U+24FF) — 130/160
 - [x] U+2460–U+2473 ①–⑳ circled numbers
+- [x] U+2474–U+2487 ⑴–⒇ parenthesized numbers 1-20
+- [x] U+249C–U+24B5 ⒜–⒵ parenthesized letters a-z
 - [x] U+24B6–U+24CF Ⓐ–Ⓩ circled uppercase letters
 - [x] U+24D0–U+24E9 ⓐ–ⓩ circled lowercase letters
 - [x] U+24EA ⓪ circled zero
-- [ ] Remaining parenthesized/circled forms
+- [x] U+24EB–U+24F4 ⓫–⓴ negative circled numbers 11-20
+- [x] U+24FF ⓿ negative circled zero
+- [ ] Remaining (U+2488–U+249B digit full stops, U+24F5–U+24FE double circled)
 
 ### [-] Miscellaneous Symbols (U+2600–U+26FF) — 32/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
@@ -616,8 +647,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
-| Phase 3 — Enrichment | ~500 | 339 | 68% |
-| Phase 4 — Extended coverage | ~500 | 324 | 65% |
+| Phase 3 — Enrichment | ~500 | 390 | 78% |
+| Phase 4 — Extended coverage | ~500 | 381 | 76% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **1710** | **~65%** |
-| **Grand total (with existing 538)** | **~3,188** | **2046** | **~64%** |
+| **Total new glyphs** | **~2,650** | **1818** | **~69%** |
+| **Grand total (with existing 538)** | **~3,188** | **2154** | **~68%** |
