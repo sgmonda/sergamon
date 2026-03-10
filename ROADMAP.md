@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2507 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2557 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 145/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 161/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -599,9 +599,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+26C4 ⛄ snowman, U+26C5 ⛅ sun behind cloud, U+26C8 ⛈ thunder cloud
 - [x] U+26CE ⛎ ophiuchus, U+26CF ⛏ pick
 - [x] U+26D1 ⛑ helmet, U+26D3 ⛓ chains
+- [x] U+26BF ⚿ squared key
+- [x] U+26C0–U+26C3 ⛀⛁⛂⛃ draughts pieces
+- [x] U+26D0 ⛐ car sliding, U+26E4 ⛤ pentagram
+- [x] U+26E8 ⛨ black cross, U+26EA ⛪ church
+- [x] U+26F0 ⛰ mountain, U+26F1 ⛱ umbrella ground, U+26F2 ⛲ fountain
+- [x] U+26F3 ⛳ golf hole, U+26F5 ⛵ sailboat, U+26F7 ⛷ skier, U+26FA ⛺ tent
 - [ ] Remaining as desired
 
-### [-] Dingbats (U+2700–U+27BF) — 100/192
+### [-] Dingbats (U+2700–U+27BF) — 116/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -655,9 +661,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+27A8–U+27AB ➨➩➪➫ concave/shaded/tilted arrows
 - [x] U+27AD–U+27AF ➭➮➯ shadowed/notted arrows
 - [x] U+27B3 ➳ open right arrow, U+27B8 ➸ heavy long right arrow
+- [x] U+2715 ✕ multiplication, U+271B ✛ open centre cross, U+271C ✜ heavy open centre cross
+- [x] U+271E ✞ shadowed Latin cross
+- [x] U+27B0 ➰ curly loop, U+27B1 ➱ curved stem pinwheel
+- [x] U+27B4 ➴ curved down arrow, U+27B6 ➶ curved up arrow, U+27B7 ➷ squat arrow
+- [x] U+27B9–U+27BE ➹➺➻➼➽➾ wedge tail/open arrows
+- [x] U+27BF ➿ double curly loop
 - [ ] Remaining as desired
 
-### [-] Latin Extended-B (U+0180–U+024F) — 143/208
+### [-] Latin Extended-B (U+0180–U+024F) — 161/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -706,6 +718,16 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+01F1–U+01F3 (Ǳǲǳ — DZ digraph)
 - [x] U+01F4–U+01F5 (Ǵǵ — G acute)
 - [x] U+01F8 Ǹ (N grave)
+- [x] U+01F9 ǹ (n grave)
+- [x] U+01FA–U+01FB (Ǻǻ — A ring acute)
+- [x] U+01FC–U+01FD (Ǽǽ — AE acute)
+- [x] U+01FE–U+01FF (Ǿǿ — O slash acute)
+- [x] U+0212–U+0213 (Ȓȓ — R inverted breve)
+- [x] U+021C–U+021D (Ȝȝ — Yogh)
+- [x] U+021E–U+021F (Ȟȟ — H caron)
+- [x] U+0222–U+0223 (Ȣȣ — Ou)
+- [x] U+01E0–U+01E1 (Ǡǡ — A dot macron)
+- [x] U+01E4 Ǥ (G stroke)
 - [ ] Remaining U+0180–U+024F
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
@@ -784,7 +806,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 462 | 92% |
-| Phase 4 — Extended coverage | ~500 | 662 | 132% |
+| Phase 4 — Extended coverage | ~500 | 712 | 142% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2171** | **~82%** |
-| **Grand total (with existing 538)** | **~3,188** | **2507** | **~79%** |
+| **Total new glyphs** | **~2,650** | **2221** | **~84%** |
+| **Grand total (with existing 538)** | **~3,188** | **2557** | **~80%** |
