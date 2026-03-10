@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2256 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2308 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 66/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 82/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -567,9 +567,17 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2694 ⚔ swords, U+2695 ⚕ staff of Aesculapius
 - [x] U+2696 ⚖ scales, U+2697 ⚗ alembic
 - [x] U+2699 ⚙ gear, U+269B ⚛ atom
+- [x] U+2604 ☄ comet, U+2609 ☉ sun
+- [x] U+2618 ☘ shamrock, U+2624 ☤ caduceus, U+2625 ☥ ankh
+- [x] U+2638 ☸ wheel of dharma
+- [x] U+261A–U+261B ☚☛ pointing hands
+- [x] U+263B ☻ black smiling face
+- [x] U+2650–U+2653 ♐–♓ zodiac (Sagittarius through Pisces)
+- [x] U+2669 ♩ quarter note
+- [x] U+267E ♾ permanent paper, U+267F ♿ wheelchair
 - [ ] Remaining as desired
 
-### [-] Dingbats (U+2700–U+27BF) — 21/192
+### [-] Dingbats (U+2700–U+27BF) — 37/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -589,9 +597,17 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2764 ❤ heavy heart
 - [x] U+2795 ➕, U+2796 ➖, U+2797 ➗ heavy plus/minus/division
 - [x] U+27A1 ➡ right arrow
+- [x] U+2710 ✐ upper right pencil, U+2711 ✑ white nib, U+2712 ✒ black nib
+- [x] U+2719 ✙ outlined Greek cross
+- [x] U+271D ✝ Latin cross, U+2721 ✡ star of David
+- [x] U+2722 ✢ four teardrop asterisk, U+2726–U+2727 ✦✧ four-pointed stars
+- [x] U+2729 ✩ stressed white star
+- [x] U+274C ❌ cross mark
+- [x] U+2753 ❓ question mark, U+2755 ❕ white exclamation, U+2757 ❗ heavy exclamation
+- [x] U+2763 ❣ heart exclamation, U+2765 ❥ rotated heart bullet
 - [ ] Remaining as desired
 
-### [-] Latin Extended-B (U+0180–U+024F) — 50/208
+### [-] Latin Extended-B (U+0180–U+024F) — 70/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -602,6 +618,13 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0218 Ș, U+0219 ș, U+021A Ț, U+021B ț (Romanian comma below)
 - [x] U+0237 ȷ (dotless j)
 - [x] U+0259 ə (small schwa)
+- [x] U+01D5–U+01DC (Ǖǖ Ǘǘ Ǚǚ Ǜǜ — U dieresis with macron/acute/caron/grave)
+- [x] U+01DE–U+01DF (Ǟǟ — A dieresis macron)
+- [x] U+01E2–U+01E3 (Ǣǣ — AE macron)
+- [x] U+01E6–U+01E9 (Ǧǧ Ǩǩ — G/K caron)
+- [x] U+01F0 ǰ (j caron)
+- [x] U+0200–U+0201 (Ȁȁ — A double grave)
+- [x] U+020C Ȍ (O double grave)
 - [ ] Remaining U+0180–U+024F
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
@@ -680,7 +703,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 462 | 92% |
-| Phase 4 — Extended coverage | ~500 | 411 | 82% |
+| Phase 4 — Extended coverage | ~500 | 463 | 93% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **1920** | **~72%** |
-| **Grand total (with existing 538)** | **~3,188** | **2256** | **~71%** |
+| **Total new glyphs** | **~2,650** | **1972** | **~74%** |
+| **Grand total (with existing 538)** | **~3,188** | **2308** | **~72%** |
