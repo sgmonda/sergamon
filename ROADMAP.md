@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1901 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2046 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -576,10 +576,20 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 ## Phase 5 — Non-Latin Scripts (ambitious, optional)
 
 ### [-] Hebrew (U+0590–U+05FF) — 27/88
-### [ ] Arabic (U+0600–U+06FF) — 0/256 *(complex: RTL + contextual forms)*
+### [-] Arabic (U+0600–U+06FF) — 36/256 *(complex: RTL + contextual forms)*
+- [x] U+0621–U+063A (hamza, alef variants, basic letters: 26 glyphs)
+- [x] U+0641–U+064A (feh through yeh: 10 glyphs)
+- [ ] Remaining U+0600–U+06FF
+
 ### [ ] Thai (U+0E00–U+0E7F) — 0/87
-### [ ] Georgian (U+10A0–U+10FF) — 0/88
-### [ ] Armenian (U+0530–U+058F) — 0/91
+### [-] Georgian (U+10A0–U+10FF) — 33/88
+- [x] U+10D0–U+10F0 (Mkhedruli lowercase: 33 letters)
+- [ ] Remaining (Asomtavruli uppercase)
+
+### [-] Armenian (U+0530–U+058F) — 76/91
+- [x] U+0531–U+0556 (uppercase: 38 letters)
+- [x] U+0561–U+0586 (lowercase: 38 letters)
+- [ ] Remaining punctuation/modifiers
 ### [ ] Devanagari (U+0900–U+097F) — 0/128 *(complex: conjuncts + matras)*
 
 > **Note:** CJK (U+4E00–U+9FFF, ~20,000) and Hangul (U+AC00–U+D7AF, ~11,000)
@@ -608,6 +618,6 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 339 | 68% |
 | Phase 4 — Extended coverage | ~500 | 324 | 65% |
-| Phase 5 — Non-Latin scripts | ~700+ | 27 | 4% |
-| **Total new glyphs** | **~2,650** | **1565** | **~59%** |
-| **Grand total (with existing 538)** | **~3,188** | **1901** | **~60%** |
+| Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
+| **Total new glyphs** | **~2,650** | **1710** | **~65%** |
+| **Grand total (with existing 538)** | **~3,188** | **2046** | **~64%** |

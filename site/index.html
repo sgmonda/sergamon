@@ -18,7 +18,7 @@
         />
         <meta
             property="og:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 538+ glyphs. What you type is what you see."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2046 glyphs. What you type is what you see."
         />
         <meta
             property="og:image"
@@ -34,7 +34,7 @@
         />
         <meta
             name="twitter:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 538+ glyphs."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2046 glyphs."
         />
         <meta
             name="twitter:image"
@@ -1354,7 +1354,7 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <span>538+ glyphs</span>
+                    <span>2046 glyphs</span>
                     <span class="stat-separator">|</span>
                     <span>8x16 pixel grid</span>
                     <span class="stat-separator">|</span>
@@ -1628,6 +1628,15 @@ The quick brown fox jumps over the lazy dog.
                     <button class="char-tab" data-tab="hebrew">
                         Hebrew
                     </button>
+                    <button class="char-tab" data-tab="georgian">
+                        Georgian
+                    </button>
+                    <button class="char-tab" data-tab="armenian">
+                        Armenian
+                    </button>
+                    <button class="char-tab" data-tab="arabic">
+                        Arabic
+                    </button>
                 </div>
 
                 <div class="char-tab-panel active" data-tab="ascii">
@@ -1668,6 +1677,18 @@ The quick brown fox jumps over the lazy dog.
 
                 <div class="char-tab-panel" data-tab="hebrew">
                     <div class="char-grid" id="hebrewGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="georgian">
+                    <div class="char-grid" id="georgianGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="armenian">
+                    <div class="char-grid" id="armenianGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="arabic">
+                    <div class="char-grid" id="arabicGrid"></div>
                 </div>
             </div>
         </section>
@@ -4555,6 +4576,66 @@ int main(void) {
                     ]);
                 }
                 populateHebrew();
+
+                function populateGeorgian() {
+                    populateCategory("#georgianGrid", [
+                        [0x10d0, "an"], [0x10d1, "ban"], [0x10d2, "gan"], [0x10d3, "don"],
+                        [0x10d4, "en"], [0x10d5, "vin"], [0x10d6, "zen"], [0x10d7, "tan"],
+                        [0x10d8, "in"], [0x10d9, "kan"], [0x10da, "las"], [0x10db, "man"],
+                        [0x10dc, "nar"], [0x10dd, "on"], [0x10de, "par"], [0x10df, "zhar"],
+                        [0x10e0, "rae"], [0x10e1, "san"], [0x10e2, "tar"], [0x10e3, "un"],
+                        [0x10e4, "phar"], [0x10e5, "khar"], [0x10e6, "ghan"], [0x10e7, "qar"],
+                        [0x10e8, "shin"], [0x10e9, "chin"], [0x10ea, "tsan"], [0x10eb, "dzil"],
+                        [0x10ec, "tsil"], [0x10ed, "char"], [0x10ee, "xan"], [0x10ef, "jhan"],
+                        [0x10f0, "hae"],
+                    ]);
+                }
+                populateGeorgian();
+
+                function populateArmenian() {
+                    populateCategory("#armenianGrid", [
+                        [0x0531, "Ayb"], [0x0532, "Ben"], [0x0533, "Gim"], [0x0534, "Da"],
+                        [0x0535, "Yech"], [0x0536, "Za"], [0x0537, "Eh"], [0x0538, "Et"],
+                        [0x0539, "To"], [0x053a, "Zhe"], [0x053b, "Ini"], [0x053c, "Liwn"],
+                        [0x053d, "Xeh"], [0x053e, "Ca"], [0x053f, "Ken"], [0x0540, "Ho"],
+                        [0x0541, "Ja"], [0x0542, "Ghad"], [0x0543, "Cheh"], [0x0544, "Men"],
+                        [0x0545, "Yi"], [0x0546, "Now"], [0x0547, "Sha"], [0x0548, "Vo"],
+                        [0x0549, "Cha"], [0x054a, "Peh"], [0x054b, "Jheh"], [0x054c, "Ra"],
+                        [0x054d, "Seh"], [0x054e, "Vew"], [0x054f, "Tiwn"], [0x0550, "Reh"],
+                        [0x0551, "Co"], [0x0552, "Yiwn"], [0x0553, "Piwr"], [0x0554, "Keh"],
+                        [0x0555, "Oh"], [0x0556, "Feh"],
+                        [0x0561, "ayb"], [0x0562, "ben"], [0x0563, "gim"], [0x0564, "da"],
+                        [0x0565, "yech"], [0x0566, "za"], [0x0567, "eh"], [0x0568, "et"],
+                        [0x0569, "to"], [0x056a, "zhe"], [0x056b, "ini"], [0x056c, "liwn"],
+                        [0x056d, "xeh"], [0x056e, "ca"], [0x056f, "ken"], [0x0570, "ho"],
+                        [0x0571, "ja"], [0x0572, "ghad"], [0x0573, "cheh"], [0x0574, "men"],
+                        [0x0575, "yi"], [0x0576, "now"], [0x0577, "sha"], [0x0578, "vo"],
+                        [0x0579, "cha"], [0x057a, "peh"], [0x057b, "jheh"], [0x057c, "ra"],
+                        [0x057d, "seh"], [0x057e, "vew"], [0x057f, "tiwn"], [0x0580, "reh"],
+                        [0x0581, "co"], [0x0582, "yiwn"], [0x0583, "piwr"], [0x0584, "keh"],
+                        [0x0585, "oh"], [0x0586, "feh"],
+                    ]);
+                }
+                populateArmenian();
+
+                function populateArabic() {
+                    populateCategory("#arabicGrid", [
+                        [0x0621, "hamza"], [0x0622, "alef madda"], [0x0623, "alef hamza above"],
+                        [0x0624, "waw hamza"], [0x0625, "alef hamza below"], [0x0626, "yeh hamza"],
+                        [0x0627, "alef"], [0x0628, "beh"], [0x0629, "teh marbuta"],
+                        [0x062a, "teh"], [0x062b, "theh"], [0x062c, "jeem"],
+                        [0x062d, "hah"], [0x062e, "khah"], [0x062f, "dal"],
+                        [0x0630, "thal"], [0x0631, "reh"], [0x0632, "zain"],
+                        [0x0633, "seen"], [0x0634, "sheen"], [0x0635, "sad"],
+                        [0x0636, "dad"], [0x0637, "tah"], [0x0638, "zah"],
+                        [0x0639, "ain"], [0x063a, "ghain"],
+                        [0x0641, "feh"], [0x0642, "qaf"], [0x0643, "kaf"],
+                        [0x0644, "lam"], [0x0645, "meem"], [0x0646, "noon"],
+                        [0x0647, "heh"], [0x0648, "waw"], [0x0649, "alef maksura"],
+                        [0x064a, "yeh"],
+                    ]);
+                }
+                populateArabic();
 
                 // ── Distinguishability Table ───────────────────────────────────
 
