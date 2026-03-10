@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2458 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2507 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 130/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 145/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -593,9 +593,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+260A–U+260D ☊☋☌☍ (ascending/descending node, conjunction, opposition)
 - [x] U+2630–U+2637 ☰–☷ trigrams (heaven, lake, fire, thunder, wind, water, mountain, earth)
 - [x] U+26B2 ⚲ neuter, U+26D4 ⛔ no entry
+- [x] U+2668 ♨ hot springs
+- [x] U+26A2–U+26A5 ⚢⚣⚤⚥ gender symbols, U+26A7 ⚧ transgender
+- [x] U+26B0 ⚰ coffin, U+26B1 ⚱ funeral urn
+- [x] U+26C4 ⛄ snowman, U+26C5 ⛅ sun behind cloud, U+26C8 ⛈ thunder cloud
+- [x] U+26CE ⛎ ophiuchus, U+26CF ⛏ pick
+- [x] U+26D1 ⛑ helmet, U+26D3 ⛓ chains
 - [ ] Remaining as desired
 
-### [-] Dingbats (U+2700–U+27BF) — 84/192
+### [-] Dingbats (U+2700–U+27BF) — 100/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -643,9 +649,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2703–U+2704 ✃✄ scissors variants
 - [x] U+2706–U+2707 ✆✇ telephone/tape drive
 - [x] U+270A ✊ raised fist, U+270B ✋ raised hand, U+270D ✍ writing hand
+- [x] U+2743 ❃ heavy teardrop pinwheel
+- [x] U+2749–U+274B ❉❊❋ spoked asterisk variants
+- [x] U+2750–U+2752 ❐❑❒ shadowed white squares
+- [x] U+27A8–U+27AB ➨➩➪➫ concave/shaded/tilted arrows
+- [x] U+27AD–U+27AF ➭➮➯ shadowed/notted arrows
+- [x] U+27B3 ➳ open right arrow, U+27B8 ➸ heavy long right arrow
 - [ ] Remaining as desired
 
-### [-] Latin Extended-B (U+0180–U+024F) — 125/208
+### [-] Latin Extended-B (U+0180–U+024F) — 143/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -686,6 +698,14 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0243 Ƀ (B stroke), U+0244 Ʉ (U bar), U+0245 Ʌ (turned V)
 - [x] U+0246–U+0247 (Ɇɇ — E stroke)
 - [x] U+0248–U+0249 (Ɉɉ — J stroke)
+- [x] U+024A–U+024B (Ɋɋ — Q stroke tail)
+- [x] U+024C–U+024D (Ɍɍ — R stroke)
+- [x] U+024E–U+024F (Ɏɏ — Y stroke)
+- [x] U+01EA–U+01ED (Ǫǫ Ǭǭ — O ogonek, O ogonek macron)
+- [x] U+01EE–U+01EF (Ǯǯ — Ezh caron)
+- [x] U+01F1–U+01F3 (Ǳǲǳ — DZ digraph)
+- [x] U+01F4–U+01F5 (Ǵǵ — G acute)
+- [x] U+01F8 Ǹ (N grave)
 - [ ] Remaining U+0180–U+024F
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
@@ -764,7 +784,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
 | Phase 3 — Enrichment | ~500 | 462 | 92% |
-| Phase 4 — Extended coverage | ~500 | 613 | 123% |
+| Phase 4 — Extended coverage | ~500 | 662 | 132% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2122** | **~80%** |
-| **Grand total (with existing 538)** | **~3,188** | **2458** | **~77%** |
+| **Total new glyphs** | **~2,650** | **2171** | **~82%** |
+| **Grand total (with existing 538)** | **~3,188** | **2507** | **~79%** |
