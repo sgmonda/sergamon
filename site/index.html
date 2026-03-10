@@ -1619,6 +1619,12 @@ The quick brown fox jumps over the lazy dog.
                     <button class="char-tab" data-tab="cyrillic">
                         Cyrillic
                     </button>
+                    <button class="char-tab" data-tab="enclosed">
+                        Enclosed
+                    </button>
+                    <button class="char-tab" data-tab="misc-symbols">
+                        Misc Symbols
+                    </button>
                 </div>
 
                 <div class="char-tab-panel active" data-tab="ascii">
@@ -1647,6 +1653,14 @@ The quick brown fox jumps over the lazy dog.
 
                 <div class="char-tab-panel" data-tab="cyrillic">
                     <div class="char-grid" id="cyrillicGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="enclosed">
+                    <div class="char-grid" id="enclosedGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="misc-symbols">
+                    <div class="char-grid" id="miscSymbolsGrid"></div>
                 </div>
             </div>
         </section>
@@ -3867,6 +3881,10 @@ int main(void) {
                         [0x2169, "Roman X"],
                         [0x216a, "Roman XI"],
                         [0x216b, "Roman XII"],
+                        [0x216c, "Roman L"],
+                        [0x216d, "Roman C"],
+                        [0x216e, "Roman D"],
+                        [0x216f, "Roman M"],
                         [0x2170, "roman i"],
                         [0x2171, "roman ii"],
                         [0x2172, "roman iii"],
@@ -3879,6 +3897,10 @@ int main(void) {
                         [0x2179, "roman x"],
                         [0x217a, "roman xi"],
                         [0x217b, "roman xii"],
+                        [0x217c, "roman l"],
+                        [0x217d, "roman c"],
+                        [0x217e, "roman d"],
+                        [0x217f, "roman m"],
                         [0x0394, "Delta"],
                         [0x03a3, "Sigma"],
                         [0x03a9, "Omega"],
@@ -4152,6 +4174,121 @@ int main(void) {
                     ]);
                 }
 
+                function populateEnclosed() {
+                    populateCategory("#enclosedGrid", [
+                        [0x24ea, "circled 0"],
+                        [0x2460, "circled 1"],
+                        [0x2461, "circled 2"],
+                        [0x2462, "circled 3"],
+                        [0x2463, "circled 4"],
+                        [0x2464, "circled 5"],
+                        [0x2465, "circled 6"],
+                        [0x2466, "circled 7"],
+                        [0x2467, "circled 8"],
+                        [0x2468, "circled 9"],
+                        [0x2469, "circled 10"],
+                        [0x246a, "circled 11"],
+                        [0x246b, "circled 12"],
+                        [0x246c, "circled 13"],
+                        [0x246d, "circled 14"],
+                        [0x246e, "circled 15"],
+                        [0x246f, "circled 16"],
+                        [0x2470, "circled 17"],
+                        [0x2471, "circled 18"],
+                        [0x2472, "circled 19"],
+                        [0x2473, "circled 20"],
+                        [0x24b6, "circled A"],
+                        [0x24b7, "circled B"],
+                        [0x24b8, "circled C"],
+                        [0x24b9, "circled D"],
+                        [0x24ba, "circled E"],
+                        [0x24bb, "circled F"],
+                        [0x24bc, "circled G"],
+                        [0x24bd, "circled H"],
+                        [0x24be, "circled I"],
+                        [0x24bf, "circled J"],
+                        [0x24c0, "circled K"],
+                        [0x24c1, "circled L"],
+                        [0x24c2, "circled M"],
+                        [0x24c3, "circled N"],
+                        [0x24c4, "circled O"],
+                        [0x24c5, "circled P"],
+                        [0x24c6, "circled Q"],
+                        [0x24c7, "circled R"],
+                        [0x24c8, "circled S"],
+                        [0x24c9, "circled T"],
+                        [0x24ca, "circled U"],
+                        [0x24cb, "circled V"],
+                        [0x24cc, "circled W"],
+                        [0x24cd, "circled X"],
+                        [0x24ce, "circled Y"],
+                        [0x24cf, "circled Z"],
+                        [0x24d0, "circled a"],
+                        [0x24d1, "circled b"],
+                        [0x24d2, "circled c"],
+                        [0x24d3, "circled d"],
+                        [0x24d4, "circled e"],
+                        [0x24d5, "circled f"],
+                        [0x24d6, "circled g"],
+                        [0x24d7, "circled h"],
+                        [0x24d8, "circled i"],
+                        [0x24d9, "circled j"],
+                        [0x24da, "circled k"],
+                        [0x24db, "circled l"],
+                        [0x24dc, "circled m"],
+                        [0x24dd, "circled n"],
+                        [0x24de, "circled o"],
+                        [0x24df, "circled p"],
+                        [0x24e0, "circled q"],
+                        [0x24e1, "circled r"],
+                        [0x24e2, "circled s"],
+                        [0x24e3, "circled t"],
+                        [0x24e4, "circled u"],
+                        [0x24e5, "circled v"],
+                        [0x24e6, "circled w"],
+                        [0x24e7, "circled x"],
+                        [0x24e8, "circled y"],
+                        [0x24e9, "circled z"],
+                    ]);
+                }
+
+                function populateMiscSymbols() {
+                    populateCategory("#miscSymbolsGrid", [
+                        [0x2600, "sun"],
+                        [0x2601, "cloud"],
+                        [0x2602, "umbrella"],
+                        [0x2603, "snowman"],
+                        [0x2605, "black star"],
+                        [0x2606, "white star"],
+                        [0x2610, "ballot box"],
+                        [0x2611, "ballot check"],
+                        [0x2612, "ballot x"],
+                        [0x2614, "umbrella rain"],
+                        [0x2615, "hot beverage"],
+                        [0x2620, "skull"],
+                        [0x2622, "radioactive"],
+                        [0x2623, "biohazard"],
+                        [0x2639, "frowning"],
+                        [0x263a, "smiling"],
+                        [0x263c, "sun rays"],
+                        [0x263e, "moon"],
+                        [0x2640, "female"],
+                        [0x2642, "male"],
+                        [0x2660, "spade"],
+                        [0x2661, "white heart"],
+                        [0x2662, "white diamond"],
+                        [0x2663, "club"],
+                        [0x2665, "black heart"],
+                        [0x2666, "black diamond"],
+                        [0x266a, "eighth note"],
+                        [0x266b, "beamed notes"],
+                        [0x2690, "white flag"],
+                        [0x2691, "black flag"],
+                        [0x26a0, "warning"],
+                        [0x26a1, "lightning"],
+                    ]);
+                }
+
                 populateASCII();
                 populateLatinExt();
                 populateShapes();
@@ -4159,6 +4296,8 @@ int main(void) {
                 populateMath();
                 populateBraille();
                 populateCyrillic();
+                populateEnclosed();
+                populateMiscSymbols();
 
                 // ── Distinguishability Table ───────────────────────────────────
 

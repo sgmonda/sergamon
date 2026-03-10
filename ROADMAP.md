@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 1544 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 1657 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -466,44 +466,44 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2080–U+2089 ₀₁₂₃₄₅₆₇₈₉ subscripts 0-9
 - [x] U+208A–U+208E ₊₋₌₍₎ subscript operators
 
-### [-] Number Forms (U+2150–U+218F) — 40/60
+### [x] Number Forms (U+2150–U+218F) — 48/60
 
 - [x] U+2150–U+215E ⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ vulgar fractions
 - [x] U+2160–U+216B Ⅰ–Ⅻ Roman numerals uppercase (12)
 - [x] U+2170–U+217B ⅰ–ⅻ Roman numerals lowercase (12)
 - [x] U+2189 ↉ zero thirds fraction
-- [ ] U+216C–U+216F Ⅼ Ⅽ Ⅾ Ⅿ Roman numerals L C D M
-- [ ] U+217C–U+217F ⅼ ⅽ ⅾ ⅿ lowercase L C D M
+- [x] U+216C–U+216F Ⅼ Ⅽ Ⅾ Ⅿ Roman numerals L C D M
+- [x] U+217C–U+217F ⅼ ⅽ ⅾ ⅿ lowercase L C D M
 
 ---
 
 ## Phase 4 — Extended Coverage (~500+ glyphs)
 
-### [ ] Enclosed Alphanumerics (U+2460–U+24FF) — 0/160
-- [ ] U+2460–U+2473 ①–⑳ circled numbers
-- [ ] U+24B6–U+24CF Ⓐ–Ⓣ circled uppercase letters
-- [ ] U+24D0–U+24E9 ⓐ–ⓩ circled lowercase letters
-- [ ] U+24EA ⓪ circled zero
+### [-] Enclosed Alphanumerics (U+2460–U+24FF) — 73/160
+- [x] U+2460–U+2473 ①–⑳ circled numbers
+- [x] U+24B6–U+24CF Ⓐ–Ⓩ circled uppercase letters
+- [x] U+24D0–U+24E9 ⓐ–ⓩ circled lowercase letters
+- [x] U+24EA ⓪ circled zero
 - [ ] Remaining parenthesized/circled forms
 
-### [ ] Miscellaneous Symbols (U+2600–U+26FF) — 0/256
-- [ ] U+2600 ☀ sun, U+2601 ☁ cloud
-- [ ] U+2602–U+2603 ☂ umbrella, ☃ snowman
-- [ ] U+2605 ★ filled star, U+2606 ☆ empty star
-- [ ] U+2610 ☐ ballot box, U+2611 ☑ checked, U+2612 ☒ crossed
-- [ ] U+2614 ☔ umbrella with rain
-- [ ] U+2615 ☕ hot beverage
-- [ ] U+2620 ☠ skull and crossbones
-- [ ] U+2622 ☢ radioactive, U+2623 ☣ biohazard
-- [ ] U+2639 ☹ frowning, U+263A ☺ smiling
-- [ ] U+263C ☼ sun, U+263E ☾ moon
-- [ ] U+2640 ♀ female, U+2642 ♂ male
-- [ ] U+2660 ♠, U+2661 ♡, U+2662 ♢, U+2663 ♣ card suits
-- [ ] U+2665 ♥, U+2666 ♦ (filled suits)
-- [ ] U+266A ♪, U+266B ♫ music notes
-- [ ] U+2690–U+2691 ⚐⚑ flags
-- [ ] U+26A0 ⚠ warning sign
-- [ ] U+26A1 ⚡ lightning
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 32/256
+- [x] U+2600 ☀ sun, U+2601 ☁ cloud
+- [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
+- [x] U+2605 ★ filled star, U+2606 ☆ empty star
+- [x] U+2610 ☐ ballot box, U+2611 ☑ checked, U+2612 ☒ crossed
+- [x] U+2614 ☔ umbrella with rain
+- [x] U+2615 ☕ hot beverage
+- [x] U+2620 ☠ skull and crossbones
+- [x] U+2622 ☢ radioactive, U+2623 ☣ biohazard
+- [x] U+2639 ☹ frowning, U+263A ☺ smiling
+- [x] U+263C ☼ sun, U+263E ☾ moon
+- [x] U+2640 ♀ female, U+2642 ♂ male
+- [x] U+2660 ♠, U+2661 ♡, U+2662 ♢, U+2663 ♣ card suits
+- [x] U+2665 ♥, U+2666 ♦ (filled suits)
+- [x] U+266A ♪, U+266B ♫ music notes
+- [x] U+2690–U+2691 ⚐⚑ flags
+- [x] U+26A0 ⚠ warning sign
+- [x] U+26A1 ⚡ lightning
 - [ ] Remaining as desired
 
 ### [ ] Dingbats (U+2700–U+27BF) — 2/192
@@ -586,8 +586,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 525 | 88% |
-| Phase 3 — Enrichment | ~500 | 331 | 66% |
-| Phase 4 — Extended coverage | ~500 | 2 | 0% |
+| Phase 3 — Enrichment | ~500 | 339 | 68% |
+| Phase 4 — Extended coverage | ~500 | 107 | 21% |
 | Phase 5 — Non-Latin scripts | ~700+ | 0 | 0% |
-| **Total new glyphs** | **~2,650** | **1208** | **~46%** |
-| **Grand total (with existing 538)** | **~3,188** | **1544** | **~48%** |
+| **Total new glyphs** | **~2,650** | **1321** | **~50%** |
+| **Grand total (with existing 538)** | **~3,188** | **1657** | **~52%** |
