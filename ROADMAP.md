@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2867 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 3006 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -744,7 +744,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+01B1 Ʊ (Upsilon), U+01B2 Ʋ (V hook)
 - [x] Remaining U+0180–U+024F (32 glyphs: turned delta, ezh, wynn, click letters, tone letters, etc.)
 
-### [-] IPA Extensions (U+0250–U+02AF) — 57/96
+### [x] IPA Extensions (U+0250–U+02AF) — 95/96
 - [x] U+0250–U+0254 (turned a, alpha, turned alpha, open o)
 - [x] U+0258–U+025F (reversed e, open e variants, dotless j stroke)
 - [x] U+0260–U+0266 (g variants, gamma, ram's horn, turned h, h hook)
@@ -755,24 +755,24 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0288–U+0292 (t retroflex, u bar, upsilon, v hook, turned v/w/y, small cap Y, z variants, ezh)
 - [x] U+0294–U+0298 (glottal stop, pharyngeal, bilabial click)
 - [x] U+029D (j crossed tail), U+02A1–U+02A2 (glottal variants)
-- [ ] Remaining U+0250–U+02AF
+- [x] Remaining U+0250–U+02AF (38 glyphs: hooks, curls, small capitals, digraphs, clicks, etc.)
 
-### [-] Spacing Modifier Letters (U+02B0–U+02FF) — 53/80
+### [x] Spacing Modifier Letters (U+02B0–U+02FF) — 80/80
 - [x] U+02B0–U+02B8 (superscript modifier letters: h, h-hook, j, r, turned-r variants, w, y)
 - [x] U+02B9–U+02BF (modifier punctuation: prime, double prime, commas, half rings)
 - [x] U+02C0–U+02CF (modifier marks: glottal stops, arrowheads, circumflex, caron, stress marks)
 - [x] U+02D0–U+02DF (IPA modifiers: triangular colon, tacks, breve, dot, ring, ogonek, tilde, double acute)
 - [x] U+02E0–U+02E4 (superscript gamma, l, s, x, reversed glottal)
-- [ ] Remaining U+02B0–U+02FF
+- [x] Remaining U+02B0–U+02FF (27 glyphs: tone bars, low modifiers, arrowheads, etc.)
 
-### [-] Combining Diacritical Marks (U+0300–U+036F) — 38/112
+### [x] Combining Diacritical Marks (U+0300–U+036F) — 112/112
 - [x] U+0300–U+0314 (above marks: grave, acute, circumflex, tilde, macron, overline, breve, dot, dieresis, hook, ring, double acute, caron, vertical lines, double grave, candrabindu, inverted breve, commas)
 - [x] U+0316–U+0317 (below accents: grave, acute)
 - [x] U+0323–U+0329 (below marks: dot, dieresis, ring, comma, cedilla, ogonek, vertical line)
 - [x] U+032D–U+032E (below: circumflex, breve)
 - [x] U+0330–U+0331 (below: tilde, macron)
 - [x] U+0335–U+0338 (through: short/long stroke, short/long solidus)
-- [ ] Remaining as needed
+- [x] Remaining U+0315–U+036F (74 glyphs: tacks, hooks, bridges, tone marks, overlays, combining letters, etc.)
 
 ---
 
@@ -820,7 +820,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 569 | 95% |
 | Phase 3 — Enrichment | ~500 | 531 | 106% |
-| Phase 4 — Extended coverage | ~500 | 928 | 186% |
+| Phase 4 — Extended coverage | ~500 | 1067 | 213% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2531** | **~96%** |
-| **Grand total (with existing 538)** | **~3,188** | **2867** | **~90%** |
+| **Total new glyphs** | **~2,650** | **2670** | **~101%** |
+| **Grand total (with existing 538)** | **~3,188** | **3006** | **~94%** |

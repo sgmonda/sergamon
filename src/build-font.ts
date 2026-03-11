@@ -45,6 +45,7 @@ const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "cyrillic"),
   path.join(PROJECT_ROOT, "glyphs", "punctuation"),
   path.join(PROJECT_ROOT, "glyphs", "latin-ext-b"),
+  path.join(PROJECT_ROOT, "glyphs", "combining"),
 ];
 
 const BUILD_DIR = path.join(PROJECT_ROOT, "build");
