@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2648 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2698 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 161/256
+### [-] Miscellaneous Symbols (U+2600–U+26FF) — 178/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -605,9 +605,13 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+26E8 ⛨ black cross, U+26EA ⛪ church
 - [x] U+26F0 ⛰ mountain, U+26F1 ⛱ umbrella ground, U+26F2 ⛲ fountain
 - [x] U+26F3 ⛳ golf hole, U+26F5 ⛵ sailboat, U+26F7 ⛷ skier, U+26FA ⛺ tent
+- [x] U+263F ☿ mercury, U+2664 ♤ white spade, U+2667 ♧ white club
+- [x] U+2673–U+2679 ♳–♹ recycling types 1-7
+- [x] U+26A6 ⚦ male with stroke, U+26A8 ⚨ vertical male stroke, U+26A9 ⚩ horizontal male stroke
+- [x] U+26AC ⚬ medium small white circle, U+26E9 ⛩ shinto shrine, U+26F4 ⛴ ferry, U+26FD ⛽ fuel pump
 - [ ] Remaining as desired
 
-### [-] Dingbats (U+2700–U+27BF) — 116/192
+### [-] Dingbats (U+2700–U+27BF) — 133/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -667,9 +671,14 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+27B4 ➴ curved down arrow, U+27B6 ➶ curved up arrow, U+27B7 ➷ squat arrow
 - [x] U+27B9–U+27BE ➹➺➻➼➽➾ wedge tail/open arrows
 - [x] U+27BF ➿ double curly loop
+- [x] U+2700 ✀ black safety scissors, U+2705 ✅ heavy check mark
+- [x] U+2723–U+2725 ✣✤✥ balloon/club-spoked asterisks
+- [x] U+272A–U+272F ✪✫✬✭✮✯ star variants
+- [x] U+2731 ✱ heavy asterisk, U+2732 ✲ open centre asterisk
+- [x] U+2735–U+2737 ✵✶✷ pointed stars, U+273A ✺ sixteen pointed asterisk
 - [ ] Remaining as desired
 
-### [-] Latin Extended-B (U+0180–U+024F) — 161/208
+### [-] Latin Extended-B (U+0180–U+024F) — 177/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -728,6 +737,11 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0222–U+0223 (Ȣȣ — Ou)
 - [x] U+01E0–U+01E1 (Ǡǡ — A dot macron)
 - [x] U+01E4 Ǥ (G stroke)
+- [x] U+0182–U+0185 (Ƃƃ — B topbar, Ƅƅ — Tone six)
+- [x] U+018B–U+018C (Ƌƌ — D topbar)
+- [x] U+0195 ƕ (hv digraph), U+019B ƛ (lambda bar), U+019C Ɯ (turned M), U+019F Ɵ (O bar)
+- [x] U+01A2–U+01A5 (Ƣƣ — Oi digraph, Ƥƥ — P hook)
+- [x] U+01B1 Ʊ (Upsilon), U+01B2 Ʋ (V hook)
 - [ ] Remaining U+0180–U+024F
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
@@ -805,8 +819,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 569 | 95% |
-| Phase 3 — Enrichment | ~500 | 514 | 103% |
-| Phase 4 — Extended coverage | ~500 | 726 | 145% |
+| Phase 3 — Enrichment | ~500 | 531 | 106% |
+| Phase 4 — Extended coverage | ~500 | 759 | 152% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2312** | **~87%** |
-| **Grand total (with existing 538)** | **~3,188** | **2648** | **~83%** |
+| **Total new glyphs** | **~2,650** | **2362** | **~89%** |
+| **Grand total (with existing 538)** | **~3,188** | **2698** | **~85%** |

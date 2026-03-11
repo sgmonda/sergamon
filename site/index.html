@@ -18,7 +18,7 @@
         />
         <meta
             property="og:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2648 glyphs. What you type is what you see."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2698 glyphs. What you type is what you see."
         />
         <meta
             property="og:image"
@@ -34,7 +34,7 @@
         />
         <meta
             name="twitter:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2648 glyphs."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2698 glyphs."
         />
         <meta
             name="twitter:image"
@@ -1354,7 +1354,7 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <span>2648 glyphs</span>
+                    <span>2698 glyphs</span>
                     <span class="stat-separator">|</span>
                     <span>8x16 pixel grid</span>
                     <span class="stat-separator">|</span>
@@ -3176,11 +3176,17 @@ int main(void) {
                         [0x017f, "long s"],
                         [0x0180, "b stroke"],
                         [0x0181, "B hook"],
+                        [0x0182, "B topbar"],
+                        [0x0183, "b topbar"],
+                        [0x0184, "Tone six"],
+                        [0x0185, "tone six"],
                         [0x0186, "open O"],
                         [0x0187, "C hook"],
                         [0x0188, "c hook"],
                         [0x0189, "D African"],
                         [0x018a, "D hook"],
+                        [0x018b, "D topbar"],
+                        [0x018c, "d topbar"],
                         [0x018e, "reversed E"],
                         [0x018f, "schwa"],
                         [0x0190, "open E"],
@@ -3188,17 +3194,27 @@ int main(void) {
                         [0x0192, "f hook"],
                         [0x0193, "G hook"],
                         [0x0194, "gamma"],
+                        [0x0195, "hv digraph"],
                         [0x0196, "iota"],
                         [0x0197, "I stroke"],
                         [0x0198, "K hook"],
                         [0x0199, "k hook"],
                         [0x019a, "l bar"],
+                        [0x019b, "lambda bar"],
+                        [0x019c, "turned M"],
                         [0x019d, "N left hook"],
                         [0x019e, "n long leg"],
+                        [0x019f, "O bar"],
                         [0x01a0, "O horn"],
                         [0x01a1, "o horn"],
+                        [0x01a2, "Oi digraph"],
+                        [0x01a3, "oi digraph"],
+                        [0x01a4, "P hook"],
+                        [0x01a5, "p hook"],
                         [0x01af, "U horn"],
                         [0x01b0, "u horn"],
+                        [0x01b1, "Upsilon"],
+                        [0x01b2, "V hook"],
                         [0x01b5, "Z stroke"],
                         [0x01b6, "z stroke"],
                         [0x01c4, "DZ caron"],
@@ -4876,14 +4892,17 @@ int main(void) {
                         [0x263a, "smiling"],
                         [0x263c, "sun rays"],
                         [0x263e, "moon"],
+                        [0x263f, "mercury"],
                         [0x2640, "female"],
                         [0x2642, "male"],
                         [0x2660, "spade"],
                         [0x2661, "white heart"],
                         [0x2662, "white diamond"],
                         [0x2663, "club"],
+                        [0x2664, "white spade suit"],
                         [0x2665, "black heart"],
                         [0x2666, "black diamond"],
+                        [0x2667, "white club suit"],
                         [0x266a, "eighth note"],
                         [0x266b, "beamed notes"],
                         [0x2690, "white flag"],
@@ -4915,6 +4934,13 @@ int main(void) {
                         [0x266e, "natural"],
                         [0x266f, "sharp"],
                         [0x2672, "recycling"],
+                        [0x2673, "recycling type 1"],
+                        [0x2674, "recycling type 2"],
+                        [0x2675, "recycling type 3"],
+                        [0x2676, "recycling type 4"],
+                        [0x2677, "recycling type 5"],
+                        [0x2678, "recycling type 6"],
+                        [0x2679, "recycling type 7"],
                         [0x267b, "recycle black"],
                         [0x2694, "swords"],
                         [0x2695, "Aesculapius"],
@@ -4955,6 +4981,7 @@ int main(void) {
                         [0x269d, "outlined star"],
                         [0x26aa, "white circle"],
                         [0x26ab, "black circle"],
+                        [0x26ac, "medium small white circle"],
                         [0x2607, "lightning"],
                         [0x2608, "thunderstorm"],
                         [0x260a, "ascending node"],
@@ -4977,7 +5004,10 @@ int main(void) {
                         [0x26a3, "doubled male"],
                         [0x26a4, "interlocked"],
                         [0x26a5, "male female"],
+                        [0x26a6, "male with stroke"],
                         [0x26a7, "transgender"],
+                        [0x26a8, "vertical male with stroke"],
+                        [0x26a9, "horizontal male with stroke"],
                         [0x26b0, "coffin"],
                         [0x26b1, "funeral urn"],
                         [0x26c4, "snowman"],
@@ -4996,14 +5026,17 @@ int main(void) {
                         [0x26d4, "no entry"],
                         [0x26e4, "pentagram"],
                         [0x26e8, "black cross"],
+                        [0x26e9, "shinto shrine"],
                         [0x26ea, "church"],
                         [0x26f0, "mountain"],
                         [0x26f1, "umbrella ground"],
                         [0x26f2, "fountain"],
                         [0x26f3, "golf hole"],
+                        [0x26f4, "ferry"],
                         [0x26f5, "sailboat"],
                         [0x26f7, "skier"],
                         [0x26fa, "tent"],
+                        [0x26fd, "fuel pump"],
                         [0x2618, "shamrock"],
                         [0x261a, "black left hand"],
                         [0x261b, "black right hand"],
@@ -5020,10 +5053,12 @@ int main(void) {
                         [0x267f, "wheelchair"],
                         [0x26a0, "warning"],
                         [0x26a1, "lightning"],
+                        [0x2700, "black safety scissors"],
                         [0x2701, "scissors upper"],
                         [0x2702, "scissors"],
                         [0x2703, "lower blade"],
                         [0x2704, "white scissors"],
+                        [0x2705, "white heavy check mark"],
                         [0x2706, "telephone loc"],
                         [0x2707, "tape drive"],
                         [0x2708, "airplane"],
@@ -5050,13 +5085,28 @@ int main(void) {
                         [0x271d, "Latin cross"],
                         [0x2721, "Star of David"],
                         [0x2722, "teardrop asterisk"],
+                        [0x2723, "four balloon-spoked asterisk"],
+                        [0x2724, "heavy four balloon-spoked asterisk"],
+                        [0x2725, "four club-spoked asterisk"],
                         [0x2726, "4-point star"],
                         [0x2727, "white 4-point star"],
                         [0x2728, "sparkles"],
                         [0x2729, "stressed star"],
+                        [0x272a, "circled white star"],
+                        [0x272b, "open centre black star"],
+                        [0x272c, "black centre white star"],
+                        [0x272d, "outlined black star"],
+                        [0x272e, "heavy outlined black star"],
+                        [0x272f, "pinwheel star"],
                         [0x2730, "shadowed star"],
+                        [0x2731, "heavy asterisk"],
+                        [0x2732, "open centre asterisk"],
                         [0x2733, "8-spoked asterisk"],
                         [0x2734, "8-pointed star"],
+                        [0x2735, "eight pointed black star"],
+                        [0x2736, "six pointed black star"],
+                        [0x2737, "eight pointed pinwheel star"],
+                        [0x273a, "sixteen pointed asterisk"],
                         [0x2744, "snowflake"],
                         [0x2747, "sparkle"],
                         [0x2740, "white florette"],

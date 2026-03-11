@@ -35,6 +35,7 @@ const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "keyboard"),
   path.join(PROJECT_ROOT, "glyphs", "cyrillic"),
   path.join(PROJECT_ROOT, "glyphs", "punctuation"),
+  path.join(PROJECT_ROOT, "glyphs", "latin-ext-b"),
 ];
 
 const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");
