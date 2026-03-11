@@ -18,7 +18,7 @@
         />
         <meta
             property="og:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2600 glyphs. What you type is what you see."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2648 glyphs. What you type is what you see."
         />
         <meta
             property="og:image"
@@ -34,7 +34,7 @@
         />
         <meta
             name="twitter:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2600 glyphs."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2648 glyphs."
         />
         <meta
             name="twitter:image"
@@ -1354,7 +1354,7 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <span>2600 glyphs</span>
+                    <span>2648 glyphs</span>
                     <span class="stat-separator">|</span>
                     <span>8x16 pixel grid</span>
                     <span class="stat-separator">|</span>
@@ -3688,6 +3688,14 @@ int main(void) {
                         [0x25f5, "circle LL quad"],
                         [0x25f6, "circle LR quad"],
                         [0x25f7, "circle UR quad"],
+                        [0x25da, "upper half inv circle"],
+                        [0x25db, "lower half inv circle"],
+                        [0x25f8, "upper left tri"],
+                        [0x25f9, "upper right tri"],
+                        [0x25fa, "lower left tri"],
+                        [0x25fd, "white med sm sq"],
+                        [0x25fe, "black med sm sq"],
+                        [0x25ff, "lower right tri"],
                         [0x2500, "horiz line"],
                         [0x2501, "heavy horiz"],
                         [0x2502, "vert line"],
@@ -3895,6 +3903,26 @@ int main(void) {
                         [0x203e, "overline"],
                         [0x2043, "hyphen bullet"],
                         [0x204b, "reversed pilcrow"],
+                        [0x2017, "double low line"],
+                        [0x201f, "dbl hi rev 9 quote"],
+                        [0x2031, "per ten thousand"],
+                        [0x2036, "reversed dbl prime"],
+                        [0x2037, "reversed triple prime"],
+                        [0x2040, "character tie"],
+                        [0x2041, "caret insertion"],
+                        [0x2042, "asterism"],
+                        [0x2045, "left bracket quill"],
+                        [0x2046, "right bracket quill"],
+                        [0x204a, "tironian et"],
+                        [0x204c, "left bullet"],
+                        [0x204d, "right bullet"],
+                        [0x204e, "low asterisk"],
+                        [0x204f, "reversed semicolon"],
+                        [0x2050, "close up"],
+                        [0x2051, "two asterisks"],
+                        [0x2052, "commercial minus"],
+                        [0x2053, "swung dash"],
+                        [0x2056, "three dot punct"],
                         [0x00b7, "middle dot"],
                         [0x00b6, "pilcrow"],
                         [0x00a7, "section"],
@@ -4157,17 +4185,22 @@ int main(void) {
                         [0x220a, "small element of"],
                         [0x220b, "contains"],
                         [0x220c, "not contains"],
+                        [0x220d, "small contains"],
+                        [0x220e, "end of proof"],
                         [0x220f, "product"],
                         [0x2210, "coproduct"],
                         [0x2211, "summation"],
                         [0x2212, "minus"],
                         [0x2213, "minus-or-plus"],
+                        [0x2214, "dot plus"],
                         [0x2215, "division slash"],
                         [0x2217, "asterisk op"],
                         [0x2218, "ring op"],
                         [0x2219, "bullet op"],
                         [0x221d, "proportional"],
                         [0x2220, "angle"],
+                        [0x2221, "measured angle"],
+                        [0x2222, "spherical angle"],
                         [0x2225, "parallel"],
                         [0x2229, "intersection"],
                         [0x222a, "union"],
@@ -4175,8 +4208,15 @@ int main(void) {
                         [0x2234, "therefore"],
                         [0x2235, "because"],
                         [0x223c, "tilde op"],
+                        [0x2238, "dot minus"],
+                        [0x2239, "excess"],
+                        [0x223a, "geometric proportion"],
                         [0x223d, "reversed tilde"],
+                        [0x223e, "inverted lazy S"],
+                        [0x2240, "wreath product"],
                         [0x2241, "not tilde"],
+                        [0x2242, "minus tilde"],
+                        [0x2246, "approx not equal"],
                         [0x2245, "approx equal"],
                         [0x2261, "identical"],
                         [0x2262, "not identical"],
@@ -4210,6 +4250,8 @@ int main(void) {
                         [0x2236, "ratio"],
                         [0x2237, "proportion"],
                         [0x222e, "contour integral"],
+                        [0x222f, "surface integral"],
+                        [0x2230, "volume integral"],
                         [0x2243, "asympt equal"],
                         [0x2244, "not asympt equal"],
                         [0x2247, "not approx equal"],
@@ -4223,15 +4265,21 @@ int main(void) {
                         [0x2258, "corresponds"],
                         [0x2254, "colon equals"],
                         [0x2255, "equals colon"],
+                        [0x2259, "estimates"],
                         [0x225c, "delta equal"],
+                        [0x225d, "equal by definition"],
+                        [0x225f, "questioned equal"],
                         [0x2263, "strictly equiv"],
                         [0x2266, "less dbl equal"],
                         [0x2267, "greater dbl equal"],
                         [0x2268, "less not equal"],
                         [0x2269, "greater not equal"],
                         [0x226c, "between"],
+                        [0x226d, "not equivalent"],
                         [0x226e, "not less than"],
                         [0x226f, "not greater than"],
+                        [0x2274, "not less/similar"],
+                        [0x2275, "not greater/similar"],
                         [0x2270, "not less equal"],
                         [0x2271, "not greater equal"],
                         [0x2272, "less or similar"],

@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2600 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2648 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -257,7 +257,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2199 ↙ south-west arrow
 - [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ ⇕ ⇖ ⇗ ⇘ ⇙ ⇠ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↤ ↥ ↦ ↧ ↨ ↰ ↱ ↲ ↳ ↺ ↻ ⇄ ⇅ ⇆ ⇋ ⇌ done)
 
-### [-] Mathematical Operators (U+2200–U+22FF) — 172/256
+### [-] Mathematical Operators (U+2200–U+22FF) — 192/256
 
 **Already done:**
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
@@ -306,13 +306,13 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 - [x] U+2297 ⊗ circled times
 - [x] U+22A5 ⊥ perpendicular
 - [x] U+22C5 ⋅ dot operator
-- [-] Remaining U+2200–U+22FF (~200 more — U+220C, U+220F–U+2210, U+2216, U+221B–U+221C, U+221F, U+2223–U+2224, U+2226, U+222C–U+222E, U+223D, U+2236–U+2237, U+2241, U+2243–U+2244, U+2247, U+2249–U+2255, U+2256–U+2258, U+225C, U+2263, U+2266–U+2277, U+226E–U+226F, U+2270–U+2271, U+22A2–U+22A4, U+22A8, U+22BB, U+22BF, U+22C4, U+22C6, U+22EE–U+22F0 done)
+- [-] Remaining U+2200–U+22FF (~200 more — U+220C–U+220E, U+220F–U+2210, U+2214, U+2216, U+221B–U+221C, U+221F, U+2221–U+2222, U+2223–U+2224, U+2226, U+222C–U+2230, U+2236–U+223A, U+223D–U+223E, U+2240–U+2242, U+2243–U+2244, U+2246–U+2247, U+2249–U+2255, U+2256–U+2259, U+225C–U+225D, U+225F, U+2263, U+2266–U+2277, U+226D–U+226F, U+2270–U+2275, U+22A2–U+22A4, U+22A8, U+22BB, U+22BF, U+22C4, U+22C6, U+22EE–U+22F0 done)
 
 ---
 
 ## Phase 3 — Enrichment (~500 glyphs)
 
-### [-] Geometric Shapes (U+25A0–U+25FF) — 73/96
+### [-] Geometric Shapes (U+25A0–U+25FF) — 81/96
 
 **Already done:**
 U+25A0 ■, U+25A1 □, U+25AA ▪, U+25AB ▫, U+25B2 ▲, U+25B3 △, U+25B6 ▶, U+25B7 ▷,
@@ -330,9 +330,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25C9–U+25CA (fisheye, lozenge)
 - [x] U+25CC–U+25CE (dotted circle, circle vert fill, bullseye)
 - [x] U+25D0–U+25D4 (half circles, UL quadrant)
-- [-] U+25D5–U+25FF (remaining circles, arcs, sectors — U+25D5–U+25D9, U+25DC–U+25E1, U+25E2–U+25EE, U+25EF, U+25F0–U+25F7, U+25FB–U+25FC done)
+- [-] U+25D5–U+25FF (remaining circles, arcs, sectors — U+25D5–U+25DB, U+25DC–U+25E1, U+25E2–U+25EE, U+25EF, U+25F0–U+25FA, U+25FB–U+25FF done)
 
-### [-] General Punctuation (U+2000–U+206F) — 48/111
+### [-] General Punctuation (U+2000–U+206F) — 68/111
 
 **Already done:** U+2013 –, U+2014 —, U+2022 •, U+2026 …
 
@@ -365,7 +365,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2047 ⁇ double question mark
 - [x] U+2048 ⁈ question exclamation
 - [x] U+2049 ⁉ exclamation question
-- [-] Remaining U+2000–U+206F (U+2016, U+202F, U+2034–U+2035, U+2038, U+203B, U+203D–U+203E, U+2043, U+204B done)
+- [-] Remaining U+2000–U+206F (U+2016–U+2017, U+201F, U+202F, U+2031, U+2034–U+2037, U+2038, U+2040–U+2042, U+203B, U+203D–U+203E, U+2043, U+2045–U+2046, U+204A–U+2053, U+2056 done)
 
 ### [-] Miscellaneous Technical (U+2300–U+23FF) — 59/256
 
@@ -804,9 +804,9 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase | Estimated | Done | % |
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
-| Phase 2 — High-impact blocks | ~600 | 549 | 92% |
-| Phase 3 — Enrichment | ~500 | 486 | 97% |
-| Phase 4 — Extended coverage | ~500 | 718 | 144% |
+| Phase 2 — High-impact blocks | ~600 | 569 | 95% |
+| Phase 3 — Enrichment | ~500 | 514 | 103% |
+| Phase 4 — Extended coverage | ~500 | 726 | 145% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2264** | **~85%** |
-| **Grand total (with existing 538)** | **~3,188** | **2600** | **~82%** |
+| **Total new glyphs** | **~2,650** | **2312** | **~87%** |
+| **Grand total (with existing 538)** | **~3,188** | **2648** | **~83%** |
