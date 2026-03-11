@@ -57,7 +57,7 @@ Download the latest `Sergamon.ttf` or `Sergamon.woff2` from the [Releases](https
 > **Updating to a new version?** macOS aggressively caches font metadata. If Font Book still shows the old version after reinstalling, remove the font first, then clear the cache and reinstall:
 > ```bash
 > # Clear font cache (run after removing the old font in Font Book)
-> sudo rm -rf /var/folders/*/*/com.apple.FontRegistry
+> sudo atsutil databases -remove
 > sudo killall fontd
 > ```
 
