@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 2698 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 2867 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -540,7 +540,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+24F5–U+24FE ⓵–⓾ double circled numbers 1-10
 - [x] U+24FF ⓿ negative circled zero
 
-### [-] Miscellaneous Symbols (U+2600–U+26FF) — 178/256
+### [x] Miscellaneous Symbols (U+2600–U+26FF) — 256/256
 - [x] U+2600 ☀ sun, U+2601 ☁ cloud
 - [x] U+2602–U+2603 ☂ umbrella, ☃ snowman
 - [x] U+2605 ★ filled star, U+2606 ☆ empty star
@@ -609,9 +609,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2673–U+2679 ♳–♹ recycling types 1-7
 - [x] U+26A6 ⚦ male with stroke, U+26A8 ⚨ vertical male stroke, U+26A9 ⚩ horizontal male stroke
 - [x] U+26AC ⚬ medium small white circle, U+26E9 ⛩ shinto shrine, U+26F4 ⛴ ferry, U+26FD ⛽ fuel pump
-- [ ] Remaining as desired
+- [x] Remaining misc symbols (78 glyphs: die faces, digrams, monograms, anchors, traffic signs, etc.)
 
-### [-] Dingbats (U+2700–U+27BF) — 133/192
+### [x] Dingbats (U+2700–U+27BF) — 192/192
 **Already done:** U+2713 ✓, U+2717 ✗
 
 - [x] U+2701 ✁ scissors
@@ -676,9 +676,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+272A–U+272F ✪✫✬✭✮✯ star variants
 - [x] U+2731 ✱ heavy asterisk, U+2732 ✲ open centre asterisk
 - [x] U+2735–U+2737 ✵✶✷ pointed stars, U+273A ✺ sixteen pointed asterisk
-- [ ] Remaining as desired
+- [x] Remaining dingbats (59 glyphs: circled digits, bracket ornaments, quotation marks, etc.)
 
-### [-] Latin Extended-B (U+0180–U+024F) — 177/208
+### [x] Latin Extended-B (U+0180–U+024F) — 208/208
 - [x] U+0180 ƀ, U+0181 Ɓ, U+0186 Ɔ, U+0187 Ƈ, U+0188 ƈ, U+0189 Ɖ, U+018A Ɗ (African)
 - [x] U+018E Ǝ, U+018F Ə, U+0190 Ɛ, U+0191 Ƒ, U+0192 ƒ, U+0193 Ɠ, U+0194 Ɣ (African/IPA)
 - [x] U+0196 Ɩ, U+0197 Ɨ, U+0198 Ƙ, U+0199 ƙ, U+019A ƚ, U+019D Ɲ, U+019E ƞ
@@ -742,7 +742,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0195 ƕ (hv digraph), U+019B ƛ (lambda bar), U+019C Ɯ (turned M), U+019F Ɵ (O bar)
 - [x] U+01A2–U+01A5 (Ƣƣ — Oi digraph, Ƥƥ — P hook)
 - [x] U+01B1 Ʊ (Upsilon), U+01B2 Ʋ (V hook)
-- [ ] Remaining U+0180–U+024F
+- [x] Remaining U+0180–U+024F (32 glyphs: turned delta, ezh, wynn, click letters, tone letters, etc.)
 
 ### [-] IPA Extensions (U+0250–U+02AF) — 57/96
 - [x] U+0250–U+0254 (turned a, alpha, turned alpha, open o)
@@ -820,7 +820,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 569 | 95% |
 | Phase 3 — Enrichment | ~500 | 531 | 106% |
-| Phase 4 — Extended coverage | ~500 | 759 | 152% |
+| Phase 4 — Extended coverage | ~500 | 928 | 186% |
 | Phase 5 — Non-Latin scripts | ~700+ | 172 | 25% |
-| **Total new glyphs** | **~2,650** | **2362** | **~89%** |
-| **Grand total (with existing 538)** | **~3,188** | **2698** | **~85%** |
+| **Total new glyphs** | **~2,650** | **2531** | **~96%** |
+| **Grand total (with existing 538)** | **~3,188** | **2867** | **~90%** |
