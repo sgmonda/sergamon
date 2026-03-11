@@ -18,7 +18,7 @@
         />
         <meta
             property="og:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2557 glyphs. What you type is what you see."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2600 glyphs. What you type is what you see."
         />
         <meta
             property="og:image"
@@ -34,7 +34,7 @@
         />
         <meta
             name="twitter:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2557 glyphs."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 2600 glyphs."
         />
         <meta
             name="twitter:image"
@@ -1354,7 +1354,7 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <span>2557 glyphs</span>
+                    <span>2600 glyphs</span>
                     <span class="stat-separator">|</span>
                     <span>8x16 pixel grid</span>
                     <span class="stat-separator">|</span>
@@ -3664,6 +3664,30 @@ int main(void) {
                         [0x25ef, "large circle"],
                         [0x25fb, "white med square"],
                         [0x25fc, "black med square"],
+                        [0x25d8, "inverse bullet"],
+                        [0x25d9, "inverse white circle"],
+                        [0x25dc, "upper left arc"],
+                        [0x25dd, "upper right arc"],
+                        [0x25de, "lower right arc"],
+                        [0x25df, "lower left arc"],
+                        [0x25e0, "upper half circle"],
+                        [0x25e1, "lower half circle"],
+                        [0x25e7, "sq left half black"],
+                        [0x25e8, "sq right half black"],
+                        [0x25e9, "sq UL diag black"],
+                        [0x25ea, "sq LR diag black"],
+                        [0x25eb, "sq vert bisect"],
+                        [0x25ec, "tri with dot"],
+                        [0x25ed, "tri left half black"],
+                        [0x25ee, "tri right half black"],
+                        [0x25f0, "sq UL quadrant"],
+                        [0x25f1, "sq LL quadrant"],
+                        [0x25f2, "sq LR quadrant"],
+                        [0x25f3, "sq UR quadrant"],
+                        [0x25f4, "circle UL quad"],
+                        [0x25f5, "circle LL quad"],
+                        [0x25f6, "circle LR quad"],
+                        [0x25f7, "circle UR quad"],
                         [0x2500, "horiz line"],
                         [0x2501, "heavy horiz"],
                         [0x2502, "vert line"],
@@ -4114,6 +4138,9 @@ int main(void) {
                         [0x00f7, "divide"],
                         [0x221e, "infinity"],
                         [0x221a, "radical"],
+                        [0x221b, "cube root"],
+                        [0x221c, "fourth root"],
+                        [0x221f, "right angle"],
                         [0x00ac, "logical not"],
                         [0x2227, "logical and"],
                         [0x2228, "logical or"],
@@ -4129,6 +4156,9 @@ int main(void) {
                         [0x2209, "not element of"],
                         [0x220a, "small element of"],
                         [0x220b, "contains"],
+                        [0x220c, "not contains"],
+                        [0x220f, "product"],
+                        [0x2210, "coproduct"],
                         [0x2211, "summation"],
                         [0x2212, "minus"],
                         [0x2213, "minus-or-plus"],
@@ -4145,6 +4175,8 @@ int main(void) {
                         [0x2234, "therefore"],
                         [0x2235, "because"],
                         [0x223c, "tilde op"],
+                        [0x223d, "reversed tilde"],
+                        [0x2241, "not tilde"],
                         [0x2245, "approx equal"],
                         [0x2261, "identical"],
                         [0x2262, "not identical"],
@@ -4189,6 +4221,8 @@ int main(void) {
                         [0x2256, "ring in equal"],
                         [0x2257, "ring equal"],
                         [0x2258, "corresponds"],
+                        [0x2254, "colon equals"],
+                        [0x2255, "equals colon"],
                         [0x225c, "delta equal"],
                         [0x2263, "strictly equiv"],
                         [0x2266, "less dbl equal"],
@@ -4196,6 +4230,8 @@ int main(void) {
                         [0x2268, "less not equal"],
                         [0x2269, "greater not equal"],
                         [0x226c, "between"],
+                        [0x226e, "not less than"],
+                        [0x226f, "not greater than"],
                         [0x2270, "not less equal"],
                         [0x2271, "not greater equal"],
                         [0x2272, "less or similar"],
@@ -4271,6 +4307,7 @@ int main(void) {
                         [0x22d9, "very much greater"],
                         [0x22da, "less eq greater"],
                         [0x22db, "greater eq less"],
+                        [0x22f0, "up right ellipsis"],
                         [0x22e0, "not precede eq"],
                         [0x00b9, "superscript 1"],
                         [0x00b2, "superscript 2"],
@@ -4488,6 +4525,7 @@ int main(void) {
                         [0x045a, "nje"],
                         [0x045b, "tshe"],
                         [0x045c, "kje"],
+                        [0x045d, "i grave"],
                         [0x045e, "short u"],
                         [0x045f, "dzhe"],
                         [0x0490, "Ghe upturn"],
@@ -4510,6 +4548,8 @@ int main(void) {
                         [0x04a1, "bashkir ka"],
                         [0x04a2, "En descender"],
                         [0x04a3, "en descender"],
+                        [0x04a4, "Ligature En Ghe"],
+                        [0x04a5, "ligature en ghe"],
                         [0x04ae, "Straight U"],
                         [0x04af, "straight u"],
                         [0x04b0, "U stroke"],
@@ -4590,6 +4630,8 @@ int main(void) {
                         [0x04f3, "u double acute"],
                         [0x04f4, "Che dieresis"],
                         [0x04f5, "che dieresis"],
+                        [0x04f6, "Ghe descender"],
+                        [0x04f7, "ghe descender"],
                         [0x04f8, "Yeru dieresis"],
                         [0x04f9, "yeru dieresis"],
                         [0x04fa, "Ghe stroke hook"],
@@ -4597,6 +4639,7 @@ int main(void) {
                         [0x04fc, "Ha hook"],
                         [0x04fd, "ha hook"],
                         [0x04fe, "Ha stroke"],
+                        [0x04ff, "Ha with stroke"],
                     ]);
                 }
 
