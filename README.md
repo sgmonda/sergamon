@@ -22,7 +22,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/preview-python.png" />
   <source media="(prefers-color-scheme: light)" srcset="assets/preview-python-light.png" />
-  <img alt="Sergamon preview — JavaScript code sample" src="assets/preview-python.png" width="720" />
+  <img alt="Sergamon preview — JavaScript code sample" src="assets/preview-python.png" />
 </picture>
 
 </div>
