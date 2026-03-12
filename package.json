@@ -10,8 +10,7 @@
     "build:previews": "node src/generate-previews.cjs",
     "site": "npm run build && cp build/*.woff2 site/fonts/",
     "dev": "tsx src/dev-preview.ts",
-    "clean": "rm -rf build/",
-    "all": "npm run build && npm run previews"
+    "clean": "rm -rf build/"
   },
   "devDependencies": {
     "@napi-rs/canvas": "^0.1.0",

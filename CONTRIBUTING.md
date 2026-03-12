@@ -113,7 +113,7 @@ This watches `.glyph` files for changes, rebuilds the font, and opens a live pre
 To run the complete build pipeline (validate, build fonts, generate previews):
 
 ```bash
-npm run all
+npm run build
 ```
 
 ---
@@ -155,9 +155,7 @@ The CI pipeline will automatically validate your glyph files on every pull reque
 | `npm run validate` | Lint all `.glyph` files for format errors |
 | `npm run build` | Validate + compile glyphs into TTF/WOFF2 |
 | `npm run dev` | Launch live preview server with file watching |
-| `npm run previews` | Build fonts + generate PNG preview images |
 | `npm run site` | Build fonts + copy WOFF2 to GitHub Pages site |
-| `npm run all` | Build + previews |
 | `npm run clean` | Remove `build/` directory |
 
 ### Project Structure

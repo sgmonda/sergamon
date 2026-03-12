@@ -25,8 +25,6 @@ Inspired by classic hardware terminals, Sergamon has a single weight -- there is
 ```bash
 npm run validate          # Validate all glyph files
 npm run build             # Validate + build TTF/WOFF2
-npm run previews          # Build + generate PNG preview images
-npm run all               # Build + previews
 npm run dev               # Dev server with file watching (free port)
 npm run clean             # Remove build/
 npm run site              # Build + copy WOFF2 to site/fonts/
