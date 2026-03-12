@@ -6,25 +6,23 @@
 
 <br />
 
-**Pixel-perfect monospaced font for code. 3,700+ glyphs. No ligatures. No surprises.**
-
-<br />
+**Pixel-perfect monospaced font for code. No ligatures. No surprises.**
 
 [![License: OFL-1.1](https://img.shields.io/badge/license-OFL--1.1-green?style=flat-square)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://img.shields.io/github/actions/workflow/status/sgmonda/sergamon/build.yml?style=flat-square&label=build)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
 [![Glyphs](https://img.shields.io/badge/glyphs-3789-orange?style=flat-square)](https://sgmonda.com/sergamon)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen?style=flat-square)](https://nodejs.org)
 
-<br />
-
 [Website](https://sgmonda.com/sergamon) &bull; [Download](https://github.com/sgmonda/sergamon/releases/latest) &bull; [Contributing](CONTRIBUTING.md)
+
+---
 
 <br />
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/preview-javascript.png" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/preview-javascript-light.png" />
-  <img alt="Sergamon preview — JavaScript code sample" src="assets/preview-javascript.png" width="720" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/preview-python.png" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/preview-python-light.png" />
+  <img alt="Sergamon preview — JavaScript code sample" src="assets/preview-python.png" width="720" />
 </picture>
 
 </div>
@@ -188,24 +186,6 @@ Or load directly from the project site:
   font-display: swap;
 }
 ```
-
-<br />
-
-## More Previews
-
-<details>
-<summary><strong>Python</strong></summary>
-
-<img alt="Sergamon preview — Python code sample" src="assets/preview-python.png" width="720" />
-
-</details>
-
-<details>
-<summary><strong>Rust</strong></summary>
-
-<img alt="Sergamon preview — Rust code sample" src="assets/preview-rust.png" width="720" />
-
-</details>
 
 <br />
 
