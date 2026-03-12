@@ -18,7 +18,7 @@
         />
         <meta
             property="og:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 3111 glyphs. What you type is what you see."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 3485 glyphs. What you type is what you see."
         />
         <meta
             property="og:image"
@@ -34,7 +34,7 @@
         />
         <meta
             name="twitter:description"
-            content="Pixel-art monospaced font for programming. No ligatures, single weight, 3111 glyphs."
+            content="Pixel-art monospaced font for programming. No ligatures, single weight, 3485 glyphs."
         />
         <meta
             name="twitter:image"
@@ -1354,7 +1354,7 @@
                     </a>
                 </div>
                 <div class="hero-stats">
-                    <span>3111 glyphs</span>
+                    <span>3485 glyphs</span>
                     <span class="stat-separator">|</span>
                     <span>8x16 pixel grid</span>
                     <span class="stat-separator">|</span>
@@ -1637,6 +1637,12 @@ The quick brown fox jumps over the lazy dog.
                     <button class="char-tab" data-tab="arabic">
                         Arabic
                     </button>
+                    <button class="char-tab" data-tab="thai">
+                        Thai
+                    </button>
+                    <button class="char-tab" data-tab="devanagari">
+                        Devanagari
+                    </button>
                 </div>
 
                 <div class="char-tab-panel active" data-tab="ascii">
@@ -1689,6 +1695,14 @@ The quick brown fox jumps over the lazy dog.
 
                 <div class="char-tab-panel" data-tab="arabic">
                     <div class="char-grid" id="arabicGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="thai">
+                    <div class="char-grid" id="thaiGrid"></div>
+                </div>
+
+                <div class="char-tab-panel" data-tab="devanagari">
+                    <div class="char-grid" id="devanagariGrid"></div>
                 </div>
             </div>
         </section>
@@ -5599,43 +5613,35 @@ int main(void) {
                 populateArmenian();
 
                 function populateArabic() {
-                    populateCategory("#arabicGrid", [
-                        [0x0621, "hamza"], [0x0622, "alef madda"], [0x0623, "alef hamza above"],
-                        [0x0624, "waw hamza"], [0x0625, "alef hamza below"], [0x0626, "yeh hamza"],
-                        [0x0627, "alef"], [0x0628, "beh"], [0x0629, "teh marbuta"],
-                        [0x062a, "teh"], [0x062b, "theh"], [0x062c, "jeem"],
-                        [0x062d, "hah"], [0x062e, "khah"], [0x062f, "dal"],
-                        [0x0630, "thal"], [0x0631, "reh"], [0x0632, "zain"],
-                        [0x0633, "seen"], [0x0634, "sheen"], [0x0635, "sad"],
-                        [0x0636, "dad"], [0x0637, "tah"], [0x0638, "zah"],
-                        [0x0639, "ain"], [0x063a, "ghain"],
-                        [0x0641, "feh"], [0x0642, "qaf"], [0x0643, "kaf"],
-                        [0x0644, "lam"], [0x0645, "meem"], [0x0646, "noon"],
-                        [0x0647, "heh"], [0x0648, "waw"], [0x0649, "alef maksura"],
-                        [0x064a, "yeh"],
-                        [0x060c, "comma"], [0x061b, "semicolon"], [0x061f, "question mark"],
-                        [0x0640, "tatweel"],
-                        [0x064b, "fathatan"], [0x064c, "dammatan"], [0x064d, "kasratan"],
-                        [0x064e, "fatha"], [0x064f, "damma"], [0x0650, "kasra"],
-                        [0x0651, "shadda"], [0x0652, "sukun"],
-                        [0x0660, "0"], [0x0661, "1"], [0x0662, "2"], [0x0663, "3"],
-                        [0x0664, "4"], [0x0665, "5"], [0x0666, "6"], [0x0667, "7"],
-                        [0x0668, "8"], [0x0669, "9"],
-                        [0x066a, "percent"], [0x066b, "decimal sep"], [0x066c, "thousands sep"], [0x066d, "five-pointed star"],
-                        [0x0671, "alef wasla"], [0x0672, "alef wavy hamza above"],
-                        [0x0673, "alef wavy hamza below"], [0x0674, "high hamza"],
-                        [0x0675, "high hamza alef"], [0x0676, "high hamza waw"],
-                        [0x0677, "u hamza waw"], [0x0678, "high hamza yeh"],
-                        [0x0679, "tteh"], [0x067a, "tteheh"], [0x067b, "beeh"],
-                        [0x067c, "teh ring"], [0x067d, "teh 3dots above downward"],
-                        [0x067e, "peh"], [0x067f, "teheh"],
-                        [0x0680, "beheh"], [0x0681, "hah hamza"],
-                        [0x0682, "hah 2dots vertical"], [0x0683, "nyeh"],
-                        [0x0684, "dyeh"], [0x0685, "hah 3dots above"],
-                        [0x0686, "tcheh"], [0x0687, "tcheheh"], [0x0688, "ddal"],
-                    ]);
+                    const chars = [];
+                    // U+0600-U+06FF — all Arabic block
+                    for (let cp = 0x0600; cp <= 0x06FF; cp++) {
+                        if (cp === 0x061C) continue; // invisible format char
+                        chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    }
+                    populateCategory("#arabicGrid", chars);
                 }
                 populateArabic();
+
+                function populateThai() {
+                    const chars = [];
+                    // U+0E01-U+0E3A, U+0E3F-U+0E5B
+                    for (let cp = 0x0E01; cp <= 0x0E3A; cp++) chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    chars.push([0x0E3F, "baht"]);
+                    for (let cp = 0x0E40; cp <= 0x0E5B; cp++) chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    populateCategory("#thaiGrid", chars);
+                }
+                populateThai();
+
+                function populateDevanagari() {
+                    const chars = [];
+                    // U+0900-U+097F
+                    for (let cp = 0x0900; cp <= 0x097F; cp++) {
+                        chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    }
+                    populateCategory("#devanagariGrid", chars);
+                }
+                populateDevanagari();
 
                 // ── Distinguishability Table ───────────────────────────────────
 

@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 3006 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 3485 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -779,7 +779,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 ## Phase 5 — Non-Latin Scripts (ambitious, optional)
 
 ### [-] Hebrew (U+0590–U+05FF) — 27/88
-### [-] Arabic (U+0600–U+06FF) — 86/256 *(complex: RTL + contextual forms)*
+### [x] Arabic (U+0600–U+06FF) — 254/256 *(complex: RTL + contextual forms)*
 - [x] U+0621–U+063A (hamza, alef variants, basic letters: 26 glyphs)
 - [x] U+0641–U+064A (feh through yeh: 10 glyphs)
 - [x] U+060C–U+061F (punctuation: comma, semicolon, question mark)
@@ -787,9 +787,9 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0660–U+0669 (Arabic-Indic digits: 10 glyphs)
 - [x] U+066A–U+066D (percent, decimal separator, five-pointed star, etc.)
 - [x] U+0671–U+0688 (extended letters: 18 glyphs)
-- [ ] Remaining U+0600–U+06FF
+- [x] U+0600–U+06FF remaining (168 glyphs: signs, extended letters, diacritics, variants)
 
-### [ ] Thai (U+0E00–U+0E7F) — 0/87
+### [x] Thai (U+0E00–U+0E7F) — 87/87
 ### [x] Georgian (U+10A0–U+10FF) — 73/88
 - [x] U+10D0–U+10F0 (Mkhedruli lowercase: 33 letters)
 - [x] U+10A0–U+10C7 (Asomtavruli uppercase: 40 letters)
@@ -798,7 +798,15 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+0531–U+0556 (uppercase: 38 letters)
 - [x] U+0561–U+0586 (lowercase: 38 letters)
 - [x] U+0559–U+058A (punctuation/modifiers: 15 glyphs)
-### [ ] Devanagari (U+0900–U+097F) — 0/128 *(complex: conjuncts + matras)*
+### [x] Devanagari (U+0900–U+097F) — 119/128
+- [x] U+0900–U+0903 (signs: candrabindu, anusvara, visarga)
+- [x] U+0904–U+0914 (independent vowels: 17 glyphs)
+- [x] U+0915–U+0939 (consonants: 37 glyphs)
+- [x] U+093C–U+094D (nukta, matras, virama: 18 glyphs)
+- [x] U+0950–U+0954 (OM, accents: 5 glyphs)
+- [x] U+0958–U+0963 (nukta variants, vocalic vowels: 12 glyphs)
+- [x] U+0966–U+096F (digits: 10 glyphs)
+- [x] U+0970–U+097F (punctuation, extended: 16 glyphs)
 
 > **Note:** CJK (U+4E00–U+9FFF, ~20,000) and Hangul (U+AC00–U+D7AF, ~11,000)
 > are not feasible in an 8x16 monospace pixel grid and are excluded from this roadmap.
@@ -809,10 +817,10 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 
 These blocks have regular, algorithmic patterns ideal for script generation (like the existing braille and block-element generators):
 
-- [ ] **Block Elements** (remaining 18) — fill patterns based on fractions
-- [ ] **Box Drawing** (remaining 102) — combinations of light/heavy/double lines
-- [ ] **Braille** — already done (256/256)
-- [ ] **Enclosed Alphanumerics** — circled/parenthesized variants of existing glyphs
+- [x] **Block Elements** (remaining 18) — fill patterns based on fractions
+- [x] **Box Drawing** (remaining 102) — combinations of light/heavy/double lines
+- [x] **Braille** — already done (256/256)
+- [x] **Enclosed Alphanumerics** — circled/parenthesized variants of existing glyphs
 - [x] **Superscripts & Subscripts** — scaled versions of existing digits/letters
 - [-] **Number Forms (fractions)** — composite of existing digit glyphs
 
@@ -826,6 +834,6 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 2 — High-impact blocks | ~600 | 569 | 95% |
 | Phase 3 — Enrichment | ~500 | 531 | 106% |
 | Phase 4 — Extended coverage | ~500 | 1067 | 213% |
-| Phase 5 — Non-Latin scripts | ~700+ | 277 | 40% |
-| **Total new glyphs** | **~2,650** | **2775** | **~105%** |
-| **Grand total (with existing 538)** | **~3,188** | **3111** | **~98%** |
+| Phase 5 — Non-Latin scripts | ~700+ | 651 | 93% |
+| **Total new glyphs** | **~2,650** | **3149** | **~119%** |
+| **Grand total (with existing 538)** | **~3,188** | **3485** | **~109%** |
