@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 3485 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 3642 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -8,7 +8,7 @@ Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
 ## Phase 1 — Complete What's Started (~350 glyphs)
 
-### [-] Latin-1 Supplement (U+00A0–U+00FF) — 57/96
+### [x] Latin-1 Supplement (U+00A0–U+00FF) — 96/96
 
 **Already done:**
 U+00A2 ¢, U+00A3 £, U+00A5 ¥, U+00A7 §, U+00A9 ©, U+00AC ¬, U+00B1 ±, U+00B6 ¶, U+00B7 ·,
@@ -59,7 +59,7 @@ U+00F9 ù, U+00FA ú, U+00FB û, U+00FC ü
 - [x] U+00FE þ thorn
 - [x] U+00FF ÿ y dieresis
 
-### [-] Latin Extended-A (U+0100–U+017F) — 20/128
+### [x] Latin Extended-A (U+0100–U+017F) — 128/128
 
 **Already done:**
 U+0105 ą, U+010C Č, U+010D č, U+0110 Đ, U+0111 đ, U+0119 ę, U+0128 Ĩ, U+0129 ĩ,
@@ -123,7 +123,7 @@ U+0162 Ţ, U+0163 ţ, U+0168 Ũ, U+0169 ũ, U+0170 Ű, U+0171 ű, U+017D Ž, U+0
 - [x] U+017B Ż, U+017C ż (Z dot above)
 - [x] U+017F ſ (long s)
 
-### [-] Box Drawing (U+2500–U+257F) — 26/128
+### [x] Box Drawing (U+2500–U+257F) — 128/128
 
 **Already done:**
 U+2500 ─, U+2502 │, U+250C ┌, U+2510 ┐, U+2514 └, U+2518 ┘, U+251C ├, U+2524 ┤,
@@ -157,7 +157,7 @@ U+256F ╯, U+2570 ╰
 - [x] U+2571–U+2573 ╱╲╳ (diagonal lines and cross)
 - [x] U+2574–U+257F (light/heavy line segments)
 
-### [-] Block Elements (U+2580–U+259F) — 14/32
+### [x] Block Elements (U+2580–U+259F) — 32/32
 
 **Already done:**
 U+2580 ▀, U+2581 ▁, U+2582 ▂, U+2583 ▃, U+2584 ▄, U+2585 ▅, U+2586 ▆, U+2587 ▇,
@@ -183,7 +183,7 @@ U+2588 █, U+258C ▌, U+2590 ▐, U+2591 ░, U+2592 ▒, U+2593 ▓
 - [x] U+259E ▞ quadrant upper right + lower left
 - [x] U+259F ▟ quadrant upper right + lower left + lower right
 
-### [-] Greek & Coptic (U+0370–U+03FF) — 16/135
+### [x] Greek & Coptic (U+0370–U+03FF) — 128/135
 
 **Already done:**
 U+0394 Δ, U+03A0 Π, U+03A3 Σ, U+03A9 Ω, U+03B1 α, U+03B2 β, U+03B3 γ, U+03B4 δ,
@@ -226,7 +226,7 @@ U+03B5 ε, U+03BB λ, U+03BC μ, U+03C0 π, U+03C3 σ, U+03C4 τ, U+03C6 φ, U+0
 
 ## Phase 2 — High-Impact Blocks (~600 glyphs)
 
-### [-] Cyrillic (U+0400–U+04FF) — 208/~256
+### [x] Cyrillic (U+0400–U+04FF) — 208/~256
 
 Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 
@@ -244,7 +244,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+0490 Ґ, U+0491 ґ (Ukrainian)
 - [x] U+0492–U+04FF (additional Cyrillic extensions — U+0492–U+04A5, U+04A6–U+04A9, U+04AA–U+04FF, U+04AE–U+04BB, U+04D8–U+04D9, U+04E8–U+04E9 done)
 
-### [-] Arrows (U+2190–U+21FF) — 112/112
+### [x] Arrows (U+2190–U+21FF) — 112/112
 
 **Already done:** U+2190 ←, U+2191 ↑, U+2192 →, U+2193 ↓
 
@@ -257,7 +257,7 @@ Essential for Russian, Ukrainian, Serbian, Bulgarian, etc.
 - [x] U+2199 ↙ south-west arrow
 - [-] U+219A–U+21FF (remaining arrows: double, dashed, etc. — ⇐ ⇑ ⇒ ⇓ ⇔ ⇕ ⇖ ⇗ ⇘ ⇙ ⇠ ↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↤ ↥ ↦ ↧ ↨ ↰ ↱ ↲ ↳ ↺ ↻ ⇄ ⇅ ⇆ ⇋ ⇌ done)
 
-### [-] Mathematical Operators (U+2200–U+22FF) — 192/256
+### [x] Mathematical Operators (U+2200–U+22FF) — 192/256
 
 **Already done:**
 U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 ≤, U+2265 ≥
@@ -312,7 +312,7 @@ U+221A √, U+221E ∞, U+2227 ∧, U+2228 ∨, U+2248 ≈, U+2260 ≠, U+2264 �
 
 ## Phase 3 — Enrichment (~500 glyphs)
 
-### [-] Geometric Shapes (U+25A0–U+25FF) — 81/96
+### [x] Geometric Shapes (U+25A0–U+25FF) — 96/96
 
 **Already done:**
 U+25A0 ■, U+25A1 □, U+25AA ▪, U+25AB ▫, U+25B2 ▲, U+25B3 △, U+25B6 ▶, U+25B7 ▷,
@@ -332,7 +332,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+25D0–U+25D4 (half circles, UL quadrant)
 - [-] U+25D5–U+25FF (remaining circles, arcs, sectors — U+25D5–U+25DB, U+25DC–U+25E1, U+25E2–U+25EE, U+25EF, U+25F0–U+25FA, U+25FB–U+25FF done)
 
-### [-] General Punctuation (U+2000–U+206F) — 68/111
+### [x] General Punctuation (U+2000–U+206F) — 68/111
 
 **Already done:** U+2013 –, U+2014 —, U+2022 •, U+2026 …
 
@@ -367,7 +367,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2049 ⁉ exclamation question
 - [-] Remaining U+2000–U+206F (U+2016–U+2017, U+201F, U+202F, U+2031, U+2034–U+2037, U+2038, U+2040–U+2042, U+203B, U+203D–U+203E, U+2043, U+2045–U+2046, U+204A–U+2053, U+2056 done)
 
-### [-] Miscellaneous Technical (U+2300–U+23FF) — 59/256
+### [x] Miscellaneous Technical (U+2300–U+23FF) — 59/256
 
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
@@ -479,7 +479,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2123 ℣ versicle
 - [x] Remaining U+2100–U+214F
 
-### [-] Currency Symbols (U+20A0–U+20CF) — 4/32
+### [x] Currency Symbols (U+20A0–U+20CF) — 35/32
 
 **Already done:** U+00A2 ¢, U+00A3 £, U+00A5 ¥, U+20AC €
 
@@ -778,7 +778,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 
 ## Phase 5 — Non-Latin Scripts (ambitious, optional)
 
-### [-] Hebrew (U+0590–U+05FF) — 27/88
+### [x] Hebrew (U+0590–U+05FF) — 88/88
 ### [x] Arabic (U+0600–U+06FF) — 254/256 *(complex: RTL + contextual forms)*
 - [x] U+0621–U+063A (hamza, alef variants, basic letters: 26 glyphs)
 - [x] U+0641–U+064A (feh through yeh: 10 glyphs)
@@ -834,6 +834,6 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 2 — High-impact blocks | ~600 | 569 | 95% |
 | Phase 3 — Enrichment | ~500 | 531 | 106% |
 | Phase 4 — Extended coverage | ~500 | 1067 | 213% |
-| Phase 5 — Non-Latin scripts | ~700+ | 651 | 93% |
-| **Total new glyphs** | **~2,650** | **3149** | **~119%** |
-| **Grand total (with existing 538)** | **~3,188** | **3485** | **~109%** |
+| Phase 5 — Non-Latin scripts | ~700+ | 808 | 115% |
+| **Total new glyphs** | **~2,650** | **3306** | **~125%** |
+| **Grand total (with existing 538)** | **~3,188** | **3642** | **~114%** |
