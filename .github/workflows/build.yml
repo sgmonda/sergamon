@@ -31,11 +31,8 @@ jobs:
       - name: Validate glyphs
         run: npm run validate
 
-      - name: Build font files
+      - name: Build font files and previews
         run: npm run build
-
-      - name: Generate previews
-        run: npm run previews
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
