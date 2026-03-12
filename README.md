@@ -214,8 +214,6 @@ The optimizer merges adjacent filled pixels into larger rectangles before conver
 
 Contributions are welcome — whether refining an existing glyph, adding a new character, or improving the build pipeline. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for everything you need: file format, style guidelines, testing workflow, and PR process.
 
-<br />
-
 ## License
 
 **Font files and glyph sources** — [SIL Open Font License 1.1](LICENSE)
