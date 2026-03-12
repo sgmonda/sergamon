@@ -148,6 +148,45 @@ The CI pipeline will automatically validate your glyph files on every pull reque
 
 ---
 
+## Development Commands
+
+| Command | Description |
+|---|---|
+| `npm run validate` | Lint all `.glyph` files for format errors |
+| `npm run build` | Validate + compile glyphs into TTF/WOFF2 |
+| `npm run dev` | Launch live preview server with file watching |
+| `npm run previews` | Build fonts + generate PNG preview images |
+| `npm run site` | Build fonts + copy WOFF2 to GitHub Pages site |
+| `npm run all` | Build + previews |
+| `npm run clean` | Remove `build/` directory |
+
+### Project Structure
+
+```
+sergamon/
+├── glyphs/                # Glyph source files (.glyph)
+│   ├── ascii/             # 95 ASCII glyphs (U+0020 – U+007E)
+│   ├── latin-ext/         # Latin Extended-A glyphs
+│   ├── cyrillic/          # Cyrillic glyphs
+│   ├── greek/             # Greek glyphs
+│   ├── arrows/            # Arrow symbols
+│   ├── box-drawing/       # Box-drawing characters
+│   ├── symbols/           # Miscellaneous symbols
+│   └── ...                # Many more Unicode blocks
+├── src/
+│   ├── build-font.ts      # Main build orchestrator
+│   ├── parse-glyph.ts     # .glyph file parser
+│   ├── validate-glyphs.ts # Glyph validator
+│   ├── optimize-paths.ts  # Pixel → rectangle optimizer
+│   ├── glyph-to-path.ts   # Rectangle → opentype.js path
+│   ├── dev-preview.ts     # Dev server with live reload
+│   └── generate-previews.cjs  # PNG preview generator
+├── site/                  # GitHub Pages site
+└── build/                 # Generated output (TTF, WOFF2, PNGs)
+```
+
+---
+
 ## Style Guidelines
 
 To maintain visual consistency across the font, follow these pixel-art conventions:

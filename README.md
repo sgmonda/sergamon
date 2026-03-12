@@ -6,57 +6,55 @@
 
 <br />
 
-**Monospaced font for nostalgic hackers**
+**Pixel-perfect monospaced font for code. 3,700+ glyphs. No ligatures. No surprises.**
 
 <br />
 
 [![License: OFL-1.1](https://img.shields.io/badge/license-OFL--1.1-green?style=flat-square)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://img.shields.io/github/actions/workflow/status/sgmonda/sergamon/build.yml?style=flat-square&label=build)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
-[![Glyphs](https://img.shields.io/badge/glyphs-107-orange?style=flat-square)](https://sgmonda.com/sergamon)
+[![Glyphs](https://img.shields.io/badge/glyphs-3789-orange?style=flat-square)](https://sgmonda.com/sergamon)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen?style=flat-square)](https://nodejs.org)
 
 <br />
 
-[Website](https://sgmonda.com/sergamon) &bull; [Releases](https://github.com/sgmonda/sergamon/releases) &bull; [Contributing](CONTRIBUTING.md)
+[Website](https://sgmonda.com/sergamon) &bull; [Download](https://github.com/sgmonda/sergamon/releases/latest) &bull; [Contributing](CONTRIBUTING.md)
 
 <br />
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/preview-javascript.png" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/preview-javascript-light.png" />
+  <img alt="Sergamon preview — JavaScript code sample" src="assets/preview-javascript.png" width="720" />
+</picture>
+
 </div>
 
-## Table of Contents
+<br />
 
-- [Features](#features)
-- [Quick Install](#quick-install)
-- [Editor & Terminal Setup](#editor--terminal-setup)
-- [Web Usage](#web-usage)
-- [How It Works](#how-it-works)
-- [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
+## Why Sergamon?
 
-## Features
+Most programming fonts chase the same goals: ligatures, multiple weights, smooth curves. Sergamon goes the opposite direction.
 
-| | |
-|---|---|
-| **Monospaced** | Every glyph occupies the same fixed width, keeping code perfectly aligned. |
-| **Pixel-art aesthetic** | An 8x16 pixel grid gives each character a crisp, retro look that stays sharp at its design size. |
-| **What you see is what you get** | No ligatures, no automatic substitutions. `==` is two equal signs, `->` is a hyphen and a greater-than. Your source code looks exactly as you typed it. |
-| **Single weight** | Inspired by classic hardware terminals -- one weight, uniform strokes, no bold or light variants. |
-| **Designed for code** | Careful distinction between confusable characters (`0/O/o`, `1/l/I`, `` ` ``/`'`/`"`), full ASCII coverage, and essential Latin Extended glyphs. |
+Every glyph is hand-crafted on an **8x16 pixel grid** — the same constraints as a classic hardware terminal. The result is a font that is sharp, predictable, and honest:
+
+- **`==` is two equal signs.** `->` is a hyphen and a greater-than. No ligatures, no magic substitutions — your source code looks exactly as you typed it.
+- **One weight.** No bold, no light, no italic. Like a real terminal, every character has the same stroke.
+- **Confusables are distinct.** `0/O/o`, `1/l/I`, `` ` ``/`'`/`"` — each pair is carefully designed to be unambiguous at a glance.
+- **Massive coverage.** 3,700+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
+
+<br />
 
 ## Quick Install
 
-Download the latest `Sergamon.ttf` or `Sergamon.woff2` from the [Releases](https://github.com/sgmonda/sergamon/releases) page, then follow the instructions for your OS:
+Download the latest **[Sergamon.ttf](https://github.com/sgmonda/sergamon/releases/latest)** (desktop) or **[Sergamon.woff2](https://github.com/sgmonda/sergamon/releases/latest)** (web) from the Releases page.
 
 <details>
 <summary><strong>macOS</strong></summary>
 
-1. Download `Sergamon.ttf`.
-2. Double-click the file and click **Install Font** in Font Book.
+1. Double-click `Sergamon.ttf` and click **Install Font** in Font Book.
 
-> **Updating to a new version?** macOS aggressively caches font metadata. If Font Book still shows the old version after reinstalling, remove the font first, then clear the cache and reinstall:
+> **Updating?** macOS caches font metadata aggressively. Remove the old font first, then:
 > ```bash
-> # Clear font cache (run after removing the old font in Font Book)
 > sudo atsutil databases -remove
 > sudo killall fontd
 > ```
@@ -66,8 +64,7 @@ Download the latest `Sergamon.ttf` or `Sergamon.woff2` from the [Releases](https
 <details>
 <summary><strong>Windows</strong></summary>
 
-1. Download `Sergamon.ttf`.
-2. Right-click the file and select **Install** (or **Install for all users**).
+Right-click `Sergamon.ttf` and select **Install** (or **Install for all users**).
 
 </details>
 
@@ -75,30 +72,24 @@ Download the latest `Sergamon.ttf` or `Sergamon.woff2` from the [Releases](https
 <summary><strong>Linux</strong></summary>
 
 ```bash
-# Per-user install
 cp Sergamon.ttf ~/.local/share/fonts/
 fc-cache -fv
-
-# Or system-wide
-sudo cp Sergamon.ttf /usr/local/share/fonts/
-sudo fc-cache -fv
 ```
 
 </details>
 
-## Editor & Terminal Setup
+<br />
 
-After installing the font on your system, configure your editor or terminal to use it.
+## Editor & Terminal Setup
 
 <details open>
 <summary><strong>VS Code</strong></summary>
 
-Add to your `settings.json`:
-
 ```json
 {
   "editor.fontFamily": "'Sergamon', monospace",
-  "editor.fontSize": 16
+  "editor.fontSize": 16,
+  "editor.letterSpacing": 0
 }
 ```
 
@@ -107,16 +98,12 @@ Add to your `settings.json`:
 <details>
 <summary><strong>JetBrains IDEs</strong> (IntelliJ, WebStorm, PyCharm, etc.)</summary>
 
-Go to **Settings > Editor > Font** and set:
-- **Font**: Sergamon
-- **Size**: 16
+**Settings > Editor > Font** — set **Font** to `Sergamon`, **Size** to `16`.
 
 </details>
 
 <details>
 <summary><strong>Sublime Text</strong></summary>
-
-Add to your user preferences (`Preferences > Settings`):
 
 ```json
 {
@@ -130,34 +117,22 @@ Add to your user preferences (`Preferences > Settings`):
 <details>
 <summary><strong>Vim / Neovim (GUI)</strong></summary>
 
-Add to your config:
-
 ```vim
 set guifont=Sergamon:h16
 ```
-
-For Neovide or other GUI frontends, consult their documentation for font configuration.
 
 </details>
 
 <details>
 <summary><strong>iTerm2</strong></summary>
 
-Go to **Preferences > Profiles > Text** and set:
-- **Font**: Sergamon
-- **Size**: 16
-- Check **Use a different font for non-ASCII text** if mixing with another font.
+**Preferences > Profiles > Text** — set **Font** to `Sergamon`, **Size** to `16`.
+Disable **Use bold fonts** and **Draw bold text in bright colors** for best results.
 
 </details>
 
 <details>
 <summary><strong>Windows Terminal</strong></summary>
-
-Open Settings (`Ctrl+,`), select your profile, and under **Appearance**:
-- **Font face**: Sergamon
-- **Font size**: 16
-
-Or edit `settings.json`:
 
 ```json
 {
@@ -177,8 +152,6 @@ Or edit `settings.json`:
 <details>
 <summary><strong>Alacritty</strong></summary>
 
-Add to `alacritty.toml`:
-
 ```toml
 [font]
 size = 16.0
@@ -189,9 +162,9 @@ family = "Sergamon"
 
 </details>
 
-## Web Usage
+<br />
 
-Use `@font-face` to load Sergamon in your web project:
+## Web Usage
 
 ```css
 @font-face {
@@ -206,7 +179,7 @@ code, pre {
 }
 ```
 
-You can also load it directly from the project site:
+Or load directly from the project site:
 
 ```css
 @font-face {
@@ -216,9 +189,29 @@ You can also load it directly from the project site:
 }
 ```
 
+<br />
+
+## More Previews
+
+<details>
+<summary><strong>Python</strong></summary>
+
+<img alt="Sergamon preview — Python code sample" src="assets/preview-python.png" width="720" />
+
+</details>
+
+<details>
+<summary><strong>Rust</strong></summary>
+
+<img alt="Sergamon preview — Rust code sample" src="assets/preview-rust.png" width="720" />
+
+</details>
+
+<br />
+
 ## How It Works
 
-Sergamon treats glyph definitions as source code. Each character lives in a plain-text `.glyph` file -- an 8x16 pixel grid that a TypeScript pipeline compiles into vector font files.
+Sergamon treats glyph definitions as source code. Each character lives in a plain-text `.glyph` file — an 8x16 pixel grid that a TypeScript pipeline compiles into vector font files.
 
 ```
 # zero (U+0030)
@@ -241,71 +234,21 @@ XX...XX.
 ........
 ```
 
-**Build pipeline:**
-
 ```
 .glyph files ──> parse ──> validate ──> optimize ──> vectorize ──> TTF ──> WOFF2
-                  │          │            │             │
-                  │          │            │             └─ opentype.js paths
-                  │          │            └─ row-merge rectangles
-                  │          └─ grid dimensions, ASCII completeness
-                  └─ header + boolean[][] grid
 ```
 
 The optimizer merges adjacent filled pixels into larger rectangles before converting to vector paths, keeping the output compact and efficient.
 
-## Development
-
-**Prerequisites:** Node.js >= 20
-
-```bash
-git clone https://github.com/sgmonda/sergamon.git
-cd sergamon
-npm ci
-```
-
-### Commands
-
-| Command | Description |
-|---|---|
-| `npm run validate` | Lint all `.glyph` files for format errors |
-| `npm run build` | Validate + compile glyphs into TTF/WOFF2 |
-| `npm run dev` | Launch live preview server with file watching |
-| `npm run previews` | Build fonts + generate PNG preview images |
-| `npm run site` | Build fonts + copy WOFF2 to GitHub Pages site |
-| `npm run all` | Build + previews |
-| `npm run clean` | Remove `build/` directory |
-
-### Project Structure
-
-```
-sergamon/
-├── glyphs/
-│   ├── ascii/          # 95 ASCII glyphs (U+0020 -- U+007E)
-│   └── latin-ext/      # 12 Latin Extended glyphs (accents, ñ, ü, ...)
-├── src/
-│   ├── build-font.ts           # Main build orchestrator
-│   ├── parse-glyph.ts          # .glyph file parser
-│   ├── validate-glyphs.ts      # Glyph validator
-│   ├── optimize-paths.ts       # Pixel → rectangle optimizer
-│   ├── glyph-to-path.ts        # Rectangle → opentype.js path
-│   ├── dev-preview.ts          # Dev server with live reload
-│   ├── generate-previews.cjs   # PNG preview generator
-│   └── opentype.d.ts           # Custom type declarations
-├── site/                # GitHub Pages site
-└── build/               # Generated output (TTF, WOFF2, PNGs)
-```
+<br />
 
 ## Contributing
 
-Contributions are welcome -- whether refining an existing glyph, adding a new character, or improving the build pipeline. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide on:
+Contributions are welcome — whether refining an existing glyph, adding a new character, or improving the build pipeline. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for everything you need: file format, style guidelines, testing workflow, and PR process.
 
-- `.glyph` file format and naming conventions
-- Pixel-art style guidelines
-- Testing workflow (`validate`, `dev`, `all`)
-- Pull request process
+<br />
 
 ## License
 
-**Font files and glyph sources** -- [SIL Open Font License 1.1](LICENSE)
-**Build scripts and site code** -- MIT License
+**Font files and glyph sources** — [SIL Open Font License 1.1](LICENSE)
+**Build scripts and site code** — MIT License
