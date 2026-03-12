@@ -14,7 +14,7 @@
         <meta property="og:type" content="website" />
         <meta
             property="og:title"
-            content="Sergamon - Monospaced font for nostalgic hackers"
+            content="Sergamon - Pixel-perfect monospaced font for code. No ligatures. No surprises."
         />
         <meta
             property="og:description"
@@ -30,7 +30,7 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="Sergamon - Monospaced font for nostalgic hackers"
+            content="Sergamon - Pixel-perfect monospaced font for code. No ligatures. No surprises."
         />
         <meta
             name="twitter:description"
@@ -1324,7 +1324,8 @@
                 </div>
                 <h1 class="font-title">Sergamon</h1>
                 <p class="font-tagline">
-                    Monospaced font for nostalgic hackers
+                    Pixel-perfect monospaced font for code. No ligatures. No
+                    surprises.
                 </p>
                 <div class="header-actions">
                     <a
@@ -1625,21 +1626,15 @@ The quick brown fox jumps over the lazy dog.
                     <button class="char-tab" data-tab="misc-symbols">
                         Misc Symbols
                     </button>
-                    <button class="char-tab" data-tab="hebrew">
-                        Hebrew
-                    </button>
+                    <button class="char-tab" data-tab="hebrew">Hebrew</button>
                     <button class="char-tab" data-tab="georgian">
                         Georgian
                     </button>
                     <button class="char-tab" data-tab="armenian">
                         Armenian
                     </button>
-                    <button class="char-tab" data-tab="arabic">
-                        Arabic
-                    </button>
-                    <button class="char-tab" data-tab="thai">
-                        Thai
-                    </button>
+                    <button class="char-tab" data-tab="arabic">Arabic</button>
+                    <button class="char-tab" data-tab="thai">Thai</button>
                     <button class="char-tab" data-tab="devanagari">
                         Devanagari
                     </button>
@@ -5553,25 +5548,80 @@ int main(void) {
 
                 function populateGeorgian() {
                     populateCategory("#georgianGrid", [
-                        [0x10a0, "An"], [0x10a1, "Ban"], [0x10a2, "Gan"], [0x10a3, "Don"],
-                        [0x10a4, "En"], [0x10a5, "Vin"], [0x10a6, "Zen"], [0x10a7, "Tan"],
-                        [0x10a8, "In"], [0x10a9, "Kan"], [0x10aa, "Las"], [0x10ab, "Man"],
-                        [0x10ac, "Nar"], [0x10ad, "On"], [0x10ae, "Par"], [0x10af, "Zhar"],
-                        [0x10b0, "Rae"], [0x10b1, "San"], [0x10b2, "Tar"], [0x10b3, "Un"],
-                        [0x10b4, "Phar"], [0x10b5, "Khar"], [0x10b6, "Ghan"], [0x10b7, "Qar"],
-                        [0x10b8, "Shin"], [0x10b9, "Chin"], [0x10ba, "Tsan"], [0x10bb, "Dzil"],
-                        [0x10bc, "Tsil"], [0x10bd, "Char"], [0x10be, "Xan"], [0x10bf, "Jhan"],
-                        [0x10c0, "Hae"], [0x10c1, "He"], [0x10c2, "Hie"], [0x10c3, "We"],
-                        [0x10c4, "Har"], [0x10c5, "Hoe"], [0x10c7, "Yn"],
-                        [0x10cd, "Aen"], [0x10ce, "Abr"], [0x10cf, "Turned"],
-                        [0x10d0, "an"], [0x10d1, "ban"], [0x10d2, "gan"], [0x10d3, "don"],
-                        [0x10d4, "en"], [0x10d5, "vin"], [0x10d6, "zen"], [0x10d7, "tan"],
-                        [0x10d8, "in"], [0x10d9, "kan"], [0x10da, "las"], [0x10db, "man"],
-                        [0x10dc, "nar"], [0x10dd, "on"], [0x10de, "par"], [0x10df, "zhar"],
-                        [0x10e0, "rae"], [0x10e1, "san"], [0x10e2, "tar"], [0x10e3, "un"],
-                        [0x10e4, "phar"], [0x10e5, "khar"], [0x10e6, "ghan"], [0x10e7, "qar"],
-                        [0x10e8, "shin"], [0x10e9, "chin"], [0x10ea, "tsan"], [0x10eb, "dzil"],
-                        [0x10ec, "tsil"], [0x10ed, "char"], [0x10ee, "xan"], [0x10ef, "jhan"],
+                        [0x10a0, "An"],
+                        [0x10a1, "Ban"],
+                        [0x10a2, "Gan"],
+                        [0x10a3, "Don"],
+                        [0x10a4, "En"],
+                        [0x10a5, "Vin"],
+                        [0x10a6, "Zen"],
+                        [0x10a7, "Tan"],
+                        [0x10a8, "In"],
+                        [0x10a9, "Kan"],
+                        [0x10aa, "Las"],
+                        [0x10ab, "Man"],
+                        [0x10ac, "Nar"],
+                        [0x10ad, "On"],
+                        [0x10ae, "Par"],
+                        [0x10af, "Zhar"],
+                        [0x10b0, "Rae"],
+                        [0x10b1, "San"],
+                        [0x10b2, "Tar"],
+                        [0x10b3, "Un"],
+                        [0x10b4, "Phar"],
+                        [0x10b5, "Khar"],
+                        [0x10b6, "Ghan"],
+                        [0x10b7, "Qar"],
+                        [0x10b8, "Shin"],
+                        [0x10b9, "Chin"],
+                        [0x10ba, "Tsan"],
+                        [0x10bb, "Dzil"],
+                        [0x10bc, "Tsil"],
+                        [0x10bd, "Char"],
+                        [0x10be, "Xan"],
+                        [0x10bf, "Jhan"],
+                        [0x10c0, "Hae"],
+                        [0x10c1, "He"],
+                        [0x10c2, "Hie"],
+                        [0x10c3, "We"],
+                        [0x10c4, "Har"],
+                        [0x10c5, "Hoe"],
+                        [0x10c7, "Yn"],
+                        [0x10cd, "Aen"],
+                        [0x10ce, "Abr"],
+                        [0x10cf, "Turned"],
+                        [0x10d0, "an"],
+                        [0x10d1, "ban"],
+                        [0x10d2, "gan"],
+                        [0x10d3, "don"],
+                        [0x10d4, "en"],
+                        [0x10d5, "vin"],
+                        [0x10d6, "zen"],
+                        [0x10d7, "tan"],
+                        [0x10d8, "in"],
+                        [0x10d9, "kan"],
+                        [0x10da, "las"],
+                        [0x10db, "man"],
+                        [0x10dc, "nar"],
+                        [0x10dd, "on"],
+                        [0x10de, "par"],
+                        [0x10df, "zhar"],
+                        [0x10e0, "rae"],
+                        [0x10e1, "san"],
+                        [0x10e2, "tar"],
+                        [0x10e3, "un"],
+                        [0x10e4, "phar"],
+                        [0x10e5, "khar"],
+                        [0x10e6, "ghan"],
+                        [0x10e7, "qar"],
+                        [0x10e8, "shin"],
+                        [0x10e9, "chin"],
+                        [0x10ea, "tsan"],
+                        [0x10eb, "dzil"],
+                        [0x10ec, "tsil"],
+                        [0x10ed, "char"],
+                        [0x10ee, "xan"],
+                        [0x10ef, "jhan"],
                         [0x10f0, "hae"],
                     ]);
                 }
@@ -5579,34 +5629,96 @@ int main(void) {
 
                 function populateArmenian() {
                     populateCategory("#armenianGrid", [
-                        [0x0531, "Ayb"], [0x0532, "Ben"], [0x0533, "Gim"], [0x0534, "Da"],
-                        [0x0535, "Yech"], [0x0536, "Za"], [0x0537, "Eh"], [0x0538, "Et"],
-                        [0x0539, "To"], [0x053a, "Zhe"], [0x053b, "Ini"], [0x053c, "Liwn"],
-                        [0x053d, "Xeh"], [0x053e, "Ca"], [0x053f, "Ken"], [0x0540, "Ho"],
-                        [0x0541, "Ja"], [0x0542, "Ghad"], [0x0543, "Cheh"], [0x0544, "Men"],
-                        [0x0545, "Yi"], [0x0546, "Now"], [0x0547, "Sha"], [0x0548, "Vo"],
-                        [0x0549, "Cha"], [0x054a, "Peh"], [0x054b, "Jheh"], [0x054c, "Ra"],
-                        [0x054d, "Seh"], [0x054e, "Vew"], [0x054f, "Tiwn"], [0x0550, "Reh"],
-                        [0x0551, "Co"], [0x0552, "Yiwn"], [0x0553, "Piwr"], [0x0554, "Keh"],
-                        [0x0555, "Oh"], [0x0556, "Feh"],
-                        [0x0561, "ayb"], [0x0562, "ben"], [0x0563, "gim"], [0x0564, "da"],
-                        [0x0565, "yech"], [0x0566, "za"], [0x0567, "eh"], [0x0568, "et"],
-                        [0x0569, "to"], [0x056a, "zhe"], [0x056b, "ini"], [0x056c, "liwn"],
-                        [0x056d, "xeh"], [0x056e, "ca"], [0x056f, "ken"], [0x0570, "ho"],
-                        [0x0571, "ja"], [0x0572, "ghad"], [0x0573, "cheh"], [0x0574, "men"],
-                        [0x0575, "yi"], [0x0576, "now"], [0x0577, "sha"], [0x0578, "vo"],
-                        [0x0579, "cha"], [0x057a, "peh"], [0x057b, "jheh"], [0x057c, "ra"],
-                        [0x057d, "seh"], [0x057e, "vew"], [0x057f, "tiwn"], [0x0580, "reh"],
-                        [0x0581, "co"], [0x0582, "yiwn"], [0x0583, "piwr"], [0x0584, "keh"],
-                        [0x0585, "oh"], [0x0586, "feh"],
-                        [0x0559, "modifier left half ring"], [0x055a, "apostrophe"],
-                        [0x055b, "emphasis mark"], [0x055c, "exclamation mark"],
-                        [0x055d, "comma"], [0x055e, "question mark"],
+                        [0x0531, "Ayb"],
+                        [0x0532, "Ben"],
+                        [0x0533, "Gim"],
+                        [0x0534, "Da"],
+                        [0x0535, "Yech"],
+                        [0x0536, "Za"],
+                        [0x0537, "Eh"],
+                        [0x0538, "Et"],
+                        [0x0539, "To"],
+                        [0x053a, "Zhe"],
+                        [0x053b, "Ini"],
+                        [0x053c, "Liwn"],
+                        [0x053d, "Xeh"],
+                        [0x053e, "Ca"],
+                        [0x053f, "Ken"],
+                        [0x0540, "Ho"],
+                        [0x0541, "Ja"],
+                        [0x0542, "Ghad"],
+                        [0x0543, "Cheh"],
+                        [0x0544, "Men"],
+                        [0x0545, "Yi"],
+                        [0x0546, "Now"],
+                        [0x0547, "Sha"],
+                        [0x0548, "Vo"],
+                        [0x0549, "Cha"],
+                        [0x054a, "Peh"],
+                        [0x054b, "Jheh"],
+                        [0x054c, "Ra"],
+                        [0x054d, "Seh"],
+                        [0x054e, "Vew"],
+                        [0x054f, "Tiwn"],
+                        [0x0550, "Reh"],
+                        [0x0551, "Co"],
+                        [0x0552, "Yiwn"],
+                        [0x0553, "Piwr"],
+                        [0x0554, "Keh"],
+                        [0x0555, "Oh"],
+                        [0x0556, "Feh"],
+                        [0x0561, "ayb"],
+                        [0x0562, "ben"],
+                        [0x0563, "gim"],
+                        [0x0564, "da"],
+                        [0x0565, "yech"],
+                        [0x0566, "za"],
+                        [0x0567, "eh"],
+                        [0x0568, "et"],
+                        [0x0569, "to"],
+                        [0x056a, "zhe"],
+                        [0x056b, "ini"],
+                        [0x056c, "liwn"],
+                        [0x056d, "xeh"],
+                        [0x056e, "ca"],
+                        [0x056f, "ken"],
+                        [0x0570, "ho"],
+                        [0x0571, "ja"],
+                        [0x0572, "ghad"],
+                        [0x0573, "cheh"],
+                        [0x0574, "men"],
+                        [0x0575, "yi"],
+                        [0x0576, "now"],
+                        [0x0577, "sha"],
+                        [0x0578, "vo"],
+                        [0x0579, "cha"],
+                        [0x057a, "peh"],
+                        [0x057b, "jheh"],
+                        [0x057c, "ra"],
+                        [0x057d, "seh"],
+                        [0x057e, "vew"],
+                        [0x057f, "tiwn"],
+                        [0x0580, "reh"],
+                        [0x0581, "co"],
+                        [0x0582, "yiwn"],
+                        [0x0583, "piwr"],
+                        [0x0584, "keh"],
+                        [0x0585, "oh"],
+                        [0x0586, "feh"],
+                        [0x0559, "modifier left half ring"],
+                        [0x055a, "apostrophe"],
+                        [0x055b, "emphasis mark"],
+                        [0x055c, "exclamation mark"],
+                        [0x055d, "comma"],
+                        [0x055e, "question mark"],
                         [0x055f, "abbreviation mark"],
-                        [0x0589, "full stop"], [0x058a, "hyphen"],
-                        [0x058d, "right-facing sign"], [0x058e, "left-facing sign"],
+                        [0x0589, "full stop"],
+                        [0x058a, "hyphen"],
+                        [0x058d, "right-facing sign"],
+                        [0x058e, "left-facing sign"],
                         [0x058f, "dram sign"],
-                        [0x0560, "lowercase turned ayb"], [0x0588, "lowercase yiwn"],
+                        [0x0560, "lowercase turned ayb"],
+                        [0x0588, "lowercase yiwn"],
                         [0x0587, "ech yiwn"],
                     ]);
                 }
@@ -5615,9 +5727,13 @@ int main(void) {
                 function populateArabic() {
                     const chars = [];
                     // U+0600-U+06FF — all Arabic block
-                    for (let cp = 0x0600; cp <= 0x06FF; cp++) {
-                        if (cp === 0x061C) continue; // invisible format char
-                        chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    for (let cp = 0x0600; cp <= 0x06ff; cp++) {
+                        if (cp === 0x061c) continue; // invisible format char
+                        chars.push([
+                            cp,
+                            "U+" +
+                                cp.toString(16).toUpperCase().padStart(4, "0"),
+                        ]);
                     }
                     populateCategory("#arabicGrid", chars);
                 }
@@ -5626,9 +5742,19 @@ int main(void) {
                 function populateThai() {
                     const chars = [];
                     // U+0E01-U+0E3A, U+0E3F-U+0E5B
-                    for (let cp = 0x0E01; cp <= 0x0E3A; cp++) chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
-                    chars.push([0x0E3F, "baht"]);
-                    for (let cp = 0x0E40; cp <= 0x0E5B; cp++) chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    for (let cp = 0x0e01; cp <= 0x0e3a; cp++)
+                        chars.push([
+                            cp,
+                            "U+" +
+                                cp.toString(16).toUpperCase().padStart(4, "0"),
+                        ]);
+                    chars.push([0x0e3f, "baht"]);
+                    for (let cp = 0x0e40; cp <= 0x0e5b; cp++)
+                        chars.push([
+                            cp,
+                            "U+" +
+                                cp.toString(16).toUpperCase().padStart(4, "0"),
+                        ]);
                     populateCategory("#thaiGrid", chars);
                 }
                 populateThai();
@@ -5636,8 +5762,12 @@ int main(void) {
                 function populateDevanagari() {
                     const chars = [];
                     // U+0900-U+097F
-                    for (let cp = 0x0900; cp <= 0x097F; cp++) {
-                        chars.push([cp, "U+" + cp.toString(16).toUpperCase().padStart(4, "0")]);
+                    for (let cp = 0x0900; cp <= 0x097f; cp++) {
+                        chars.push([
+                            cp,
+                            "U+" +
+                                cp.toString(16).toUpperCase().padStart(4, "0"),
+                        ]);
                     }
                     populateCategory("#devanagariGrid", chars);
                 }

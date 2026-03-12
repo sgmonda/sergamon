@@ -271,23 +271,7 @@ def fibonacci(n: int) -> int:
     """Return the nth Fibonacci number."""
     if n <= 1:
         return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
-
-class Matrix:
-    def __init__(self, rows, cols):
-        self.rows = rows
-        self.cols = cols
-        self.data = [[0.0] * cols for _ in range(rows)]
-
-    def __eq__(self, other):
-        return self.data == other.data
-
-    def __ne__(self, other):
-        return not self.__eq__(other)
-
-# Test: 0 O o | 1 l I | \` ' "
-result = fibonacci(30)  # => 832040
-print(f"fib(30) == {result}")`,
+    return fibonacci(n - 1) + fibonacci(n - 2)`,
 
   javascript: `// Event-driven task runner
 const STATUS = Object.freeze({
@@ -357,14 +341,14 @@ fn main() {
 // ── Render a preview image ───────────────────────────────────────────────────
 
 function renderPreview(language, code, theme) {
-  const WIDTH = 1200;
-  const HEIGHT = 800;
-  const FONT_SIZE = 20;
-  const LINE_HEIGHT = 20;
+  const WIDTH = 960;
+  const HEIGHT = 325;
+  const FONT_SIZE = 24;
+  const LINE_HEIGHT = 24;
   const GUTTER_WIDTH = 52;
   const HEADER_HEIGHT = 36;
-  const PADDING_LEFT = 16;
-  const PADDING_TOP = 16;
+  const PADDING_LEFT = 24;
+  const PADDING_TOP = 24;
   const FONT_NAME = "Sergamon";
 
   const canvas = createCanvas(WIDTH, HEIGHT);
@@ -400,7 +384,7 @@ function renderPreview(language, code, theme) {
 
   // Header title
   ctx.fillStyle = theme.headerText;
-  ctx.font = `12px "${FONT_NAME}", monospace`;
+  ctx.font = `20px "${FONT_NAME}", monospace`;
   ctx.textBaseline = "middle";
   const ext = language === "rust" ? "rs" : language === "python" ? "py" : "js";
   ctx.fillText(`preview-${language}.${ext}`, 80, dotY);
@@ -464,10 +448,10 @@ function renderPreview(language, code, theme) {
 
   // Watermark
   ctx.fillStyle = theme.comment;
-  ctx.font = `11px "${FONT_NAME}", monospace`;
+  ctx.font = `20px "${FONT_NAME}", monospace`;
   ctx.textBaseline = "bottom";
   ctx.fillText(
-    "Sergamon - Monospaced font for nostalgic hackers",
+    "Sergamon - Pixel-perfect monospaced font for code. No ligatures. No surprises.",
     GUTTER_WIDTH + PADDING_LEFT,
     HEIGHT - 12,
   );
