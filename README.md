@@ -17,8 +17,6 @@
 
 ---
 
-<br />
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/preview-python.png" />
   <source media="(prefers-color-scheme: light)" srcset="assets/preview-python-light.png" />
@@ -39,8 +37,6 @@ Every glyph is hand-crafted on an **8x16 pixel grid** — the same constraints a
 - **One weight.** No bold, no light, no italic. Like a real terminal, every character has the same stroke.
 - **Confusables are distinct.** `0/O/o`, `1/l/I`, `` ` ``/`'`/`"` — each pair is carefully designed to be unambiguous at a glance.
 - **Massive coverage.** 3,700+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
-
-<br />
 
 ## Quick Install
 
@@ -75,8 +71,6 @@ fc-cache -fv
 ```
 
 </details>
-
-<br />
 
 ## Editor & Terminal Setup
 
@@ -160,8 +154,6 @@ family = "Sergamon"
 
 </details>
 
-<br />
-
 ## Web Usage
 
 ```css
@@ -186,8 +178,6 @@ Or load directly from the project site:
   font-display: swap;
 }
 ```
-
-<br />
 
 ## How It Works
 
@@ -219,8 +209,6 @@ XX...XX.
 ```
 
 The optimizer merges adjacent filled pixels into larger rectangles before converting to vector paths, keeping the output compact and efficient.
-
-<br />
 
 ## Contributing
 
