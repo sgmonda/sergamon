@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 3789 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 3837 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -367,7 +367,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2049 ⁉ exclamation question
 - [-] Remaining U+2000–U+206F (U+2016–U+2017, U+201F, U+202F, U+2031, U+2034–U+2037, U+2038, U+2040–U+2042, U+203B, U+203D–U+203E, U+2043, U+2045–U+2046, U+204A–U+2053, U+2056 done)
 
-### [x] Miscellaneous Technical (U+2300–U+23FF) — 59/256
+### [x] Miscellaneous Technical (U+2300–U+23FF) — 99/256
 
 **Already done (in keyboard/):** U+2303 ⌃, U+2318 ⌘, U+2325 ⌥, U+21E7 ⇧, U+23CE ⏎
 
@@ -404,6 +404,10 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+2387 ⎇ alt key, U+238B ⎋ escape
 - [x] U+23CF ⏏ eject
 - [x] U+23FB–U+23FE ⏻⏼⏽⏾ (power symbols)
+- [x] U+23BA–U+23BD ⎺⎻⎼⎽ (horizontal scan lines 1/3/7/9)
+- [x] U+239B–U+23A0 ⎛⎜⎝⎞⎟⎠ (parenthesis pieces: upper/lower hook, extension)
+- [x] U+23A1–U+23A6 ⎡⎢⎣⎤⎥⎦ (square bracket pieces: upper/lower corner, extension)
+- [x] U+23A7–U+23AD ⎧⎨⎩⎪⎫⎬⎭ (curly bracket pieces: upper/lower hook, middle, extension)
 - [x] Remaining as needed
 
 ### [x] Letterlike Symbols (U+2100–U+214F) — 80/80
@@ -505,7 +509,7 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+20BD ₽ Russian ruble
 - [x] U+20BF ₿ bitcoin
 
-### [x] Superscripts & Subscripts (U+2070–U+209F) — 30/42
+### [x] Superscripts & Subscripts (U+2070–U+209F) — 42/42
 
 - [x] U+2070 ⁰ superscript zero
 - [x] U+2071 ⁱ superscript i
@@ -514,15 +518,21 @@ U+25BC ▼, U+25BD ▽, U+25C0 ◀, U+25C1 ◁, U+25C6 ◆, U+25C7 ◇, U+25CB �
 - [x] U+207F ⁿ superscript n
 - [x] U+2080–U+2089 ₀₁₂₃₄₅₆₇₈₉ subscripts 0-9
 - [x] U+208A–U+208E ₊₋₌₍₎ subscript operators
+- [x] U+2090–U+209C ₐₑₒₓₔₕₖₗₘₙₚₛₜ subscript letters
 
-### [x] Number Forms (U+2150–U+218F) — 48/60
+### [x] Number Forms (U+2150–U+218F) — 60/60
 
 - [x] U+2150–U+215E ⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞ vulgar fractions
+- [x] U+215F ⅟ fraction numerator one
 - [x] U+2160–U+216B Ⅰ–Ⅻ Roman numerals uppercase (12)
 - [x] U+2170–U+217B ⅰ–ⅻ Roman numerals lowercase (12)
 - [x] U+2189 ↉ zero thirds fraction
 - [x] U+216C–U+216F Ⅼ Ⅽ Ⅾ Ⅿ Roman numerals L C D M
 - [x] U+217C–U+217F ⅼ ⅽ ⅾ ⅿ lowercase L C D M
+- [x] U+2180–U+2182 ↀↁↂ archaic Roman numerals (1000, 5000, 10000)
+- [x] U+2183–U+2184 Ↄↄ reversed C (uppercase/lowercase)
+- [x] U+2185–U+2188 ↅↆↇↈ late/early Roman numeral forms
+- [x] U+218A–U+218B ↊↋ turned digit two/three
 
 ---
 
@@ -822,7 +832,7 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 - [x] **Braille** — already done (256/256)
 - [x] **Enclosed Alphanumerics** — circled/parenthesized variants of existing glyphs
 - [x] **Superscripts & Subscripts** — scaled versions of existing digits/letters
-- [-] **Number Forms (fractions)** — composite of existing digit glyphs
+- [x] **Number Forms (fractions)** — composite of existing digit glyphs
 
 ---
 
@@ -832,8 +842,8 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 |-------|-----------|------|---|
 | Phase 1 — Complete started blocks | ~350 | 350 | 100% |
 | Phase 2 — High-impact blocks | ~600 | 617 | 103% |
-| Phase 3 — Enrichment | ~500 | 574 | 115% |
+| Phase 3 — Enrichment | ~500 | 622 | 124% |
 | Phase 4 — Extended coverage | ~500 | 1067 | 213% |
 | Phase 5 — Non-Latin scripts | ~700+ | 808 | 115% |
-| **Total new glyphs** | **~2,650** | **3453** | **~130%** |
-| **Grand total (with existing 538)** | **~3,188** | **3789** | **~119%** |
+| **Total new glyphs** | **~2,650** | **3501** | **~132%** |
+| **Grand total (with existing 538)** | **~3,188** | **3837** | **~120%** |

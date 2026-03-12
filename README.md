@@ -10,7 +10,7 @@
 
 [![License: OFL-1.1](https://img.shields.io/badge/license-OFL--1.1-green?style=flat-square)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://img.shields.io/github/actions/workflow/status/sgmonda/sergamon/build.yml?style=flat-square&label=build)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
-[![Glyphs](https://img.shields.io/badge/glyphs-3789-orange?style=flat-square)](https://sgmonda.com/sergamon)
+[![Glyphs](https://img.shields.io/badge/glyphs-3837-orange?style=flat-square)](https://sgmonda.com/sergamon)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen?style=flat-square)](https://nodejs.org)
 
 [Website](https://sgmonda.com/sergamon) &bull; [Download](https://github.com/sgmonda/sergamon/releases/latest) &bull; [Contributing](CONTRIBUTING.md)
@@ -36,7 +36,7 @@ Every glyph is hand-crafted on an **8x16 pixel grid** — the same constraints a
 - **`==` is two equal signs.** `->` is a hyphen and a greater-than. No ligatures, no magic substitutions — your source code looks exactly as you typed it.
 - **One weight.** No bold, no light, no italic. Like a real terminal, every character has the same stroke.
 - **Confusables are distinct.** `0/O/o`, `1/l/I`, `` ` ``/`'`/`"` — each pair is carefully designed to be unambiguous at a glance.
-- **Massive coverage.** 3,700+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
+- **Massive coverage.** 3,800+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
 
 ## Quick Install
 
