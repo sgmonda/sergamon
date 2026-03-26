@@ -40,6 +40,7 @@ const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "georgian"),
   path.join(PROJECT_ROOT, "glyphs", "thai"),
   path.join(PROJECT_ROOT, "glyphs", "devanagari"),
+  path.join(PROJECT_ROOT, "glyphs", "invisible-indicators"),
 ];
 
 const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");

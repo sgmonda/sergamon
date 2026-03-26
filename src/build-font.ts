@@ -49,6 +49,7 @@ const GLYPH_DIRS = [
   path.join(PROJECT_ROOT, "glyphs", "georgian"),
   path.join(PROJECT_ROOT, "glyphs", "thai"),
   path.join(PROJECT_ROOT, "glyphs", "devanagari"),
+  path.join(PROJECT_ROOT, "glyphs", "invisible-indicators"),
 ];
 
 const BUILD_DIR = path.join(PROJECT_ROOT, "build");

@@ -10,7 +10,7 @@
 
 [![License: OFL-1.1](https://img.shields.io/badge/license-OFL--1.1-green?style=flat-square)](https://opensource.org/licenses/OFL-1.1)
 [![Build](https://img.shields.io/github/actions/workflow/status/sgmonda/sergamon/build.yml?style=flat-square&label=build)](https://github.com/sgmonda/sergamon/actions/workflows/build.yml)
-[![Glyphs](https://img.shields.io/badge/glyphs-3837-orange?style=flat-square)](https://sgmonda.com/sergamon)
+[![Glyphs](https://img.shields.io/badge/glyphs-4226-orange?style=flat-square)](https://sgmonda.com/sergamon)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen?style=flat-square)](https://nodejs.org)
 
 [Website](https://sgmonda.com/sergamon) &bull; [Download](https://github.com/sgmonda/sergamon/releases/latest) &bull; [Contributing](CONTRIBUTING.md)
@@ -36,7 +36,8 @@ Every glyph is hand-crafted on an **8x16 pixel grid** — the same constraints a
 - **`==` is two equal signs.** `->` is a hyphen and a greater-than. No ligatures, no magic substitutions — your source code looks exactly as you typed it.
 - **One weight.** No bold, no light, no italic. Like a real terminal, every character has the same stroke.
 - **Confusables are distinct.** `0/O/o`, `1/l/I`, `` ` ``/`'`/`"` — each pair is carefully designed to be unambiguous at a glance.
-- **Massive coverage.** 3,800+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
+- **Massive coverage.** 4,200+ glyphs spanning Latin, Cyrillic, Greek, Hebrew, Arabic, Thai, Devanagari, Georgian, Armenian, box-drawing, braille, math operators, and more.
+- **Invisible character indicators.** 420+ normally-invisible Unicode characters used in cyberattacks (Trojan Source, prompt injection, phishing evasion) are rendered as small, distinctive indicator glyphs instead of blank space. [Learn more](https://github.com/sgmonda/sergamon/wiki/Invisible-Unicode-Indicators).
 
 ## Quick Install
 
@@ -209,6 +210,24 @@ XX...XX.
 ```
 
 The optimizer merges adjacent filled pixels into larger rectangles before converting to vector paths, keeping the output compact and efficient.
+
+## Invisible Character Indicators
+
+Unicode contains hundreds of characters that produce no visible output — zero-width spaces, bidirectional overrides, variation selectors, tag characters. Attackers exploit them because **humans can't see what the compiler processes**.
+
+Sergamon makes these characters visible with small, category-specific indicator glyphs:
+
+| Category | Codepoints | Indicator | Threat |
+|----------|-----------|-----------|--------|
+| BiDi overrides | U+202A–U+202E, U+2066–U+2069 | Directional arrow + letter | Trojan Source (CVE-2021-42574) |
+| Zero-width | U+200B, U+200C, U+200D, U+FEFF, U+2060 | Category symbol in dotted frame | Zero-width payload encoding |
+| Tags Block | U+E0000–U+E007F | Tag brackets + miniature ASCII | LLM prompt injection |
+| Variation Selectors | U+FE00–U+FE0F, U+E0100–U+E01EF | "V" + hex index | Glassworm (2025) |
+| Hangul fillers | U+3164, U+FFA0 | "HF" indicator | Tycoon 2FA phishing |
+| Invisible math | U+2061–U+2064 | Math symbol in thin frame | Formula obfuscation |
+| Soft hyphen | U+00AD | Dotted line | Email filter evasion |
+
+For the full security rationale, linked CVEs, and attack descriptions, see the [wiki page](https://github.com/sgmonda/sergamon/wiki/Invisible-Unicode-Indicators).
 
 ## Contributing
 
