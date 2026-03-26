@@ -1,6 +1,6 @@
 # Sergamon — Unicode Coverage Roadmap
 
-**Current:** 3837 glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
+**Current:** 4,000+ glyphs | **Target:** ~2,500–3,000 (practical programming font coverage)
 
 Legend: `[x]` = done, `[-]` = partial, `[ ]` = not started
 
@@ -846,4 +846,4 @@ These blocks have regular, algorithmic patterns ideal for script generation (lik
 | Phase 4 — Extended coverage | ~500 | 1067 | 213% |
 | Phase 5 — Non-Latin scripts | ~700+ | 808 | 115% |
 | **Total new glyphs** | **~2,650** | **3501** | **~132%** |
-| **Grand total (with existing 538)** | **~3,188** | **3837** | **~120%** |
+| **Grand total (with existing 538)** | **~3,188** | **4,000+** | **~120%** |
