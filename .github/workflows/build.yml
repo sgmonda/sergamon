@@ -40,6 +40,7 @@ jobs:
           name: font-files
           path: |
             build/*.ttf
+            build/*.otf
             build/*.woff2
             build/previews/*.png
 
@@ -72,4 +73,5 @@ jobs:
           generate_release_notes: true
           files: |
             build/Sergamon.ttf
+            build/Sergamon.otf
             build/Sergamon.woff2

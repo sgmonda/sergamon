@@ -17,6 +17,8 @@ import type { FontConfig, ParsedGlyph, Rectangle } from "./types.js";
 import { parseAllGlyphs } from "./parse-glyph.js";
 import { optimizeGrid } from "./optimize-paths.js";
 import { glyphToPath } from "./glyph-to-path.js";
+import { recomputeChecksums } from "./recompute-checksums.js";
+import { buildTrueTypeBuffer } from "./build-truetype.js";
 
 // ── Constants ───────────────────────────────────────────────────────────────
 
@@ -73,28 +75,35 @@ function postScriptName(codepoint: number | undefined, fallback: string): string
   return `u${codepoint.toString(16).toUpperCase().padStart(5, "0")}`;
 }
 
+interface BuiltGlyph {
+  glyph: opentype.Glyph;
+  rects: Rectangle[];
+  name: string;
+}
+
 function buildGlyphs(
   parsedGlyphs: ParsedGlyph[],
   config: FontConfig,
-): opentype.Glyph[] {
+): BuiltGlyph[] {
   const { pixelSize } = config.metrics;
   const { baselineRow, width: stdWidth } = config.grid;
   const stdAdvanceWidth = pixelSize * stdWidth;
 
-  const results: opentype.Glyph[] = [];
+  const results: BuiltGlyph[] = [];
 
   for (const pg of parsedGlyphs) {
     const rects: Rectangle[] = optimizeGrid(pg.grid);
     const glyphPath = glyphToPath(rects, pixelSize, baselineRow);
+    const name = postScriptName(pg.header.codepoint, pg.header.label);
 
     const glyph = new opentype.Glyph({
-      name: postScriptName(pg.header.codepoint, pg.header.label),
+      name,
       unicode: pg.header.codepoint,
       advanceWidth: stdAdvanceWidth,
       path: glyphPath,
     });
 
-    results.push(glyph);
+    results.push({ glyph, rects, name });
   }
 
   return results;
@@ -191,7 +200,9 @@ async function main(): Promise<void> {
   });
 
   // Assemble the glyph array: .notdef must be first.
-  const glyphArray = [notdefGlyph, ...builtGlyphs];
+  const glyphArray: opentype.Glyph[] = [notdefGlyph, ...builtGlyphs.map((b) => b.glyph)];
+  const rectsPerGlyph: Rectangle[][] = [[], ...builtGlyphs.map((b) => b.rects)];
+  const glyphNames: string[] = [".notdef", ...builtGlyphs.map((b) => b.name)];
 
   // 5. Build the opentype.Font.
   const familyName = config.font.familyName;
@@ -263,26 +274,44 @@ async function main(): Promise<void> {
   await fs.mkdir(BUILD_DIR, { recursive: true });
   await fs.mkdir(SITE_FONTS_DIR, { recursive: true });
 
-  const ttfPath = path.join(BUILD_DIR, "Sergamon.ttf");
+  const otfPath = path.join(BUILD_DIR, "Sergamon.otf");
   const woff2BuildPath = path.join(BUILD_DIR, "Sergamon.woff2");
   const woff2SitePath = path.join(SITE_FONTS_DIR, "Sergamon.woff2");
 
   const arrayBuffer = font.toArrayBuffer();
-  const ttfBuffer = Buffer.from(arrayBuffer);
+  const otfBuffer = Buffer.from(arrayBuffer);
 
-  // Patch binary fields that opentype.js doesn't expose via its API.
-  patchPostIsFixedPitch(ttfBuffer);
-  patchHeadFontRevision(ttfBuffer, version);
+  // opentype.js v1.3.4 emits OpenType-CFF (sfnt magic 'OTTO') and hardcodes
+  // post.isFixedPitch=0 / head.fontRevision=1.0. Patch the binary, then
+  // recompute table checksums so Windows accepts the file (issue #2).
+  patchPostIsFixedPitch(otfBuffer);
+  patchHeadFontRevision(otfBuffer, version);
+  recomputeChecksums(otfBuffer);
 
+  await fs.writeFile(otfPath, otfBuffer);
+  console.log(`    Wrote ${otfPath}`);
+
+  // 7. Build TrueType (sfnt 0x00010000, outlines in glyf/loca) from the same
+  //    rectangle data, reusing the OTF as a template for format-agnostic
+  //    tables. Apple Books and similar PDF rasterizers mishandle subsetted
+  //    CFF; shipping a real TrueType file fixes that (issue #4).
+  const ttfPath = path.join(BUILD_DIR, "Sergamon.ttf");
+  const ttfBuffer = buildTrueTypeBuffer({
+    otfBuffer,
+    rectsPerGlyph,
+    glyphNames,
+    pixelSize,
+    baselineRow,
+  });
   await fs.writeFile(ttfPath, ttfBuffer);
   console.log(`    Wrote ${ttfPath}`);
 
-  // 7. Convert to WOFF2.
+  // 8. WOFF2 is built from the TrueType buffer so the web flavour matches
+  //    the primary desktop install.
   const woff2Buffer = await wawoff2.compress(ttfBuffer);
   await fs.writeFile(woff2BuildPath, woff2Buffer);
   console.log(`    Wrote ${woff2BuildPath}`);
 
-  // 8. Copy WOFF2 to site/fonts/.
   await fs.writeFile(woff2SitePath, woff2Buffer);
   console.log(`    Wrote ${woff2SitePath}`);
 
