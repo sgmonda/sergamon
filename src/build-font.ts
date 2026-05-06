@@ -57,6 +57,22 @@ const SITE_FONTS_DIR = path.join(PROJECT_ROOT, "site", "fonts");
 
 // ── Build font ─────────────────────────────────────────────────────────────
 
+/**
+ * Derive a unique PostScript glyph name from a codepoint.
+ *
+ * Using the human-readable label from the .glyph header collides across
+ * scripts (e.g. latin/cyrillic share `A`, `I`, `O`...), and opentype.js
+ * silently disambiguates with `.1`/`.2` suffixes. Some PDF rasterizers
+ * reverse-map glyph names back to codepoints, so `Eacute.1` ends up rendered
+ * as É instead of Í. Using `uniXXXX`/`uXXXXX` per Adobe Glyph List spec
+ * guarantees uniqueness and avoids that misinterpretation. See issue #3.
+ */
+function postScriptName(codepoint: number | undefined, fallback: string): string {
+  if (codepoint === undefined) return fallback;
+  if (codepoint <= 0xffff) return `uni${codepoint.toString(16).toUpperCase().padStart(4, "0")}`;
+  return `u${codepoint.toString(16).toUpperCase().padStart(5, "0")}`;
+}
+
 function buildGlyphs(
   parsedGlyphs: ParsedGlyph[],
   config: FontConfig,
@@ -72,7 +88,7 @@ function buildGlyphs(
     const glyphPath = glyphToPath(rects, pixelSize, baselineRow);
 
     const glyph = new opentype.Glyph({
-      name: pg.header.label,
+      name: postScriptName(pg.header.codepoint, pg.header.label),
       unicode: pg.header.codepoint,
       advanceWidth: stdAdvanceWidth,
       path: glyphPath,
