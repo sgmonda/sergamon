@@ -96,12 +96,25 @@ function buildGlyphs(
     const glyphPath = glyphToPath(rects, pixelSize, baselineRow);
     const name = postScriptName(pg.header.codepoint, pg.header.label);
 
+    // Left side bearing must match the glyph's xMin. Otherwise some
+    // rasterizers (skia/freetype, Apple) treat head.flags bit 1
+    // ("lsb point at x=0") as authoritative and shift the glyph left by
+    // xMin, making glyphs whose pixels start away from column 0 render
+    // flush-left in their cell (e.g. middledot).
+    const minCol = rects.length === 0
+      ? 0
+      : Math.min(...rects.map((r) => r.x));
+    const lsb = minCol * pixelSize;
+
     const glyph = new opentype.Glyph({
       name,
       unicode: pg.header.codepoint,
       advanceWidth: stdAdvanceWidth,
       path: glyphPath,
     });
+    // opentype.js's Glyph constructor ignores leftSideBearing in options,
+    // so assign it directly after construction.
+    (glyph as any).leftSideBearing = lsb;
 
     results.push({ glyph, rects, name });
   }
