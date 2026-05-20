@@ -1,6 +1,6 @@
 {
   "name": "sergamon",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "type": "module",
   "description": "Pixel-perfect monospaced font for code. No ligatures. No surprises.",
   "scripts": {
