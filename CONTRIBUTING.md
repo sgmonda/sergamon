@@ -192,7 +192,10 @@ To maintain visual consistency across the font, follow these pixel-art conventio
 ### Stroke width
 - Use **1-pixel or 2-pixels strokes** only.
 - Vertical strokes are 2-pixels width.
-- Horizontal strokes are 1-pixel width.
+- Horizontal strokes are 1-pixel width in letters and digits.
+- Horizontal strokes are 2-pixels width in the characters that draw lines —
+  box-drawing, arrows and dashes — so they match each other where they meet.
+  See [the canonical horizontal axis](#the-canonical-horizontal-axis).
 
 ### Character proportions
 - Most uppercase letters should span columns 1--7 (0-indexed), leaving column 0 and column 7 as side-bearings when possible.
@@ -212,6 +215,42 @@ To maintain visual consistency across the font, follow these pixel-art conventio
 - All glyphs must respect the fixed 8-column width. Do not use columns outside the grid.
 - Baseline is at row 13 (0-indexed). Characters should sit on the baseline unless they have descenders.
 - Maintain consistent vertical alignment for similar character classes (all digits at the same height, all uppercase at the same height, etc.).
+
+### The canonical horizontal axis
+
+Box-drawing characters, arrows and dashes all sit on **one** horizontal axis: the
+boundary between **rows 8 and 9**. It is where the bars of `-`, `+` and `=`
+already sit, so lines, arrows and operators line up with each other and with the
+text around them.
+
+This is what makes a run like `──→` render as one continuous line. Get it wrong
+by a single pixel and the line visibly steps where it meets the arrow.
+
+A stroke centred on that boundary mirrors around it, so **row `r` pairs with row
+`17 - r`**:
+
+| Stroke | Rows | Example |
+|--------|------|---------|
+| Light (2px) | 8–9 | `─` `→` `-` |
+| Heavy (4px) | 7–10 | `━` |
+| Double | 6–7 and 10–11 | `═` `⇒` |
+
+The vertical axis is the mirror of this: vertical strokes occupy **columns 3–4**
+(and 1–2 plus 5–6 when doubled), so verticals join across lines.
+
+Two consequences worth knowing:
+
+- A vertical stem must still reach the cell edge it points at, or boxes break
+  apart between lines. When you move a horizontal stroke, restretch the vertical
+  bands above and below it rather than shifting the whole glyph.
+- Arrows are the same weight as the lines they meet: a 2px stem, not 1px. A
+  hairline arrow next to `─` reads as a different, lighter character.
+
+`npm run validate` enforces all of this and names the offending rows, so a
+misaligned glyph fails the build rather than reaching a release. Arrows whose
+full-width row is a base or a curve instead of a stem (`↥`, `↵`, `⇪`, …) are
+listed as explicit exemptions in `src/validate-glyphs.ts`; if you add such a
+glyph, add it there with a comment saying why.
 
 ### General principles
 - Fewer filled pixels is often better -- keep designs clean and readable.

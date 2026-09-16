@@ -49,6 +49,47 @@ const CONFIG_PATH = path.join(PROJECT_ROOT, "font-config.json");
 const ASCII_START = 0x0020;
 const ASCII_END = 0x007e;
 
+// ── Canonical horizontal axis ───────────────────────────────────────────────
+//
+// Lines, arrows and dashes all sit on one horizontal axis so that a run like
+// `──→` joins into a continuous line instead of stepping where the line meets
+// the arrow. The axis is the boundary between rows 8 and 9, which is also
+// where the bars of `-`, `+` and `=` sit.
+//
+// A stroke centred on that boundary mirrors around it, so row r pairs with
+// row AXIS_ROW_SUM - r: a 2px stroke is rows 8-9, a 4px heavy stroke is rows
+// 7-10, and a double stroke is rows 6-7 plus 10-11.
+const AXIS_ROW_SUM = 17;
+
+const BOX_DRAWING_START = 0x2500;
+const BOX_DRAWING_END = 0x257f;
+const ARROWS_START = 0x2190;
+const ARROWS_END = 0x21ff;
+
+// Arrows whose full-width row is a base or a curve rather than a horizontal
+// stem, so the axis does not apply to them.
+const AXIS_EXEMPT_ARROWS = new Set([
+  0x21a5, // ↥ upwards arrow from bar — the full row is the bar
+  0x21a7, // ↧ downwards arrow from bar
+  0x21a8, // ↨ up down arrow with base
+  0x21ab, // ↫ leftwards arrow with loop
+  0x21ac, // ↬ rightwards arrow with loop
+  0x21b5, // ↵ downwards arrow with corner leftwards
+  0x21b8, // ↸ north west arrow to long bar
+  0x21ea, // ⇪ upwards white arrow from bar
+]);
+
+// Dashes are the same stroke at different lengths; they share the axis too.
+const DASH_CODEPOINTS = new Set([
+  0x002d, // - hyphen-minus
+  0x2010, // ‐ hyphen
+  0x2011, // ‑ non-breaking hyphen
+  0x2013, // – en dash
+  0x2014, // — em dash
+  0x2015, // ― horizontal bar
+  0x2212, // − minus sign
+]);
+
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 interface ValidationError {
@@ -62,6 +103,30 @@ function formatCodepoint(cp: number): string {
 
 function relativeToProject(absPath: string): string {
   return path.relative(PROJECT_ROOT, absPath);
+}
+
+/** Rows holding a wide stroke that reaches a side edge, so it joins the next cell. */
+function connectingRows(grid: boolean[][]): number[] {
+  const rows: number[] = [];
+  for (let r = 0; r < grid.length; r++) {
+    const row = grid[r];
+    const filled = row.filter(Boolean).length;
+    if (filled >= 5 && (row[0] || row[row.length - 1])) rows.push(r);
+  }
+  return rows;
+}
+
+/** Rows filled edge to edge. */
+function fullRows(grid: boolean[][]): number[] {
+  const rows: number[] = [];
+  for (let r = 0; r < grid.length; r++) {
+    if (grid[r].every(Boolean)) rows.push(r);
+  }
+  return rows;
+}
+
+function isContiguous(rows: number[]): boolean {
+  return rows.length > 0 && rows[rows.length - 1] - rows[0] === rows.length - 1;
 }
 
 // ── Validation rules ────────────────────────────────────────────────────────
@@ -170,11 +235,61 @@ function validateGlyphs(
           message: `Codepoint ${formatCodepoint(cp)} is in the surrogate range (U+D800-U+DFFF) and is not a valid Unicode scalar value.`,
         });
       }
+
+      // ── 6. Canonical horizontal axis ─────────────────────────────────
+      // Box-drawing: every stroke that joins the neighbouring cell must
+      // mirror around the axis, or lines step where they meet.
+      if (cp >= BOX_DRAWING_START && cp <= BOX_DRAWING_END) {
+        const rows = connectingRows(glyph.grid);
+        const offAxis = rows.filter((r) => !rows.includes(AXIS_ROW_SUM - r));
+        if (offAxis.length > 0) {
+          errors.push({
+            file: rel,
+            message: `Horizontal stroke on row(s) ${offAxis.join(", ")} is off the canonical axis. Strokes must mirror around the boundary between rows 8 and 9, so row r pairs with row ${AXIS_ROW_SUM} - r (2px stroke: rows 8-9; heavy: 7-10; double: 6-7 and 10-11).`,
+          });
+        }
+      }
+
+      // Arrows: a stem crossing the whole cell shares that same axis, so
+      // `──→` joins up. Stems that are really a base or a curve are exempt.
+      if (
+        cp >= ARROWS_START &&
+        cp <= ARROWS_END &&
+        !AXIS_EXEMPT_ARROWS.has(cp)
+      ) {
+        const stem = fullRows(glyph.grid);
+        if (stem.length > 0 && isContiguous(stem)) {
+          const top = stem[0];
+          const bottom = stem[stem.length - 1];
+          if (top + bottom !== AXIS_ROW_SUM) {
+            errors.push({
+              file: rel,
+              message: `Arrow stem spans rows ${top}-${bottom}, which is off the canonical axis. A stem crossing the cell must mirror around the boundary between rows 8 and 9 (a 2px stem is rows 8-9).`,
+            });
+          }
+        }
+      }
+
+      // Dashes are one stroke at different lengths, all on the axis.
+      if (DASH_CODEPOINTS.has(cp)) {
+        const rows: number[] = [];
+        for (let r = 0; r < glyph.grid.length; r++) {
+          if (glyph.grid[r].some(Boolean)) rows.push(r);
+        }
+        const onAxis =
+          rows.length === 2 && rows[0] === 8 && rows[1] === 9;
+        if (!onAxis) {
+          errors.push({
+            file: rel,
+            message: `Dash occupies row(s) ${rows.join(", ") || "none"}; dashes must be a 2px stroke on rows 8-9 so they match '-', '+' and '='. Only their length may differ.`,
+          });
+        }
+      }
     }
 
   }
 
-  // ── 6. No duplicate codepoints ────────────────────────────────────────
+  // ── 7. No duplicate codepoints ────────────────────────────────────────
   for (const [cp, dups] of codepointOccurrences) {
     if (dups.length > 1) {
       const files = dups.map((g) => relativeToProject(g.filePath)).join(", ");
@@ -185,7 +300,7 @@ function validateGlyphs(
     }
   }
 
-  // ── 7. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
+  // ── 8. ASCII completeness (U+0020-U+007E, 95 chars) ──────────────────
   for (let cp = ASCII_START; cp <= ASCII_END; cp++) {
     if (!codepointToGlyph.has(cp)) {
       const char =
